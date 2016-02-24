@@ -3,8 +3,8 @@ URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents
 METHOD: POST
  
 HEADER:
-	Authorization = â€œBearer  {accessToken}â€	
-	Content-Type  = â€œapplication/jsonâ€
+	Authorization = “Bearer  {accessToken}”	
+	Content-Type  = “application/json”
 
 MADATORY FIELDS:
 ................
@@ -99,293 +99,293 @@ REQUEST:
 			
 RESPONSE:
 {
-Â Â Â "id": "INC0000001016",
-Â Â Â "subject": "creating incident from API",
-Â Â Â "description": "Description",
-Â Â Â "status": "New",
-Â Â Â "oldStatus": "New",
-Â Â Â "priority": "Normal",
-Â Â Â "oldPriority": "Normal",
-Â Â Â "requester": {
-Â Â Â Â Â Â "id": "USR0000002129",
-Â Â Â Â Â Â "loginName": "Deepu.Mungamuri",
-Â Â Â Â Â Â "lastName": "Mungamuri",
-Â Â Â Â Â Â "firstName": "Deepu",
-Â Â Â Â Â Â "email": "deepu.mungamuri@gmail.com",
-Â Â Â Â Â Â "phoneNumber": "9992226668",
-Â Â Â Â Â Â "timeZone": {
-Â Â Â Â Â Â Â Â Â "id": "19",
-Â Â Â Â Â Â Â Â Â "name": "Asia/Calcutta",
-Â Â Â Â Â Â Â Â Â "label": "GMT +05:30 India",
-Â Â Â Â Â Â Â Â Â "code": "IST"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â "orgId": "client_93",
-Â Â Â Â Â Â "profileImage": {
-Â Â Â Â Â Â Â Â Â "description": "",
-Â Â Â Â Â Â Â Â Â "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-Â Â Â Â Â Â Â Â Â "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-Â Â Â Â Â Â Â Â Â "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-Â Â Â Â Â Â Â Â Â "imageType": ""
-Â Â Â Â Â Â },
-Â Â Â Â Â Â "changePassword": false,
-Â Â Â Â Â Â "organizationName": "Brocade Lab",
-Â Â Â Â Â Â "createdTime": "2015-12-18T13:55:14+0530",
-Â Â Â Â Â Â "updatedTime": "2015-12-18T13:55:14+0530",
-Â Â Â Â Â Â "acls": [
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 5,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "Client User"
-Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â ]
-Â Â Â },
-Â Â Â "assignedUser": {
-Â Â Â Â Â Â "id": "USR0000002129",
-Â Â Â Â Â Â "loginName": "Deepu.Mungamuri",
-Â Â Â Â Â Â "lastName": "Mungamuri",
-Â Â Â Â Â Â "firstName": "Deepu",
-Â Â Â Â Â Â "email": "deepu.mungamuri@gmail.com",
-Â Â Â Â Â Â "phoneNumber": "9992226668",
-Â Â Â Â Â Â "timeZone": {
-Â Â Â Â Â Â Â Â Â "id": "19",
-Â Â Â Â Â Â Â Â Â "name": "Asia/Calcutta",
-Â Â Â Â Â Â Â Â Â "label": "GMT +05:30 India",
-Â Â Â Â Â Â Â Â Â "code": "IST"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â "orgId": "client_93",
-Â Â Â Â Â Â "profileImage": {
-Â Â Â Â Â Â Â Â Â "description": "",
-Â Â Â Â Â Â Â Â Â "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-Â Â Â Â Â Â Â Â Â "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-Â Â Â Â Â Â Â Â Â "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-Â Â Â Â Â Â Â Â Â "imageType": ""
-Â Â Â Â Â Â },
-Â Â Â Â Â Â "changePassword": false,
-Â Â Â Â Â Â "organizationName": "Brocade Lab",
-Â Â Â Â Â Â "createdTime": "2015-12-18T13:55:14+0530",
-Â Â Â Â Â Â "updatedTime": "2015-12-18T13:55:14+0530",
-Â Â Â Â Â Â "acls": [
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 5,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "Client User"
-Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â ]
-Â Â Â },
-Â Â Â "customFields": [
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003778",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "for service provider",
-Â Â Â Â Â Â Â Â Â "name": "for_service_provider_3778",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_TEXT",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "all clients and all partners"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003779",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "for service prov 2",
-Â Â Â Â Â Â Â Â Â "name": "for_service_prov_2_3779",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_CHECKBOX",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "all partners and clients",
-Â Â Â Â Â Â Â Â Â "options": [
-Â Â Â Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "label": "yes",
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "value": "1"
-Â Â Â Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â Â Â Â ]
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003780",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "for service pro 3",
-Â Â Â Â Â Â Â Â Â "name": "for_service_pro_3_3780",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_TEXT",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "service provider"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003781",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "date",
-Â Â Â Â Â Â Â Â Â "name": "date_3781",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_DATE",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "date field"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003782",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "date and time label",
-Â Â Â Â Â Â Â Â Â "name": "date_and_time_label_3782",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_DATETIME",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "date and time description"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003783",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "dropdown for incident",
-Â Â Â Â Â Â Â Â Â "name": "dropdown_for_incident_3783",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_DROPDOWN",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "DROPDOWN label",
-Â Â Â Â Â Â Â Â Â "options": [
-Â Â Â Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "label": "one",
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "value": "1"
-Â Â Â Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "label": "two",
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "value": "2"
-Â Â Â Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "label": "THREE",
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â "value": "3"
-Â Â Â Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â Â Â Â ],
-Â Â Â Â Â Â Â Â Â "value": "3",
-Â Â Â Â Â Â Â Â Â "selectedOption": {
-Â Â Â Â Â Â Â Â Â Â Â Â "label": "THREE",
-Â Â Â Â Â Â Â Â Â Â Â Â "value": "3"
-Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003784",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "multi line text",
-Â Â Â Â Â Â Â Â Â "name": "multi_line_text_3784",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_TEXTAREA",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "multi line text custom field"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "UDF0000003785",
-Â Â Â Â Â Â Â Â Â "classCode": "INCIDENT",
-Â Â Â Â Â Â Â Â Â "displayLabel": "numeric custom",
-Â Â Â Â Â Â Â Â Â "name": "numeric_custom_3785",
-Â Â Â Â Â Â Â Â Â "fieldType": "TYPE_NUMBER",
-Â Â Â Â Â Â Â Â Â "mandatory": false,
-Â Â Â Â Â Â Â Â Â "editable": true,
-Â Â Â Â Â Â Â Â Â "description": "numeric custom field for incident"
-Â Â Â Â Â Â }
-Â Â Â ],
-Â Â Â "ticketArisedTime": "",
-Â Â Â "createdUser": {
-Â Â Â Â Â Â "id": "USR0000002095",
-Â Â Â Â Â Â "loginName": "vistara_system_user",
-Â Â Â Â Â Â "lastName": " ",
-Â Â Â Â Â Â "firstName": "Vistara System User",
-Â Â Â Â Â Â "email": "sarma519@gmail.com",
-Â Â Â Â Â Â "profileImage": {
-Â Â Â Â Â Â Â Â Â "description": "",
-Â Â Â Â Â Â Â Â Â "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-Â Â Â Â Â Â Â Â Â "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-Â Â Â Â Â Â Â Â Â "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-Â Â Â Â Â Â Â Â Â "imageType": ""
-Â Â Â Â Â Â },
-Â Â Â Â Â Â "changePassword": false,
-Â Â Â Â Â Â "organizationName": "System Organization",
-Â Â Â Â Â Â "createdTime": "2013-05-10T00:00:00+0530",
-Â Â Â Â Â Â "updatedTime": "2013-05-10T00:00:00+0530",
-Â Â Â Â Â Â "acls": [
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â },
-Â Â Â Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â Â Â Â "id": 75,
-Â Â Â Â Â Â Â Â Â Â Â Â "name": "System User Acl"
-Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â ]
-Â Â Â },
-Â Â Â "alertIds": [],
-Â Â Â "createdDate": "2015-12-21T10:14:33+0530",
-Â Â Â "serviceRestoreDate": "2015-12-29T11:05:33+0530",
-Â Â Â "allowedStatus": [
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "2",
-Â Â Â Â Â Â Â Â Â "name": "Open"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â {
-Â Â Â Â Â Â Â Â Â "id": "5",
-Â Â Â Â Â Â Â Â Â "name": "Closed"
-Â Â Â Â Â Â }
-Â Â Â ],
-Â Â Â "client": {
-Â Â Â Â Â Â "id": 93,
-Â Â Â Â Â Â "uniqueId": "client_93",
-Â Â Â Â Â Â "name": "Brocade Lab",
-Â Â Â Â Â Â "activated": true,
-Â Â Â Â Â Â "updatedTime": "2016-01-27T12:47:42+0530",
-Â Â Â Â Â Â "createdTime": "2013-01-29T09:45:04+0530",
-Â Â Â Â Â Â "lastUpdatedBy": {
-Â Â Â Â Â Â Â Â Â "id": "USR0000002095",
-Â Â Â Â Â Â Â Â Â "loginName": "vistara_system_user",
-Â Â Â Â Â Â Â Â Â "lastName": " ",
-Â Â Â Â Â Â Â Â Â "firstName": "Vistara System User",
-Â Â Â Â Â Â Â Â Â "email": "sarma519@gmail.com",
-Â Â Â Â Â Â Â Â Â "changePassword": false
-Â Â Â Â Â Â }
-Â Â Â },
-Â Â Â "updatedDate": "2015-12-21T14:08:16+0530",
-Â Â Â "priorityUpdatedBy": {
-Â Â Â Â Â Â "id": "USR0000002114",
-Â Â Â Â Â Â "loginName": "deepu@client",
-Â Â Â Â Â Â "lastName": "mungamuri",
-Â Â Â Â Â Â "firstName": "client_deepu",
-Â Â Â Â Â Â "email": "deepu.mungamuri@vistarait.com",
-Â Â Â Â Â Â "changePassword": false
-Â Â Â },
-Â Â Â "priorityUpdatedDate": "2015-12-21T10:14:33+0530",
-Â Â Â "statusUpdatedBy": {
-Â Â Â Â Â Â "id": "USR0000002114",
-Â Â Â Â Â Â "loginName": "deepu@client",
-Â Â Â Â Â Â "lastName": "mungamuri",
-Â Â Â Â Â Â "firstName": "client_deepu",
-Â Â Â Â Â Â "email": "deepu.mungamuri@vistarait.com",
-Â Â Â Â Â Â "changePassword": false
-Â Â Â },
-Â Â Â "statusUpdatedDate": "2015-12-21T10:14:33+0530",
-Â Â Â "slaDetails": {
-Â Â Â Â Â Â "slaPolicy": {
-Â Â Â Â Â Â Â Â Â "id": 1,
-Â Â Â Â Â Â Â Â Â "name": "test"
-Â Â Â Â Â Â },
-Â Â Â Â Â Â "resolutionTime": 0,
-Â Â Â Â Â Â "responseTime": 334,
-Â Â Â Â Â Â "responseBreach": false,
-Â Â Â Â Â Â "resolutionBreach": false,
-Â Â Â Â Â Â "responseBreachDate": "",
-Â Â Â Â Â Â "resolutionBreachDate": ""
-Â Â Â }
+   "id": "INC0000001016",
+   "subject": "creating incident from API",
+   "description": "Description",
+   "status": "New",
+   "oldStatus": "New",
+   "priority": "Normal",
+   "oldPriority": "Normal",
+   "requester": {
+      "id": "USR0000002129",
+      "loginName": "Deepu.Mungamuri",
+      "lastName": "Mungamuri",
+      "firstName": "Deepu",
+      "email": "deepu.mungamuri@gmail.com",
+      "phoneNumber": "9992226668",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "orgId": "client_93",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Brocade Lab",
+      "createdTime": "2015-12-18T13:55:14+0530",
+      "updatedTime": "2015-12-18T13:55:14+0530",
+      "acls": [
+         {
+            "id": 5,
+            "name": "Client User"
+         }
+      ]
+   },
+   "assignedUser": {
+      "id": "USR0000002129",
+      "loginName": "Deepu.Mungamuri",
+      "lastName": "Mungamuri",
+      "firstName": "Deepu",
+      "email": "deepu.mungamuri@gmail.com",
+      "phoneNumber": "9992226668",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "orgId": "client_93",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Brocade Lab",
+      "createdTime": "2015-12-18T13:55:14+0530",
+      "updatedTime": "2015-12-18T13:55:14+0530",
+      "acls": [
+         {
+            "id": 5,
+            "name": "Client User"
+         }
+      ]
+   },
+   "customFields": [
+      {
+         "id": "UDF0000003778",
+         "classCode": "INCIDENT",
+         "displayLabel": "for service provider",
+         "name": "for_service_provider_3778",
+         "fieldType": "TYPE_TEXT",
+         "mandatory": false,
+         "editable": true,
+         "description": "all clients and all partners"
+      },
+      {
+         "id": "UDF0000003779",
+         "classCode": "INCIDENT",
+         "displayLabel": "for service prov 2",
+         "name": "for_service_prov_2_3779",
+         "fieldType": "TYPE_CHECKBOX",
+         "mandatory": false,
+         "editable": true,
+         "description": "all partners and clients",
+         "options": [
+            {
+               "label": "yes",
+               "value": "1"
+            }
+         ]
+      },
+      {
+         "id": "UDF0000003780",
+         "classCode": "INCIDENT",
+         "displayLabel": "for service pro 3",
+         "name": "for_service_pro_3_3780",
+         "fieldType": "TYPE_TEXT",
+         "mandatory": false,
+         "editable": true,
+         "description": "service provider"
+      },
+      {
+         "id": "UDF0000003781",
+         "classCode": "INCIDENT",
+         "displayLabel": "date",
+         "name": "date_3781",
+         "fieldType": "TYPE_DATE",
+         "mandatory": false,
+         "editable": true,
+         "description": "date field"
+      },
+      {
+         "id": "UDF0000003782",
+         "classCode": "INCIDENT",
+         "displayLabel": "date and time label",
+         "name": "date_and_time_label_3782",
+         "fieldType": "TYPE_DATETIME",
+         "mandatory": false,
+         "editable": true,
+         "description": "date and time description"
+      },
+      {
+         "id": "UDF0000003783",
+         "classCode": "INCIDENT",
+         "displayLabel": "dropdown for incident",
+         "name": "dropdown_for_incident_3783",
+         "fieldType": "TYPE_DROPDOWN",
+         "mandatory": false,
+         "editable": true,
+         "description": "DROPDOWN label",
+         "options": [
+            {
+               "label": "one",
+               "value": "1"
+            },
+            {
+               "label": "two",
+               "value": "2"
+            },
+            {
+               "label": "THREE",
+               "value": "3"
+            }
+         ],
+         "value": "3",
+         "selectedOption": {
+            "label": "THREE",
+            "value": "3"
+         }
+      },
+      {
+         "id": "UDF0000003784",
+         "classCode": "INCIDENT",
+         "displayLabel": "multi line text",
+         "name": "multi_line_text_3784",
+         "fieldType": "TYPE_TEXTAREA",
+         "mandatory": false,
+         "editable": true,
+         "description": "multi line text custom field"
+      },
+      {
+         "id": "UDF0000003785",
+         "classCode": "INCIDENT",
+         "displayLabel": "numeric custom",
+         "name": "numeric_custom_3785",
+         "fieldType": "TYPE_NUMBER",
+         "mandatory": false,
+         "editable": true,
+         "description": "numeric custom field for incident"
+      }
+   ],
+   "ticketArisedTime": "",
+   "createdUser": {
+      "id": "USR0000002095",
+      "loginName": "vistara_system_user",
+      "lastName": " ",
+      "firstName": "Vistara System User",
+      "email": "sarma519@gmail.com",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "System Organization",
+      "createdTime": "2013-05-10T00:00:00+0530",
+      "updatedTime": "2013-05-10T00:00:00+0530",
+      "acls": [
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         }
+      ]
+   },
+   "alertIds": [],
+   "createdDate": "2015-12-21T10:14:33+0530",
+   "serviceRestoreDate": "2015-12-29T11:05:33+0530",
+   "allowedStatus": [
+      {
+         "id": "2",
+         "name": "Open"
+      },
+      {
+         "id": "5",
+         "name": "Closed"
+      }
+   ],
+   "client": {
+      "id": 93,
+      "uniqueId": "client_93",
+      "name": "Brocade Lab",
+      "activated": true,
+      "updatedTime": "2016-01-27T12:47:42+0530",
+      "createdTime": "2013-01-29T09:45:04+0530",
+      "lastUpdatedBy": {
+         "id": "USR0000002095",
+         "loginName": "vistara_system_user",
+         "lastName": " ",
+         "firstName": "Vistara System User",
+         "email": "sarma519@gmail.com",
+         "changePassword": false
+      }
+   },
+   "updatedDate": "2015-12-21T14:08:16+0530",
+   "priorityUpdatedBy": {
+      "id": "USR0000002114",
+      "loginName": "deepu@client",
+      "lastName": "mungamuri",
+      "firstName": "client_deepu",
+      "email": "deepu.mungamuri@vistarait.com",
+      "changePassword": false
+   },
+   "priorityUpdatedDate": "2015-12-21T10:14:33+0530",
+   "statusUpdatedBy": {
+      "id": "USR0000002114",
+      "loginName": "deepu@client",
+      "lastName": "mungamuri",
+      "firstName": "client_deepu",
+      "email": "deepu.mungamuri@vistarait.com",
+      "changePassword": false
+   },
+   "statusUpdatedDate": "2015-12-21T10:14:33+0530",
+   "slaDetails": {
+      "slaPolicy": {
+         "id": 1,
+         "name": "test"
+      },
+      "resolutionTime": 0,
+      "responseTime": 334,
+      "responseBreach": false,
+      "resolutionBreach": false,
+      "responseBreachDate": "",
+      "resolutionBreachDate": ""
+   }
 }
 
 RESPONSE CODE : 200 OK
