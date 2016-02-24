@@ -1,36 +1,125 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/incidents/{incidentId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents
 
-METHOD: GET
+METHOD: POST
  
 HEADER:
 	Authorization = "Bearer  {accessToken}"	
 	Content-Type  = "application/json"
 
-REQUEST : None
-.........
+MADATORY FIELDS:
+................
+	subject
+	priority
+	description
 
-EX : https://api.vistara.io/api/v2/tenants/client_93/incidents/INC0000000965
+OPTIONAL FIELDS:
+................
+	status
+	requester
+	assignedUser
+	assigneeGroup
+	devices
+	dueDate
+	extTicketId
+	customFields
+	categoryId
+	subCategoryId
+	alertId
+	problem
+	changeRequest
+	appendAllAlerts [true or false]
+	parentId
+	cc
+	attachments
+	
 
-RESPONSE:
-.........
+NOTE : 
+	* alertId has to be added for creating incident from alerts.
+	* either problem or changeRequest should be given, if both given then changeRequest will be taken by default.
+	* parentId is refers to link incident [provide incident Unique Id (Ex : INC0000000965)]
+	* For attachments, files must be converted to bytes stream and then encoded with base64
+
+REQUEST:
+........
 {
-   "id": "INC0000001018",
+	"alertId" : "0",
+	"subject": "Test incident creation from UI",
+	"description": "Incident creation from UI : testing description",
+	"status": "New",
+	"priority": "High",
+	"requester": {
+		"id": "USR0000002129",
+		"loginName": "Deepu.Mungamuri"
+	},
+	"assignedUser": {
+		"id": "USR0000002067",
+		"loginName": "customer01"
+	},
+	"assigneeGroup": {
+		"name": "user_group_dell_client"
+	},
+	"devices": [{
+		"id": "DEV0000002798",
+		"name": "tivamo_device_test-update"
+	}],
+	"dueDate": "2015-12-29T11:05:33+0530",
+	"location": "",
+	"extTicketId": "000042526342",
+	"ticketArisedTime": "2015-12-29T11:05:33+0530",
+	"categoryId": "11",
+	"subCategoryId" : "20",
+	"cc": "vistara@gmail.com",
+	"customFields": [{
+		"id": "2343",
+		"name": "custom_user",
+		"value": "234"
+	}],
+	"problem": {
+		"id": "2359"
+	},
+	"changeRequest" : {
+		"id" : "199"
+	},
+	"channelId": "MOBILE",
+	"sourceId": "",
+	"tags": "vistara",
+	"rating": "5",
+	"parentId" : "INC0000000971",
+	"attachments": [
+		{
+			"name": "test_data.csv",
+			"file": "UGFydG5lciBVbmlxdWUgSUQsWE1MIFVzZXJuYW1lLFhNTCBQYXNzd29yZA0KbXNwXzU2NyxhYmMsDQptc3BfNTk0LCx4eXoNCm1zcF81OTYscXdlLHF3ZQ0KbXNwXzYxMCxoaWUscXdl"
+		},
+		{
+			"name": "test_data.csv",
+			"file": "UGFydG5lciBVbmlxdWUgSUQsWE1MIFVzZXJuYW1lLFhNTCBQYXNzd29yZA0KbXNwXzU2NyxhYmMsDQptc3BfNTk0LCx4eXoNCm1zcF81OTYscXdlLHF3ZQ0KbXNwXzYxMCxoaWUscXdl"
+		}
+	]
+}
+			
+RESPONSE:
+{
+   "id": "INC0000001016",
    "subject": "creating incident from API",
    "description": "Description",
    "status": "New",
    "oldStatus": "New",
-   "priority": "High",
+   "priority": "Normal",
    "oldPriority": "Normal",
    "requester": {
-      "id": "USR0000000453",
-      "loginName": "test@autotask.19",
-      "lastName": "Autotask",
-      "firstName": "Admin",
-      "email": "sarma519@gmail.com",
-      "phoneNumber": "518-720-3500",
-      "mobileNumber": "",
-      "timeZone": "America/Los_Angeles",
-      "orgId": "msp_92",
+      "id": "USR0000002129",
+      "loginName": "Deepu.Mungamuri",
+      "lastName": "Mungamuri",
+      "firstName": "Deepu",
+      "email": "deepu.mungamuri@gmail.com",
+      "phoneNumber": "9992226668",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "orgId": "client_93",
       "profileImage": {
          "description": "",
          "logoPath": "https://app.vistarait.com/img/nophoto.gif",
@@ -39,20 +128,30 @@ RESPONSE:
          "imageType": ""
       },
       "changePassword": false,
-      "organizationName": "Brocade Inc",
-      "createdTime": "2013-03-22T17:07:51+0530",
-      "updatedTime": "2013-03-22T17:07:51+0530"
+      "organizationName": "Brocade Lab",
+      "createdTime": "2015-12-18T13:55:14+0530",
+      "updatedTime": "2015-12-18T13:55:14+0530",
+      "acls": [
+         {
+            "id": 5,
+            "name": "Client User"
+         }
+      ]
    },
    "assignedUser": {
-      "id": "USR0000000453",
-      "loginName": "test@autotask.19",
-      "lastName": "Autotask",
-      "firstName": "Admin",
-      "email": "sarma519@gmail.com",
-      "phoneNumber": "518-720-3500",
-      "mobileNumber": "",
-      "timeZone": "America/Los_Angeles",
-      "orgId": "msp_92",
+      "id": "USR0000002129",
+      "loginName": "Deepu.Mungamuri",
+      "lastName": "Mungamuri",
+      "firstName": "Deepu",
+      "email": "deepu.mungamuri@gmail.com",
+      "phoneNumber": "9992226668",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "orgId": "client_93",
       "profileImage": {
          "description": "",
          "logoPath": "https://app.vistarait.com/img/nophoto.gif",
@@ -61,9 +160,15 @@ RESPONSE:
          "imageType": ""
       },
       "changePassword": false,
-      "organizationName": "Brocade Inc",
-      "createdTime": "2013-03-22T17:07:51+0530",
-      "updatedTime": "2013-03-22T17:07:51+0530"
+      "organizationName": "Brocade Lab",
+      "createdTime": "2015-12-18T13:55:14+0530",
+      "updatedTime": "2015-12-18T13:55:14+0530",
+      "acls": [
+         {
+            "id": 5,
+            "name": "Client User"
+         }
+      ]
    },
    "customFields": [
       {
@@ -172,7 +277,6 @@ RESPONSE:
          "description": "numeric custom field for incident"
       }
    ],
-   "cc": "testmail@gmail.comm",
    "ticketArisedTime": "",
    "createdUser": {
       "id": "USR0000002095",
@@ -180,7 +284,6 @@ RESPONSE:
       "lastName": " ",
       "firstName": "Vistara System User",
       "email": "sarma519@gmail.com",
-      "timeZone": "Asia/Calcutta",
       "profileImage": {
          "description": "",
          "logoPath": "https://app.vistarait.com/img/nophoto.gif",
@@ -191,13 +294,41 @@ RESPONSE:
       "changePassword": false,
       "organizationName": "System Organization",
       "createdTime": "2013-05-10T00:00:00+0530",
-      "updatedTime": "2013-05-10T00:00:00+0530"
+      "updatedTime": "2013-05-10T00:00:00+0530",
+      "acls": [
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         },
+         {
+            "id": 75,
+            "name": "System User Acl"
+         }
+      ]
    },
    "alertIds": [],
-   "toEmail": "testmail2@gmail.com",
-   "createdDate": "2015-12-29T09:32:22+0530",
-   "serviceRestoreDate": "2015-12-29T11:05:00+0530",
-   "resolutionSummary": "",
+   "createdDate": "2015-12-21T10:14:33+0530",
+   "serviceRestoreDate": "2015-12-29T11:05:33+0530",
    "allowedStatus": [
       {
          "id": "2",
@@ -212,38 +343,37 @@ RESPONSE:
       "id": 93,
       "uniqueId": "client_93",
       "name": "Brocade Lab",
-      "activated": false,
-      "updatedTime": "2014-11-10T13:15:01+0530",
+      "activated": true,
+      "updatedTime": "2016-01-27T12:47:42+0530",
       "createdTime": "2013-01-29T09:45:04+0530",
       "lastUpdatedBy": {
-         "id": "USR0000000001",
-         "loginName": "superadmin",
-         "lastName": "Admin",
-         "firstName": "Super",
+         "id": "USR0000002095",
+         "loginName": "vistara_system_user",
+         "lastName": " ",
+         "firstName": "Vistara System User",
          "email": "sarma519@gmail.com",
          "changePassword": false
       }
    },
-   "updatedDate": "2015-12-30T08:00:27+0530",
+   "updatedDate": "2015-12-21T14:08:16+0530",
    "priorityUpdatedBy": {
-      "id": "USR0000000001",
-      "loginName": "superadmin",
-      "lastName": "Admin",
-      "firstName": "Super",
-      "email": "sarma519@gmail.com",
+      "id": "USR0000002114",
+      "loginName": "deepu@client",
+      "lastName": "mungamuri",
+      "firstName": "client_deepu",
+      "email": "deepu.mungamuri@vistarait.com",
       "changePassword": false
    },
-   "priorityUpdatedDate": "2015-12-30T08:00:27+0530",
+   "priorityUpdatedDate": "2015-12-21T10:14:33+0530",
    "statusUpdatedBy": {
-      "id": "USR0000002129",
-      "loginName": "Deepu.Mungamuri",
-      "lastName": "Mungamuri",
-      "firstName": "Deepu",
-      "email": "deepu.mungamuri@gmail.com",
+      "id": "USR0000002114",
+      "loginName": "deepu@client",
+      "lastName": "mungamuri",
+      "firstName": "client_deepu",
+      "email": "deepu.mungamuri@vistarait.com",
       "changePassword": false
    },
-   "statusUpdatedDate": "2015-12-29T09:32:22+0530",
-   "requestedDate": "2015-12-29T09:32:22+0530",
+   "statusUpdatedDate": "2015-12-21T10:14:33+0530",
    "slaDetails": {
       "slaPolicy": {
          "id": 1,
@@ -251,8 +381,10 @@ RESPONSE:
       },
       "resolutionTime": 0,
       "responseTime": 334,
-      "responseBreach": "false",
-      "resolutionBreach": "false"
+      "responseBreach": false,
+      "resolutionBreach": false,
+      "responseBreachDate": "",
+      "resolutionBreachDate": ""
    }
 }
 
