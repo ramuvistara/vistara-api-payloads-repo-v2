@@ -33,15 +33,20 @@ NOTE :
 RESPONSE : 
 {
   "results" : [ {
-    "id" : 2,
+    "id" : "3",
+    "type" : "ncare",
+    "partner" : {
+      "id" : 92,
+      "uniqueId" : "msp_92",
+      "name" : "Brocade Inc",
+      "activated" : true
+    },
     "client" : {
       "id" : 93,
       "uniqueId" : "client_93",
       "name" : "Brocade Lab",
       "activated" : true
     },
-    "parnterName" : "Brocade Inc",
-    "partnerId" : "msp_92",
     "user" : {
       "id" : "USR0000002114",
       "loginName" : "deepu@client",
@@ -60,51 +65,61 @@ RESPONSE :
       "clientUniqueId" : "client_93",
       "type" : "DEVICE"
     },
-    "protocol" : "NSS",
-    "ipAddress" : "10.2.3.50",
+    "startTime" : "2016-02-11T17:10:48+0530",
+    "endTime" : "2016-02-11T17:10:48+0530",
+    "consoleProtocol" : "NSS",
+    "ipAddress" : "10.4.18.56",
+    "port" : "8443",
+    "url" : "https://app.vistarait.com/computer.do?action=launchPlayer&recId=3",
+    "notes" : "testing notes"
+  }, {
+    "id" : "2",
+    "type" : "ncare",
+    "partner" : {
+      "id" : 92,
+      "uniqueId" : "msp_92",
+      "name" : "Brocade Inc",
+      "activated" : true
+    },
+    "client" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    },
+    "user" : {
+      "id" : "USR0000002114",
+      "loginName" : "deepu@client",
+      "lastName" : "mungamuri",
+      "firstName" : "client_deepu",
+      "email" : "deepu.mungamuri@vistarait.com",
+      "changePassword" : false
+    },
+    "device" : {
+      "id" : "DEV0000015773",
+      "generalInfo" : {
+        "ipAddresses" : "11.0.0.26",
+        "hostName" : "Active.Director",
+        "buildNumber" : 0
+      },
+      "clientUniqueId" : "client_93",
+      "type" : "DEVICE"
+    },
     "startTime" : "2016-02-03T13:18:25+0530",
     "endTime" : "2016-02-03T13:18:25+0530",
-    "notes" : "notes test",
-    "recordingUrl": "https://app.vistarait.com/computer.do?action=launchPlayer&recId=2"
-  }, {
-    "id" : 1,
-    "client" : {
-      "id" : 93,
-      "uniqueId" : "client_93",
-      "name" : "Brocade Lab",
-      "activated" : true
-    },
-    "parnterName" : "Brocade Inc",
-    "partnerId" : "msp_92",
-    "user" : {
-      "id" : "USR0000002114",
-      "loginName" : "deepu@client",
-      "lastName" : "mungamuri",
-      "firstName" : "client_deepu",
-      "email" : "deepu.mungamuri@vistarait.com",
-      "changePassword" : false
-    },
-    "device" : {
-      "id" : "DEV0000015773",
-      "generalInfo" : {
-        "ipAddresses" : "11.0.0.26",
-        "hostName" : "Active.Director",
-        "buildNumber" : 0
-      },
-      "clientUniqueId" : "client_93",
-      "type" : "DEVICE"
-    },
-    "protocol" : "NSS",
-    "ipAddress" : "10.2.4.3",
-    "recordingUrl": "https://app.vistarait.com/computer.do?action=launchPlayer&recId=2"
+    "consoleProtocol" : "NSS",
+    "ipAddress" : "10.2.3.50",
+    "port" : "0",
+    "url" : "https://app.vistarait.com/computer.do?action=launchPlayer&recId=2",
+    "notes" : "notes test"
   } ],
-  "totalResults" : 2,
+  "totalResults" : 3,
   "orderBy" : "id",
   "pageNo" : 1,
-  "pageSize" : 10,
-  "totalPages" : 1,
-  "nextPage" : false,
-  "nextPageNo" : 0,
+  "pageSize" : 2,
+  "totalPages" : 2,
+  "nextPage" : true,
+  "nextPageNo" : 2,
   "previousPageNo" : 0,
   "descendingOrder" : true
 }
