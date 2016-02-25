@@ -1,0 +1,136 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}
+ 
+METHOD: POST
+ 
+HEADER:
+	Authorization = "Bearer {accessToken}"
+	Accept = "application/json"
+
+Note:
+
+updating status from Resolved to Open need to give reopen reason in "notes" field.
+"status": "Open",
+"notes": "reopen the ticket"
+ 
+REQUEST:
+........
+{
+	    "priority": "High",
+	    "status": "Open",
+    	"notes": "reopen"
+	    "assignedUser": {
+		      "id": "USR0000000500",
+	       	"loginName": "satya-user9"
+	    },
+  	  "participantUsers": [{
+		      "id": "USR0000000536",
+	      	"loginName": "device-user"
+	     }],
+	    "devices": [{
+		      "id": "fb3d81e9-cb01-4178-a7c7-7336ddd3c756",
+		      "name": "Test-Device1"
+	     }],
+	    "consoles": [{
+		      "type": "MANAGEMENTCONSOLE",
+		      "consoleProtocol": "RDP",
+		      "options": "DiskShare,ClipboardAccess"
+		      },
+	   	    {
+		      "type": "MANAGEMENTCONSOLE",
+		       "consoleProtocol": "TELNET",
+		      "options": "DiskShare,ClipboardAccess"
+	        }],
+      "schedule": {
+	      	"type":"One-Time",
+		      "startTime":"2014-01-09 12:15:00 UTC",
+		      "endTime":"2015-12-12 09:35:00 UTC"
+      }
+ }		 
+ 
+ex: /api/v2//tenants/client_699/timeBoundRequests/TBT0000000193
+ 
+	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+	Accept = "application/json"
+ 
+RESPONSE:
+.........
+{
+          "id":"TBT0000000196",
+          "subject":"Time Bound Request creation",
+          "description":"API:Time Bound Request Creation",
+          "status":"Open",
+          "priority":"High",
+          "requester": {
+              "id":"USR0000000609",
+              "loginName":"satya-user9",
+              "email":"satya@net.com",
+              "phoneNumber":"",
+              "orgId":"client_227",
+              "profileImage": {
+                    "description": "",
+                    "logoPath":"https://yourdomain/img/nophoto.gif",
+                    "thumbPath":"https://yourdomain/img/nophoto.gif",
+                    "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                    "imageType":""
+                    },
+                    "changePassword":false,
+                    "organizationName":"Appy Client"
+              },
+              "assignedUser": {
+                    "id":"USR0000000609",
+                    "loginName":"satya-user9",
+                    "email":"satya@net.com",
+                    "phoneNumber":"",
+                    "orgId":"client_227",
+                    "profileImage": {
+                          "description": "",
+                          "logoPath":"https://yourdomain/img/nophoto.gif",
+                          "thumbPath":"https://yourdomain/img/nophoto.gif",
+                          "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                          "imageType": ""
+                          },
+                          "changePassword":false,
+                          "organizationName":"Appy Client"
+                      },
+                      "devices": [{
+                          "id":"DEV0000011580",
+                          "name":"Satya--N6"
+                      }],
+                      "ticketArisedTime":"",
+                      "createdDate":"2015-02-24T12:56:40+0530",
+                      "consoles": [{
+                          "consoleProtocol":"RDP",
+                          "type":"MANAGEMENTCONSOLE",
+                          "options":"DISKSHARE,CLIPBOARDACCESS"
+                          },
+                          {
+                          "consoleProtocol":"TELNET",
+                          "type":"MANAGEMENTCONSOLE",
+                          "options":"DISKSHARE,CLIPBOARDACCESS"
+                      }],
+                      "allowedStatus": [{
+                            "id":"1",
+                            "name":"New"
+                            },
+                            {
+                            "id":"3",
+                            "name":"Pending"
+                            },
+                            {
+                            "id":"4",
+                            "name":"Resolved"
+                            },
+                            {
+                            "id":"5",
+                            "name":"Closed"
+                            },
+                            {
+                            "id":"6",
+                            "name":"On Hold"
+                      }],
+                      "schedule": {
+                            "type": "one-time",
+                            "startTime": "2014-01-09 17:45:00 +0530",
+                            "endTime":"2015-12-12 15:05:00 +0530"
+                      }
+}

@@ -1,0 +1,75 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/serviceRequests/{serviceReqId}
+
+METHOD: POST
+ 
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+updating status from Resolved to Open need to give reopen reason in "notes" field. 
+ 
+"status": "Open",
+"notes": "reopen the ticket"
+
+REQUEST:
+........
+ {
+	"assigneeGroup": {
+		"name": "user_group_dell_client"
+	},
+	"assignedUser": {
+		"id": "USR0000002252",
+		"loginName": "latest_api_test"
+	},
+	"devices": [{
+		"id": "3f29b570-3368-4b0e-bec2-fd11aaeb6a9a"
+	}],
+	"status": "Open",
+	"notes": "reopen",
+	"responses": [{
+		"description": "change"
+	}]
+}
+
+ex: /api/v2//tenants/client_69919/serviceRequests/SRQ0000002364
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"id": "SRQ0000002409",
+	"subject": "service_request",
+	"description": "service request",
+	"status": "Open",
+	"priority": "High",
+	"assignedUser": {
+		"id": "USR0000002252",
+		"loginName": "latest_api_test",
+		"email": "test@gmail.com",
+		"phoneNumber": "09887485473",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Dell Client1"
+	},
+	"assigneeGroup": {
+		"name": "user_group_dell_client",
+		"userCount": 0,
+		"unAssignUsers": []
+	},
+	"devices": [{
+		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+		"name": "Device_1"
+	}],
+	"ticketArisedTime": "",
+	"createdDate": "2015-01-27T19:34:57+0530",
+	"serviceCatalogItemId": "0"
+}

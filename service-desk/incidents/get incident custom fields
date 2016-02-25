@@ -1,0 +1,83 @@
+URL : https://api.vistara.io/api/v2/tenants/{clientId}/customFields/{classCode}
+
+METHOD: GET
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+Classcode parameter:
+
+  	Service Requests - SERVICEREQUEST
+	Time Bound Requests - ACSTICKET
+	Tasks - TASK
+	Incidents - INCIDENT
+	Problems - PROBLEM
+	Change Requests - CHANGE
+	Scheduled Tasks - SCHEDULEDTASK
+	Users - USER
+	KB Articles - KBARTICLE
+
+  Ex: https://api.vistara.io/api/v2/tenants/{clientId}/customFields/SERVICEREQUEST
+
+RESPONSE : 
+[
+   {
+      "id": "UDF0000003778",
+      "classCode": "INCIDENT",
+      "displayLabel": "for service provider",
+      "name": "for_service_provider_3778",
+      "fieldType": "TYPE_TEXT",
+      "mandatory": false,
+      "editable": true,
+      "description": "all clients and all partners"
+   },
+   {
+      "id": "UDF0000003779",
+      "classCode": "INCIDENT",
+      "displayLabel": "for service prov 2",
+      "name": "for_service_prov_2_3779",
+      "fieldType": "TYPE_CHECKBOX",
+      "mandatory": false,
+      "editable": true,
+      "description": "all partners and clients",
+      "options": [
+         {
+            "label": "yes",
+            "value": "1"
+         }
+      ]
+   },
+   {
+      "id": "UDF0000003780",
+      "classCode": "INCIDENT",
+      "displayLabel": "for service pro 3",
+      "name": "for_service_pro_3_3780",
+      "fieldType": "TYPE_TEXT",
+      "mandatory": false,
+      "editable": true,
+      "description": "service provider"
+   },
+   {
+      "id": "UDF0000003781",
+      "classCode": "INCIDENT",
+      "displayLabel": "date",
+      "name": "date_3781",
+      "fieldType": "TYPE_DATE",
+      "mandatory": false,
+      "editable": true,
+      "description": "date field"
+   },
+   {
+      "id": "UDF0000003782",
+      "classCode": "INCIDENT",
+      "displayLabel": "date and time label",
+      "name": "date_and_time_label_3782",
+      "fieldType": "TYPE_DATETIME",
+      "mandatory": false,
+      "editable": true,
+      "description": "date and time description"
+   }
+]
+
+RESPONSE CODE : 200 OK

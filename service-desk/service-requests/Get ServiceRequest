@@ -1,0 +1,49 @@
+URL: https://api.vistara.io/tenants/{tenantId}/serviceRequests/{serviceReqId}
+
+METHOD: GET
+ 
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+ex: /api/v2//tenants/client_69919/serviceRequests/SRQ0000002179
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"id": "SRQ0000002022",
+	"subject": "This is test sservice request",
+	"description": "This is test sservice request",
+	"status": "New",
+	"priority": "Very Low",
+	"requester": {
+		"id": "USR0000002188",
+		"loginName": "dell_admin",
+		"lastName": "admin",
+		"firstName": "dell",
+		"email": "sravanthig17@gmail.com",
+		"phoneNumber": "",
+		"orgId": "msp_69918",
+		"profileImage": {
+			"logoPath": "https://staging.vistarait.com/images//users/2188/94.jpg",
+			"thumbPath": "https://staging.vistarait.com/images//users/2188/thumb-94.jpg",
+			"tinyThumbPath": "https://staging.vistarait.com/images/null",
+			"imageType": "image/jpeg"
+		},
+		"changePassword": false
+	},
+	"ticketArisedTime": "",
+	"createdDate": "2014-09-26T12:41:46+0530",
+	"allowedStatus": [{
+		"id": "2",
+		"name": "Open"
+	},
+	{
+		"id": "5",
+		"name": "Closed"
+	}],
+	"serviceCatalogItemId": "0"
+}

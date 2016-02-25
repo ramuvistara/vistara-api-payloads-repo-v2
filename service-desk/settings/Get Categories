@@ -1,0 +1,34 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/sdesk/categories/{categoryId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+NOTE : 
+  * categoryId = 0 for getting the categories of client
+  * categoryId > 0 for getting the subcategories based on the given category id
+ 
+RESPONSE : 
+[
+   {
+      "id": "3",
+      "clientId": "93",
+      "mspId": "92",
+      "categoryName": "child 2 for parent 1",
+      "parentCategoryName": "category 1 for incident",
+      "categoryType": 0
+   },
+   {
+      "id": "2",
+      "clientId": "93",
+      "mspId": "92",
+      "categoryName": "child for parent 1",
+      "parentCategoryName": "category 1 for incident",
+      "categoryType": 0
+   }
+]
+
+RESPONSE CODE : 200 OK

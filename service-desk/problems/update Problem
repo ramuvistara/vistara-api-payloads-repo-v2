@@ -1,0 +1,83 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/problems/{problemId}
+
+METHOD: GET
+ 
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Accept  = "application/json"
+
+updating status from Resolved to Open need to give reopen reason in "notes" field. 
+
+"status": "Open",
+"notes": "reopen the ticket"
+
+REQUEST:
+........
+{
+	"assignedUser": {
+		"id": "USR0000002251",
+		"loginName": "user_test_api"
+	},
+	"devices": [{
+		"id": "fb3d81e9-cb01-4178-a7c7-7336ddd3c756",
+		"name": "Device_5"
+	}],
+	"status": "Open",
+	"notes": "reopen resolved"
+}
+
+ex( /tenants/client_69919/problems/PRB0000002407)
+ 
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"id": "PRB0000002407",
+	"subject": "problem_by_Api",
+	"description": "problem",
+	"status": "Open",
+	"priority": "High",
+	"requester": {
+		"id": "USR0000002258",
+		"loginName": "user_api_testing",
+		"email": "test@gmail.com",
+		"phoneNumber": "09887485473",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Dell Client1"
+	},
+	"assignedUser": {
+		"id": "USR0000002251",
+		"loginName": "user_test_api",
+		"email": "test@gmail.com",
+		"phoneNumber": "09887485473",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Dell Client1"
+	},
+	"devices": [{
+		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+		"name": "Device_1"
+	}],
+	"ticketArisedTime": "",
+	"createdDate": "2015-01-27T13:38:28+0530",
+	"rootCause": "root problem",
+	"workaround": "work problem",
+	"application": "itop"
+}

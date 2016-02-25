@@ -1,0 +1,96 @@
+url: /tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}
+ 
+Header params:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+ 
+Method:GET
+ 
+ex: /api/v2//tenants/client_69919/timeBoundRequests/TBT0000000193
+ 
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json"
+ 
+OUTPUT PAYLOAD:
+................ 
+
+{
+        "id": "TBT0000000196",
+        "subject":"Time Bound Request creation",
+        "description":"API:Time Bound Request Creation",
+        "status": "New",
+        "priority": "Low",
+         "requester": {
+               "id":"USR0000000609",
+               "loginName":"Test-NE-User",
+               "email":"satya@net.com",
+               "phoneNumber":"",
+               "orgId":"client_227",
+               "profileImage":{
+               "description":"",
+               "logoPath":"https://yourdomain/img/nophoto.gif",
+               "thumbPath":"https://yourdomain/img/nophoto.gif",
+               "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+               "imageType":""
+                },
+               "changePassword":false,
+               "organizationName":"Appy Client"
+          },
+          "assignedUser":{
+               "id":"USR0000000605",
+               "loginName":"test-user",
+               "email":"satya@net.com",
+               "phoneNumber":"",
+               "orgId":"client_227",
+               "profileImage": {
+               "description":"",
+               "logoPath":"https://yourdomain/img/nophoto.gif",
+               "thumbPath":"https://yourdomain/img/nophoto.gif",
+               "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+               "imageType":""
+               },
+               "changePassword":false,
+               "organizationName":"Appy Client"
+          },
+          "devices": [{
+               "id":"DEV0000011580",
+               "name":"Test-Device"
+          }],
+          "ticketArisedTime": "",
+          "createdDate": "2015-02-24T12:56:40+0530",
+          "consoles": [{
+               "consoleProtocol":"RDP",
+               "type":"MANAGEMENTCONSOLE",
+               "options":"DISKSHARE,CLIPBOARDACCESS"
+          }],
+         "allowedStatus": [{
+               "id":"2",
+               "name":"Open"
+               },
+               {
+               "id":"3",
+               "name":"Pending"
+               },
+               {
+               "id": "4",
+               "name": "Resolved"
+               },
+               {
+               "id": "5",
+               "name":"Closed"
+               },
+               {
+               "id":"6",
+               "name":"On Hold"
+         }],
+         "client": {
+              "id": "93",
+              "uniqueId": "client_93",
+              "name": "Brocade Lab"
+          },
+         "schedule": {
+               "type":"one-time",
+               "startTime":"2014-01-09 17:45:00 +0530",
+               "endTime":"2015-01-12 15:05:00 +0530"
+         }
+} 

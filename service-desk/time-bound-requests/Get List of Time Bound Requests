@@ -1,0 +1,265 @@
+input parameters
+----------------------------
+/api/v2/tenants/{tenantUniqueId}/timeBoundRequests/search
+
+Method: GET
+
+Header params
+
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+queryParams
+
+1. pageNo={pageNo} defaultValue=1 [optional]
+2. pageSize={pageSize} defaultValue=10 [optional]
+3. isDescendingOrder={true/false} defaultValue=false [optional]
+4. queryString={queryString} [optional]
+
+query varibles:
+
+1. status [ New,Open,Pending,Resolved,Closed,On Hold ]
+2. startDate
+3. endDate
+4. priority [Low,Normal,High,Urgent,Very Low ]
+5. subject
+6. assignedTo
+7. requester
+9. startCreationDate
+10.endCreationDate
+11.startUpdationDate
+12.endUpdationDate
+13.monitor [true, false]   (Note : true -- for getting  monitoring Tickets, and false -- for getting Non monitoring Tickets)
+
+
+ex: (/api/v2/tenants/client_69919/timeBoundRequests/search?pageNo=1&pageSize=10&isDecendingOrder=true&queryString=status:New,Open%2Bpriority:High,Urgent%2Brequester:USER0000000129%2Bsubject:5b6%2BstartDate:2013-12-12 11-5-33%2BendDate:2014-12-12 11-5-33)
+
+Note:
+
+special characters in queryString:
+
+1. %2B -- indicate next field
+2. : -- indicate equals to
+3. dataformate should be in yyyy-MM-dd HH-mm-ss
+
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json"
+
+OUTPUT PAYLOAD :
+--------------- 
+{
+        "results":[{
+              "id":"TBT0000000195",
+              "subject":"create Api Time bound request",
+              "description":"Ticket status was updated by Vistara User",
+              "status":"New",
+              "priority": "Normal",
+              "requester": {
+                    "loginName": "superadmin",
+                    "email":"PavanKumar@netenrich.com",
+                    "phoneNumber":"",
+                    "profileImage": {
+                          "description":"",
+                          "logoPath": "https://yourdomain/img/nophoto.gif",
+                          "thumbPath":"https://yourdomain/img/nophoto.gif",
+                          "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                          "imageType":""
+                      },
+                      "changePassword": false,
+                      "organizationName":"NetEnrich"
+                },
+                "assignedUser": {
+                      "id":"USR0000000301",
+                      "loginName":"console_user",
+                      "email":"satya@gmail.com",
+                      "phoneNumber":"",
+                      "orgId":"msp_109",
+                      "profileImage": { 
+                          "description": "",
+                          "logoPath":"https://yourdomain/img/nophoto.gif",
+                          "thumbPath":"https://yourdomain/img/nophoto.gif",
+                          "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                          "imageType":""
+                          },
+                          "changePassword":false,
+                          "organizationName":"Apple Demo"
+                      },
+                      "devices":[{
+                          "id": "DEV0000011571",
+                          "name":"visat2"
+                          },
+                          { 
+                          "id":"DEV0000011573",
+                          "name":"vista8"
+                          },
+                          { 
+                          "id":"DEV0000011574",
+                          "name":"vista11"
+                      }],
+                      "ticketArisedTime":"",
+                      "createdDate":"2015-02-24T12:46:42+0530",
+                      "consoles": [{
+                          "consoleProtocol":"SSH",
+                          "type":"MANAGEMENTCONSOLE",
+                          "options":"CLIPBOARDACCESS,FILETRANSFER"
+                          },
+                          {
+                          "consoleProtocol":"RDP",
+                          "type":"MANAGEMENTCONSOLE",
+                          "options":"DISKSHARE"
+                          },
+                          {
+                          "consoleProtocol":"RDP",
+                          "type":"ADMINCONSOLE"
+                      }],
+                      "participantUsers":[{
+                          "loginName":"var",
+                          "changePassword":false
+                          },
+                          {
+                          "id":"USR0000000301",
+                          "loginName":"console_user",
+                          "changePassword":false
+                          },
+                          {
+                          "id":"USR0000000308",
+                          "loginName":"apple_patner",
+                          "changePassword":false
+                      }],
+                      "allowedStatus":[{
+                          "id":"2",
+                          "name":"Open"
+                          },
+                          {
+                          "id":"3",
+                          "name":"Pending"
+                          },
+                          {
+                          "id":"4",
+                          "name":"Resolved"
+                          },
+                          {
+                          "id":"5",
+                          "name":"Closed"
+                          },
+                          {
+                          "id":"6",
+                          "name":"On Hold"
+                    }],
+                    "client": {
+                        "id": "93",
+                        "uniqueId": "client_93",
+                        "name": "Brocade Lab"
+                     },
+                    "schedule": {
+                          "type":"recurring",
+                          "startTime":"2015-02-24 09:01:00 +0530",
+                          "endTime":"2015-02-27 20:02:00 +0530",
+                          "pattern":
+                              {
+                              "dayOfWeek":"every weekday"
+                              }
+                      }
+               },
+               {
+               "id":"TBT0000000194",
+               "subject":"Time Bound Request",
+               "description":"Time Bound Request created by Vistara System User",
+               "status":"New",
+               "priority":"Very Low",
+               "requester": {
+                      "loginName":"superadmin",
+                      "email":"PavanKumar@netenrich.com",
+                      "phoneNumber":"",
+                      "profileImage": {
+                            "description":"",
+                            "logoPath":"https://yourdomain/img/nophoto.gif",
+                            "thumbPath":"https://yourdomain/img/nophoto.gif",
+                            "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                            "imageType": ""
+                            },
+                            "changePassword":false,
+                            "organizationName":"NetEnrich"
+                      },
+                      "assignedUser": {
+                            "id":"USR0000000310",
+                            "loginName":"apple_patner101",
+                            "email":"saty@net.com",
+                            "phoneNumber":"",
+                            "orgId":"msp_109",
+                            "profileImage":
+                                  {
+                                  "description":"",
+                                  "logoPath":"https://yourdomain/img/nophoto.gif",
+                                  "thumbPath":"https://yourdomain/img/nophoto.gif",
+                                  "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                                  "imageType":""
+                                  },
+                                  "changePassword":false,
+                                  "organizationName":"Apple Demo"
+                        },
+                        "devices":[{
+                                "id":"DEV0000011571",
+                                "name":"visat2"
+                        }],
+                        "ticketArisedTime":"",
+                        "createdDate":"2015-02-21T12:28:21+0530",
+                        "consoles": [{
+                                "consoleProtocol":"SSH",
+                                "type":"MANAGEMENTCONSOLE",
+                                "options":"CLIPBOARDACCESS,FILETRANSFER"
+                                },
+                                {
+                                "consoleProtocol":"TELNET",
+                                "type":"MANAGEMENTCONSOLE",
+                                "options":"CLIPBOARDACCESS"
+                                },
+                                {
+                                "consoleProtocol":"RDP",
+                                "type":"MANAGMENTCONSOLE",
+                                "options":"DISKSHARE"
+                                },
+                                {
+                                "consoleProtocol":"RDP",
+                                "type":"ADMINCONSOLE"
+                        }],
+                        "allowedStatus": [{
+                                "id":"2",
+                                "name":"Open"
+                                },
+                                {
+                                "id":"3",
+                                "name":"Pending"
+                                },
+                                {
+                                "id":"4",
+                                "name":"Resolved"
+                                },
+                                {
+                                "id":"5",
+                                "name":"Closed"
+                                },
+                                {
+                                "id":"6",
+                                "name":"On Hold"
+                        }],
+                        "client": {
+                        "id": "93",
+                        "uniqueId": "client_93",
+                        "name": "Brocade Lab"
+                         },
+                        "schedule": {
+                                "type":"one-time",
+                                "startTime":"2015-02-21 00:00:00 +0530",
+                                "endTime":"2015-02-24 00:00:00 +0530"
+                        }
+        }],
+        "totalResults":2,
+        "pageNo":1,
+        "pageSize":10,
+        "totalPages":1,
+        "nextPage":false,
+        "nextPageNo":0,
+        "previousPageNo":0,
+        "decendingOrder":false
+}

@@ -1,0 +1,31 @@
+URL : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes/{noteId}
+
+METHOD : GET
+
+HEADERS :
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+NOTE :  
+	* URL for Incident : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes/{noteId}
+	* URL for Service Request : https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes/{noteId}
+
+RESPONSE :
+{
+   "id": "6",
+   "subject": "note 31",
+   "description": "note 31",
+   "createdTime": "2015-10-27T12:53:50+0530",
+   "updatedTime": "2015-12-20T10:20:13+0530",
+   "createdBy": {
+      "id": "USR0000002113",
+      "loginName": "deepu@superadmin",
+      "lastName": "DEEPU",
+      "firstName": "MUNGAMURI",
+      "email": "deepu.mungamuri@vistarait.com",
+      "changePassword": false
+   }
+}
+
+STATUS CODE : 200 OK

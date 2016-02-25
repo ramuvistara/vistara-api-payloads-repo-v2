@@ -1,0 +1,109 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/changeRequests
+
+METHOD: POST
+
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Accept  = "application/json"
+ 
+MANDATORY FIELDS:
+.................
+	subject
+	description
+	priority
+	changePlan
+	rollbackPlan
+	testPlan
+	plannedStart
+	plannedEnd
+	workStart
+	workEnd
+ 
+ priority field should contain :
+........................................
+	 Low
+	 Normal
+	 High
+	 Urgent
+	 Very Low
+
+ex:(/api/v2/tenants/client_69919/changeRequests)
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+REQUEST:
+........
+ {
+	"subject": "change_request",
+	"description": "change request",
+	"priority": "High",
+	"changePlan": "changing plan",
+	"rollbackPlan": "change request roll back",
+	"testPlan":"testing change request",
+ 	"plannedStart":"2015-01-22T00:00:00+0530",
+ 	"plannedEnd":"2015-01-26T00:00:00+0530",
+ 	"workStart":"2015-01-22T00:00:00+0530",
+ 	"workEnd":"2015-01-27T00:00:00+0530",
+	"assignedUser": {
+		"id": "USR0000002256",
+		"loginName": "client_user"
+	},
+	"devices": [{
+		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2"
+	}]
+}
+
+RESPONSE:
+.........
+{
+	"id": "CHG0000002408",
+	"subject": "change_request",
+	"description": "change request",
+	"status": "New",
+	"priority": "High",
+	"requester": {
+		"loginName": "vistara_system_user",
+		"email": "sravanthig17@gmail.com",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Vistara SaaS Platform"
+	},
+	"assignedUser": {
+		"id": "USR0000002256",
+		"loginName": "client_user",
+		"email": "test@gmail.com",
+		"phoneNumber": "09887485473",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Dell Client1"
+	},
+	"devices": [{
+		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+		"name": "Device_1"
+	}],
+	"ticketArisedTime": "",
+	"createdDate": "2015-01-27T13:59:43+0530",
+	"changePlan": "changing plan",
+	"rollbackPlan": "change request roll back",
+	"testPlan": "testing change request",
+	"plannedStart": "2015-01-28T00:00:00+0530",
+	"plannedEnd": "2015-01-31T00:00:00+0530",
+	"workStart": "2015-01-28T00:00:00+0530",
+	"workEnd": "2015-01-30T00:00:00+0530"
+}
+ 
+ 

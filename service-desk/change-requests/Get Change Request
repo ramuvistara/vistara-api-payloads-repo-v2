@@ -1,0 +1,112 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/changeRequests/{changeRequestId} 
+
+METHOD: GET
+ 
+HEADER:
+ Authorization = "Bearer  {accessToken}"	
+ Accept  = "application/json"
+
+ex( /api/v2//tenants/client_69919/changeRequests/CHG0000000497)
+ 
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+  "id": "CHG0000000497",
+  "subject": "New Change Request",
+  "description": "New Change Request",
+  "status": "Open",
+  "priority": "High",
+  "requester": {
+    "loginName": "superadmin",
+    "lastName": "G",
+    "firstName": "Sravanthi",
+    "email": "sravanthig17@gmail.com",
+    "phoneNumber": "4084365900",
+    "profileImage": {
+      "description": "",
+      "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+      "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+      "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+      "imageType": "image/gif"
+    },
+    "changePassword": false
+  },
+  "assignedUser": {
+    "id": "USR0000002252",
+    "loginName": "latest_api_test",
+    "lastName": "testing_api_client",
+    "firstName": "testing_api",
+    "email": "test@gmail.com",
+    "phoneNumber": "09887485473",
+    "orgId": "client_69919",
+    "profileImage": {
+      "description": "",
+      "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+      "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+      "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+      "imageType": "image/gif"
+    },
+    "changePassword": false
+  },
+  "devices": [
+    {
+      "id": "DEV0011732",
+      "generalInfo": {
+        "ipAddresses": "192.168.100.146",
+        "hostName": "windows2008r6",
+        "deviceType": "Desktop",
+        "ramCapacity": 0,
+        "buildNumber": 0
+      },
+      "bios": {},
+      "consoles": [
+        {
+          "ipAddress": "192.168.1.200",
+          "port": "3389",
+          "consoleConnector": "Gateway",
+          "consoleAuthType": "PASSWORD",
+          "consoleProtocol": "RDP",
+          "type": "MANAGEMENTCONSOLE",
+          "userName": "admin"
+        }
+      ],
+      "status": "Active"
+    }
+  ],
+  "ticketArisedTime": "",
+  "createdDate": "2014-06-30T11:07:58+0530",
+  "allowedStatus": [
+    {
+      "id": "3",
+      "name": "Pending"
+    },
+    {
+      "id": "4",
+      "name": "Resolved"
+    },
+    {
+      "id": "6",
+      "name": "On Hold"
+    },
+    {
+      "id": "5",
+      "name": "Closed"
+    }
+  ],
+  "client":
+    {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+    },
+  "changePlan": "New Change Request",
+  "rollbackPlan": "New Change Request",
+  "testPlan": "New Change Request",
+  "plannedStart": "2014-06-30T00:00:00+0530",
+  "plannedEnd": "2014-07-09T23:59:59+0530",
+  "workStart": "2014-06-30T00:00:00+0530",
+  "workEnd": "2014-07-09T23:59:59+0530"
+}

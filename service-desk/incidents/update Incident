@@ -1,0 +1,224 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentid}
+
+METHOD: POST
+ 
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Content-Type  = "application/json"
+
+NOTE:
+* when updating status to On Hold need to give "suspendReason" and "suspendEndDate". "suspendEndDate" field should be after current date and time
+"suspendEndDate" field format yyyy-MM-dd'T'HH:mm:ssZ (ex :2015-01-28T18:55:27+0530)
+suspendReason contains :
+
+Awaiting Change
+Awaiting Customer Action
+Awaiting Transport of Device
+Customer Unavailable
+Third Party
+ex:
+{
+  "status":"On Hold",
+  "suspendReason":"Customer Unavailable",
+  "suspendEndDate":"2015-01-28T18:55:27+0530" 
+}
+
+when updating status to Closed need to give "closureData" field 
+
+closureData fields contains :
+
+Incident can recurr - Problems raised
+Provided a Workaround
+Not Applicable
+
+example:
+{
+"status":"Closed",
+ "closureData":"Provided a Workaround"
+}
+
+ when updating status  Resolved to Open
+ 
+ example:
+ {
+ "status":"Open",
+"notes":"reason to open" 
+ }
+ 
+  when updating status to  Resolved  :
+  ..........................................
+  
+   {	
+   	 "status":"Resolved",
+	 "resolutionCategory" :"Database",
+  	"resolutionSummary" :"summary"
+   }
+   
+ "resolutionCategory" field  should be any of this: 
+ 
+ 
+ Database
+ Facilities
+ Hardware
+ Network
+ Interface /Middleware
+ Result of Changed
+ Third party Managed
+ Security
+ Software
+ Undetermined
+ User Question /Training
+  
+ status fields should be:
+ New
+ Open
+ Pending
+ Resolved
+ Closed
+ On Hold
+ 
+ 
+ priority fields should contain :
+ 
+ Low
+ Normal
+ High
+ Urgent
+ Very Low
+ 
+REQUEST: 
+........
+ {
+	"status":"Open",
+	"priority":"High",
+	"assignedUser":{
+				"id":"USR0000003783",
+				"loginName":"user1"
+			},
+	"assigneeGroup":{
+				"name":"user_group_dell_client"
+			},
+	"dueDate":"2015-12-29T11:05:33+0530",
+	"cc":"vistara@gmail.com",
+	"customFields":[
+			{
+				"id":"2343",
+				"name":"custom_user",
+				"value":"234"
+			}
+			],
+	"problem":{
+			"id":"3"
+		   },
+	"channelId":"MOBILE",
+	"sourceId":"",
+	"categoryId":"43",
+	"tags":"vistara",
+	"rating":"5",
+	"responses":[{
+                	 "description":" sample test response"
+        	 }]
+ }
+
+ex( /tenants/client_69919/incidents/INC0000002406)
+ 
+ 
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"id": "INC0000002406",
+	"subject": "Incident Creation",
+	"description": "creating Incidents using Payload",
+	"status": "On Hold",
+	"priority": "High",
+	"requester": {
+		"id": "USR0000002252",
+		"loginName": "latest_api_test",
+		"email": "test@gmail.com",
+		"phoneNumber": "09887485473",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Dell Client1"
+	},
+	"assignedUser": {
+		"id": "USR0000002253",
+		"loginName": "new_api_test",
+		"email": "testnew@gmail.com",
+		"phoneNumber": "09887485474",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Dell Client1"
+	},
+	"assigneeGroup": {
+		"name": "user_group_new",
+		"userCount": 0,
+		"unAssignUsers": []
+	},
+	"devices": [{
+		"id": "DEV0000027139",
+		"name": "tivamo_device_test-update"
+	}],
+	"extTicketId": "000042526342",
+	"customFields": [{
+		"id": "UDF0000005057",
+		"displayLabel": "Partner Custom Field Text",
+		"name": "partner_custom_field_text",
+		"mandatory": false,
+		"editable": true
+	},
+	{
+		"id": "UDF0000005058",
+		"displayLabel": "Client custom field text",
+		"name": "client_custom_field_text",
+		"mandatory": false,
+		"editable": true
+	}],
+	"ticketArisedTime": "",
+	"createdDate": "2015-01-27T13:04:30+0530",
+	"suspendReason": "Customer Unavailable",
+	"suspendEndDate": "2015-01-28T18:55:27+0530",
+	"resolutionCategory": "User Question /Training",
+	"problem": {
+		"id": "PRB0000002359",
+		"subject": "problem_create",
+		"description": "problem",
+		"status": "Closed",
+		"priority": "High",
+		"requester": {
+			"loginName": "vistara_system_user",
+			"email": "sravanthig17@gmail.com",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"ticketArisedTime": "",
+		"createdDate": "2015-01-20T07:22:52+0530",
+		"rootCause": "root problem",
+		"workaround": "work problem",
+		"application": "itop"
+	}
+}
+ 

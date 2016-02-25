@@ -1,0 +1,398 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/changeRequests/search  
+ 
+METHOD: GET
+ 
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+ 
+QUERY PARAMS:
+.............
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=false [optional]
+4.	queryString={queryString} [optional]
+ 
+QUERY VARIABLES:
+................ 
+1.	status [ New,Open,Pending,Resolved,Closed,On Hold ]
+2.	startDate
+3.	endDate
+4.	priority [Low,Normal,High,Urgent,Very Low ]
+5.	appId
+6.	subject
+7.	assignedTo
+8.	requester
+9.	startCreationDate
+10.	endCreationDate
+11.	startUpdationDate
+12.	endUpdationDate
+13.	monitor [true, false]   (Note : true -- for getting  monitoring Tickets, and false -- for getting Non monitoring Tickets)
+
+ 
+ex:(/api/v2/tenants/client_69919/changeRequests/search?pageNo=1&pageSize=10&isDecendingOrder=true&sortName=id&queryString=status:New,Open%2Bpriority:High,Urgent%2Brequester:USER0000000129%2Bsubject:5b6%2BstartDate:2013-12-12 11-5-33%2BendDate:2014-12-12 11-5-33)
+ 
+Note:
+	special characters in queryString:
+	
+	1.	%2B -- indicate next field
+	2.	: -- indicate equals to
+	3.	dataformate should be in yyyy-MM-dd HH-mm-ss
+ 
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+  "results": [
+    {
+      "id": "CHG0000002401",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+   	},
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-22T09:26:37+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-25T00:00:00+0530",
+      "workStart": "2015-01-22T00:00:00+0530",
+      "workEnd": "2015-01-23T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002400",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+	 },
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-22T09:21:57+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-25T00:00:00+0530",
+      "workStart": "2015-01-22T00:00:00+0530",
+      "workEnd": "2015-01-23T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002399",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+	 },
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-22T09:04:10+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-25T00:00:00+0530",
+      "workStart": "2015-01-22T00:00:00+0530",
+      "workEnd": "2015-01-23T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002398",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+   	},
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-22T08:59:52+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-25T00:00:00+0530",
+      "workStart": "2015-01-22T00:00:00+0530",
+      "workEnd": "2015-01-23T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002397",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+	 },
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-22T05:44:49+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-24T00:00:00+0530",
+      "workStart": "2015-01-23T00:00:00+0530",
+      "workEnd": "2015-01-24T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002396",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+   	},
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-22T00:22:31+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-24T00:00:00+0530",
+      "workStart": "2015-01-23T00:00:00+0530",
+      "workEnd": "2015-01-24T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002395",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+   	},
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-21T23:50:30+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-23T00:00:00+0530",
+      "plannedEnd": "2015-01-24T00:00:00+0530",
+      "workStart": "2015-01-23T00:00:00+0530",
+      "workEnd": "2015-01-24T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002394",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+	 },
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-21T13:35:35+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-26T00:00:00+0530",
+      "workStart": "2015-01-25T00:00:00+0530",
+      "workEnd": "2015-01-26T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002393",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+	 },
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-21T12:24:02+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-26T00:00:00+0530",
+      "workStart": "2015-01-22T00:00:00+0530",
+      "workEnd": "2015-01-26T00:00:00+0530"
+    },
+    {
+      "id": "CHG0000002392",
+      "subject": "change_request",
+      "description": "change request",
+      "status": "New",
+      "priority": "High",
+      "requester": {
+        "loginName": "vistara_system_user",
+        "email": "sravanthig17@gmail.com",
+        "profileImage": {
+          "description": "",
+          "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+          "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+          "imageType": "image/gif"
+        },
+        "changePassword": false,
+        "organizationName": "Vistara SaaS Platform"
+      },
+      "client": {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+	 },
+      "ticketArisedTime": "",
+      "createdDate": "2015-01-21T12:23:32+0530",
+      "changePlan": "changing plan",
+      "rollbackPlan": "change request roll back",
+      "testPlan": "testing change request",
+      "plannedStart": "2015-01-22T00:00:00+0530",
+      "plannedEnd": "2015-01-26T00:00:00+0530",
+      "workStart": "2015-01-22T00:00:00+0530",
+      "workEnd": "2015-01-24T00:00:00+0530"
+    }
+  ],
+  "totalResults": 49,
+  "pageNo": 1,
+  "pageSize": 10,
+  "totalPages": 5,
+  "nextPage": true,
+  "nextPageNo": 2,
+  "previousPageNo": 0,
+  "decendingOrder": false
+}

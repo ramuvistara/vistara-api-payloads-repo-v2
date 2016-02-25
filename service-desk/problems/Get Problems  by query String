@@ -1,0 +1,416 @@
+URL: https://api.vistara.io/api/v2/tenants/client_69919/problems/search?<k=v>
+
+METHOD: GET
+ 
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Accept  = "application/json"
+ 
+QUERY PARAMS:
+.............
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=false [optional]
+4.	queryString={queryString} [optional]
+
+QUERY VARIABLES:
+................
+1.	status [ New,Open,Pending,Resolved,Closed,On Hold ]
+2.	startDate
+3.	endDate
+4.	priority [Low,Normal,High,Urgent,Very Low ]
+5.	appId
+6.	subject
+7.	assignedTo
+8.	requester
+9.	startCreationDate
+10.	endCreationDate
+11.	startUpdationDate
+12.	endUpdationDate
+13.	monitor [true, false]   (Note : true -- for getting  monitoring Tickets, and false -- for getting Non monitoring Tickets)
+ 
+ex:(/api/v2/tenants/client_69919/problems/search?pageNo=1&pageSize=10&isDecendingOrder=true&sortName=id&queryString=status:New,Open%2Bpriority:High,Urgent%2Brequester:USER0000000129%2Bsubject:5b6%2BstartDate:2013-12-12 11-5-33%2BendDate:2014-12-12 11-5-33)
+ 
+Note:
+	special characters in queryString:
+	
+	1.	%2B -- indicate next field
+	2.	: -- indicate equals to
+	3.	dataformate should be in yyyy-MM-dd HH-mm-ss
+ 
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+ 
+RESPONSE:
+.........
+{
+	"results": [{
+		"id": "PRB0000002360",
+		"subject": "problem_by_Api",
+		"description": "problem",
+		"status": "New",
+		"priority": "High",
+		"requester": {
+			"id": "USR0000002258",
+			"loginName": "user_api_testing",
+			"email": "test@gmail.com",
+			"phoneNumber": "09887485473",
+			"orgId": "client_69919",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Dell Client1"
+		},
+		"assignedUser": {
+			"id": "USR0000002256",
+			"loginName": "client_user",
+			"email": "test@gmail.com",
+			"phoneNumber": "09887485473",
+			"orgId": "client_69919",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Dell Client1"
+		},
+		"devices": [{
+			"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+			"name": "Device_1"
+		}],
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2015-01-20T10:16:38+0530",
+		"rootCause": "root problem",
+		"workaround": "work problem",
+		"application": "itop"
+	},
+	{
+		"id": "PRB0000002359",
+		"subject": "problem_create",
+		"description": "problem",
+		"status": "Closed",
+		"priority": "High",
+		"requester": {
+			"loginName": "vistara_system_user",
+			"email": "sravanthig17@gmail.com",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},		
+		"ticketArisedTime": "",
+		"createdDate": "2015-01-20T07:22:52+0530",
+		"rootCause": "root problem",
+		"workaround": "work problem",
+		"application": "itop"
+	},
+	{
+		"id": "PRB0000002358",
+		"subject": "problem",
+		"description": "problem",
+		"status": "Open",
+		"priority": "Low",
+		"requester": {
+			"loginName": "superadmin",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "4084365900",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"assignedUser": {
+			"id": "USR0000002256",
+			"loginName": "client_user",
+			"email": "test@gmail.com",
+			"phoneNumber": "09887485473",
+			"orgId": "client_69919",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Dell Client1"
+		},
+		"devices": [{
+			"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+			"name": "Device_1"
+		}],
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2015-01-20T05:56:43+0530",
+		"rootCause": "problem root",
+		"workaround": "problem work",
+		"application": "itom"
+	},
+	{
+		"id": "PRB0000000022",
+		"subject": "Test problem",
+		"description": "Test problem",
+		"status": "Closed",
+		"priority": "Low",
+		"requester": {
+			"id": "USR0000134",
+			"loginName": "orchuser",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2013-12-04T11:12:22+0530",
+		"rootCause": "Test problem",
+		"workaround": "Test problem",
+		"application": "Test problem"
+	},
+	{
+		"id": "PRB0000000021",
+		"subject": "Test problem",
+		"description": "Test problem",
+		"status": "Closed",
+		"priority": "Low",
+		"requester": {
+			"id": "USR0000134",
+			"loginName": "orchuser",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2013-12-04T11:04:28+0530",
+		"rootCause": "Test problem",
+		"workaround": "Test problem",
+		"application": "Test problem"
+	},
+	{
+		"id": "PRB0000000020",
+		"subject": "Test problem",
+		"description": "Test problem",
+		"status": "Open",
+		"priority": "Low",
+		"requester": {
+			"id": "USR0000134",
+			"loginName": "orchuser",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"assignedUser": {
+			"id": "USR0000002251",
+			"loginName": "user_test_api",
+			"email": "test@gmail.com",
+			"phoneNumber": "09887485473",
+			"orgId": "client_69919",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Dell Client1"
+		},
+		"devices": [{
+			"id": "DEV0000027125",
+			"name": "nsg86"
+		}],
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2013-12-04T10:52:22+0530",
+		"rootCause": "Test problem",
+		"workaround": "Test problem",
+		"application": "Test problem"
+	},
+	{
+		"id": "PRB0000000019",
+		"subject": "Test problem",
+		"description": "Test problem",
+		"status": "New",
+		"priority": "Low",
+		"requester": {
+			"id": "USR0000134",
+			"loginName": "orchuser",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2013-12-04T10:52:03+0530",
+		"rootCause": "Test problem",
+		"workaround": "Test problem",
+		"application": "Test problem"
+	},
+	{
+		"id": "PRB0000000018",
+		"subject": "Test problem",
+		"description": "Test problem",
+		"status": "New",
+		"priority": "Low",
+		"requester": {
+			"id": "USR0000134",
+			"loginName": "orchuser",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2013-12-04T09:27:54+0530",
+		"rootCause": "Test problem",
+		"workaround": "Test problem",
+		"application": "Test problem\nTest problem\nTest problem\nTest problem\nTest problem\nTest problem\nTest problem"
+	},
+	{
+		"id": "PRB0000000003",
+		"subject": "Test problem",
+		"description": "Test problem",
+		"status": "New",
+		"priority": "High",
+		"requester": {
+			"id": "USR0000134",
+			"loginName": "orchuser",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"profileImage": {
+				"description": "",
+				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+				"imageType": "image/gif"
+			},
+			"changePassword": false,
+			"organizationName": "Vistara SaaS Platform"
+		},
+		"assignedUser": {
+			"id": "USR0000002188",
+			"loginName": "dell_admin",
+			"email": "sravanthig17@gmail.com",
+			"phoneNumber": "",
+			"orgId": "msp_69918",
+			"profileImage": {
+				"logoPath": "https://staging.vistarait.com/images//users/2188/94.jpg",
+				"thumbPath": "https://staging.vistarait.com/images//users/2188/thumb-94.jpg",
+				"tinyThumbPath": "https://staging.vistarait.com/images/null",
+				"imageType": "image/jpeg"
+			},
+			"changePassword": false,
+			"organizationName": "Dell Inc"
+		},
+		"client": {
+			 "id": "93",
+			 "uniqueId": "client_93",
+      			 "name": "Brocade Lab"
+   		},
+		"ticketArisedTime": "",
+		"createdDate": "2013-12-02T09:44:58+0530",
+		"rootCause": "Test problem",
+		"workaround": "Test problem",
+		"application": "Test problem"
+	}],
+	"totalResults": 9,
+	"pageNo": 1,
+	"pageSize": 10,
+	"totalPages": 1,
+	"nextPage": false,
+	"nextPageNo": 0,
+	"previousPageNo": 0,
+	"decendingOrder": false
+}

@@ -1,0 +1,25 @@
+URL : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes/{noteId}
+
+METHOD : POST
+
+HEADERS :
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+NOTE :  
+	* URL for Incident : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes/{noteId}
+	* URL for Service Request : https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes/{noteId}
+
+INPUT JSON / PAYLOAD :
+{
+  "description" : "this notes is created and updated from api"
+}
+
+RESPONSE :
+{
+  "id" : "8",
+  "subject" : "this notes"
+}
+
+STATUS CODE : 200 OK

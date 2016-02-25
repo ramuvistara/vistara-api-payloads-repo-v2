@@ -1,0 +1,87 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/problems/{problemId}
+
+METHOD: GET
+ 
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Accept  = "application/json"
+
+ex( /tenants/client_69919/problems/PRB0000002358)
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"id": "PRB0000002358",
+	"subject": "problem",
+	"description": "problem",
+	"status": "1",
+	"priority": "1",
+	"requester": {
+		"loginName": "superadmin",
+		"lastName": "G",
+		"firstName": "Sravanthi",
+		"email": "sravanthig17@gmail.com",
+		"phoneNumber": "4084365900",
+		"profileImage": {
+			"description": "image",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false
+	},
+	"assignedUser": {
+		"id": "USR0000002256",
+		"loginName": "client_user",
+		"lastName": "testing_api_client",
+		"firstName": "testing_api",
+		"email": "test@gmail.com",
+		"phoneNumber": "09887485473",
+		"orgId": "client_69919",
+		"profileImage": {
+			"description": "image",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false
+	},
+	"devices": [{
+		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+		"generalInfo": {
+			"ipAddresses": "172.26.103.126",
+			"hostName": "Device_1",
+			"deviceType": "Android",
+			"ramCapacity": 0,
+			"buildNumber": 0
+		},
+		"bios": {
+			"systemModel": ""
+		},
+		"consoles": [],
+		"status": "Active"
+	}],
+	"ticketArisedTime": "",
+	"createdDate": "2015-01-20T05:56:43+0530",
+	"allowedStatus": [{
+		"id": "2",
+		"name": "Open"
+	},
+	{
+		"id": "5",
+		"name": "Closed"
+	}],
+	"rootCause": "problem root",
+	"workaround": "problem work",
+	"application": "itom",
+	"client": {
+		"id": "93",
+		"uniqueId": "client_93",
+		 "name": "Brocade Lab"
+   	}
+}

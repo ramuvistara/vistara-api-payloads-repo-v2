@@ -1,0 +1,67 @@
+URL: https://api.vistara.io/api/v2//tenants/{tenantId}/incidents/{incidentId}/close
+
+METHOD: POST
+ 
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Content-Type  = "application/json"
+ 
+MANDATORY FIELD : 
+	closureData || reason  [closureData is for supporting old versions]
+	
+NOTE:
+	* Close Request need to pass closureData [or reason] by creating the status change reasons for closing incident.
+		
+
+REQUEST:
+........
+{
+  "closureData" :"Not Applicable"
+}
+/api/v2/tenants/client_69919/incidents/INC0000002335/close
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+ 
+RESPONSE:
+.........
+{
+	"id": "INC0000002403",
+	"subject": "vistara",
+	"description": "vistara",
+	"status": "Closed",
+	"priority": "Very Low",
+	"requester": {
+		"loginName": "superadmin",
+		"email": "sravanthig17@gmail.com",
+		"phoneNumber": "4084365900",
+		"profileImage": {
+			"description": "",
+			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
+			"imageType": "image/gif"
+		},
+		"changePassword": false,
+		"organizationName": "Vistara SaaS Platform"
+	},
+	"customFields": [{
+		"id": "UDF0000005057",
+		"displayLabel": "Partner Custom Field Text",
+		"name": "partner_custom_field_text",
+		"mandatory": false,
+		"editable": true
+	},
+	{
+		"id": "UDF0000005058",
+		"displayLabel": "Client custom field text",
+		"name": "client_custom_field_text",
+		"mandatory": false,
+		"editable": true
+	}],
+	"ticketArisedTime": "",
+	"createdDate": "2015-01-23T06:48:48+0530",
+	"closureData": "Not Applicable",
+	"allowedStatus": []
+}
+

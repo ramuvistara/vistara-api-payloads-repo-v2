@@ -1,0 +1,28 @@
+URL : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
+
+METHOD : POST
+
+HEADERS :
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+NOTE : 
+	* URL for Incident : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
+	* URL for Service Request : https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes
+	
+MANDATORY FEILDS : 
+  description
+  
+INPUT JSON / PAYLOAD :
+{
+  "description" : "this notes is created from api"
+}
+
+RESPONSE :
+{
+  "id" : "8",
+  "subject" : "this notes"
+}
+
+STATUS CODE : 200 OK

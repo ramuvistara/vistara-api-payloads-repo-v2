@@ -1,0 +1,59 @@
+URL : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
+
+METHOD : GET 
+
+HEADERS :
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+
+NOTE :  
+	* URL for Incident : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
+	* URL for Service Request : https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes/search
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=note.id [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	searchWord         [description, subject]
+2.	startCreationDate
+3.	endCreationDate
+4.	startUpdationDate
+5.	endUpdationDate
+6.	id
+
+RESPONSE : 
+{
+  "results" : [ {
+    "id" : 12,
+    "subject" : "this notes",
+    "description" : "this notes is created and updated from api 1",
+    "createdTime" : "2015-11-02T09:17:09+0530",
+    "updatedTime" : "",
+    "createdBy" : {
+      "id" : "USR0000002095",
+      "loginName" : "vistara_system_user",
+      "lastName" : " ",
+      "firstName" : "Vistara System User",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    }
+  } ],
+  "totalResults" : 1,
+  "orderBy" : "note.id",
+  "pageNo" : 1,
+  "pageSize" : 10,
+  "totalPages" : 1,
+  "nextPage" : false,
+  "nextPageNo" : 1,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+STATUS CODE : 200 OK

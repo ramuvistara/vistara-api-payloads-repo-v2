@@ -1,0 +1,57 @@
+url : api/v2/tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}/responses
+ 
+Header params:
+
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+ 
+Method: Get
+ 
+ex: api/v2/tenants/{tenantId}/timeBoundRequests/TBT0000000193/responses
+ 
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json"
+ 
+Output payload:
+ 
+------------------- 
+{
+        "results":[{
+             "creator": {
+                   "loginName":"Test_user",
+                   "profileImage": {
+                        "description":"",
+                        "logoPath":"https://yourdomain/img/nophoto.gif",
+                        "thumbPath":"https://yourdomain/img/nophoto.gif",
+                        "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                        "imageType":""
+                        },
+                        "changePassword":false
+               },
+               "createDateString":"2015-02-24T18:49:17+0530",
+               "description":"This ticket update from API response added by satya"
+           },
+           {
+               "creator": {
+                    "loginName":"superadmin",
+                    "profileImage":{
+                             "description":"",
+                             "logoPath":"https://yourdomain/img/nophoto.gif",
+                             "thumbPath":"https://yourdomain/img/nophoto.gif",
+                             "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
+                             "imageType":""
+                             },
+                             "changePassword":false
+                      },
+                 "createDateString":"2015-02-24T18:16:44+0530",
+                 "description":"Time Bound Request Status changged"
+        }],
+        "totalResults":2,
+        "pageNo":1,
+        "pageSize":10,
+        "totalPages":1,
+        "nextPage":false,
+        "nextPageNo":0,
+        "previousPageNo":0,
+        "decendingOrder":false
+ }

@@ -1,0 +1,33 @@
+URL: api/v2/tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}/responses
+ 
+Header params
+
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+Method: POST
+
+Mandatory Fileds:
+.....................
+creator
+description
+ 
+INPUT JSON / PAYLOAD :
+
+{
+	    "creator": {
+		        "id": "USR0000000307",
+		        "loginName": "test_user"
+	    },
+	    "status": "Pending",
+	    "description": "This ticket update from API response added by satya"
+}
+ 
+(ex:api/v2/tenants/client_69919/timeBoundRequests/TBT0000000193/responses)
+
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json"
+
+output parameter:
+ 
+Status : 200 OK 
