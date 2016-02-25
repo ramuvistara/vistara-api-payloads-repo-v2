@@ -1,0 +1,96 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/deviceGroups/search
+ 
+METHOD: GET
+ 
+HEADER:
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+
+QUERY PARAMS:
+.............
+name=<name>
+ 
+ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/deviceGroups/search?name=HR
+
+RESPONSE:
+.........
+[
+  {
+    "id":1615,
+    "name":"HR Mgnt",
+    "type":"DEVICE_GROUP",
+    "childs":[
+	      { 
+		"id":836,
+		"name":"vistara-prod-app01",
+		"type":"DEVICE",
+		"childs":[],
+		"kbArticlesIds":[]
+	      },
+	      {
+		"id":844,
+		"name":"vistara-prod-db01",
+		"type":"DEVICE",
+		"childs":[],
+		"kbArticlesIds":[]
+	     }
+    ],
+    "policy":{ 
+		"id":0,
+		"matchType":"ALL",	
+		"rules":[
+		    {
+		      "key":"Device Name",
+		      "operator":"Ends with",
+                      "value":"01"
+                    }
+                ],
+               "actions":[],
+               "executionOrder":0
+             },
+    "kbArticlesIds":[]
+  },
+  {
+    "id":1617,
+    "name":"HRD",
+    "type":"DEVICE_GROUP",
+    "childs":[
+              {
+                "id":835,
+                "name":"acme-ecomm-aws-web2",
+                "type":"DEVICE",
+                "childs":[],
+                "kbArticlesIds":[]
+             },
+             {
+               "id":841,
+               "name":"acme-ecomm-aws-web3",
+               "type":"DEVICE",
+               "childs":[],
+               "kbArticlesIds":[]
+             },
+             {
+               "id":849,
+               "name":"acme-ecomm-aws-web1",
+               "type":"DEVICE",
+               "childs":[],
+               "kbArticlesIds":[]
+             }
+     ],
+     "policy":
+              {
+                "id":0,
+                "matchType":"ALL",
+                "rules":[
+                          {
+                            "key":"Device Name",
+                            "operator":"Contains",
+                            "value":"web"
+                          }
+                 ],
+                "actions":[],
+                "executionOrder":0
+              },
+     "kbArticlesIds":[]
+  }
+]

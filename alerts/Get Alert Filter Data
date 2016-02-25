@@ -1,0 +1,516 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alertViews/{viewId}
+ 
+METHOD: GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+SAMPLE DATA :
+  	actions       :  {Open=Open, Acknowledged=Acknowledged, Ticketed=Ticketed, Permanent Suppressed=Permanent Suppressed, Closed=Closed, Suppressed=Suppressed}
+	alertTimeBase :  {created=Created Time, updated=Last Updated Time}
+	alertTypes    :  [Monitoring, Maintenance, Appliance, Agent, Scheduled Maintenance, Obsolete]
+	deviceStatus  :  {all=All, manage=Managed Devices, unmanage=Unmanaged Devices}
+	deviceTypes   :  {51=Cisco UCS, 7=Network Device >> Switch, 100=Other, 12=Server >> Linux, 11=Server >> Windows, 49=Storage >> EMC VNXx, 37=Vistara Gateway, 42=VMware}
+	locations     :  {1814=Pleasanton, 132884=Pleasanton}
+	priorities    :  {1=P0, 2=P1, 3=P2, 4=P3, 5=P4, 6=P5}
+	resourceTypes :  {LOAD_BALANCER=AWS/Load Balancer, SQS=AWS/SQS, EBS=AWS/Volume, DEVICE=Device, SNS=AWS/SNS, REDSHIFT=AWS/Redshift, SERVICE=Service Group}
+	states        :  {Ok=Ok, Warning=Warning, Critical=Critical, Info=Info}
+	technologies  :  {11=NewRelic, 12=Nimsoft, 14=OpsManager, 10=SAPSolutionManager, 9=Solarwinds, 8=Vistara, 5=Vistara Agent, 3=Vistara Gateway}
+	duration      :  {1=Last one day, 7=Last one week, 30=Last one month}
+	
+RESPONSE JSON/DATA : (Ex for client)
+{
+   "id": 0,
+   "clients": [
+      {
+         "id": "93",
+         "uniqueId": "client_93",
+         "name": "Brocade Lab"
+      }
+   ],
+   "deviceGroups": [
+      {
+         "id": "1664",
+         "name": "A",
+         "deviceCount": 0
+      },
+      {
+         "id": "1665",
+         "name": "C",
+         "deviceCount": 0
+      },
+      {
+         "id": "1790",
+         "name": "B",
+         "deviceCount": 0
+      }
+   ],
+   "deviceTypes": [
+      {
+         "id": 4,
+         "path": "Desktop"
+      },
+      {
+         "id": 33,
+         "path": "Desktop >> Laptop"
+      },
+      {
+         "id": 59,
+         "path": "Mobile >> Android"
+      }
+   ],
+   "locations": [
+      {
+         "id": 69667,
+         "clientId": 93,
+         "path": "testing site >> API Location 111"
+      },
+      {
+         "id": 69659,
+         "clientId": 93,
+         "path": "testing site >> API Location 11"
+      },
+      {
+         "id": 69669,
+         "clientId": 93,
+         "path": "testing site >> API Location 111"
+      }
+   ],
+   "priorities": [
+      {
+         "key": "1",
+         "value": "P0"
+      },
+      {
+         "key": "2",
+         "value": "P1"
+      },
+      {
+         "key": "3",
+         "value": "P2"
+      },
+      {
+         "key": "4",
+         "value": "P3"
+      },
+      {
+         "key": "5",
+         "value": "P4"
+      },
+      {
+         "key": "6",
+         "value": "P5"
+      }
+   ],
+   "alertTypes": [
+      "Monitoring",
+      "Maintenance",
+      "Appliance",
+      "Agent",
+      "Scheduled Maintenance",
+      "Obsolete"
+   ],
+   "subAlertTypes": [
+      "AVUD",
+      "AVUS",
+      "DEFRAG",
+      "Device Down",
+      "DISK",
+      "EVENTLOGS",
+      "Hung Server",
+      "Memory",
+      "Paging File",
+      "PATCH DLD",
+      "PATCH DLS",
+      "PATCH INLD",
+      "PATCH INLS",
+      "Processor Usage",
+      "TEMP"
+   ],
+   "devices": [
+      {
+         "id": "1521012",
+         "hostName": "10.0.0.19"
+      },
+      {
+         "id": "1521014",
+         "hostName": "10.170.99.244"
+      },
+      {
+         "id": "1520954",
+         "hostName": "10.232.73.157"
+      },
+      {
+         "id": "1520962",
+         "hostName": "acme-ecomm-aws-api1"
+      }
+   ],
+   "alertTimeBase": [
+      {
+         "key": "created",
+         "value": "Created Time"
+      },
+      {
+         "key": "updated",
+         "value": "Last Updated Time"
+      }
+   ],
+   "technologies": [
+      {
+         "key": "16",
+         "value": "Oracle"
+      },
+      {
+         "key": "17",
+         "value": "Pingdom"
+      },
+      {
+         "key": "3",
+         "value": "Vistara Gateway"
+      },
+      {
+         "key": "5",
+         "value": "Vistara Agent"
+      },
+      {
+         "key": "8",
+         "value": "Vistara"
+      },
+      {
+         "key": "9",
+         "value": "Solarwinds"
+      },
+      {
+         "key": "10",
+         "value": "SAPSolutionManager"
+      },
+      {
+         "key": "11",
+         "value": "NewRelic"
+      },
+      {
+         "key": "12",
+         "value": "Nimsoft"
+      },
+      {
+         "key": "14",
+         "value": "OpsManager"
+      },
+      {
+         "key": "15",
+         "value": "Dell Compellent"
+      }
+   ],
+   "resourceTypes": [
+      {
+         "key": "DEVICE",
+         "value": "Device"
+      },
+      {
+         "key": "LOAD_BALANCER",
+         "value": "AWS/Load Balancer"
+      },
+      {
+         "key": "EBS",
+         "value": "AWS/Volume"
+      },
+      {
+         "key": "SQS",
+         "value": "AWS/SQS"
+      },
+      {
+         "key": "SNS",
+         "value": "AWS/SNS"
+      },
+      {
+         "key": "REDSHIFT",
+         "value": "AWS/Redshift"
+      },
+      {
+         "key": "SERVICE",
+         "value": "Service Group"
+      }
+   ],
+   "duration": [
+      {
+         "key": "1",
+         "value": "Last one day"
+      },
+      {
+         "key": "7",
+         "value": "Last one week"
+      },
+      {
+         "key": "30",
+         "value": "Last one month"
+      }
+   ],
+   "deviceStatus": [
+      {
+         "key": "all",
+         "value": "All"
+      },
+      {
+         "key": "manage",
+         "value": "Managed Devices"
+      },
+      {
+         "key": "unmanage",
+         "value": "Unmanaged Devices"
+      }
+   ],
+   "states": [
+      "Ok",
+      "Warning",
+      "Critical",
+      "Info"
+   ],
+   "actions": [
+      {
+         "key": "Open",
+         "value": "Open"
+      },
+      {
+         "key": "Acknowledged",
+         "value": "Acknowledged"
+      },
+      {
+         "key": "Ticketed",
+         "value": "Ticketed"
+      },
+      {
+         "key": "Permanent Suppressed",
+         "value": "Permanent Suppressed"
+      },
+      {
+         "key": "Closed",
+         "value": "Closed"
+      },
+      {
+         "key": "Suppressed",
+         "value": "Suppressed"
+      }
+   ]
+}
+
+RESPONSE DATA : (example for MSP)
+{
+   "id": 0,
+   "clients": [
+      {
+         "id": "69856",
+         "uniqueId": "client_69856",
+         "name": "Brocade Inc Client"
+      },
+      {
+         "id": "93",
+         "uniqueId": "client_93",
+         "name": "Brocade Lab"
+      }
+   ],
+   "deviceGroups": [],
+   "deviceTypes": [],
+   "locations": [],
+   "priorities": [
+      {
+         "key": "1",
+         "value": "P0"
+      },
+      {
+         "key": "2",
+         "value": "P1"
+      },
+      {
+         "key": "3",
+         "value": "P2"
+      },
+      {
+         "key": "4",
+         "value": "P3"
+      },
+      {
+         "key": "5",
+         "value": "P4"
+      },
+      {
+         "key": "6",
+         "value": "P5"
+      }
+   ],
+   "alertTypes": [
+      "Monitoring",
+      "Maintenance",
+      "Appliance",
+      "Agent",
+      "Scheduled Maintenance",
+      "Obsolete"
+   ],
+   "subAlertTypes": [
+      "AVUD",
+      "AVUS",
+      "DEFRAG",
+      "Device Down",
+      "DISK",
+      "EVENTLOGS",
+      "Hung Server",
+      "Memory",
+      "Paging File",
+      "PATCH DLD",
+      "PATCH DLS",
+      "PATCH INLD",
+      "PATCH INLS",
+      "Processor Usage",
+      "TEMP"
+   ],
+   "devices": [],
+   "alertTimeBase": [
+      {
+         "key": "created",
+         "value": "Created Time"
+      },
+      {
+         "key": "updated",
+         "value": "Last Updated Time"
+      }
+   ],
+   "technologies": [
+      {
+         "key": "16",
+         "value": "Oracle"
+      },
+      {
+         "key": "17",
+         "value": "Pingdom"
+      },
+      {
+         "key": "3",
+         "value": "Vistara Gateway"
+      },
+      {
+         "key": "5",
+         "value": "Vistara Agent"
+      },
+      {
+         "key": "8",
+         "value": "Vistara"
+      },
+      {
+         "key": "9",
+         "value": "Solarwinds"
+      },
+      {
+         "key": "10",
+         "value": "SAPSolutionManager"
+      },
+      {
+         "key": "11",
+         "value": "NewRelic"
+      },
+      {
+         "key": "12",
+         "value": "Nimsoft"
+      },
+      {
+         "key": "14",
+         "value": "OpsManager"
+      },
+      {
+         "key": "15",
+         "value": "Dell Compellent"
+      }
+   ],
+   "resourceTypes": [
+      {
+         "key": "DEVICE",
+         "value": "Device"
+      },
+      {
+         "key": "LOAD_BALANCER",
+         "value": "AWS/Load Balancer"
+      },
+      {
+         "key": "EBS",
+         "value": "AWS/Volume"
+      },
+      {
+         "key": "SQS",
+         "value": "AWS/SQS"
+      },
+      {
+         "key": "SNS",
+         "value": "AWS/SNS"
+      },
+      {
+         "key": "REDSHIFT",
+         "value": "AWS/Redshift"
+      },
+      {
+         "key": "SERVICE",
+         "value": "Service Group"
+      }
+   ],
+   "duration": [
+      {
+         "key": "1",
+         "value": "Last one day"
+      },
+      {
+         "key": "7",
+         "value": "Last one week"
+      },
+      {
+         "key": "30",
+         "value": "Last one month"
+      }
+   ],
+   "deviceStatus": [
+      {
+         "key": "all",
+         "value": "All"
+      },
+      {
+         "key": "manage",
+         "value": "Managed Devices"
+      },
+      {
+         "key": "unmanage",
+         "value": "Unmanaged Devices"
+      }
+   ],
+   "states": [
+      "Ok",
+      "Warning",
+      "Critical",
+      "Info"
+   ],
+   "actions": [
+      {
+         "key": "Open",
+         "value": "Open"
+      },
+      {
+         "key": "Acknowledged",
+         "value": "Acknowledged"
+      },
+      {
+         "key": "Ticketed",
+         "value": "Ticketed"
+      },
+      {
+         "key": "Permanent Suppressed",
+         "value": "Permanent Suppressed"
+      },
+      {
+         "key": "Closed",
+         "value": "Closed"
+      },
+      {
+         "key": "Suppressed",
+         "value": "Suppressed"
+      }
+   ]
+}
+
+STATUS CODE : 200 OK

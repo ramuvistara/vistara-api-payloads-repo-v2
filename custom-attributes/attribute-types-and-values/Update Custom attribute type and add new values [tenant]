@@ -1,0 +1,37 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/{attributeId}
+ 
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+NOTE : This api can be used to update custom attribute description or to add new values
+
+EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/11
+     2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/12
+
+INPUT JSON / PAYLOAD :
+{
+	"description" : "creating custom_type for tenant update",
+	"customAttributeValues" : [
+		{
+			"value" : "test_val_1_for_custom_attr_type_for_tenant_1",
+			"description" : "creating first value for tenant update"
+		},
+		{
+			"value" : "test_val_2_for_custom_attr_type_for_tenant_2",
+			"description" : "creating second value for tenant update"
+		}
+	]
+}
+
+RESPONSE : 
+{
+  "id" : 1,
+  "name" : "custom_attr_type_for_tenant",
+  "description" : "creating custom_type for tenant update"
+}
+
+RESPONSE CODE : 200 OK

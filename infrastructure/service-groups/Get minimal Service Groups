@@ -1,0 +1,112 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/serviceGroups/minimal
+
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+RESPONSE : 
+[
+   {
+      "id": 1672,
+      "name": "A",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1674,
+      "name": "BB",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1666,
+      "name": "ELB",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1804,
+      "name": "fdr",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1455,
+      "name": "Instances",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1802,
+      "name": "mu",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1806,
+      "name": "sgr",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1449,
+      "name": "SQS",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1685,
+      "name": "Test",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1792,
+      "name": "Test21",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1677,
+      "name": "TestApp",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1676,
+      "name": "TestApplication",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1702,
+      "name": "TestC",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   },
+   {
+      "id": 1450,
+      "name": "Volumes",
+      "childType": "SERVICE",
+      "frequency": 0,
+      "thresholdLimit": 0
+   }
+]
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,42 @@
+URL: https://api.vistara.io/api/v2/cfg/tenants/nocs
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+RESPONSE : 
+[
+   {
+      "id": 3,
+      "name": "ANN NOC"
+   },
+   {
+      "id": 4,
+      "name": "BVRM NOC"
+   },
+   {
+      "id": 6,
+      "name": "DEMO NOC"
+   },
+   {
+      "id": 2,
+      "name": "HYD NOC1"
+   },
+   {
+      "id": 1,
+      "name": "HYD NOC2"
+   },
+   {
+      "id": 5,
+      "name": "QA NOC"
+   },
+   {
+      "id": 7,
+      "name": "SBS NOC"
+   }
+]
+
+RESPONSE CODE : 200 OK

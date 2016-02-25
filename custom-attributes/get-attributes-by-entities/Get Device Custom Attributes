@@ -1,0 +1,63 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices/{deviceId}/customAttributes
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/tenants/client_93/devices/DEV0000015767/customAttributes
+	
+RESPONSE :
+[ {
+  "id" : 1239,
+  "customAttributeValue" : {
+    "id" : 396,
+    "customAttribute" : {
+      "id" : 63,
+      "name" : "custom_attr_from_API_test_1",
+      "description" : "custom_attr_from_API_test_1_update",
+      "organization" : {
+        "id" : 93,
+        "uniqueId" : "client_93",
+        "name" : "Brocade Lab",
+        "activated" : true
+      }
+    },
+    "value" : "custom_attr_from_API_test_1_value",
+    "description" : "desc_custom_attr_from_API_test_1_update_1"
+  },
+  "taggable" : {
+    "id" : "DEV0000015767",
+    "name" : "AD-14",
+    "entityType" : "Device"
+  },
+  "tagSource" : "VISTARA"
+}, {
+  "id" : 1247,
+  "customAttributeValue" : {
+    "id" : 394,
+    "customAttribute" : {
+      "id" : 61,
+      "name" : "test case",
+      "description" : "test case",
+      "organization" : {
+        "id" : 93,
+        "uniqueId" : "client_93",
+        "name" : "Brocade Lab",
+        "activated" : true
+      }
+    },
+    "value" : "value for test case",
+    "description" : "test case value"
+  },
+  "taggable" : {
+    "id" : "DEV0000015767",
+    "name" : "AD-14",
+    "entityType" : "Device"
+  },
+  "tagSource" : "VISTARA"
+} ]
+
+RESPONSE CODE : 200 OK

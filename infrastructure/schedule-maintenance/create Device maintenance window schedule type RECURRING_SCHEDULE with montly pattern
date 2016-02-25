@@ -1,0 +1,119 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenant}/scheduleMaintenances/
+
+METHOD: POST
+
+HEADER: 
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2. Accept  = "application/json"
+ 
+MANDATORY FIELDS:
+.................
+name
+description
+devices or deviceGroups
+schedule -> type
+schedule -> startTime
+schedule -> endTime
+schedule -> timezone
+pattern -> type
+pattern -> dayOfMonth -  madatory for 'day of month' recurring schedule
+pattern -> weekIndex, pattern -> dayOfWeek - madatory for  'day of week' recurring schedule
+
+Provide  schedule 'type': recurring
+Provide pattern 'type': monthly
+Options for 'dayOfMonth':  1 to 31
+Options for 'weekIndex': 1. First  2. Second  3. Third	 4. Fourth   5. Fifth 	6. Last
+Options for 'dayOfWeek': 1. Sunday  2. Monday 	3. Tuesday  4. Wednesday  5. Thursday  6. Friday  7. Saturday
+Options for timezone:
+  1. Pacific/Apia       2. Pacific/Honolulu      3. America/Anchorage     4. America/Los_Angeles     5. America/Denver     6. America/Chicago      
+  7. America/New_York   8. America/Puerto_Rico   9. America/St_Johns     10. America/Buenos_Aires   11. Atlantic/Azores   12. GMT                  
+ 13. Europe/Paris      14. Europe/Istanbul      15. Africa/Addis_Ababa   16. Asia/Tehran            17. Asia/Yerevan      18. Asia/Karachi         
+ 19. Asia/Calcutta     20. Asia/Dacca           21. Asia/Saigon          22. Asia/Shanghai          23. Asia/Tokyo        24. Australia/Darwin     
+ 25. Australia/Sydney  26. Pacific/Guadalcanal  27. Pacific/Auckland
+ 	
+REQUEST: DayOfMonth Recurring schedule
+......................................
+
+{
+  "name": "Recurring-monthly-1 schedule",
+  "description": "Recurring-monthly-1 schedule",
+  "dontRunRBA": "false",
+  "dontInstallPatch": "false",
+  "devices": [
+    {
+      "hostName": "Device_4"
+    }, {
+      "id":"10"
+    }
+  ],
+  "deviceGroups": [
+    {
+      "name": "DG-1"
+    }, {
+      "id":"11"
+    }
+  ],
+  "locations": [
+    {
+      "name":"LOC-1"
+    }, {
+      "id":"12"
+    }
+  ],
+  "schedule": {
+    "type": "Recurring",
+    "startTime":"2015-05-28T10:55:27+0000",
+    "endTime":"2015-05-29T18:55:27+0000",
+    "timezone": "America/Los_Angeles",
+    "pattern": {
+      "type": "monthly",
+      "dayOfMonth": "14"
+    }
+  }
+}
+
+REQUEST: for DayOfWeek Recurring schedule
+.........................................
+{
+  "name": "Recurring-monthly-2 schedule",
+  "description": "Recurring-monthly-2 schedule",
+  "dontRunRBA": "false",
+  "dontInstallPatch": "false",
+  "devices": [
+    {
+      "hostName": "Device_2"
+    }, {
+      "id":"10"
+    }
+  ],
+  "deviceGroups": [
+    {
+      "name": "DG-1"
+    }, {
+      "id":"11"
+    }
+  ],
+  "locations": [
+    {
+      "name":"LOC-1"
+    }, {
+      "id":"12"
+    }
+  ],
+  "schedule": {
+    "type": "Recurring",
+    "startTime":"2015-05-28T10:55:27+0000",
+    "endTime":"2015-05-29T18:55:27+0000",
+    "timezone": "America/Los_Angeles",
+    "pattern": {
+      "type": "monthly",
+      "weekIndex": "Third",
+      "dayOfWeek": "Thursday"
+    }
+  }
+}
+
+RESPONSE:
+.........
+
+Status : 200 OK

@@ -1,0 +1,60 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts
+
+METHOD: POST
+ 
+HEADER:
+	Authorization = "Bearer  {accessToken}"	
+	Content-Type  = "application/json"
+
+MADATORY FIELDS:
+................
+	device
+	alertTime
+	currentState
+	serviceName
+	subject
+	app (valid apps : VISTARA,LOGMEIN,Zabbix,SCOM)
+
+OPTIONAL FEILDS:
+................
+	component
+	alertType
+	deviceName
+	oldState
+	description
+	monitorName
+	sender
+
+REQUEST:
+........
+    [
+	{
+		"serviceName": "CPU",
+		"device":
+			{
+				"hostName":"Think-pad",
+				"resourceUUID":"DEV0000011767",
+				"providerUUID":"11767",
+				"systemUUID":"11767",
+				"macAddress":"2E:8B:EB:32:7A:F9",
+				"ipAddress":"172.2.229.109"
+			},
+		"subject":"Test API Alert for car", 
+		"alertTime":"2014-11-05 11:26:00",
+		"currentState":"CRITICAL", 
+		"app":"Vistara",
+		"alertType":"Maintenance",
+		"component": "C",
+		"oldState": "OK",
+		"description":"api calls",
+		"monitorName":"test",
+		"sender":"Zabbix123"
+		
+	}
+]
+
+RESPONSE:
+.........
+status:
+ 
+200 ok

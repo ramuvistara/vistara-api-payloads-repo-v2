@@ -1,0 +1,15 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/rtype/{resourceType}/resource/{resourceId}
+
+METHOD: DELETE
+ 
+HEADERS:
+  Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+EX : https://api.vistara.io/api/v2/tenants/client_20/rtype/DEVICE/resource/DEV0000007909
+     https://api.vistara.io/api/v2/tenants/client_20/rtype/DEVICE/resource/i-3378c94f
+     https://api.vistara.io/api/v2/tenants/client_20/rtype/MACHINE_LEARNING/resource/ml-cEye2e8TxWB
+     https://api.vistara.io/api/v2/tenants/client_20/rtype/LOAD_BALANCER/resource/trivalley-web-cla
+	
+RESPONSE CODE : 200 OK

@@ -1,0 +1,147 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/search
+
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=false [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.	queryString = {queryString} [optional]
+ 
+QUERY VARIABLES:
+	hostName
+	dnsName
+	resourceUUID
+	serialNumber
+	ipAddress
+	systemUID
+	status  [up, down, unknown]  (case sensitive)
+	startCreationDate
+	endCreationDate
+	startUpdationDate
+	endUpdationDate
+
+SAMPLE QUERYSTRINGS:
+	queryString=hostName:HYDLPT220
+	queryString=resourceUUID:60c6f02e-5080-46a7-856b-f1f2a1997603
+	queryString=ipAddress:172.25.120.52+hostName:HYDLPT220
+	queryString=status:up+hostName:HYDLPT220
+	
+NOTE: 
+	* If queryString is included in the URL, it is safe to perfrom URL-encoding.
+	* status values must be one of these [up, down, unknown]
+
+EX : 1. https://api.vistara.io/api/v2/tenants/client_93/devices/search?pageNo=1&pageSize=3&queryString=ipAddress:10.18.226.194
+
+RESPONSE:
+{
+  "results": [
+    {
+      "id": "43e1f369-0f74-4dce-b775-555069b26bba",
+      "generalInfo": {
+        "osName": "Microsoft Windows 7 Professional  Service Pack 1",
+        "ipAddresses": "172.24.221.118",
+        "hostName": "HYDLPT220",
+        "dns": "hydlpt220",
+        "deviceType": "Laptop",
+        "macAddress": "28:D2:44:2F:11:41",
+        "buildNumber": 0,
+       	"createdTime" : "2015-02-17T07:54:37+0530",
+      	"updatedTime" : "2015-03-16T11:16:42+0530",
+      	"agentDeploytime" : ""
+      },
+      "bios": {
+        "biosName": "Phoenix BIOS SC-T v2.2",
+        "biosVersion": "HEET36WW (1.17 )",
+        "systemSerial": "PF0VNPL",
+        "systemModel": "68855TU"
+      },
+      "consoles": [
+        {
+          "ipAddress": "127.0.0.1",
+          "port": "0",
+          "consoleConnector": "Agent",
+          "consoleAuthType": "PASSWORD",
+          "consoleProtocol": "RMSHELL",
+          "type": "MANAGEMENTCONSOLE"
+        },
+        {
+          "ipAddress": "127.0.0.1",
+          "port": "3389",
+          "consoleConnector": "Agent",
+          "consoleAuthType": "PASSWORD",
+          "consoleProtocol": "RDP",
+          "type": "MANAGEMENTCONSOLE"
+        },
+        {
+          "ipAddress": "127.0.0.1",
+          "port": "0",
+          "consoleConnector": "Agent",
+          "consoleAuthType": "PASSWORD",
+          "consoleProtocol": "FTRANSFER",
+          "type": "MANAGEMENTCONSOLE"
+        }
+      ],
+      "status": "UP",
+      "state": "active",
+      "clientUniqueId" : "client_93",
+      "clientName" : "Brocade Lab",
+      "ipAddress": "172.24.221.118",
+      "modifiedTime": "2015-03-16T11:16:42+0530"
+    },
+    {
+      "id": "aed5beb5-fb33-4499-b691-a1108fdd19f3",
+      "generalInfo": {
+        "osName": "Ubuntu 12.04.4 LTS",
+        "ipAddresses": "172.22.221.235",
+        "hostName": "kafka-cass",
+        "dns": "kafka-cass.netenrich.net",
+        "deviceType": "Linux",
+        "macAddress": "08:00:27:E0:E9:42",
+        "buildNumber": 0,
+        "createdTime" : "2015-10-17T07:54:37+0530",
+      	"updatedTime" : "2014-12-03T14:33:48+0530",
+      	"agentDeploytime" : ""
+      },
+      "bios": {
+        "biosName": "innotek GmbH",
+        "biosVersion": "VirtualBox",
+        "systemSerial": "0",
+        "systemModel": "VirtualBox"
+      },
+      "consoles": [
+        {
+          "ipAddress": "127.0.0.1",
+          "port": "22",
+          "consoleConnector": "Agent",
+          "consoleAuthType": "PASSWORD",
+          "consoleProtocol": "SSH",
+          "type": "MANAGEMENTCONSOLE",
+          "userName": ""
+        }
+      ],
+      "status": "UNKNOWN",
+      "state": "active",
+      "clientUniqueId" : "client_93",
+      "clientName" : "Brocade Lab",
+      "ipAddress": "172.22.221.235",
+      "modifiedTime": "2014-12-03T14:33:48+0530"
+    }
+  ],
+  "totalResults": 2,
+  "pageNo": 1,
+  "pageSize": 10,
+  "totalPages": 1,
+  "nextPage": false,
+  "nextPageNo": 0,
+  "previousPageNo": 0,
+  "descendingOrder": false
+}
+
+STATUS CODE : 200 OK

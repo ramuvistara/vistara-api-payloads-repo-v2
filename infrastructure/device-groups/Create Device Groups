@@ -1,0 +1,91 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/deviceGroups
+
+METHOD: POST
+
+HEADER:
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+3. Content-Type = application/json
+
+ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/deviceGroups
+
+Note: response returned can be posted again with any modification required
+
+REQUEST:
+........
+[
+  {
+    "name": "Device group example",
+    "type": "DEVICE_GROUP",
+    "childs": [
+      {
+        "name": "Policy example",
+        "type": "DEVICE_GROUP",
+        "childs": [
+          {
+            "name": "Policy example subgroup",
+            "type": "DEVICE_GROUP",
+            "policy": {
+              "matchType": "ALL",
+              "rules": [
+                {
+                  "key": "Device Name",
+                  "operator": "Starts with",
+                  "value": "db-mysql"
+                },
+                {
+                  "key": "Device Name",
+                  "operator": "Contains",
+                  "value": "redis-prod"
+                },
+                {
+                  "key": "Device Name",
+                  "operator": "Ends with",
+                  "value": "cassandra-prod"
+                },
+                {
+                  "key": "Device Name",
+                  "operator": "Regex",
+                  "value": "db.*.prod"
+                }
+              ],
+              "actions": [],
+              "executionOrder": 0
+            },
+            "kbArticlesIds": []
+          }
+        ],
+        "kbArticlesIds": []
+      },
+      {
+        "name": "Static example",
+        "type": "DEVICE_GROUP",
+        "childs": [
+          {
+            "name": "Static example sub-group",
+            "type": "DEVICE_GROUP",
+            "childs": [
+              {
+                "id": 381961,
+                "name": "Desktop001",
+                "type": "DEVICE",
+                "childs": [],
+                "kbArticlesIds": []
+              },
+              {
+                "id": 381971,
+                "name": "ne-esx12",
+                "type": "DEVICE",
+                "childs": [],
+                "kbArticlesIds": []
+              }
+            ],
+            "kbArticlesIds": []
+          }
+        ],
+        "kbArticlesIds": []
+      }
+    ],
+    "kbArticlesIds": []
+  }
+]

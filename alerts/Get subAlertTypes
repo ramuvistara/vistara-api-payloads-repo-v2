@@ -1,0 +1,32 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/subAlertTypes
+
+METHOD: GET
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+QUERY PARAMS:
+.............
+1.	alertTypes={alertType} defaultValue="" [optional]
+
+ex:(/api/v2/tenants/client_4/subAlertTypes?alertTypes=Monitoring)
+
+RESPONSE:
+[
+   "AVUD",
+   "AVUS",
+   "DEFRAG",
+   "Device Down",
+   "DISK",
+   "EVENTLOGS",
+   "Hung Server",
+   "Memory",
+   "Paging File",
+   "PATCH DLD",
+   "PATCH DLS",
+   "PATCH INLD",
+   "PATCH INLS",
+   "Processor Usage",
+   "TEMP"
+]

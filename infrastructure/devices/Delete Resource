@@ -1,0 +1,12 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/resource/{resourceId}
+
+METHOD: DELETE
+ 
+HEADERS:
+  Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+EX : https://api.vistara.io/api/v2/tenants/client_20/resource/152
+	
+RESPONSE CODE : 200 OK

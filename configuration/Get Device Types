@@ -1,0 +1,139 @@
+URL: https://api.vistara.io/api/v2/cfg/devices/types
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+RESPONSE : 
+[
+   {
+      "id": 59,
+      "name": "Android",
+      "path": "Mobile >> Android",
+      "parentDeviceType": {
+         "id": 58,
+         "name": "Mobile",
+         "path": "Mobile"
+      }
+   },
+   {
+      "id": 51,
+      "name": "Cisco UCS",
+      "path": "Cisco UCS"
+   },
+   {
+      "id": 4,
+      "name": "Desktop",
+      "path": "Desktop"
+   },
+   {
+      "id": 73,
+      "name": "EMC CLARiiON",
+      "path": "Storage >> EMC CLARiiON",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 83,
+      "name": "EMC Isilon",
+      "path": "Storage >> EMC Isilon",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 70,
+      "name": "EMC VMAX",
+      "path": "Storage >> EMC VMAX",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 72,
+      "name": "EMC VMAX",
+      "path": "Storage >> EMC VMAX",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 49,
+      "name": "EMC VNX",
+      "path": "Storage >> EMC VNXx",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 50,
+      "name": "EMC VNXe",
+      "path": "Storage >> EMC VNXe",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 9,
+      "name": "Firewall",
+      "path": "Network Device >> Firewall",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device"
+      }
+   },
+   {
+      "id": 66,
+      "name": "FlexPod",
+      "path": "FlexPod"
+   },
+   {
+      "id": 76,
+      "name": "HP 3Par",
+      "path": "Storage >> HP 3Par",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 74,
+      "name": "HP EVA",
+      "path": "Storage >> HP EVA",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   },
+   {
+      "id": 71,
+      "name": "IBM STORWIZE",
+      "path": "Storage >> IBM Storwize",
+      "parentDeviceType": {
+         "id": 47,
+         "name": "Storage",
+         "path": "Storage"
+      }
+   }
+]
+
+RESPONSE CODE : 200 OK

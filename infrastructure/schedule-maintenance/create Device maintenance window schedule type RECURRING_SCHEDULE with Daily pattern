@@ -1,0 +1,88 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/scheduleMaintenances/ 
+
+METHOD: POST
+
+HEADER:
+1. Authorization = "Bearer  {accessToken}"	
+2. Accept  = "application/json
+
+MANDATORY FIELDS:
+.................
+name
+description
+devices or deviceGroups
+schedule -> type
+schedule -> startTime
+schedule -> endTime
+schedule -> timezone
+pattern -> type
+pattern -> dayFrequency
+
+Provide  schedule 'type': recurring
+Provide pattern 'type': daily
+Options for 'dayFrequency': 1. every weekday  2. everyday
+Options for timezone:
+  1. Pacific/Apia       2. Pacific/Honolulu      3. America/Anchorage     4. America/Los_Angeles     5. America/Denver     6. America/Chicago      
+  7. America/New_York   8. America/Puerto_Rico   9. America/St_Johns     10. America/Buenos_Aires   11. Atlantic/Azores   12. GMT                  
+ 13. Europe/Paris      14. Europe/Istanbul      15. Africa/Addis_Ababa   16. Asia/Tehran            17. Asia/Yerevan      18. Asia/Karachi         
+ 19. Asia/Calcutta     20. Asia/Dacca           21. Asia/Saigon          22. Asia/Shanghai          23. Asia/Tokyo        24. Australia/Darwin     
+ 25. Australia/Sydney  26. Pacific/Guadalcanal  27. Pacific/Auckland
+             
+Examples for pattern :
+.....................
+ex:1 
+     "pattern": {
+	"type": "daily",
+	"dayFrequency": "every weekday"
+     }
+
+ex:2:
+    "pattern": {
+	"type": "daily",
+	"dayFrequency": "everyday"
+    }
+
+REQUEST:
+........
+
+{
+  "name": "Recurring-daily everyday schedule",
+  "description": "Recurring-daily everyday schedule",
+  "dontRunRBA": "false",
+  "dontInstallPatch": "false",
+  "devices": [
+    {
+      "hostName": "Device_1"
+    }, {
+      "id":"10"
+    }
+  ],
+  "deviceGroups": [
+    {
+      "name": "DG-1"
+    }, {
+      "id":"11"
+    }
+  ],
+  "locations": [
+    {
+      "name":"LOC-1"
+    }, {
+      "id":"12"
+    }
+  ],
+  "schedule": {
+    "type": "Recurring",
+    "startTime":"2015-05-28T10:55:27+0000",
+    "endTime":"2015-05-29T18:55:27+0000",
+    "timezone": "America/Los_Angeles",
+    "pattern": {
+      "type": "daily",
+      "dayFrequency": "every weekday"
+    }
+  }
+}
+
+RESPONSE:
+.........
+Status : 200 OK

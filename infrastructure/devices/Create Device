@@ -1,0 +1,48 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices [Ex: /api/v2/tenants/client_12/devices]
+
+METHOD: POST
+
+HEADER:
+	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+	Content-Type : application/json
+	Accept : application/json 
+	
+MANDATORY FIELDS:
+	1.hostName
+	2.resourceNetworkInterface [atleast one network interface with an ipAddress is required]
+
+REQUEST:
+{
+	"dnsName": "testdevice-api.vistara.com",
+	"hostName": "testdevice-api",
+	"deviceType": "server",
+	"os": "Ubuntu 12.04.5 LTS",
+	"serialNumber": "564D35B8-3FF8-D31F-935D-558A15B81234",
+	"make":"Ubuntu make",
+	"model":"Ubuntu model",
+	"managementProfile":"VG 2",
+	"resourceNetworkInterface": [{
+		"ipAddressType": "STATIC",
+		"macAddress": "2E:8B:EB:32:7A:F9",
+		"default": 1,
+		"ipAddress": "192.168.56.86"
+	},
+	{
+		"ipAddressType": "STATIC",
+		"macAddress": "00:0C:29:B8:C8:8F",
+		"default": 0,
+		"ipAddress": "172.22.221.90"
+	},
+	{
+		"ipAddressType": "DHCP",
+		"macAddress": "00:0C:29:B8:C8:95",
+		"default": 0,
+		"ipAddress": "172.22.100.86"
+	}]
+}
+
+RESPONSE: 200 OK
+{
+	resourceUUID: "612acfb0-6890-4d52-950b-1c4ec17a7248"
+	tenantID: "client_12"
+}

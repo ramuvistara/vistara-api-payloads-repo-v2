@@ -1,0 +1,29 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/{id}
+
+METHOD: DELETE
+
+HEADER:
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+
+ex : /api/v2/tenants/client_105261/policies/management/2325
+
+RESPONSE:
+.........
+{
+  "status": 200,
+  "entity": "Removed policy with id: 2325",
+  "metadata": {},
+  "length": -1,
+  "headers": {},
+  "cookies": {},
+  "links": [],
+  "stringHeaders": {},
+  "allowedMethods": [],
+  "statusInfo": {
+    "family": "SUCCESSFUL",
+    "statusCode": 200,
+    "reasonPhrase": "OK"
+  },
+  "actualEntity": "Removed policy with id: 2325"
+}

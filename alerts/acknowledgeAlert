@@ -1,0 +1,16 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alertId}/acknowledge
+
+METHOD: POST
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+ex: /api/v2/tenants/client_69919/alerts/6/acknowledge
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+Status : 200 

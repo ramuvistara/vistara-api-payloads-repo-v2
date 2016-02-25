@@ -1,0 +1,69 @@
+input parameters
+----------------------------
+/api/v2/tenants/{tenantId}/deviceGroups
+
+Method: GET
+ 
+Header params
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+(ex:/api/v2/tenants/client_69919/deviceGroups)
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+ 
+out prameter :
+---------------
+
+{
+	"results": [{
+		"name": "dgroup4",
+		"description": "",
+		"assignDevices": [{
+			"uniqueId": "d190594e-ca99-4eac-b6cd-05b070ca7f82",
+			"name": "Device_4"
+		},
+		{
+			"uniqueId": "fb3d81e9-cb01-4178-a7c7-7336ddd3c756",
+			"name": "Device_5"
+		}],
+		"unAssignDevices": [],
+		"createdTime": 1420590569000,
+		"updatedTime": 1420590570000,
+		"deviceCount": 2
+	},
+	{
+		"name": "Device_Group11",
+		"description": "",
+		"assignDevices": [{
+			"uniqueId": "a14bd1d1-58c2-4983-aa76-818bba2431ee",
+			"name": "Device_2"
+		}],
+		"unAssignDevices": [],
+		"createdTime": 1420522931000,
+		"updatedTime": 1420522931000,
+		"deviceCount": 1
+	},
+	{
+		"name": "Device_Group1",
+		"description": "",
+		"assignDevices": [{
+			"uniqueId": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
+			"name": "Device_1"
+		}],
+		"unAssignDevices": [],
+		"createdTime": 1420522790000,
+		"updatedTime": 1420522790000,
+		"deviceCount": 1
+	}],
+	"totalResults": 3,
+	"orderBy": "id",
+	"pageNo": 1,
+	"pageSize": 10,
+	"totalPages": 1,
+	"nextPage": true,
+	"nextPageNo": 2,
+	"previousPageNo": 0,
+	"decendingOrder": true
+}

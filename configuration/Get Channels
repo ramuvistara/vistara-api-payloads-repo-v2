@@ -1,0 +1,39 @@
+URL: https://api.vistara.io/api/v2/cfg/tenants/channels
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+RESPONSE : 
+[
+   {
+      "id": 1,
+      "name": "Ingram Micro",
+      "timeZone": "America/Los_Angeles"
+   },
+   {
+      "id": 2,
+      "name": "Arrow ECS",
+      "timeZone": "America/Los_Angeles"
+   },
+   {
+      "id": 3,
+      "name": "NetEnrich",
+      "timeZone": "America/Los_Angeles"
+   },
+   {
+      "id": 4,
+      "name": "N-able",
+      "timeZone": "America/Los_Angeles"
+   },
+   {
+      "id": 6,
+      "name": "Multi Channel",
+      "timeZone": "America/Los_Angeles"
+   }
+]
+
+RESPONSE CODE : 200 OK

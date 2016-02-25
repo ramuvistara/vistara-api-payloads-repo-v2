@@ -1,0 +1,48 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/minimal
+
+METHOD: GET
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+QUERY PARAMS:
+1.  status = {status} defaultValue = "manage" [optional]
+2.  locationId = {locationId} defaultValue = "0" [optional]
+3.  deviceGroupId = {deviceGroupId} defaultValue = "0" [optional]
+4.  deviceTypeId = {deviceTypeId} defaultValue = "0" [optional]
+
+EX : (https://api.vistara.io/api/v2/tenants/client_93/devices/minimal?status=manage&locationId=69644&deviceGroupId=1790&deviceTypeId=12)
+
+NOTE : status = all for getting all devices belongs to that client
+
+RESPONSE:
+[
+   {
+      "id": "1520068",
+      "hostName": "Active.Director",
+      "uniqueId" : "88a2d720-9b80-11e2-9ce9-000c2911afe1"
+   },
+   {
+      "id": "15767",
+      "hostName": "AD-14",
+      "uniqueId" : "DEV0000000030"
+   },
+   {
+      "id": "1520783",
+      "hostName": "Agent Not Installed",
+      "uniqueId" : "d12ffdd8-d656-49ce-9dba-0549e9b02b42"
+   },
+   {
+      "id": "1520784",
+      "hostName": "Agent Not Installed2",
+      "uniqueId" : "564DF28B-4CA2-DD65-79B1-FC9B136AFD43"
+   },
+   {
+      "id": "1520197",
+      "hostName": "vistara3",
+      "uniqueId" : "422F6FCC-2175-96A7-1AB4-52E1DB9ECD57"
+   }
+]
+
+STATUS CODE : 200 OK

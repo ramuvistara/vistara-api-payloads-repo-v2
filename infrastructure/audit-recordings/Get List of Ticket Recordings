@@ -1,0 +1,77 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/tickets/{ticketId}/auditRecordings/search
+
+METHOD: GET
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+QUERY PARAMS:
+.............
+1. pageNo={pageNo} defaultValue=1 [optional]
+2. pageSize={pageSize} defaultValue=10 [optional]
+3. isDescendingOrder={true/false} defaultValue=false [optional]
+4. queryString={queryString} [optional]
+
+QUERY VARIABLES:
+................
+recStatus [ Completed,Open ]
+consoleType [ RDP,TELNET,SSH,VNC ]
+startDate
+endDate
+
+ex: /api/v2/tenants/client_14527/ticket/TBT0000000193/ticketRecordings/search?pageNo=1&pageSize=10&queryString=recStatus:Completed+consoleType:RDP+startDate:2013-12-12 11-5-33+endDate:2014-12-12 11-5-33&isDecendingOrder=true
+
+Note:
+special characters in queryString:
+1. %2B -- indicate next field
+2. : -- indicate equals to
+3. dataformate should be in yyyy-MM-dd HH-mm-ss
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json"
+
+
+RESPONSE:
+.........
+{
+  "results": [
+    {
+      "type": "ncare",
+      "consoleProtocol": "RDP",
+      "ipAddress": "172.29.1.57",
+      "url": "https://yourdomain/computer.do?action=launchPlayer&recId=1181"
+    },
+    {
+      "type": "ncare",
+      "consoleProtocol": "RDP",
+      "ipAddress": "172.29.1.57",
+      "url": "https://yourdomain/computer.do?action=launchPlayer&recId=1180"
+    },
+    {
+      "type": "ncare",
+      "consoleProtocol": "SSH",
+      "ipAddress": "172.29.1.42",
+      "url": "https://yourdomain/computer.do?action=launchPlayer&recId=1179"
+    },
+    {
+      "type": "ncare",
+      "consoleProtocol": "SSH",
+      "ipAddress": "172.29.1.42",
+      "url": "https://yourdomain/computer.do?action=launchPlayer&recId=1178"
+    },
+    {
+      "type": "ncare",
+      "consoleProtocol": "SSH",
+      "ipAddress": "172.29.1.42",
+      "url": "https://yourdomain/computer.do?action=launchPlayer&recId=1177"
+    }
+  ],
+  "totalResults": 5,
+  "pageNo": 1,
+  "pageSize": 10,
+  "totalPages": 1,
+  "nextPage": false,
+  "nextPageNo": 0,
+  "previousPageNo": 0,
+  "decendingOrder": false
+}

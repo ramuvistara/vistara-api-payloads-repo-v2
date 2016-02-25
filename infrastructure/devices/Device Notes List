@@ -1,0 +1,76 @@
+URL: https://api.vistara.io/api/basic/tenants/{tenantId}/devices/{deviceId}/notes
+
+METHOD: GET
+ 
+HEADER:
+	Authorization : Basic c3N2Ok5ldCF0aXZhbW81YjY=
+	Content-Type : application/json
+	Accept : application/json 
+	
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDecendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=note.id [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	searchWord         [description, subject]
+2.	startCreationDate
+3.	endCreationDate
+4.	startUpdationDate
+5.	endUpdationDate
+6.	id
+
+EX : URL: https://api.vistara.io/api/basic/tenants/client_93/devices/DEV0000015401/notes?pageNo=2&pageSize=3&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+	
+RESPONSE:
+{
+  "results" : [ {
+    "id" : 28,
+    "subject" : "Note 2",
+    "description" : "<p>testing 2</p>",
+    "createdTime" : "2015-12-16T06:45:19+0530",
+    "updatedTime" : "2015-12-16T06:45:19+0530",
+    "expiryTime" : "",
+    "createdBy" : {
+      "id" : "USR0000000001",
+      "loginName" : "superadmin",
+      "lastName" : "Admin",
+      "firstName" : "Super",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    }
+  }, {
+    "id" : 27,
+    "subject" : "device notes 1",
+    "description" : "<p>testing...1</p>",
+    "createdTime" : "2015-12-16T06:40:57+0530",
+    "updatedTime" : "2015-12-16T06:40:57+0530",
+    "expiryTime" : "2015-12-23T23:40:00+0530",
+    "createdBy" : {
+      "id" : "USR0000000001",
+      "loginName" : "superadmin",
+      "lastName" : "Admin",
+      "firstName" : "Super",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    }
+  } ],
+  "totalResults" : 2,
+  "orderBy" : "note.id",
+  "pageNo" : 1,
+  "pageSize" : 10,
+  "totalPages" : 1,
+  "nextPage" : false,
+  "nextPageNo" : 1,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+RESPONSE CODE : 200 OK
+ 
+Note: Encode username and password with colon(:) in between using Base64 algorithm.
+base64_encode(loginName:password). Include this with 'Basic' prefix in Authorization header.

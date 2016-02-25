@@ -1,0 +1,161 @@
+URL : https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/{attributeId}/assignedEntities/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.	queryString={field} [optional]
+
+QUERY VARIABLES : 
+1.	id
+2.	value
+3.	source
+
+EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/10/assignedEntities/search
+     2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/11/assignedEntities/search
+     
+NOTE : This api can be used to get list of assigned entities.
+
+RESPONSE :
+{
+  "results" : [ {
+    "id" : 1271,
+    "customAttributeValue" : {
+      "id" : 399,
+      "customAttribute" : {
+        "id" : 63,
+        "name" : "custom_attr_from_API_test_1",
+        "description" : "custom_attr_from_API_test_1_update",
+        "organization" : {
+          "id" : 93,
+          "uniqueId" : "client_93",
+          "name" : "Brocade Lab",
+          "activated" : true
+        }
+      },
+      "value" : "custom_attr_from_API_test_2_value",
+      "description" : "custom_attr_from_API_test_2_value_description"
+    },
+    "taggable" : {
+      "id" : "DEV0000015747",
+      "name" : "hydlptCampusGolden",
+      "entityType" : "Device"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1270,
+    "customAttributeValue" : {
+      "id" : 399,
+      "customAttribute" : {
+        "id" : 63,
+        "name" : "custom_attr_from_API_test_1",
+        "description" : "custom_attr_from_API_test_1_update",
+        "organization" : {
+          "id" : 93,
+          "uniqueId" : "client_93",
+          "name" : "Brocade Lab",
+          "activated" : true
+        }
+      },
+      "value" : "custom_attr_from_API_test_2_value",
+      "description" : "custom_attr_from_API_test_2_value_description"
+    },
+    "taggable" : {
+      "id" : "DEV0000015776",
+      "name" : "INMON-SFLOW",
+      "entityType" : "Device"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1244,
+    "customAttributeValue" : {
+      "id" : 396,
+      "customAttribute" : {
+        "id" : 63,
+        "name" : "custom_attr_from_API_test_1",
+        "description" : "custom_attr_from_API_test_1_update",
+        "organization" : {
+          "id" : 93,
+          "uniqueId" : "client_93",
+          "name" : "Brocade Lab",
+          "activated" : true
+        }
+      },
+      "value" : "custom_attr_from_API_test_1_value",
+      "description" : "desc_custom_attr_from_API_test_1_update_1"
+    },
+    "taggable" : {
+      "id" : "1672",
+      "name" : "A",
+      "entityType" : "ServiceGroup"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1239,
+    "customAttributeValue" : {
+      "id" : 396,
+      "customAttribute" : {
+        "id" : 63,
+        "name" : "custom_attr_from_API_test_1",
+        "description" : "custom_attr_from_API_test_1_update",
+        "organization" : {
+          "id" : 93,
+          "uniqueId" : "client_93",
+          "name" : "Brocade Lab",
+          "activated" : true
+        }
+      },
+      "value" : "custom_attr_from_API_test_1_value",
+      "description" : "desc_custom_attr_from_API_test_1_update_1"
+    },
+    "taggable" : {
+      "id" : "DEV0000015767",
+      "name" : "AD-14",
+      "entityType" : "Device"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1238,
+    "customAttributeValue" : {
+      "id" : 396,
+      "customAttribute" : {
+        "id" : 63,
+        "name" : "custom_attr_from_API_test_1",
+        "description" : "custom_attr_from_API_test_1_update",
+        "organization" : {
+          "id" : 93,
+          "uniqueId" : "client_93",
+          "name" : "Brocade Lab",
+          "activated" : true
+        }
+      },
+      "value" : "custom_attr_from_API_test_1_value",
+      "description" : "desc_custom_attr_from_API_test_1_update_1"
+    },
+    "taggable" : {
+      "id" : "1458",
+      "name" : "B",
+      "entityType" : "ServiceGroup"
+    },
+    "tagSource" : "VISTARA"
+  } ],
+  "totalResults" : 5,
+  "orderBy" : "id",
+  "pageNo" : 1,
+  "pageSize" : 10,
+  "totalPages" : 1,
+  "nextPage" : false,
+  "nextPageNo" : 0,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,53 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/{id}
+
+METHOD: GET
+
+HEADER:
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+
+ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/management/2327
+
+RESPONSE:
+.........
+{
+    "id": 2327,
+    "name": "Mysql-policy",
+    "resourceType": "DEVICE",
+    "matchType": "ALL",
+    "rules": [
+        {
+            "key": "Device Name",
+            "operator": "Contains",
+            "value": "mysql"
+        }
+    ],
+    "actions": [
+        {
+            "action": "ASSIGN MONITORINGTEMPLATE",
+            "items": [
+                {
+                    "item": "19",
+                    "parameters": {
+                        "MYSQL IPAddress": "127.0.0.1",
+                        "MYSQL Username": "root",
+                        "MYSQL Port": "3306",
+                        "MYSQL Password": "mysql"
+                    },
+                    "instances": {}
+                }
+            ]
+        },
+        {
+            "action": "ASSIGN CREDENTIALSET",
+            "items": [
+                {
+                    "item": "1",
+                    "parameters": {},
+                    "instances": {}
+                }
+            ]
+        }
+    ],
+    "executionOrder": 0
+}

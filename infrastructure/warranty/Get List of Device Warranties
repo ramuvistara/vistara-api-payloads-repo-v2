@@ -1,0 +1,22 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/deviceWarranties
+
+METHOD: GET 
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+ 
+RESPONSE:
+.........
+[
+  {
+    "purchaseDate": "2015-11-09T18:00:00+0530",
+    "warrantyExpireDate": "2020-12-09T18:00:00+0530",
+    "deviceId": "DEV0000011576"
+  },
+  {
+    "purchaseDate": "2015-01-15T00:00:00+0530",
+    "warrantyExpireDate": "2015-01-20T00:00:00+0530",
+    "deviceId": "f4a82c4a-8b65-4e7d-a57c-2e8a1aef14ff"
+  }
+]

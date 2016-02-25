@@ -1,0 +1,81 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/discoveryProfiles
+ 
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+MANDATORY FEILDS: [Check in UI]
+  name
+  discoveryType   [Agent || Gateway]
+  agentProfileId
+  discoveryProfileType 
+  deviceType  ( based on the discoveryProfileType : No need for SNMP and WMI )
+  modelType   ( mandatory if discoveryProfileType = Storage + deviceType = EMC VNX )
+  credentialSet
+  ipDetails   ( ipRange is neccessary and remaining based on discoveryProfileType )
+
+NOTE : 
+	* Different schedule patterns COMMENTED below to get to know those formats in payload...........
+	* ipRange holds either one of these : IP Address, IP Range, Seed Nodes, Primary Control Station, SMI-S Provider IP Address, Cluster Management IP Address
+  	* # if Device Type = EMC CLARiiON then ipRange holds the value of SP A IP Address [SEE IN UI]
+  	* # Don't add (Beta) to Device Types that is shown as in UI.. [Ex : EMC CLARiiON (Beta), NetApp Cluster (Beta)]
+  
+INPUT JSON / PAYLOAD :
+{
+   "name": "API - testing 1",
+   "discoveryType": "gateway",
+   "agentProfileId": "37",
+   "discoveryProfileType": "SNMP",
+   "deviceType": "",
+   "modelType": "",
+   "credentialSet": "creating with snmp",
+   "ipDetails": {
+      "discoveryType": "SEED",
+      "ipRange": "172.22.22.1",
+      "networkHubCount": "5",
+      "secondayControlStation": "",
+      "ipAddressSPA": "",
+      "ipAddressSPB": ""
+   },
+   "frequency":"6",
+   "pattern":"1",
+   "customParams": {
+      "discoverVOIPPhones": "true",
+      "revDNSLookUp": "true",
+      "discUsingCdpFdpLldpEtc": "true",
+      "discUsingARP": "true",
+      "detectVms": "true",
+      "vmAutoManageEntities": "true",
+      "vmDataCollection": "true",
+      "collectionIntervals": "30",
+      "vmEnableNotifications": "true",
+      "vmAlarmCollectInterval": "10",
+      "vmAlarmCapable": "some",
+      "vmDataCenter": "true",
+      "vmCluster": "true",
+      "vmHosts": "true",
+      "vmVirtualMachine": "true",
+      "vmDataStore": "true",
+      "vmNetwork": "true",
+      "vmEnableMetricsJob": "true",
+      "vmCapacityMetrics": "true"
+   },
+   "gatewayScheduleFlag": "true",
+   "discoverySchedule": {
+      "patternType": "MINUTES",
+      "pattern": "20"
+   }
+}
+
+RESPONSE :
+{
+   "id": "51",
+   "name": "created for testing",
+   "clientId": "93",
+   "mspId": "92"
+}
+
+STATUS CODE : 200 OK

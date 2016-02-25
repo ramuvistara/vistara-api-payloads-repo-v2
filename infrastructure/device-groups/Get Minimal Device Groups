@@ -1,0 +1,35 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/deviceGroups/minimal
+
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+RESPONSE :
+[
+   {
+      "id": 1664,
+      "name": "A",
+      "type": "DEVICE_GROUP",
+      "childs": [],
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1665,
+      "name": "C",
+      "type": "DEVICE_GROUP",
+      "childs": [],
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1790,
+      "name": "B",
+      "type": "DEVICE_GROUP",
+      "childs": [],
+      "kbArticlesIds": []
+   }
+]
+
+STATUS CODE : 200 OK

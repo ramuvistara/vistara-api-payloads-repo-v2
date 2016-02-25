@@ -1,0 +1,130 @@
+URL : https://api.vistara.io/api/v2/tenants/{tenantId}/discoveryProfiles/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=false [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.  	queryString = {queryString} [optional]
+
+NOTE : 
+  * EX : https://api.vistara.io/api/v2/tenants/{tenantId}/discoveryProfiles/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id&queryString=172.22.22.1
+  * queringString is optional : if you hasn't provided any thing in that then all profiles under that msp/client will comes.
+  *	it supports for only one parameter in queryString .i.e., either ipRange or profileName (only 1 can be pass)
+  
+RESPONSE :
+{
+   "results": [
+      {
+         "id": 52,
+         "name": "API - testing 1",
+         "clientId": 93,
+         "clientName": "Brocade Lab",
+         "mspId": 92,
+         "partnerName": "Brocade Inc",
+         "discoveryType": "Gateway",
+         "agentProfileId": "37",
+         "agentProfileName": "Default",
+         "discoveryProfileType": "SNMP",
+         "ipDetails": {
+            "discoveryType": "SEED",
+            "ipRange": "172.22.22.1",
+            "networkHubCount": "5"
+         },
+         "gatewayScheduleFlag": true,
+         "discoverySchedule": {
+            "patternType": "MINUTES",
+            "pattern": "20",
+            "startTime": "00:20:00"
+         }
+      },
+      {
+         "id": 51,
+         "name": "creating from UI",
+         "clientId": 93,
+         "clientName": "Brocade Lab",
+         "mspId": 92,
+         "partnerName": "Brocade Inc",
+         "discoveryType": "Gateway",
+         "agentProfileId": "37",
+         "agentProfileName": "Default",
+         "discoveryProfileType": "SNMP",
+         "ipDetails": {
+            "discoveryType": "IPRANGE",
+            "ipRange": "172.22.2.0-172.22.2.50",
+            "networkHubCount": "1"
+         },
+         "gatewayScheduleFlag": true,
+         "discoverySchedule": {
+            "patternType": "MINUTES",
+            "pattern": "20",
+            "startTime": "00:20:00"
+         }
+      },
+      {
+         "id": 50,
+         "name": "API - testing 1 - from update",
+         "clientId": 93,
+         "clientName": "Brocade Lab",
+         "mspId": 92,
+         "partnerName": "Brocade Inc",
+         "discoveryType": "Gateway",
+         "agentProfileId": "37",
+         "agentProfileName": "Default",
+         "discoveryProfileType": "SNMP",
+         "ipDetails": {
+            "discoveryType": "IPRANGE",
+            "ipRange": "172.22.2.0-172.22.2.50",
+            "networkHubCount": "1"
+         },
+         "gatewayScheduleFlag": true,
+         "discoverySchedule": {
+            "patternType": "MONTHLY",
+            "pattern": "05,10,15",
+            "startTime": "3"
+         }
+      },
+      {
+         "id": 47,
+         "name": "testing",
+         "clientId": 93,
+         "clientName": "Brocade Lab",
+         "mspId": 92,
+         "partnerName": "Brocade Inc",
+         "discoveryType": "Cloud",
+         "discoveryProfileType": "AWS",
+         "ipDetails": {}
+      },
+      {
+         "id": 44,
+         "name": "AWS",
+         "clientId": 93,
+         "clientName": "Brocade Lab",
+         "mspId": 92,
+         "partnerName": "Brocade Inc",
+         "discoveryType": "Cloud",
+         "discoveryProfileType": "AWS",
+         "ipDetails": {
+            "ipRange": ""
+         }
+      }
+   ],
+   "totalResults": 5,
+   "orderBy": "id",
+   "pageNo": 1,
+   "pageSize": 10,
+   "totalPages": 1,
+   "nextPage": false,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

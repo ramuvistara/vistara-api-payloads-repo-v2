@@ -1,0 +1,58 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/deviceTypes/minimal
+
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+RESPONSE :
+[
+   {
+      "id": 4,
+      "path": "Desktop"
+   },
+   {
+      "id": 33,
+      "path": "Desktop >> Laptop"
+   },
+   {
+      "id": 59,
+      "path": "Mobile >> Android"
+   },
+   {
+      "id": 7,
+      "path": "Network Device >> Switch"
+   },
+   {
+      "id": 82,
+      "path": "OpenStack"
+   },
+   {
+      "id": 100,
+      "path": "Other"
+   },
+   {
+      "id": 3,
+      "path": "Server"
+   },
+   {
+      "id": 12,
+      "path": "Server >> Linux"
+   },
+   {
+      "id": 11,
+      "path": "Server >> Windows"
+   },
+   {
+      "id": 50,
+      "path": "Storage >> EMC VNXe"
+   },
+   {
+      "id": 42,
+      "path": "VMware"
+   }
+]
+
+STATUS CODE : 200 OK

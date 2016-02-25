@@ -1,0 +1,119 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices/{deviceId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+EX : https://api.vistara.io/api/v2/tenants/client_93/devices/DEV0000015401
+
+RESPONSE : 
+{
+   "id": "DEV0001520157",
+   "generalInfo": {
+      "osName": "Microsoft Windows 7  Service Pack 1",
+      "ipAddresses": "192.168.56.1",
+      "make": "LENOVO",
+      "description": "Phoenix BIOS SC-T v2.1",
+      "hostName": "hydlpt311.netenrich.com",
+      "dns": "HYDLPT311",
+      "deviceType": "Laptop",
+      "domainRole": "1",
+      "keyboardType": "US104",
+      "encodingType": "UTF8",
+      "physicalMemory": "7.72",
+      "buildNumber": 0,
+      "aliasName": "hydlpt311.netenrich.com",
+      "createdTime": "2014-08-20T08:47:45+0530",
+      "updatedTime": "2014-12-04T05:55:20+0530",
+      "agentDeploytime": ""
+   },
+   "bios": {
+      "biosName": "Phoenix BIOS SC-T v2.1",
+      "biosVersion": "J9ET58WW (1.58 )",
+      "smBiosVersion": "J9ET58WW (1.58 )",
+      "smBiosMajorVersion": "2",
+      "smBiosMinorVersion": "7",
+      "smBiosPresent": "True",
+      "systemSerial": "PF00XNRM",
+      "systemModel": "20C600AAUS",
+      "systemManufacturer": "Microsoft Corporation"
+   },
+   "consoles": [
+      {
+         "ipAddress": "127.0.0.1",
+         "port": "3389",
+         "consoleConnector": "Agent",
+         "consoleAuthType": "PASSWORD",
+         "consoleProtocol": "RDP",
+         "type": "MANAGEMENTCONSOLE"
+      },
+      {
+         "ipAddress": "127.0.0.1",
+         "port": "0",
+         "consoleConnector": "Agent",
+         "consoleAuthType": "PASSWORD",
+         "consoleProtocol": "FTRANSFER",
+         "type": "MANAGEMENTCONSOLE"
+      },
+      {
+         "ipAddress": "127.0.0.1",
+         "port": "0",
+         "consoleConnector": "Agent",
+         "consoleAuthType": "PASSWORD",
+         "consoleProtocol": "RMSHELL",
+         "type": "MANAGEMENTCONSOLE"
+      }
+   ],
+   "drives": [
+      {
+         "id": 645,
+         "total": 150,
+         "free": 80,
+         "name": "C:"
+      },
+      {
+         "id": 646,
+         "total": 0,
+         "free": 0,
+         "name": "D:"
+      },
+      {
+         "id": 647,
+         "total": 150,
+         "free": 122,
+         "name": "E:"
+      }
+   ],
+   "networkCardDetails": [
+      {
+         "id": 245387,
+         "gateway": "192.168.1.1"
+      },
+      {
+         "id": 245388,
+         "gateway": "195.168.1.10"
+      }
+   ],
+   "location": {
+      "id": 69646,
+      "name": "testing site child 1",
+      "clientId": 93,
+      "mspId": 92,
+      "description": "testing site child 1 is being created"
+   },
+   "deviceWarranty": {
+      "id": 7,
+      "purchaseDate": "2014-12-01T10:10:00+0530",
+      "warrantyExpireDate": "2015-12-01T10:10:00+0530"
+   },
+   "status": "UNKNOWN",
+   "state": "active",
+   "clientUniqueId": "client_93",
+   "ipAddress": "192.168.56.1",
+   "type": "DEVICE"
+}
+
+RESPONSE CODE : 200 OK

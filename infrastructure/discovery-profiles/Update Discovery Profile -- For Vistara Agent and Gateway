@@ -1,0 +1,33 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/discoveryProfiles/{discoveryProfileId}
+
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+NOTE : 
+  * send fields those needs to be updated only in payload
+  * If you want to update discoverySchedule then flag must be set. (true : update with new fields & false : update with null)
+	
+INPUT JSON / PAYLOAD :
+{
+   "name": "API - testing 1 - from update",
+   "gatewayScheduleFlag": "true",
+   "discoverySchedule": {
+      "patternType": "MONTHLY",
+      "pattern": "5,10,15",
+      "startTime": "03"
+   }
+}
+
+RESPONSE:
+{
+   "id": "51",
+   "name": "created for testing",
+   "clientId": "93",
+   "mspId": "92"
+}
+
+STATUS CODE : 200 OK

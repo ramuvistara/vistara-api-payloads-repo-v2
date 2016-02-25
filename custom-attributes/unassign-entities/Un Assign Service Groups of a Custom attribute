@@ -1,0 +1,29 @@
+URL : https://api.vistara.io/api/v2/tenants/{clientId}/customAttributes/{attributeId}/values/{valueId}/serviceGroups
+
+METHOD : DELETE
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/tenants/client_93/customAttributes/64/values/397/serviceGroups
+
+INPUT JSON / PAYLOAD :
+[
+	{
+		"id" : "1458"
+	},
+	{
+		"id" : "1692"
+	}
+]
+
+RESPONSE : 
+{
+  "FailedEntities" : { },
+  "FailedCount" : 0,
+  "SuccessCount" : 2
+}
+
+RESPONSE CODE : 200 OK

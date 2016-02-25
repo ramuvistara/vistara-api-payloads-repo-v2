@@ -1,0 +1,37 @@
+URL : https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/{attributeId}
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json 
+
+EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/63
+     2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/64
+
+NOTE : This api will get the custom attribute and its values
+
+RESPONSE : 
+{
+  "id" : 63,
+  "name" : "custom_attr_from_API_test_1",
+  "description" : "custom_attr_from_API_test_1_update",
+  "customAttributeValues" : [ {
+    "id" : 396,
+    "value" : "custom_attr_from_API_test_1_value",
+    "description" : "desc_custom_attr_from_API_test_1_update_1"
+  }, {
+    "id" : 399,
+    "value" : "custom_attr_from_API_test_2_value",
+    "description" : "custom_attr_from_API_test_2_value_description"
+  } ],
+  "organization" : {
+    "id" : 93,
+    "uniqueId" : "client_93",
+    "name" : "Brocade Lab",
+    "activated" : true
+  }
+}
+
+RESPONSE CODE : 200 OK

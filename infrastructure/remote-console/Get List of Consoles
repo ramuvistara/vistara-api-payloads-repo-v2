@@ -1,0 +1,50 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}/remoteConsoles
+
+METHOD: GET
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+QUERY PARAMS:
+1. pageNo={pageNo} defaultValue=1 [optional]
+2. pageSize={pageSize} defaultValue=10 [optional]
+ 
+RESPONSE:
+.........
+{
+  "results": [
+    {
+      "type": "ADMINCONSOLE",
+      "url": "https://www.google.com",
+      "adminService": "Admin_service",
+      "adminDeviceName": "visata13"
+    },
+    {
+      "ipAddress": "119.36.3.79",
+      "port": "23",
+      "consoleConnector": "Agent",
+      "consoleAuthType": "PASSWORD",
+      "consoleProtocol": "SSH",
+      "type": "MANAGEMENTCONSOLE",
+      "userName": "satya123"
+    },
+    {
+      "ipAddress": "119.36.13.79",
+      "port": "23",
+      "consoleConnector": "Gateway",
+      "consoleAuthType": "PASSWORD",
+      "consoleProtocol": "TELNET",
+      "type": "MANAGEMENTCONSOLE",
+      "userName": "satya123"
+    }
+  ],
+  "totalResults": 3,
+  "pageNo": 1,
+  "pageSize": 10,
+  "totalPages": 1,
+  "nextPage": false,
+  "nextPageNo": 0,
+  "previousPageNo": 0,
+  "decendingOrder": false
+}

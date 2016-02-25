@@ -1,0 +1,143 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/monitoringTemplates
+
+METHOD: GET
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=false [optional]
+4.	sortName={field} defaultValue=name [optional]
+5.	templateType = {templateType} defaultValue=1 [optional]
+6.	collectorType = {collectorType} defaultValue=0 [optional]
+
+RESPONSE:
+{
+   "results": [
+      {
+         "templateId": 2761,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": " IBM WebSphere Cast Iron System Status Template",
+         "collectorType": "Gateway",
+         "applicableFor": "DEVICE",
+         "description": "Monitors the system, network and runtime status using command 'system show status'. This template has been tested on WebSphere Cast Iron DataPower Appliance XH40.",
+         "tags": "",
+         "uniqueId": "8X1AHHZJNPIFMVJZDWEA88C7"
+      },
+      {
+         "templateId": 971,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "*Do not use* Standard Interface - IFMIB - Full Duplex",
+         "templateType": "INTERFACE",
+         "collectorType": "Gateway",
+         "applicableFor": "DEVICE",
+         "description": "*Do not use* This can be applied on all interfaces having the 64 bit counter OIDS and in the Full Duplex Transmission mode",
+         "tags": "Monitors Status, Errors and Discards",
+         "uniqueId": "7EJFJGNXPPG6EIC00JX2EXE9"
+      },
+      {
+         "templateId": 1882,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "*Do not use* Standard Interface - MIB2IF - Full Duplex",
+         "templateType": "INTERFACE",
+         "collectorType": "Gateway",
+         "applicableFor": "DEVICE",
+         "description": "*Do not use* This template is to be applied on interfaces that have the 32 bit counter oid and having Full Duplex mode of Transmission",
+         "tags": "Monitors availability, Errros, Discards and Utilization",
+         "uniqueId": "LWPTX0JX2EV7AXRZNBOF6FO4"
+      },
+      {
+         "templateId": 2622,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "*Do not use* Standard Interface - MIB2IF - Full Duplex - Health monitoring",
+         "templateType": "INTERFACE",
+         "collectorType": "Gateway",
+         "applicableFor": "DEVICE",
+         "description": "*Do not use* This template is to be applied on interfaces that have the 32 bit counter oid and having Full Duplex mode of Transmission",
+         "tags": "Monitors availability and Utilization",
+         "uniqueId": "IEH6CBJOU7C6RCIGSKGJC5LK"
+      },
+      {
+         "templateId": 6695,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "12345",
+         "collectorType": "SERVICE",
+         "applicableFor": "SERVICE",
+         "description": "",
+         "tags": "",
+         "uniqueId": "UJ5YHHZILGI9K64ZM6W2KMGG"
+      },
+      {
+         "templateId": 6666,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "A",
+         "collectorType": "SERVICE",
+         "applicableFor": "SERVICE",
+         "description": "A",
+         "tags": "A",
+         "uniqueId": "0YZ28Z90L0FFSRDKQYKZ71G0"
+      },
+      {
+         "templateId": 6668,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "AA",
+         "collectorType": "AZURE",
+         "applicableFor": "DEVICE",
+         "description": "",
+         "tags": "",
+         "uniqueId": "YXUCACVAUDABQRJGLPQIB5LM"
+      },
+      {
+         "templateId": 6688,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "AG",
+         "collectorType": "SERVICE",
+         "applicableFor": "SERVICE",
+         "description": "",
+         "tags": "",
+         "uniqueId": "INRV3QG32XHP26JC13CF8PV9"
+      },
+      {
+         "templateId": 6726,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "Agent Installed",
+         "collectorType": "Agent",
+         "applicableFor": "DEVICE",
+         "description": "Agent Installed",
+         "tags": "Agent Installed",
+         "uniqueId": "IY0FEO81G0XWNM7ZCSXAM9D5"
+      },
+      {
+         "templateId": 6727,
+         "mspId": 0,
+         "clientId": 0,
+         "templateName": "Agent Not Installed",
+         "collectorType": "Agent",
+         "applicableFor": "DEVICE",
+         "description": "Agent Not Installed",
+         "tags": "Agent Not Installed",
+         "uniqueId": "H43ZPM16OZWL9FGYD37Q38TH"
+      }
+   ],
+   "totalResults": 402,
+   "orderBy": "name",
+   "pageNo": 1,
+   "pageSize": 10,
+   "totalPages": 41,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": false
+}

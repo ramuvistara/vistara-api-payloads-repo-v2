@@ -1,0 +1,61 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/scheduleMaintenances/{smId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json 
+
+RESPONSE:
+	{
+   "id": "1",
+   "name": "OneTime",
+   "dontRunRBA": "true",
+   "dontInstallPatch": "true",
+   "schedule": {
+      "type": "one-time",
+      "startTime": "2015-06-30T05:06:00+0530",
+      "endTime": "2015-07-01T00:00:00+0530"
+   },
+   "devices": [
+      {
+         "id": "43e1f369-0f74-4dce-b775-555069b26bba",
+         "generalInfo": {
+            "ipAddresses": "172.24.221.139",
+            "hostName": "HYDLPT220",
+            "deviceType": "Laptop",
+            "buildNumber": 0
+         },
+         "bios": {
+            "biosName": "Phoenix BIOS SC-T v2.2",
+            "biosVersion": "HEET36WW (1.17 )",
+            "systemSerial": "PF0VNPL",
+            "systemModel": "68855TU"
+         },
+         "consoles": [
+            {
+               "ipAddress": "127.0.0.1",
+               "port": "3389",
+               "consoleConnector": "Agent",
+               "consoleAuthType": "PASSWORD",
+               "consoleProtocol": "RDP",
+               "type": "MANAGEMENTCONSOLE"
+            },
+            {
+               "ipAddress": "127.0.0.1",
+               "port": "0",
+               "consoleConnector": "Agent",
+               "consoleAuthType": "PASSWORD",
+               "consoleProtocol": "FTRANSFER",
+               "type": "MANAGEMENTCONSOLE"
+            }
+         ],
+         "status": "UNKNOWN",
+         "state": "active",
+         "ipAddress": "172.24.221.139"
+      }
+   ]
+}
+
+Response Code: 200 OK

@@ -1,0 +1,141 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/search
+
+METHOD: GET
+
+HEADER:
+    Authorization = Bearer {accessToken}
+    Accept = application/json
+
+QUERY PARAMS:
+.............
+name=<name>
+
+ex:  https://api.vistara.io/api/v2/tenants/client_105261/policies/management/search?name=Web
+
+RESPONSE:
+.........
+[
+    {
+        "id": 210,
+        "name": "test-Mysql-policy",
+        "resourceType": "DEVICE",
+        "matchType": "ALL",
+        "rules": [
+            {
+                "key": "Device Name",
+                "operator": "Contains",
+                "value": "mysql"
+            }
+        ],
+        "actions": [
+            {
+                "action": "ASSIGN MONITORINGTEMPLATE",
+                "items": [
+                    {
+                        "item": "19",
+                        "parameters": {
+                            "MYSQL IPAddress": "127.0.0.1",
+                            "MYSQL Username": "root",
+                            "MYSQL Port": "3306",
+                            "MYSQL Password": "mysql"
+                        },
+                        "instances": {}
+                    }
+                ]
+            },
+            {
+                "action": "ASSIGN CREDENTIALSET",
+                "items": [
+                    {
+                        "item": "1",
+                        "parameters": {},
+                        "instances": {}
+                    }
+                ]
+            }
+        ],
+        "executionOrder": 0
+    },
+    {
+        "id": 209,
+        "name": "test-Mysql-policy-nvidia",
+        "resourceType": "DEVICE",
+        "matchType": "ALL",
+        "rules": [
+            {
+                "key": "Device Name",
+                "operator": "Contains",
+                "value": "mysql"
+            }
+        ],
+        "actions": [
+            {
+                "action": "ASSIGN MONITORINGTEMPLATE",
+                "items": [
+                    {
+                        "item": "19",
+                        "parameters": {
+                            "MYSQL IPAddress": "127.0.0.1",
+                            "MYSQL Username": "root",
+                            "MYSQL Port": "3306",
+                            "MYSQL Password": "mysql"
+                        },
+                        "instances": {}
+                    }
+                ]
+            },
+            {
+                "action": "ASSIGN CREDENTIALSET",
+                "items": [
+                    {
+                        "item": "1",
+                        "parameters": {},
+                        "instances": {}
+                    }
+                ]
+            }
+        ],
+        "executionOrder": 0
+    },
+    {
+        "id": 205,
+        "name": "test-Mysql-policy-with-name",
+        "resourceType": "DEVICE",
+        "matchType": "ALL",
+        "rules": [
+            {
+                "key": "Device Name",
+                "operator": "Contains",
+                "value": "mysql"
+            }
+        ],
+        "actions": [
+            {
+                "action": "ASSIGN MONITORINGTEMPLATE",
+                "items": [
+                    {
+                        "item": "19",
+                        "parameters": {
+                            "MYSQL IPAddress": "127.0.0.1",
+                            "MYSQL Username": "root",
+                            "MYSQL Port": "3306",
+                            "MYSQL Password": "mysql"
+                        },
+                        "instances": {}
+                    }
+                ]
+            },
+            {
+                "action": "ASSIGN CREDENTIALSET",
+                "items": [
+                    {
+                        "item": "1",
+                        "parameters": {},
+                        "instances": {}
+                    }
+                ]
+            }
+        ],
+        "executionOrder": 0
+    }
+]

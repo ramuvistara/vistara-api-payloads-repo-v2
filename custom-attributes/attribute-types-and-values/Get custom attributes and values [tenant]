@@ -1,0 +1,219 @@
+URL : https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=id [optional]
+
+EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/search
+     2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/search
+     
+NOTE : This api can be used to get list of custom attribute types and its corresponding values.
+  
+RESPONSE : 
+{
+  "results" : [ {
+    "id" : 63,
+    "name" : "custom_attr_from_API_test_1",
+    "description" : "custom_attr_from_API_test_1_update",
+    "customAttributeValues" : [ {
+      "id" : 396,
+      "value" : "custom_attr_from_API_test_1_value",
+      "description" : "desc_custom_attr_from_API_test_1_update_1"
+    }, {
+      "id" : 399,
+      "value" : "custom_attr_from_API_test_2_value",
+      "description" : "custom_attr_from_API_test_2_value_description"
+    } ],
+    "organization" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    }
+  }, {
+    "id" : 61,
+    "name" : "test case",
+    "description" : "test case",
+    "customAttributeValues" : [ {
+      "id" : 393,
+      "value" : "custom attribute values",
+      "description" : "test case example"
+    }, {
+      "id" : 392,
+      "value" : "value",
+      "description" : "test case"
+    }, {
+      "id" : 394,
+      "value" : "value for test case",
+      "description" : "test case value"
+    } ],
+    "organization" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    }
+  }, {
+    "id" : 60,
+    "name" : "Test",
+    "customAttributeValues" : [ {
+      "id" : 387,
+      "value" : "ELB"
+    } ],
+    "organization" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    }
+  }, {
+    "id" : 59,
+    "name" : "Test-Tag-Key1",
+    "customAttributeValues" : [ {
+      "id" : 375,
+      "value" : "Test-Tag-Key-Value1"
+    } ],
+    "organization" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    }
+  }, {
+    "id" : 58,
+    "name" : "aws:autoscaling:groupName",
+    "customAttributeValues" : [ {
+      "id" : 373,
+      "value" : "acme-web-as-group"
+    }, {
+      "id" : 385,
+      "value" : "vistara-autoscale-webapp"
+    } ],
+    "organization" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    }
+  }, {
+    "id" : 57,
+    "name" : "Name",
+    "customAttributeValues" : [ {
+      "id" : 382,
+      "value" : "acme-ecomm-aws-api1"
+    }, {
+      "id" : 367,
+      "value" : "acme-ecomm-aws-api2"
+    }, {
+      "id" : 364,
+      "value" : "acme-ecomm-aws-api3"
+    }, {
+      "id" : 365,
+      "value" : "acme-ecomm-aws-cache1"
+    }, {
+      "id" : 381,
+      "value" : "acme-ecomm-aws-cache2"
+    }, {
+      "id" : 366,
+      "value" : "acme-ecomm-aws-cache3"
+    }, {
+      "id" : 386,
+      "value" : "acme-ecomm-aws-web1"
+    }, {
+      "id" : 369,
+      "value" : "acme-ecomm-aws-web2"
+    }, {
+      "id" : 377,
+      "value" : "acme-ecomm-aws-web3"
+    }, {
+      "id" : 388,
+      "value" : "ADFS"
+    }, {
+      "id" : 358,
+      "value" : "allow-out"
+    }, {
+      "id" : 389,
+      "value" : "amazon2015"
+    }, {
+      "id" : 376,
+      "value" : "itson-olf2"
+    }, {
+      "id" : 357,
+      "value" : "Modern Enterprise VPC"
+    }, {
+      "id" : 372,
+      "value" : "mwiki2"
+    }, {
+      "id" : 383,
+      "value" : "OSController"
+    }, {
+      "id" : 390,
+      "value" : "qainstance1"
+    }, {
+      "id" : 391,
+      "value" : "rhel7.1"
+    }, {
+      "id" : 374,
+      "value" : "sqs-test-12345"
+    }, {
+      "id" : 363,
+      "value" : "testinginstancesgr"
+    }, {
+      "id" : 360,
+      "value" : "Vagrant Devops"
+    }, {
+      "id" : 359,
+      "value" : "VISTARA"
+    }, {
+      "id" : 384,
+      "value" : "Vistara Gateway 178"
+    }, {
+      "id" : 370,
+      "value" : "Vistara update 1.9.0"
+    }, {
+      "id" : 368,
+      "value" : "vistara-matainence"
+    }, {
+      "id" : 362,
+      "value" : "vistara-prod"
+    }, {
+      "id" : 371,
+      "value" : "vistara-prod-app01"
+    }, {
+      "id" : 380,
+      "value" : "vistara-prod-db01"
+    }, {
+      "id" : 378,
+      "value" : "vistara-prod-nat"
+    }, {
+      "id" : 379,
+      "value" : "vw-media3-decomm"
+    } ],
+    "organization" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    }
+  } ],
+  "totalResults" : 6,
+  "orderBy" : "tag.id",
+  "pageNo" : 1,
+  "pageSize" : 2,
+  "totalPages" : 3,
+  "nextPage" : true,
+  "nextPageNo" : 2,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,39 @@
+URL: https://api.vistara.io/api/v2/tenants/{varId}/clients/{clientId}/customAttributes
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/tenants/msp_92/clients/client_93/customAttributes
+
+RESPONSE : 
+[ {
+  "id" : 1277,
+  "customAttributeValue" : {
+    "id" : 410,
+    "customAttribute" : {
+      "id" : 71,
+      "name" : "custom_attr_type_for_service_provider",
+      "description" : "creating custom_type for provider-update",
+      "organization" : {
+        "id" : 1,
+        "uniqueId" : "org_1",
+        "name" : "Vistara SaaS Platform",
+        "activated" : true
+      }
+    },
+    "value" : "test_val_1_for_custom_attr_type_for_sp_1",
+    "description" : "creating first value for s provider update"
+  },
+  "taggable" : {
+    "id" : "client_93",
+    "name" : "Brocade Lab",
+    "entityType" : "Client"
+  },
+  "tagSource" : "VISTARA"
+} ]
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,102 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/serviceGroups/{sgId}
+
+METHOD: GET
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+ex: URL: https://api.vistara.io/api/v2/tenants/client_105261/policies/serviceGroups/2830
+
+RESPONSE:
+.........
+[
+    {
+        "id": 8386,
+        "name": "Policy service map",
+        "childType": "SERVICE",
+        "childs": [
+            {
+                "id": 8385,
+                "name": "Policy subgroup",
+                "childType": "DEVICE",
+                "childs": [],
+                "frequency": 5,
+                "thresholdType": "count",
+                "thresholdLimit": 1,
+                "monitorNames": [
+                    "SERVICE_AVAILABILITY_METRIC"
+                ],
+                "policy": {
+                    "id": 0,
+                    "matchType": "ALL",
+                    "rules": [
+                        {
+                            "key": "Device Name",
+                            "operator": "Starts with",
+                            "value": "db-mysql"
+                        },
+                        {
+                            "key": "Device Name",
+                            "operator": "Contains",
+                            "value": "redis-prod"
+                        },
+                        {
+                            "key": "Device Name",
+                            "operator": "Ends with",
+                            "value": "cassandra-prod"
+                        },
+                        {
+                            "key": "Device Name",
+                            "operator": "Regex",
+                            "value": "db.*.prod"
+                        }
+                    ],
+                    "actions": [],
+                    "executionOrder": 0
+                }
+            }
+        ],
+        "frequency": 1,
+        "thresholdType": "count",
+        "thresholdLimit": 1,
+        "monitorNames": [
+            "SERVICE_AVAILABILITY_METRIC"
+        ]
+    },
+    {
+        "id": 8388,
+        "name": "Static service map",
+        "childType": "SERVICE",
+        "childs": [
+            {
+                "id": 8387,
+                "name": "Static subgroup",
+                "childType": "DEVICE",
+                "childs": [
+                    {
+                        "id": 28132,
+                        "name": "app09-lin-10-04",
+                        "childType": "DEVICE",
+                        "childs": [],
+                        "frequency": 0,
+                        "thresholdLimit": 0,
+                        "monitorNames": []
+                    }
+                ],
+                "frequency": 5,
+                "thresholdType": "count",
+                "thresholdLimit": 1,
+                "monitorNames": [
+                    "SERVICE_AVAILABILITY_METRIC"
+                ]
+            }
+        ],
+        "frequency": 1,
+        "thresholdType": "count",
+        "thresholdLimit": 1,
+        "monitorNames": [
+            "SERVICE_AVAILABILITY_METRIC"
+        ]
+    }
+]

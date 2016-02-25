@@ -1,0 +1,12 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices/{deviceId}
+
+METHOD: DELETE
+ 
+HEADERS:
+  Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+EX : https://api.vistara.io/api/v2/tenants/client_69856/devices/12ac5b65-da4e-4d34-8b72-eb0fbaebe0aa
+	
+RESPONSE CODE : 200 OK

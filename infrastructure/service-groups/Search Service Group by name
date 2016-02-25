@@ -1,0 +1,90 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/serviceGroups/search
+
+METHOD: GET
+
+HEADER:
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+
+QUERY PARAMS:
+.............
+name=<name>
+
+ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/serviceGroups/search?name=web
+
+RESPONSE:
+.........
+[
+  {
+    "id":1618,
+    "name":"Web Sg",
+    "childType":"DEVICE",
+    "childs":[
+              {
+                "id":828,
+                "name":"sles11-sp3",
+                "childType":"DEVICE",
+                "childs":[],
+                "frequency":0,
+                "thresholdLimit":0,
+                "monitorNames":[]
+              }
+            ],
+    "frequency":5,
+    "thresholdType":"count",
+    "thresholdLimit":1,
+    "monitorNames":["SERVICE_AVAILABILITY_METRIC"]
+  },
+  {
+    "id":1619,
+    "name":"Web sg2",
+    "childType":"DEVICE",
+    "childs":[
+              {
+                "id":835,
+                "name":"acme-ecomm-aws-web2",
+                "childType":"DEVICE",
+                "childs":[],
+                "frequency":0,
+                "thresholdLimit":0,
+                "monitorNames":[]
+              },
+              {
+                "id":841,
+                "name":"acme-ecomm-aws-web3",
+                "childType":"DEVICE",
+                "childs":[],
+                "frequency":0,
+                "thresholdLimit":0,
+                "monitorNames":[]
+              },
+             {
+                "id":849,
+                "name":"acme-ecomm-aws-web1",
+                "childType":"DEVICE",
+                "childs":[],
+                "frequency":0,
+                "thresholdLimit":0,
+                "monitorNames":[]
+             }
+           ],
+   "frequency":5,
+   "thresholdType":"count",
+   "thresholdLimit":1,
+   "monitorNames":["SERVICE_AVAILABILITY_METRIC"],
+   "policy":
+            {
+              "id":0,
+              "matchType":"ALL",
+              "rules":[
+                        {
+                          "key":"Device Name",
+                          "operator":"Contains",
+                          "value":"web"
+                        }
+                ],
+             "actions":[],
+             "executionOrder":0
+           }
+ }
+]

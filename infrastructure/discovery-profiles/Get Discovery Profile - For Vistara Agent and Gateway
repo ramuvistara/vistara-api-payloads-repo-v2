@@ -1,0 +1,69 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/discoveryProfiles/{discoveryProfileId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+RESPONSE : 
+{
+   "id": 51,
+   "name": "creating from UI",
+   "clientId": 93,
+   "mspId": 92,
+   "discoveryType": "Gateway",
+   "agentProfileId": "37",
+   "agentProfileName": "Default",
+   "discoveryProfileType": "SNMP",
+   "credentialSet": "creating with snmp",
+   "credentials": {
+      "id": 337,
+      "name": "creating with snmp",
+      "credentialType": "SNMP",
+      "secure": false,
+      "port": 161,
+      "snmpVersion": "V1",
+      "autoEnableMode": false,
+      "universal": true,
+      "spSecure": false,
+      "spPort": 0,
+      "timeoutMs": 0,
+      "assignedUsers": [],
+      "assignedDevices": [],
+      "assignedAcls": [],
+      "assignedDeviceGroups": []
+   },
+   "ipDetails": {
+      "discoveryType": "IPRANGE",
+      "ipRange": "172.22.2.0-172.22.2.50",
+      "networkHubCount": "1"
+   },
+   "customParams": {
+      "discoverVOIPPhones": true,
+      "revDNSLookUp": true,
+      "discUsingCdpFdpLldpEtc": true,
+      "discUsingARP": true,
+      "detectVms": false,
+      "vmDataCollection": true,
+      "vmEnableNotifications": true,
+      "vmDataCenter": false,
+      "vmCluster": false,
+      "vmHosts": false,
+      "vmVirtualMachine": false,
+      "vmDataStore": false,
+      "vmNetwork": false,
+      "vmEnableMetricsJob": false,
+      "vmCapacityMetrics": true,
+      "monitorAccessPoints": false
+   },
+   "gatewayScheduleFlag": true,
+   "discoverySchedule": {
+      "patternType": "MINUTES",
+      "pattern": "20",
+      "startTime": "00:20:00"
+   }
+}
+
+STATUS CODE : 200 OK

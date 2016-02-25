@@ -1,0 +1,31 @@
+URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeId}/values/{valueId}/partners
+
+METHOD : POST
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/values/411/partners
+
+NOTE : only a service provider can assign partners to a custom attribute
+
+INPUT JSON / PAYLOAD :
+[
+	{
+		"id" : "msp_4"
+	},
+	{
+		"id" : "msp_12"
+	}
+]
+
+RESPONSE : 
+{
+  "failedEntities" : { },
+  "failedCount" : 0,
+  "successCount" : 2
+}
+
+RESPONSE CODE : 200 OK

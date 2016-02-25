@@ -1,0 +1,38 @@
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/users/{userId}/alertViews
+ 
+METHOD: GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+        isDescendingOrder={true/false} defaultValue=true[optional]
+        sortName={sortName} defaultValue=id [optional]
+        
+RESPONSE:
+[
+   {
+      "id": 30,
+      "name": "Default",
+      "description": "Default"
+   },
+   {
+      "id": 27,
+      "name": "QA Filter",
+      "description": "QA Filter"
+   },
+   {
+      "id": 28,
+      "name": "Test",
+      "description": "Test"
+   },
+   {
+      "id": 29,
+      "name": "Test Partner",
+      "description": "Test Partner"
+   }
+]
+
+Response Code : 200 OK
