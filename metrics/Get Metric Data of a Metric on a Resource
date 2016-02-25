@@ -1,0 +1,134 @@
+URL: https://api.vistara.io/api/v2/metric/search?tenant={tenantId}&rtype={rtype}&resource={resource}&metric={metric}&startTime={startTime}&endTime={endTime}
+
+METHOD:GET
+
+HEADER: 
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+MANDATORY FIELDS:
+.................
+tenant
+rtype
+resource
+metric
+startTime
+endTime
+
+ex: api/v2/metric/search?tenant=client_100340&rtype=DEVICE&resource=725ab798-e9b1-474c-aa03-de9fb6a6e0c4&metric=system.ping.rta&startTime=1444973469&endTime=1445002269
+
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json" 
+
+RESPONSE:
+.........
+[{
+     "resource": 2828433,
+     "metric": "system.ping.rta",
+     "metricType": "Guage",
+     "unit": "",
+     "unitLabel": "RTA(ms) & Packet Loss",
+     "component": "system.ping.rta",
+     "description": "Ping monitor provides the ping statistics of the remote device. The Warning and Critical threshold indicates the Round Trip Average (RTA) in milliseconds, packet loss percentage and number of packets",
+     "consolFunc": "AVERAGE",
+     "factor": 1,
+     "data": {
+     "1444973758": 148,
+     "1444973888": 151,
+     "1444974011": 124.04,
+     "1444974128": 99,
+     "1444974248": 134,
+     "1444974608": 110,
+     "1444974851": 198,
+     "1444976011": 206,
+     "1444976131": 156.03,
+     "1444976251": 128.05,
+     "1444976371": 110
+     }
+}]
+-----------------------------
+Example of Multiple components of a Metric:
+
+ex: api/v2/metric/search?tenant=client_100340&rtype=DEVICE&resource=725ab798-e9b1-474c-aa03-de9fb6a6e0c4&metric=system.disk.used&startTime=1444973469&endTime=1445002269
+
+1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
+2. Accept = "application/json" 
+
+RESPONSE:
+-------------------------
+[
+  {
+  "resource": 2828433,
+  "metric": "system.disk.used",
+  "metricType": "Guage",
+  "unit": "GB",
+  "unitLabel": "Utilization",
+  "component": "c",
+  "description": "Used space on the selected logical disk drive",
+  "consolFunc": "AVERAGE",
+  "factor": 1073741824,
+       "data": {
+       "1444974749": 138995040000,
+       "1444975649": 139468997000,
+       "1444976549": 139482628000,
+       "1444977449": 139496260000,
+       "1444978349": 139461657000,
+       "1444979249": 139464802000,
+       "1444980149": 139464802000,
+       "1444981049": 139472142000,
+       "1444981949": 139472142000,
+       "1444982849": 137434759000,
+       "1444983749": 137435808000
+       }
+  },
+  {
+  "resource": 2828433,
+  "metric": "system.disk.used",
+  "metricType": "Guage",
+  "unit": "GB",
+  "unitLabel": "Utilization",
+  "component": "d",
+  "description": "Used space on the selected logical disk drive",
+  "consolFunc": "AVERAGE",
+  "factor": 1073741824,
+       "data": {
+       "1444974749": 131245015000,
+       "1444975649": 131245015000,
+       "1444976549": 131245015000,
+       "1444977449": 131245015000,
+       "1444978349": 131245015000,
+       "1444979249": 131245015000,
+       "1444980149": 131245015000,
+       "1444981049": 131245015000,
+       "1444981949": 131245015000,
+       "1444982849": 131245015000,
+       "1444983749": 131245015000,
+       "1444984649": 131245015000,
+       "1444985549": 131245015000
+       }
+  },
+  {
+  "resource": 2828433,
+  "metric": "system.disk.used",
+  "metricType": "Guage",
+  "unit": "GB",
+  "unitLabel": "Utilization",
+  "component": "q",
+  "description": "Used space on the selected logical disk drive",
+  "consolFunc": "AVERAGE",
+  "factor": 1073741824,
+       "data": {
+       "1444974749": 103809024,
+       "1444975649": 103809024,
+       "1444976549": 103809024,
+       "1444977449": 103809024,
+       "1444978349": 103809024,
+       "1444979249": 103809024,
+       "1444980149": 103809024,
+       "1444981049": 103809024,
+       "1444981949": 103809024,
+       "1444982849": 103809024,
+       "1444983749": 103809024
+       }
+  }
+]

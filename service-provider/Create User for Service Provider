@@ -1,0 +1,124 @@
+URL: https://api.vistara.io/api/serviceProvider/users
+
+METHOD: POST
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+MANDATORY FIELDS : 
+1. loginName
+2. lastName
+3. firstName
+4. password
+5. email
+6. country
+7. timeZone.code
+
+REQUEST:
+........
+{
+	"loginName":"1.create_user_test_api_8",
+	"lastName":"testing_api_client",
+	"firstName":"testing_api",
+	"password":"apiTest!123",
+	"designation":"test case",
+	"email":"test@gmail.com",
+	"address":"hyderabad",
+	"city":"hyderabad",
+	"state":"Andra Pradesh",
+	"country":"United States",
+	"timeZone":{
+	"code" : "PSTM"
+	},
+	"phoneNumber":"09887485473",
+	"mobileNumber":"9432434453",
+	"altEmail" : "slfjsf@gmail.com",
+	"userAccountType" : "REGULAR",
+	"userNotifications" : [
+		{
+			"notifyType":"Account Information"
+		}
+	],
+	"acls" : [
+		{
+			"name":"Business User"
+		},
+		{
+			"name":"Service Provider Administrator"
+		}
+	]
+}
+
+EX : https://api.vistara.io/api/serviceProvider/users
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+   "id": "USR0000002140",
+   "loginName": "1.create_user_test_api_8",
+   "lastName": "testing_api_client",
+   "firstName": "testing_api",
+   "email": "test@gmail.com",
+   "altEmail": "slfjsf@gmail.com",
+   "userAccountType": "REGULAR",
+   "designation": "test case",
+   "address": "hyderabad",
+   "city": "hyderabad",
+   "state": "Andra Pradesh",
+   "country": "United States",
+   "phoneNumber": "09887485473",
+   "mobileNumber": "9432434453",
+   "timeZone": {
+      "id": "12",
+      "name": "GMT",
+      "label": "Greenwich Mean Time",
+      "code": "GMT"
+   },
+   "authType": "LOCAL",
+   "status": "active",
+   "orgId": "org_1",
+   "profileImage": {
+      "description": "",
+      "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+      "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+      "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+      "imageType": ""
+   },
+   "changePassword": true,
+   "organizationName": "Vistara SaaS Platform",
+   "userNotifications": [
+      {
+         "notifyType": "Account Information",
+         "notifyMethod": "Email",
+         "notifyRecurringReport": false
+      },
+      {
+         "notifyType": "Alert Notification",
+         "notifyMethod": "No Notify",
+         "notifyRecurringReport": false
+      },
+      {
+         "notifyType": "Report Notification",
+         "notifyMethod": "No Notify",
+         "notifyRecurringReport": false
+      }
+   ],
+   "createdTime": "2016-02-03T15:58:37+0530",
+   "updatedTime": "2016-02-03T15:58:37+0530",
+   "acls": [
+      {
+         "id": 1,
+         "name": "Service Provider Administrator"
+      },
+      {
+         "id": 23,
+         "name": "Business User"
+      }
+   ]
+}
+
+RESPONSE CODE : 200 OK

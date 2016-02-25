@@ -1,0 +1,85 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/escalationPolicy
+ 
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+MANDATORY FEILD:
+  allclients || clients
+  name
+  timeZone
+  severityTypes
+  schedule
+  
+INPUT JSON / PAYLOAD :
+{
+   "allclients": "false",
+   "clients": [
+      {
+         "id": "93"
+      }
+   ],
+   "name": "escalation policy created using api",
+   "description": "description for create escalation example from api",
+   "timeZone": {
+      "id": "5"
+   },
+   "autoNotification": "true",
+   "assignedLocations": [
+      {
+         "id": "69659"
+      },
+      {
+         "id": "69669"
+      }
+   ],
+   "assignedDeviceGroups": [
+      {
+         "id": "1664"
+      }
+   ],
+   "assignedDevices": [
+      {
+         "uniqueId": "DEV0000016029"
+      }
+   ],
+   "escalationIndiceDetails": [
+      {
+         "priority": "1",
+         "repeatCount": "2",
+         "repeatFreqHours": "0",
+         "repeatFreqMinutes": "10",
+         "severityTypes": [
+            "CRITICAL",
+            "WARNING"
+         ],
+         "schedule": {
+            "id": "18"
+         }
+      }
+   ]
+}
+
+RESPONSE :
+{
+   "id": 20,
+   "mspId": 92,
+   "name": "escalation policy created using api",
+   "description": "description for create escalation example from api",
+   "allclients": false,
+   "timeZone": {
+      "id": 5,
+      "version": 0,
+      "name": "America/Phoenix",
+      "label": "GMT -07:00 Mountain",
+      "code": "MST",
+      "timezoneCodeWithDST": "MST",
+      "labelWithDST": "GMT -07:00 Mountain Standard Time"
+   },
+   "autoNotification": true
+}
+
+Response Code : 200 OK

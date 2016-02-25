@@ -1,0 +1,40 @@
+URL :https://api.vistarait.io/api/v2/metric/tenants/{tenant}/rtypes/{rtype}/resources/{resource}/metrics
+
+Method: GET
+
+Header params
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+
+Mandatory Fields :-
+1. tenant
+2. rtype
+3. resource
+
+----------------------------------------------------------------------------
+
+Ex:-https://api.vistarait.io/api/v2/metric/tenants/client_105261/rtypes/DEVICE/resources/DEVICE_2136747/metrics
+
+Method:GET
+
+Header Params
+1. Authorization = Bearer {accessToken}
+2. Accept = application/json
+
+RESPONSE PAYLOAD :- 
+-----------------------------
+[
+  {
+    "metricName":"system.cpu.utilization",
+    "displayName":"CPU Utilization",
+    "description":"The percentage of elapsed time that the processor spends to execute a non-Idle thread",
+    "unit":"%","unitLabel":"Utilization"
+  },
+  {
+    "metricName":"system.disk.used",
+    "displayName":"Disk Utilization",
+    "description":"Used space on the selected logical disk drive",
+    "unit":"GB",
+    "unitLabel":"Utilization"
+  }
+]

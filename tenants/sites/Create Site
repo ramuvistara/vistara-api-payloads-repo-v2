@@ -1,0 +1,50 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/sites
+ 
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+MANDATORY FEILD:
+	name
+	clientId
+	
+INPUT JSON / PAYLOAD :
+{
+   "name": "API Location 111",
+   "parent": {
+      "id": 69641
+   },
+   "clientId": 93,
+   "description": "Testing for Creating Site",
+   "address": "testing 123",
+   "city": "hyderabad",
+   "state": "Telangana",
+   "country": "India",
+   "phoneNumber": "9999999999",
+   "phoneExtension": "91",
+   "primaryContact": {
+      "loginName": "rajesh"
+   },
+   "devices": [
+      {
+         "id": "DEV0001520157"
+      },
+      {
+         "id": "DEV0000015781"
+      }
+   ]
+ }
+
+RESPONSE:
+	{
+	"id":69667,
+	"name":"API update 1",
+	"clientId":93,
+	"mspId":92
+	}
+
+
+Response Code: 200 OK

@@ -1,0 +1,23 @@
+URL: https://api.vistara.io/api/v2/tenants/{varId}/clients/{clientId}
+ 
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+	
+INPUT JSON / PAYLOAD :	
+{
+  "address" : "Madhapur, Vital Rao Nagar, Near Global Edge school"
+}
+
+RESPONSE:
+{
+  "id" : "69878",
+  "uniqueId" : "client_69878",
+  "name" : "client from api 3"
+}
+	
+RESPONSE CODE : 200 OK

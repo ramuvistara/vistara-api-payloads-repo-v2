@@ -1,0 +1,55 @@
+URL: https://api.vistara.io/api/tenants/{orgId}/users
+
+METHOD: POST
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+REQUEST:
+........
+ {
+ 	"loginName": "user_api_testing",
+	"lastName": "user_api_test",
+	"firstName": "test_api",
+	"password": "apiTest!123",
+	"email": "test@gmail.com",
+	"address": "hyderabad",
+	"city": "hyderabad",
+	"state": "Andra Pradesh",
+	"country": "United States",
+	"timeZone": {"code" : "PSTM"},
+	"phoneNumber": "09887485473",
+	"mobileNumber": "9432434453",
+	"userGroups": [{
+		"name": "user_group_new",
+		"assignUsers": [{
+			"id": "2193",
+			"loginName": "test123",
+			"firstName": "test",
+			"lastName": "test"
+		},
+		{
+			"id": "2251",
+			"loginName": "user_test_api",
+			"firstName": "test",
+			"lastName": "user"
+		}]
+	},
+	{
+		"name": "user_group_new"
+	}]
+}
+
+(ex:/api/v2/tenants/client_69919/users)
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"id": "USR0000002258",
+	"loginName": "user_api_testing",
+	"changePassword": false
+}

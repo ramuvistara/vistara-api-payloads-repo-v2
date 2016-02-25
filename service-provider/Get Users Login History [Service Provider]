@@ -1,0 +1,86 @@
+URL : https://api.vistara.io/api/v2/serviceProvider/users/loginHistory/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.	queryString={field} [optional]
+
+QUERY VARIABLES : 
+1.	id
+2.	loginName
+3.	userId            [EX : USR0000000001]
+4.	startLoginDate    
+5.	endLoginDate
+6.	startLogoutDate
+7.	endLogoutDate
+
+EX : 1. https://api.vistara.io/api/v2/serviceProvider/users/loginHistory/search?pageSize=2&queryString=userId:USR0000000001+startLoginDate:2014-12-12T01:13:12 0530+endLoginDate:2015-12-12T01:13:12 0530
+     
+NOTE : 
+    	special characters in queryString:
+    	1.	%2B -- indicate next field
+    	2.	: -- indicate equals to
+    	3.	dataformate should be in yyyy-MM-dd'T'HH:mm:ssZ
+
+RESPONSE :
+{
+   "results": [
+      {
+         "id": 12723,
+         "user": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sourceIp": "127.0.0.1",
+         "sourceHost": "127.0.0.1",
+         "sessionId": "1704B749331F12E815F81AF9E7EA6C45",
+         "status": "Logged In",
+         "loginType": "Success",
+         "loginTime": "2016-02-03T06:36:15+0530",
+         "logoutTime": ""
+      },
+      {
+         "id": 12722,
+         "user": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sourceIp": "127.0.0.1",
+         "sourceHost": "127.0.0.1",
+         "sessionId": "2B1FA807FFAC2470DE7F67209413C72B",
+         "status": "Logged Out",
+         "loginType": "Success",
+         "logoutType": "Normal",
+         "loginTime": "2016-02-01T06:42:18+0530",
+         "logoutTime": "2016-02-01T08:03:57+0530"
+      }
+   ],
+   "totalResults": 1843,
+   "orderBy": "id",
+   "pageNo": 1,
+   "pageSize": 2,
+   "totalPages": 922,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,46 @@
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/users/minimal
+
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+RESPONSE : 
+[
+   {
+      "id": "USR0000000453",
+      "loginName": "test@autotask.19",
+      "lastName": "Autotask",
+      "firstName": "Admin",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   {
+      "id": "USR0000000216",
+      "loginName": "asuri@brocade.com",
+      "lastName": "Suri",
+      "firstName": "Anika",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   {
+      "id": "USR0000002097",
+      "loginName": "brocade_test",
+      "lastName": "Test",
+      "firstName": "Brocade",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   {
+      "id": "USR0000002115",
+      "loginName": "deepu@partner",
+      "lastName": "mungamuri",
+      "firstName": "partner_deepu",
+      "email": "deepu.mungamuri@vistarait.com",
+      "changePassword": false
+   }
+]
+
+STATUS CODE : 200 OK

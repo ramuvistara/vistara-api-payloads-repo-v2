@@ -1,0 +1,147 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/roles/{roleId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : 1.https://api.vistara.io/api/v2/tenants/client_93/roles/10
+     2.https://api.vistara.io/api/v2/tenants/msp_92/roles/11
+ 
+RESPONSE : 
+{
+   "id": 78,
+   "name": "Testing with partner",
+   "description": "testing for partner role",
+   "clients": [
+      {
+         "id": 69856,
+         "uniqueId": "client_69856",
+         "name": "Brocade Inc Client",
+         "activated": true
+      },
+      {
+         "id": 93,
+         "uniqueId": "client_93",
+         "name": "Brocade Lab",
+         "activated": true
+      }
+   ],
+   "users": [
+      {
+         "id": "USR0000000216",
+         "loginName": "asuri@brocade.com",
+         "lastName": "Suri",
+         "firstName": "Anika",
+         "email": "sarma519@gmail.com",
+         "changePassword": false
+      },
+      {
+         "id": "USR0000002097",
+         "loginName": "brocade_test",
+         "lastName": "Test",
+         "firstName": "Brocade",
+         "email": "sarma519@gmail.com",
+         "changePassword": false
+      }
+   ],
+   "userGroups": [
+      {
+         "id": 11,
+         "name": "brocade user grp",
+         "userCount": 2
+      },
+      {
+         "id": 12,
+         "name": "brocade user grp 2",
+         "userCount": 2
+      }
+   ],
+   "devices": [
+      {
+         "id": "0bcb1c93-0980-4a9a-9d0d-a68dc91b86e8",
+         "generalInfo": {
+            "ipAddresses": "10.4.18.25",
+            "hostName": "Testing device 1",
+            "buildNumber": 0
+         },
+         "clientUniqueId": "client_69856",
+         "type": "DEVICE"
+      },
+      {
+         "id": "fb4b486c-2141-4ea9-8448-0953d6445da8",
+         "generalInfo": {
+            "ipAddresses": "10.4.18.50",
+            "hostName": "Testing device 2",
+            "buildNumber": 0
+         },
+         "clientUniqueId": "client_69856",
+         "type": "DEVICE"
+      }
+   ],
+   "deviceGroups": [
+      {
+         "id": 1790,
+         "name": "B",
+         "type": "DEVICE_GROUP",
+         "kbArticlesIds": []
+      },
+      {
+         "id": 1665,
+         "name": "C",
+         "type": "DEVICE_GROUP",
+         "kbArticlesIds": []
+      }
+   ],
+   "credentialSets": [
+      {
+         "uniqueId": "QPrN4YQKk5cERqgWd9XsFwQe",
+         "id": 333,
+         "name": "11. TESTING CREDENTIAL SET CREATION FROM API 3",
+         "secure": false,
+         "port": 0,
+         "snmpVersion": "V2",
+         "description": "this is testing from api",
+         "autoEnableMode": false,
+         "universal": true,
+         "spSecure": false,
+         "spPort": 0,
+         "timeoutMs": 15000
+      },
+      {
+         "uniqueId": "ShDxSbEjp3c8cHZKBbrqphjp",
+         "id": 334,
+         "name": "11. TESTING CREDENTIAL SET CREATION FROM API 4",
+         "secure": false,
+         "port": 0,
+         "snmpVersion": "V2",
+         "description": "this is testing from api",
+         "autoEnableMode": false,
+         "universal": true,
+         "spSecure": false,
+         "spPort": 0,
+         "timeoutMs": 15000
+      }
+   ],
+   "permissions": [
+      {
+         "id": 2,
+         "name": "Var Administrator",
+         "description": "Administrator role for all the service operations supported VAR(s)"
+      },
+      {
+         "id": 68,
+         "name": "NetApp Admin",
+         "description": ""
+      },
+      {
+         "id": 26,
+         "name": "ITOP VAR Administrator",
+         "description": "ITOP VAR Administrator"
+      }
+   ]
+}
+
+RESPONSE CODE : 200 OK

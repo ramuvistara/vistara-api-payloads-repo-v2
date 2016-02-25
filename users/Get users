@@ -1,0 +1,125 @@
+URL : https://api.vistara.io/api/v2/tenants/api/v2/tenants/{tenantId}/users/search
+
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=false [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	uniqueId
+2.	loginName
+3.	firstName
+4.	lastName
+5.	mailId
+6.	startCreationDate
+7.	endCreationDate
+8.	startUpdationDate
+9.	endUpdationDate
+
+EX : https://api.vistara.io/api/v2/tenants/api/v2/tenants/client_93/users/search
+EX : https://api.vistara.io/api/v2/tenants/api/v2/tenants/client_93/users/search?pageSize:5&queryString=loginName:brocade+lastName:lab
+
+RESPONSE :
+{
+   "results": [
+      {
+         "id": "USR0000002115",
+         "loginName": "deepu@partner",
+         "lastName": "mungamuri",
+         "firstName": "partner_deepu",
+         "email": "deepu.mungamuri@vistarait.com",
+         "phoneNumber": "9581963860 Extn 91",
+         "mobileNumber": "9581963860",
+         "timeZone": {
+            "id": "19",
+            "name": "Asia/Calcutta",
+            "label": "GMT +05:30 India",
+            "code": "IST"
+         },
+         "orgId": "msp_92",
+         "profileImage": {
+            "description": "",
+            "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+            "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+            "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+            "imageType": ""
+         },
+         "changePassword": false,
+         "organizationName": "Brocade Inc",
+         "createdTime": "2015-08-08T19:05:50+0530",
+         "updatedTime": "2015-08-08T19:05:50+0530",
+         "roles": [
+            {
+               "id": 2,
+               "name": "Var Administrator"
+            },
+            {
+               "id": 3,
+               "name": "VAR User"
+            },
+            {
+               "id": 8,
+               "name": "ITOP Administrator"
+            }
+         ]
+      },
+      {
+         "id": "USR0000002097",
+         "loginName": "brocade_test",
+         "lastName": "Test",
+         "firstName": "Brocade",
+         "email": "sarma519@gmail.com",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "timeZone": {
+            "id": "1",
+            "name": "Pacific/Apia",
+            "label": "GMT -11:00 Samoa",
+            "code": "SST"
+         },
+         "orgId": "msp_92",
+         "profileImage": {
+            "description": "",
+            "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+            "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+            "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+            "imageType": ""
+         },
+         "changePassword": false,
+         "organizationName": "Brocade Inc",
+         "createdTime": "2013-09-02T05:14:49+0530",
+         "updatedTime": "2013-09-02T05:14:49+0530",
+         "roles": [
+            {
+               "id": 72,
+               "name": "FULL PERMISSIONS"
+            },
+            {
+               "id": 78,
+               "name": "Testing with partner"
+            }
+         ]
+      }
+   ],
+   "totalResults": 4,
+   "orderBy": "user.id",
+   "pageNo": 1,
+   "pageSize": 2,
+   "totalPages": 2,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

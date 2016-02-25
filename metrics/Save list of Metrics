@@ -1,0 +1,10 @@
+Action : To save list of Metrics
+URI    : https://api.vistara.io/api/v2/tenants/{tenant}/rtypes/{rtype}/resources/{resource}/metrics
+Method : POST
+PayLoad: list_dataLogs.json
+
+HEADER:
+	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+	Content-Type : application/json
+	Accept : application/json 
+

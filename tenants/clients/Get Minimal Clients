@@ -1,0 +1,30 @@
+URL : https://api.vistara.io/api/basic/tenants/{tenantId}/clients/minimal
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+RESPONSE :
+[
+   {
+      "id": "93",
+      "uniqueId": "client_93",
+      "name": "Brocade Lab"
+   },
+   {
+      "id": "1880",
+      "uniqueId": "client_1880",
+      "name": "Site 1 for Bounds Test Partner A"
+   },
+   {
+      "id": "69856",
+      "uniqueId": "client_69856",
+      "name": "Brocade Inc Client"
+   }
+]
+
+
+RESPONSE CODE : 200 OK

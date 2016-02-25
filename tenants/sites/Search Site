@@ -1,0 +1,152 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/sites/search
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json 
+	
+QUERY PARAMS:
+        pageNo={pageNo} defaultValue=1 [optional]
+        pageSize={pageSize} defaultValue=10 [optional]
+        isDescendingOrder={true/false} defaultValue=true [optional]
+        sortName={sortName} defaultValue=id [optional]
+        queryString={queryString} [optional]
+        
+QUERY VARIABLES:
+	siteId
+	name
+	parentId
+
+EX : https://api.vistara.io/api/v2/tenants/{tenantId}/sites/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id&queryString=siteId:69621+name:site name+parentId:69600
+
+NOTE : 
+	special characters in queryString:
+	1.	+ -- indicate next field and it must be URL encoded (then it automatically converts to %2B)
+	2.	: -- indicate equals to
+
+RESPONSE:
+{
+   "results": [
+      {
+         "id": 69677,
+         "name": "1. Api site after search 2",
+         "clientId": 93,
+         "mspId": 92,
+         "description": "Testing for Creating Site",
+         "address": "testing 123",
+         "phoneNumber": "9999999999",
+         "primaryContact": {
+            "id": "USR0000002111",
+            "loginName": "rajesh",
+            "lastName": "bokka",
+            "firstName": "rajesh",
+            "email": "rajeshbokka481@gmail.com",
+            "phoneNumber": "",
+            "orgId": "client_93",
+            "profileImage": {
+               "description": "",
+               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+               "imageType": ""
+            },
+            "changePassword": false,
+            "organizationName": "Brocade Lab"
+         }
+      },
+      {
+         "id": 69676,
+         "name": "Api site after search 2 updated from msp",
+         "clientId": 93,
+         "mspId": 92,
+         "description": "Testing for Creating Site",
+         "address": "testing 123",
+         "phoneNumber": "9999999999",
+         "primaryContact": {
+            "id": "USR0000002111",
+            "loginName": "rajesh",
+            "lastName": "bokka",
+            "firstName": "rajesh",
+            "email": "rajeshbokka481@gmail.com",
+            "phoneNumber": "",
+            "orgId": "client_93",
+            "profileImage": {
+               "description": "",
+               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+               "imageType": ""
+            },
+            "changePassword": false,
+            "organizationName": "Brocade Lab"
+         }
+      },
+      {
+         "id": 69673,
+         "name": "API 1 update",
+         "clientId": 93,
+         "mspId": 92,
+         "description": "sldjf",
+         "address": "lfdjdljs",
+         "phoneNumber": "",
+         "primaryContact": {
+            "id": "USR0000002111",
+            "loginName": "rajesh",
+            "lastName": "bokka",
+            "firstName": "rajesh",
+            "email": "rajeshbokka481@gmail.com",
+            "phoneNumber": "",
+            "orgId": "client_93",
+            "profileImage": {
+               "description": "",
+               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+               "imageType": ""
+            },
+            "changePassword": false,
+            "organizationName": "Brocade Lab"
+         }
+      },
+      {
+         "id": 69672,
+         "name": "1.creating from ui",
+         "clientId": 93,
+         "mspId": 92,
+         "description": "sjdfl",
+         "address": "ljslfdj",
+         "phoneNumber": "9999999999",
+         "primaryContact": {
+            "id": "USR0000002114",
+            "loginName": "deepu@client",
+            "lastName": "mungamuri",
+            "firstName": "client_deepu",
+            "email": "deepu.mungamuri@vistarait.com",
+            "phoneNumber": "",
+            "orgId": "client_93",
+            "profileImage": {
+               "description": "",
+               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+               "imageType": ""
+            },
+            "changePassword": false,
+            "organizationName": "Brocade Lab"
+         }
+      }
+   ],
+   "totalResults": 4,
+   "orderBy": "id",
+   "pageNo": 1,
+   "pageSize": 10,
+   "totalPages": 1,
+   "nextPage": false,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+Response Code: 200 OK

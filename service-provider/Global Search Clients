@@ -1,0 +1,322 @@
+URL: https://api.vistara.io/api/v2/serviceProvider/clients/search
+
+METHOD: GET
+
+HEADER:
+	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+	Content-Type : application/json
+	Accept : application/json 
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDecendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=client.id [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	uniqueId		[ex : client_1]
+2.	name
+3.	startCreationDate	[ex : 2015-11-01T11:49:21 0530]
+4.	endCreationDate
+5.	startUpdationDate
+6.	endUpdationDate
+7. 	partnerUniqueId
+
+EX : https://api.vistara.io/api/v2/serviceProvider/clients/search?pageSize:5&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+
+RESPONSE : 
+{
+   "results": [
+      {
+         "id": 69881,
+         "uniqueId": "client_69881",
+         "name": "test client",
+         "activated": true,
+         "updatedTime": "2015-12-16T08:13:12+0530",
+         "createdTime": "2015-12-16T08:13:12+0530",
+         "createdBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "lastUpdatedBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "channel": {
+            "id": 1,
+            "name": "Ingram Micro",
+            "timeZone": "America/Los_Angeles"
+         },
+         "address": "test address",
+         "city": "hyd",
+         "state": "hyd",
+         "country": "India",
+         "zip": "500081",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "mspId": "msp_92",
+         "clientDetails": {
+            "businessStartHour": 3,
+            "businessStartMin": 0,
+            "businessEndHour": 3,
+            "businessEndMin": 0,
+            "businessDayStart": 3,
+            "businessDayEnd": 4,
+            "ticketModuleName": "Vistara"
+         },
+         "agentPolicies": [
+            {
+               "id": 179,
+               "name": "Desktops Policy",
+               "deviceCount": 0,
+               "policies": [
+                  {
+                     "id": 1,
+                     "name": "PatchManagement",
+                     "check": true
+                  },
+                  {
+                     "id": 2,
+                     "name": "uvnc",
+                     "check": true
+                  },
+                  {
+                     "id": 3,
+                     "name": "ncaretrayicon",
+                     "check": true
+                  },
+                  {
+                     "id": 6,
+                     "name": "VCareCoreModule",
+                     "check": true
+                  },
+                  {
+                     "id": 7,
+                     "name": "sqlitedb",
+                     "check": true
+                  }
+               ]
+            },
+            {
+               "id": 178,
+               "name": "Servers Policy",
+               "deviceCount": 0,
+               "policies": [
+                  {
+                     "id": 1,
+                     "name": "PatchManagement",
+                     "check": true
+                  },
+                  {
+                     "id": 2,
+                     "name": "uvnc",
+                     "check": true
+                  },
+                  {
+                     "id": 3,
+                     "name": "ncaretrayicon",
+                     "check": true
+                  },
+                  {
+                     "id": 6,
+                     "name": "VCareCoreModule",
+                     "check": true
+                  },
+                  {
+                     "id": 7,
+                     "name": "sqlitedb",
+                     "check": true
+                  }
+               ]
+            }
+         ],
+         "saClient": false,
+         "nableClient": false,
+         "lpiClient": false,
+         "ncareAgent": false,
+         "ncareDevsCount": "0",
+         "noPolicyDevsCount": "0",
+         "nocDetails": {
+            "id": 1,
+            "name": "HYD NOC2"
+         }
+      },
+      {
+         "id": 69880,
+         "uniqueId": "client_69880",
+         "name": "1. create client from api",
+         "activated": true,
+         "updatedTime": "2015-10-07T08:35:39+0530",
+         "createdTime": "2015-10-07T08:35:39+0530",
+         "createdBy": {
+            "id": "USR0000002095",
+            "loginName": "vistara_system_user",
+            "lastName": " ",
+            "firstName": "Vistara System User",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "lastUpdatedBy": {
+            "id": "USR0000002095",
+            "loginName": "vistara_system_user",
+            "lastName": " ",
+            "firstName": "Vistara System User",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "channel": {
+            "id": 3,
+            "name": "NetEnrich",
+            "timeZone": "America/Los_Angeles"
+         },
+         "address": "address field",
+         "city": "hyderabad",
+         "state": "Telangana",
+         "country": "india",
+         "zip": "500081",
+         "emailAddress": "deepu.mungamuri94@gmail.com",
+         "phoneNumber": "9581963860 Extn +91",
+         "mobileNumber": "9999988888",
+         "mspId": "msp_69818",
+         "extOrgId": "93",
+         "clientDetails": {
+            "businessStartHour": 5,
+            "businessStartMin": 30,
+            "businessEndHour": 5,
+            "businessEndMin": 15,
+            "businessDayStart": 2,
+            "businessDayEnd": 6,
+            "ticketModuleName": "Legacy"
+         },
+         "agentPolicies": [
+            {
+               "id": 176,
+               "name": "Desktops Policy",
+               "deviceCount": 0,
+               "policies": [
+                  {
+                     "id": 1,
+                     "name": "PatchManagement",
+                     "check": false
+                  },
+                  {
+                     "id": 2,
+                     "name": "uvnc",
+                     "check": false
+                  },
+                  {
+                     "id": 3,
+                     "name": "ncaretrayicon",
+                     "check": false
+                  },
+                  {
+                     "id": 6,
+                     "name": "VCareCoreModule",
+                     "check": false
+                  },
+                  {
+                     "id": 7,
+                     "name": "sqlitedb",
+                     "check": true
+                  }
+               ]
+            },
+            {
+               "id": 177,
+               "name": "new Policy",
+               "deviceCount": 0,
+               "policies": [
+                  {
+                     "id": 1,
+                     "name": "PatchManagement",
+                     "check": true
+                  },
+                  {
+                     "id": 2,
+                     "name": "uvnc",
+                     "check": true
+                  },
+                  {
+                     "id": 3,
+                     "name": "ncaretrayicon",
+                     "check": true
+                  },
+                  {
+                     "id": 6,
+                     "name": "VCareCoreModule",
+                     "check": false
+                  },
+                  {
+                     "id": 7,
+                     "name": "sqlitedb",
+                     "check": false
+                  }
+               ]
+            },
+            {
+               "id": 175,
+               "name": "Servers Policy",
+               "deviceCount": 0,
+               "policies": [
+                  {
+                     "id": 1,
+                     "name": "PatchManagement",
+                     "check": true
+                  },
+                  {
+                     "id": 2,
+                     "name": "uvnc",
+                     "check": false
+                  },
+                  {
+                     "id": 3,
+                     "name": "ncaretrayicon",
+                     "check": true
+                  },
+                  {
+                     "id": 6,
+                     "name": "VCareCoreModule",
+                     "check": false
+                  },
+                  {
+                     "id": 7,
+                     "name": "sqlitedb",
+                     "check": true
+                  }
+               ]
+            }
+         ],
+         "saClient": false,
+         "nableClient": false,
+         "lpiClient": false,
+         "ncareAgent": false,
+         "ncareDevsCount": "0",
+         "noPolicyDevsCount": "0",
+         "nocDetails": {
+            "id": 1,
+            "name": "HYD NOC2"
+         }
+      }
+   ],
+   "totalResults": 73,
+   "orderBy": "client.id",
+   "pageNo": 1,
+   "pageSize": 2,
+   "totalPages": 37,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,97 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/sites/{siteId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+RESPONSE : 
+{
+   "id": 69672,
+   "name": "1.creating from ui",
+   "clientId": 93,
+   "mspId": 92,
+   "description": "sjdfl",
+   "address": "ljslfdj",
+   "city": "ljjssldfj",
+   "state": "ljslfjf",
+   "country": "India",
+   "phoneNumber": "9999999999",
+   "primaryContact": {
+      "id": "USR0000002114",
+      "loginName": "deepu@client",
+      "lastName": "mungamuri",
+      "firstName": "client_deepu",
+      "email": "deepu.mungamuri@vistarait.com",
+      "phoneNumber": "",
+      "orgId": "client_93",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Brocade Lab"
+   },
+   "devices": [
+      {
+         "id": "DEV0000015773",
+         "generalInfo": {
+            "ipAddresses": "11.0.0.26",
+            "hostName": "Active.Director",
+            "deviceType": "Windows",
+            "buildNumber": 0
+         },
+         "bios": {
+            "biosVersion": "",
+            "systemSerial": "",
+            "systemModel": ""
+         },
+         "consoles": [],
+         "status": "UNKNOWN",
+         "state": "active",
+         "clientUniqueId": "client_93",
+         "ipAddress": "11.0.0.26"
+      },
+      {
+         "id": "d7bce6fe-d19f-4ad7-8c50-2f639f2dd778",
+         "generalInfo": {
+            "ipAddresses": "2.36.41.14",
+            "hostName": "Agent Not Installed",
+            "deviceType": "Windows",
+            "buildNumber": 0
+         },
+         "bios": {
+            "systemModel": "Dell"
+         },
+         "consoles": [],
+         "status": "UNKNOWN",
+         "state": "active",
+         "clientUniqueId": "client_93",
+         "ipAddress": "2.36.41.14"
+      },
+      {
+         "id": "05c5a19c-f440-4b81-95b0-bac7837751f6",
+         "generalInfo": {
+            "ipAddresses": "10.5.5.58",
+            "hostName": "Agent Not Installed2",
+            "deviceType": "Windows",
+            "buildNumber": 0
+         },
+         "bios": {
+            "systemModel": "Dell"
+         },
+         "consoles": [],
+         "status": "UNKNOWN",
+         "state": "active",
+         "clientUniqueId": "client_93",
+         "ipAddress": "10.5.5.58"
+      }
+   ]
+}
+
+Response Code: 200 OK

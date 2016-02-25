@@ -1,0 +1,34 @@
+URL: /api/v2/metric/tenants/{tenant}/rtypes/{rtype}/resources/{resource}/metric
+
+METHOD: POST
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+ 
+MANDATORY FIELD:
+................
+metricName
+instanceVal
+ts
+
+REQUEST:
+........
+{
+  "metricName": "system.ping.rta",
+  "instanceName": "rta",
+  "instanceVal": "9.0",
+  "ts": "1426675822"
+}
+
+
+ex: /api/v2/metric/tenants/client_105261/rtypes/DEVICE/resources/735ab798-e9b4-474c-aa03-de9fb6a6e0f5/metric
+ 
+1. Authorization = "Bearer db5ec38f-1200-4037-aefc-47a40cc5e378"
+2. Accept = "application/json"
+ 
+RESPONSE:
+.........
+status :
+
+200 ok

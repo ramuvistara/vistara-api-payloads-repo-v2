@@ -1,0 +1,39 @@
+URL : https://api.vistara.io/api/v2/metric/tenants/{tenant}/metrictype
+
+METHOD: POST
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+
+MANDATORY FEILD:
+................
+tenant
+metricName
+groupName
+displayName
+description
+unit
+type
+
+REQUEST:
+........
+{
+     "metricName": "system.sample.testmetric",
+     "groupName" : "system.sample.*",
+     "description": "sample MetricTest",
+     "displayName": "testMetric",
+     "unit": "%",
+     "type":"Guage"
+}
+
+ex: api/v2/metric/tenants/client_4/metrictype
+
+1. Authorization = "Bearer db5ec38f-1200-4037-aefc-47a40cc5e378"
+2. Accept = "application/json"
+
+RESPONSE:
+.......................
+status :
+ 
+200 ok

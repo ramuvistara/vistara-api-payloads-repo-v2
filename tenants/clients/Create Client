@@ -1,0 +1,137 @@
+URL: https://api.vistara.io/api/v2/tenants/{varId}/clients
+ 
+METHOD: POST
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+MANDATORY FEILDS:
+  name
+  address
+  country
+  timeZone
+
+INPUT JSON / PAYLOAD :
+{
+   "name": "client from api 4",
+   "extOrgId": "93",
+   "address": "address field",
+   "city": "hyderabad",
+   "state": "Telangana",
+   "zip": "500081",
+   "emailAddress": "deepu.mungamuri94@gmail.com",
+   "country": "India",
+   "rdp2swfState": "true",
+   "enableCLIRecording": "true",
+   "phoneNumber": "9581963860",
+   "phoneExtension": "+91",
+   "mobileNumber": "9999988888",
+   "timeZone": "Asia/Calcutta",
+   "showCopyClipBoard": "true",
+   "clientDetails": {
+      "businessStartHour": "02",
+      "businessStartMin": "30",
+      "businessEndHour": "05",
+      "businessEndMin": "15",
+      "businessDayStart": "2",
+      "businessDayEnd": "6",
+      "companyId": "c_1234",
+      "companyName": "c_name"
+   },
+   "agentPolicies": [
+      {
+         "name": "Servers Policy",
+         "policies": [
+            {
+               "name": "PatchManagement",
+               "check": "true"
+            },
+            {
+               "name": "uvnc",
+               "check": "false"
+            },
+            {
+               "name": "ncaretrayicon",
+               "check": "true"
+            },
+            {
+               "name": "VCareCoreModule",
+               "check": "false"
+            },
+            {
+               "name": "sqlitedb",
+               "check": "true"
+            }
+         ]
+      },
+      {
+         "name": "Desktops Policy",
+         "policies": [
+            {
+               "name": "PatchManagement",
+               "check": "false"
+            },
+            {
+               "name": "uvnc",
+               "check": "false"
+            },
+            {
+               "name": "ncaretrayicon",
+               "check": "false"
+            },
+            {
+               "name": "VCareCoreModule",
+               "check": "false"
+            },
+            {
+               "name": "sqlitedb",
+               "check": "true"
+            }
+         ]
+      },
+      {
+         "name": "new Policy",
+         "policies": [
+            {
+               "name": "PatchManagement",
+               "check": "true"
+            },
+            {
+               "name": "uvnc",
+               "check": "true"
+            },
+            {
+               "name": "ncaretrayicon",
+               "check": "true"
+            },
+            {
+               "name": "VCareCoreModule",
+               "check": "false"
+            },
+            {
+               "name": "sqlitedb",
+               "check": "false"
+            }
+         ]
+      }
+   ],
+   "singleSignOnAuthentication": {
+      "enable": "true",
+      "type": "Okta",
+      "issuerUrl": "lksdjflsf",
+      "redirectionUrl": "lsjfslfssf",
+      "logoutUrl": "sldfjsfsf",
+      "certificate": "sdlfjslfs"
+   }
+}
+
+RESPONSE :
+{
+   "id" : "69878",
+  "uniqueId" : "client_69878",
+  "name" : "client from api 3"
+}
+
+STATUS CODE : 200 OK

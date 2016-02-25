@@ -1,0 +1,22 @@
+URL: https://api.vistara.io/api/v2/feedback
+
+METHOD: POST
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+MANDATORY FEILD:
+	description
+	category
+
+INPUT JSON / PAYLOAD :	
+{
+	"description": "This is Description about feedback",
+	"category": "Feedback Category",
+	"attachmentName": "Attached_File.jpg",
+	"attachmentInBytes": "c2FtcGxlIGV4YW1wbGUgb2YgZmVlZGJhY2sgYW5kIGxzZGYgc2xmcyBmc2RkZg0Kc2Ygc2RsZmpzZGY="
+}
+
+Response Code: 200 OK

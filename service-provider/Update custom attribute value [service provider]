@@ -1,0 +1,26 @@
+URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeId}/values/{valueId}
+
+METHOD : POST
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/values/411
+
+NOTE : This api can be used for updating the description of a custom attribute value (value cannot be updated , only description).
+
+INPUT JSON / PAYLOAD :
+{
+  "description" : "update for description"
+}
+
+RESPONSE : 
+{
+  "id" : 411,
+  "vlaue" : "value of the custom attribute value",
+  "description" : "update for description"
+}
+
+RESPONSE CODE : 200 OK

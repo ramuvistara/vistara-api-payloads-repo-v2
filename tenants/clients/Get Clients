@@ -1,0 +1,98 @@
+URL : https://api.vistara.io/api/v2/tenants/{varId}/clients/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=client.id [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	uniqueId
+2.	name
+3.	activeStatus	[true, false]
+4.	startCreationDate
+5.	endCreationDate
+6.	startUpdationDate
+7.	endUpdationDate
+	
+EX : https://api.vistara.io/api/v2/tenants/msp_92/clients/search
+EX : https://api.vistara.io/api/v2/tenants/msp_92/clients/search?pageNo=2&pageSize=5&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+
+RESPONSE :
+{
+   "results": [
+      {
+         "id": 69856,
+         "uniqueId": "client_69856",
+         "name": "Brocade Inc Client",
+         "updatedTime": "2015-11-02T11:49:21+0530",
+         "createdTime": "2015-08-25T08:23:38+0530",
+         "createdBy": {
+            "id": "USR0000002113",
+            "loginName": "deepu@superadmin",
+            "lastName": "DEEPU",
+            "firstName": "MUNGAMURI",
+            "email": "deepu.mungamuri@vistarait.com",
+            "changePassword": false
+         },
+         "lastUpdatedBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         }
+      },
+      {
+         "id": 1880,
+         "uniqueId": "client_1880",
+         "name": "Site 1 for Bounds Test Partner A",
+         "updatedTime": "",
+         "createdTime": "2006-08-29T17:19:53+0530",
+         "createdBy": {
+            "id": "USR0000000255",
+            "loginName": "imadmin",
+            "lastName": "Administrator",
+            "firstName": "IM",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         }
+      },
+      {
+         "id": 93,
+         "uniqueId": "client_93",
+         "name": "Brocade Lab",
+         "updatedTime": "2014-11-10T13:15:01+0530",
+         "createdTime": "2013-01-29T09:45:04+0530",
+         "lastUpdatedBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         }
+      }
+   ],
+   "totalResults": 3,
+   "orderBy": "client.id",
+   "pageNo": 1,
+   "pageSize": 10,
+   "totalPages": 1,
+   "nextPage": false,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

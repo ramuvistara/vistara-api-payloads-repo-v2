@@ -1,0 +1,123 @@
+URL: https://api.vistara.io/api/v2/tenants/{varId}/clients/{clientId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+RESPONSE : 
+{
+   "id": 78,
+   "uniqueId": "client_78",
+   "name": "MindTree",
+   "updatedTime": "2015-12-11T07:04:21+0000",
+   "createdTime": "2015-09-29T09:57:20+0000",
+   "primaryChannel": {
+      "id": 1,
+      "name": "ITOP",
+      "timeZone": "America/Los_Angeles"
+   },
+   "createdBy": {
+      "id": "USR0000000016",
+      "loginName": "sunil.tatikonda@vistarait.com",
+      "lastName": "tatikonda",
+      "firstName": "sunil",
+      "email": "sunil.tatikonda@vistarait.com",
+      "changePassword": false
+   },
+   "lastUpdatedBy": {
+      "id": "USR0000000025",
+      "loginName": "qateam",
+      "lastName": "team",
+      "firstName": "qa",
+      "email": "srinivasaraju.uddaraju@vistarait.com",
+      "changePassword": false
+   },
+   "address": "Hyd",
+   "city": "",
+   "state": "",
+   "country": "India",
+   "zip": "",
+   "phoneNumber": "",
+   "mobileNumber": "",
+   "varId": "76",
+   "clientDetails": {
+      "businessStartHour": 0,
+      "businessStartMin": 0,
+      "businessEndHour": 0,
+      "businessEndMin": 0,
+      "businessDayStart": 0,
+      "businessDayEnd": 0,
+      "ticketModuleName": "Vistara",
+      "clientTechnologies": [
+         "Vistara Gateway",
+         "Vistara Agent"
+      ],
+      "boughtServices": [
+         "vistara"
+      ]
+   },
+   "agentPolicies": [
+      {
+         "id": 77,
+         "name": "Desktops Policy",
+         "deviceCount": 9,
+         "policies": [
+            {
+               "id": 1,
+               "name": "VCareCoreModule",
+               "check": true
+            },
+            {
+               "id": 3,
+               "name": "UVNCModule",
+               "check": true
+            },
+            {
+               "id": 6,
+               "name": "TrayiconModule",
+               "check": true
+            }
+         ]
+      },
+      {
+         "id": 76,
+         "name": "Servers Policy",
+         "deviceCount": 2,
+         "policies": [
+            {
+               "id": 1,
+               "name": "VCareCoreModule",
+               "check": true
+            },
+            {
+               "id": 3,
+               "name": "UVNCModule",
+               "check": true
+            },
+            {
+               "id": 6,
+               "name": "TrayiconModule",
+               "check": true
+            }
+         ]
+      }
+   ],
+   "saClient": false,
+   "nableClient": false,
+   "lpiClient": true,
+   "ncareAgent": true,
+   "ncareDevsCount": "2",
+   "noPolicyDevsCount": "0",
+   "desktopCount": "12",
+   "serverCount": "32",
+   "allDevicesCount": "133",
+   "nocDetails": {
+      "id": 1,
+      "name": "Default NOC"
+   }
+}
+
+RESPONSE CODE : 200 OK

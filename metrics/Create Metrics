@@ -1,0 +1,91 @@
+URL: https://api.vistara.io/api/v2/metricstore/metrics
+
+METHOD: POST
+
+HEADER:
+	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+	Content-Type : application/json
+	Accept : application/json 
+
+REQUEST:
+[
+    {
+        "metricName": "url.http.response-code",
+        "groupName": "url.http.response-code",
+        "uniqueId": "b9b58273-9f08-4c12-90a7-5208bc3cf47",
+        "type": null,
+        "resourceType": null,
+        "displayName": "HTTP response code",
+        "unit": "",
+        "displayUnit": null,
+        "factor": 1,
+        "unitLabel": null,
+        "description": "url.http.response-code",
+        "consolFunc": "AVERAGE",
+        "metricCollectorType": "URL",
+        "metric": "url.http.response-code",
+        "expression": null,
+        "warnRepeatCount": 1,
+        "criticalRepeatCount": 1,
+        "warnOperator": "NONE",
+        "criticalOperator": "NOT_EQUAL",
+        "alertSub": "##SEVERITY## - ##COMPONENTNAME## - ##METRICVALUE## (##THRESHOLD##)",
+        "alertBody": "##SEVERITY## - ##COMPONENTNAME##\nHostname: ##RESOURCENAME##\nIP: ##RESOURCEIP##\nMetric Name: ##METRICNAME##\nComponent: ##COMPONENTNAME##\nSeverity: ##SEVERITY##\nValue: ##METRICVALUE##\nReason: ##METRICVALUE## (##THRESHOLD##)",
+        "warningThreshHold": null,
+        "criticalThreshHold": "200",
+        "monitorType": "RESOURCE",
+        "collectorType": "Gateway",
+        "enumMap": null,
+        "datapointExp": null,
+        "state": "Active",
+        "alertState": "GRAPHANDALERT",
+        "graphPoint": "HISTORICAL",
+        "datapointType": "CounterRate",
+        "format": "VALUE",
+        "rangeExp": null
+    },
+    {
+        "metricName": "url.response-time",
+        "groupName": "url.response-time",
+        "type": null,
+        "resourceType": null,
+        "displayName": "URL response time",
+        "unit": "ms",
+        "displayUnit": null,
+        "factor": 1,
+        "unitLabel": null,
+        "description": "URL response time",
+        "consolFunc": "AVERAGE",
+        "metricCollectorType": "URL",
+        "metric": "url.response-time",
+        "expression": null,
+        "warnRepeatCount": 1,
+        "criticalRepeatCount": 1,
+        "warnOperator": "GREATER_THAN_EQUAL",
+        "criticalOperator": "GREATER_THAN_EQUAL",
+        "alertSub": "##SEVERITY## - ##COMPONENTNAME## - ##METRICVALUE## (##THRESHOLD##)",
+        "alertBody": "##SEVERITY## - ##COMPONENTNAME##\nHostname: ##RESOURCENAME##\nIP: ##RESOURCEIP##\nMetric Name: ##METRICNAME##\nComponent: ##COMPONENTNAME##\nSeverity: ##SEVERITY##\nValue: ##METRICVALUE##\nReason: ##METRICVALUE## (##THRESHOLD##)",
+        "warningThreshHold": "20000",
+        "criticalThreshHold": "30000",
+        "monitorType": "RESOURCE",
+        "collectorType": "Gateway",
+        "enumMap": null,
+        "datapointExp": null,
+        "state": "Active",
+        "alertState": "GRAPHANDALERT",
+        "graphPoint": "HISTORICAL",
+        "datapointType": "DeriveDelta",
+        "format": "VALUE",
+        "rangeExp": null
+    }
+]
+
+RESPONSE: 200 OK
+{
+    "failedCount": 1,
+    "failedList": {
+        "url.http.response-code": "No MetricDefinition found with id: b9b58273-9f08-4c12-90a7-5208bc3cf47"
+    },
+    "updatedCount": 0,
+    "createdCount": 1
+}

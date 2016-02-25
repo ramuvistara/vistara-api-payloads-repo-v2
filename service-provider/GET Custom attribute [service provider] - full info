@@ -1,0 +1,44 @@
+URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeId}
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json 
+
+EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71
+
+NOTE : This api will get the custom attribute and its values
+
+RESPONSE : 
+{
+  "id" : 71,
+  "name" : "custom_attr_type_for_service_provider",
+  "description" : "creating custom_type for provider-update",
+  "customAttributeValues" : [ {
+    "id" : 408,
+    "value" : "test_val_1_for_custom_attr_type_for_sp",
+    "description" : "creating first value for s provider 1"
+  }, {
+    "id" : 410,
+    "value" : "test_val_1_for_custom_attr_type_for_sp_1",
+    "description" : "creating first value for s provider update"
+  }, {
+    "id" : 409,
+    "value" : "test_val_2_for_custom_attr_type_for_sp",
+    "description" : "creating second value for s provider 2"
+  }, {
+    "id" : 411,
+    "value" : "test_val_2_for_custom_attr_type_for_sp_2",
+    "description" : "updated check"
+  } ],
+  "organization" : {
+    "id" : 1,
+    "uniqueId" : "org_1",
+    "name" : "Vistara SaaS Platform",
+    "activated" : true
+  }
+}
+
+RESPONSE CODE : 200 OK

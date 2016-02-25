@@ -1,0 +1,121 @@
+URL : https://api.vistara.io/api/v2/tenants/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=msp.name [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	uniqueId
+2.	name
+3.	mailId
+4.	startCreationDate
+5.	endCreationDate
+6.	startUpdationDate
+7.	endUpdationDate
+
+EX : https://api.vistara.io/api/v2/tenants/search?pageSize:5&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+	
+RESPONSE :
+{
+   "results": [
+      {
+         "id": 83,
+         "uniqueId": "msp_83",
+         "name": "Wes solutions",
+         "updatedTime": "2015-12-14T10:34:43+0530",
+         "createdTime": "2012-12-28T00:48:32+0530",
+         "lastUpdatedBy": {
+            "id": "USR0000002113",
+            "loginName": "deepu@superadmin",
+            "lastName": "DEEPU",
+            "firstName": "MUNGAMURI",
+            "email": "deepu.mungamuri@vistarait.com",
+            "changePassword": false
+         },
+         "timeZone": "Asia/Calcutta",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "primaryAdmin": {
+            "id": "USR0000000444",
+            "loginName": "test@autotask.10",
+            "lastName": "Autotask",
+            "firstName": "Admin",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sp": false,
+         "nsp": false,
+         "isp": false,
+         "partnerCommunity": false,
+         "primaryLocationSupportRadius": 0,
+         "tncAccepted": false
+      },
+      {
+         "id": 77,
+         "uniqueId": "msp_77",
+         "name": "Web Solutions",
+         "updatedTime": "",
+         "createdTime": "2012-12-27T18:20:37+0530",
+         "timeZone": "America/Los_Angeles",
+         "primaryAdmin": {
+            "id": "USR0000000438",
+            "loginName": "test@autotask.4",
+            "lastName": "Autotask",
+            "firstName": "Admin",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sp": false,
+         "nsp": false,
+         "isp": false,
+         "partnerCommunity": false,
+         "primaryLocationSupportRadius": 0,
+         "tncAccepted": false
+      },
+      {
+         "id": 21,
+         "uniqueId": "msp_21",
+         "name": "Vistara LLC",
+         "updatedTime": "",
+         "createdTime": "2012-10-29T15:22:32+0530",
+         "timeZone": "America/Los_Angeles",
+         "phoneNumber": "+ 1 408-436-5900",
+         "mobileNumber": "",
+         "primaryAdmin": {
+            "id": "USR0000000079",
+            "loginName": "demostagingvar",
+            "firstName": "demostagingvar",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sp": false,
+         "nsp": false,
+         "isp": false,
+         "partnerCommunity": false,
+         "primaryLocationSupportRadius": 0,
+         "tncAccepted": false
+      }
+   ],
+   "totalResults": 33,
+   "orderBy": "msp.name",
+   "pageNo": 1,
+   "pageSize": 3,
+   "totalPages": 11,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

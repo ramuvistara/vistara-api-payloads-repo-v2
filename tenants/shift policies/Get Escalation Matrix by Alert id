@@ -1,0 +1,22 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alert_id}/escalation
+ 
+METHOD: GET
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+ex:(/api/v2/tenants/client_4/alerts/51/escalation)
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+	[{
+		"id":"USR0000000005",
+		"loginName":"saasrimm",
+		"email":"pcvarma@netenrich.com",
+		"phoneNumber":"94256824467",
+		"orgId":"3",
+	}]

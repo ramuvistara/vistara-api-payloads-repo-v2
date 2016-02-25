@@ -1,0 +1,88 @@
+URL: https://api.vistara.io/api/v2/tenants/{varId}/
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+RESPONSE : 
+{
+   "id": 92,
+   "uniqueId": "msp_92",
+   "name": "Brocade Inc",
+   "updatedTime": "2014-04-01T16:03:45+0530",
+   "createdTime": "2013-01-29T09:42:56+0530",
+   "createdBy": {
+      "id": "USR0000000001",
+      "loginName": "superadmin",
+      "lastName": "Admin",
+      "firstName": "Super",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   "lastUpdatedBy": {
+      "id": "USR0000000001",
+      "loginName": "superadmin",
+      "lastName": "Admin",
+      "firstName": "Super",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   "channel": {
+      "id": 1,
+      "name": "Ingram Micro",
+      "timeZone": "America/Los_Angeles"
+   },
+   "timeZone": "America/Los_Angeles",
+   "address": "HYD\r\n",
+   "city": "San Jose",
+   "state": "CA",
+   "country": "United States",
+   "zip": "95134",
+   "phoneNumber": "408-333-8000",
+   "mobileNumber": "",
+   "showCopyClipBoard": true,
+   "primaryAdmin": {
+      "id": "USR0000000210",
+      "loginName": "test@autotask.19",
+      "lastName": "Autotask",
+      "firstName": "Admin",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   "sp": false,
+   "nsp": false,
+   "isp": false,
+   "partnerCommunity": false,
+   "primaryLocationSupportRadius": 0,
+   "tncAccepted": false,
+   "primaryLocation": {
+      "id": 1919,
+      "name": "Main Office",
+      "clientId": 2097,
+      "mspId": 0
+   },
+   "mspDetails": {
+      "escStatus": 0,
+      "skuSupport": false,
+      "applicationPatchSupport": false,
+      "rsaSupport": false,
+      "kbSupport": true,
+      "scheduledTaskSupport": true,
+      "ticketModule": "VISTARA",
+      "slaModule": false,
+      "ticketingModule": true,
+      "tcksSupport": true,
+      "ticketingSystem": {
+         "webLoginURL": "https://jagadish.connectwise.com",
+         "companyName": "Jagadish",
+         "userName": "superadmin",
+         "deviceIntegrationEnabled": false
+      },
+      "legacyTicketingIntegration": false
+   }
+}
+
+RESPONSE CODE : 200 OK

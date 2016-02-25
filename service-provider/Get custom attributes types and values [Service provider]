@@ -1,0 +1,86 @@
+URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=id [optional]
+
+EX : 1. https://api.vistara.io/api/v2/serviceProvider/customAttributes/search
+     
+NOTE : This api can be used to get list of custom attribute types and its corresponding values.
+  
+RESPONSE : 
+{
+  "results" : [ {
+    "id" : 71,
+    "name" : "custom_attr_type_for_service_provider",
+    "description" : "creating custom_type for provider-update",
+    "customAttributeValues" : [ {
+      "id" : 408,
+      "value" : "test_val_1_for_custom_attr_type_for_sp",
+      "description" : "creating first value for s provider 1"
+    }, {
+      "id" : 410,
+      "value" : "test_val_1_for_custom_attr_type_for_sp_1",
+      "description" : "creating first value for s provider update"
+    }, {
+      "id" : 409,
+      "value" : "test_val_2_for_custom_attr_type_for_sp",
+      "description" : "creating second value for s provider 2"
+    }, {
+      "id" : 411,
+      "value" : "test_val_2_for_custom_attr_type_for_sp_2",
+      "description" : "updated check"
+    } ],
+    "organization" : {
+      "id" : 1,
+      "uniqueId" : "org_1",
+      "name" : "Vistara SaaS Platform",
+      "activated" : true
+    }
+  }, {
+    "id" : 67,
+    "name" : "Service provider custom attr",
+    "description" : "description about custom attr",
+    "organization" : {
+      "id" : 1,
+      "uniqueId" : "org_1",
+      "name" : "Vistara SaaS Platform",
+      "activated" : true
+    }
+  }, {
+    "id" : 66,
+    "name" : "Test",
+    "description" : "",
+    "customAttributeValues" : [ {
+      "id" : 398,
+      "value" : "custom attribute val for partner",
+      "description" : "test case"
+    } ],
+    "organization" : {
+      "id" : 1,
+      "uniqueId" : "org_1",
+      "name" : "Vistara SaaS Platform",
+      "activated" : true
+    }
+  } ],
+  "totalResults" : 3,
+  "orderBy" : "tag.id",
+  "pageNo" : 1,
+  "pageSize" : 10,
+  "totalPages" : 1,
+  "nextPage" : false,
+  "nextPageNo" : 0,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+RESPONSE CODE : 200 OK

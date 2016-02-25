@@ -1,0 +1,75 @@
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/shiftSchedules/{shiftScheduleId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+RESPONSE:
+{
+  "id" : 8,
+  "mspId" : 92,
+  "timeZone" : {
+    "id" : 5,
+    "version" : 0,
+    "name" : "America/Phoenix",
+    "label" : "GMT -07:00 Mountain",
+    "code" : "MST",
+    "timezoneCodeWithDST" : "MST",
+    "labelWithDST" : "GMT -07:00 Mountain Standard Time"
+  },
+  "allClients" : true,
+  "scheduleName" : "1. created from UI for all clients",
+  "createdBy" : {
+    "id" : "USR0000002113",
+    "loginName" : "deepu@superadmin",
+    "lastName" : "DEEPU",
+    "firstName" : "MUNGAMURI",
+    "email" : "deepu.mungamuri@vistarait.com",
+    "changePassword" : false
+  },
+  "updatedBy" : {
+    "id" : "USR0000000001",
+    "loginName" : "superadmin",
+    "lastName" : "Admin",
+    "firstName" : "Super",
+    "email" : "sarma519@gmail.com",
+    "changePassword" : false
+  },
+  "createdTime" : "2015-08-26T09:31:36+0530",
+  "updatedTime" : "2015-12-16T19:18:51+0530",
+  "escalationShiftDetails" : [ {
+    "id" : 8,
+    "shiftName" : "shift 1",
+    "shiftType" : 1,
+    "startTime" : "17:00:00",
+    "endTime" : "18:00:00",
+    "sunday" : true,
+    "monday" : false,
+    "tuesday" : false,
+    "wednesday" : false,
+    "thursday" : false,
+    "friday" : false,
+    "saturday" : false,
+    "shiftUsers" : [ {
+      "id" : "USR0000000453",
+      "loginName" : "test@autotask.19",
+      "lastName" : "Autotask",
+      "firstName" : "Admin",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    } ],
+    "primaryContact" : {
+      "id" : "USR0000000453",
+      "loginName" : "test@autotask.19",
+      "lastName" : "Autotask",
+      "firstName" : "Admin",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    }
+  } ]
+}
+
+Response Code: 200 OK

@@ -1,0 +1,14 @@
+URL: https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeId}
+
+METHOD: DELETE
+ 
+HEADERS:
+  	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+EX : 1. https://api.vistara.io/api/v2/serviceProvider/customAttributes/12
+
+RESPONSE : null
+
+RESPONSE CODE : 200 OK

@@ -1,0 +1,16 @@
+Method: POST
+URL: /api/mobile/auth/signout
+
+Headers:
+	Authorization : Basic c3N2Ok5ldCF0aXZhbW81YjY=
+	Content-Type : application/json
+	Accept : application/json 
+
+Input Payload: NONE
+
+Response Payload: NONE
+
+Response Code: 200 OK
+
+Note: Encode username and password with colon(:) in between using Base64 algorithm.
+base64_encode(loginName:password). Include this with 'Basic' prefix in Authorization header. 

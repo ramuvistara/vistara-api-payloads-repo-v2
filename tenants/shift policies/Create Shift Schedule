@@ -1,0 +1,76 @@
+URL : https://api.vistara.io/api/v2/tenants/{orgId}/shiftSchedules
+
+METHOD : POST
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+
+MANDATORY FEILDS:
+	allClients || clients
+	scheduleName
+	timeZone
+	shiftName
+	shiftType [1 || 2]
+	shiftUsers
+	
+JSON/PAYLOAD :
+{
+   "timeZone": {
+      "id": "5"
+   },
+   "allClients": "true",
+   "clients": [
+      {
+         "id": "93"
+      }
+   ],
+   "scheduleName": "SCHEDULE created from api",
+   "escalationShiftDetails": [
+      {
+         "shiftName": "SHIFT name",
+         "shiftType": "2",
+         "startDateandTime": "2015-08-27T11:26:00+0530",
+         "endDateandTime": "2015-08-28T10:37:00+0530",
+         "weekDayStartHour": "10",
+         "weekDayStartMin": "30",
+         "weekDayEndHour": "13",
+         "weekDayEndMin": "30",
+         "sunday": "false",
+         "monday": "false",
+         "tuesday": "false",
+         "wednesday": "false",
+         "thursday": "false",
+         "friday": "true",
+         "saturday": "false",
+         "primaryContact": {
+            "loginName": "deepu@partner"
+         },
+         "shiftUsers": [
+            {
+               "loginName": "deepu@partner"
+            }
+         ]
+      }
+   ]
+}
+
+RESPONSE DATA: 
+{
+   "id": 20,
+   "mspId": 92,
+   "timeZone": {
+      "id": 5,
+      "version": 0,
+      "name": "America/Phoenix",
+      "label": "GMT -07:00 Mountain",
+      "code": "MST",
+      "timezoneCodeWithDST": "MST",
+      "labelWithDST": "GMT -07:00 Mountain Standard Time"
+   },
+   "allClients": false,
+   "scheduleName": "SCHEDULE created from api",
+   "createdBy": 2095,
+   "updatedBy": 0
+}
+Response Code : 200 OK

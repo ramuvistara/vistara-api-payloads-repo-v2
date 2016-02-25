@@ -1,0 +1,41 @@
+URL: https://api.vistara.io/api/v2//tenants/{orgId}/userGroups 
+
+METHOD: GET
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+ 
+
+ex: https://api.vistara.io/api/v2//tenants/client_69919/userGroups
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+
+RESPONSE:
+.........
+{
+	"results": [{
+		"name": "test_api",
+		"userCount": 0,
+		"unAssignUsers": []
+	},
+	{
+		"name": "user_group_new",
+		"userCount": 0,
+		"unAssignUsers": []
+	},
+	{
+		"name": "user_group_dell_client",
+		"userCount": 0,
+		"unAssignUsers": []
+	}],
+	"totalResults": 3,
+	"pageNo": 1,
+	"pageSize": 10,
+	"totalPages": 1,
+	"nextPage": false,
+	"nextPageNo": 0,
+	"previousPageNo": 0,
+	"decendingOrder": false
+}

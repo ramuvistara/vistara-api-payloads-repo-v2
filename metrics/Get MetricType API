@@ -1,0 +1,31 @@
+URL: api/v2/metric/tenants/{tenant}/metrics/{metric}/metricType
+
+METHOD: GET
+
+HEADER:
+1. Authorization = "Bearer {accessToken}"
+2. Accept = "application/json"
+ 
+MANDATORY FIELD:
+................
+tenant
+metric
+
+ex: api/v2/metric/tenants/client_581250/metrics/system.cpu.utilization/metricType
+
+RESPONSE:
+
+{
+"metricName": "system.cpu.utilization",
+"groupName": "system.cpu.*",
+"type": "Guage",
+"displayName": "CPU Utilization",
+"unit": "%",
+"factor": 1,
+"unitLabel": "Utilization",
+"description": "The percentage of elapsed time that the processor spends to execute a non-Idle thread",
+"consolFunc": "AVERAGE",
+"displayByComponent": false,
+"displayOrder": 0,
+"topMetric": true
+}

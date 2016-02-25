@@ -1,0 +1,97 @@
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/users/{userId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/tenants/client_93/users/USR0000002114
+ 
+RESPONSE : 
+{
+   "id": "USR0000002114",
+   "loginName": "deepu@client",
+   "lastName": "mungamuri",
+   "firstName": "client_deepu",
+   "email": "deepu.mungamuri@vistarait.com",
+   "altEmail": "deepu.mungamuri94@gmail.com",
+   "userAccountType": "REGULAR",
+   "designation": "client purpose",
+   "address": "",
+   "city": "rajahmundry",
+   "state": "telangana",
+   "country": "India",
+   "zip": "500081",
+   "phoneNumber": "",
+   "mobileNumber": "9581963860",
+   "timeZone": {
+      "id": "19",
+      "name": "Asia/Calcutta",
+      "label": "GMT +05:30 India",
+      "code": "IST"
+   },
+   "authType": "LOCAL",
+   "userGroups": [
+      {
+         "id": 0,
+         "name": "grp1",
+         "userCount": 0,
+         "assignUsers": [],
+         "unAssignUsers": []
+      }
+   ],
+   "status": "active",
+   "orgId": "client_93",
+   "profileImage": {
+      "description": "",
+      "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+      "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+      "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+      "imageType": ""
+   },
+   "changePassword": false,
+   "organizationName": "Brocade Lab",
+   "userNotifications": [
+      {
+         "notifyType": "Report Notification",
+         "notifyMethod": "Email",
+         "notifyInputType": "Primary Email",
+         "notifyRecurringReport": false
+      },
+      {
+         "notifyType": "Account Information",
+         "notifyMethod": "Email",
+         "notifyInputType": "Primary Email",
+         "notifyRecurringReport": false
+      },
+      {
+         "notifyType": "Alert Notification",
+         "notifyMethod": "No Notify",
+         "notifyRecurringReport": false
+      }
+   ],
+   "createdTime": "2015-08-08T18:56:57+0530",
+   "updatedTime": "2015-08-08T18:56:57+0530",
+   "roles": [
+      {
+         "id": 4,
+         "name": "Client Administrator"
+      },
+      {
+         "id": 5,
+         "name": "Client User"
+      },
+      {
+         "id": 6,
+         "name": "Customer"
+      },
+      {
+         "id": 9,
+         "name": "IT Administrator"
+      }
+   ]
+}
+
+RESONSE CODE : 200 OK

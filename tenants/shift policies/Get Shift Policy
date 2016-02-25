@@ -1,0 +1,202 @@
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/escalationPolicy/{escalationPolicyId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+RESPONSE:
+{
+  "id" : 35,
+  "mspId" : 92,
+  "mspUniqueId" : "msp_92",
+  "mspName" : "Brocade Inc",
+  "name" : "escalation policy created using api 3 schedule testing 3",
+  "description" : "description for create escalation example from api",
+  "allclients" : false,
+  "timeZone" : {
+    "id" : 5,
+    "version" : 0,
+    "name" : "America/Phoenix",
+    "label" : "GMT -07:00 Mountain",
+    "code" : "MST",
+    "labelWithDST" : "GMT -07:00 Mountain Standard Time",
+    "timezoneCodeWithDST" : "MST"
+  },
+  "createdBy" : {
+    "id" : "USR0000002095",
+    "loginName" : "vistara_system_user",
+    "lastName" : " ",
+    "firstName" : "Vistara System User",
+    "email" : "sarma519@gmail.com",
+    "changePassword" : false
+  },
+  "updatedBy" : {
+    "id" : "USR0000002095",
+    "loginName" : "vistara_system_user",
+    "lastName" : " ",
+    "firstName" : "Vistara System User",
+    "email" : "sarma519@gmail.com",
+    "changePassword" : false
+  },
+  "createdTime" : "2015-08-26T17:41:52+0530",
+  "updatedTime" : "2015-10-28T10:24:01+0530",
+  "autoNotification" : true,
+  "escalationIndiceDetails" : [ {
+    "id" : 12,
+    "priority" : 1,
+    "repeatCount" : 2,
+    "repeatFreqHours" : 0,
+    "repeatFreqMinutes" : 0,
+    "schedule" : {
+      "id" : 13,
+      "mspId" : 92,
+      "timeZone" : {
+        "id" : 5,
+        "version" : 0,
+        "name" : "America/Phoenix",
+        "label" : "GMT -07:00 Mountain",
+        "code" : "MST",
+        "labelWithDST" : "GMT -07:00 Mountain Standard Time",
+        "timezoneCodeWithDST" : "MST"
+      },
+      "allClients" : false,
+      "clients" : [ {
+        "id" : 93,
+        "uniqueId" : "client_93",
+        "name" : "Brocade Lab",
+        "updatedTime" : "2014-11-10T13:15:01+0530",
+        "createdTime" : "2013-01-29T09:45:04+0530",
+        "lastUpdatedBy" : {
+          "id" : "USR0000000001",
+          "loginName" : "superadmin",
+          "lastName" : "Admin",
+          "firstName" : "Super",
+          "email" : "sarma519@gmail.com",
+          "changePassword" : false
+        }
+      } ],
+      "scheduleName" : "SCHEDULE created from api",
+      "createdBy" : {
+        "id" : "USR0000002095",
+        "loginName" : "vistara_system_user",
+        "lastName" : " ",
+        "firstName" : "Vistara System User",
+        "email" : "sarma519@gmail.com",
+        "changePassword" : false
+      },
+      "updatedBy" : {
+        "id" : "USR0000000001",
+        "loginName" : "superadmin",
+        "lastName" : "Admin",
+        "firstName" : "Super",
+        "email" : "sarma519@gmail.com",
+        "changePassword" : false
+      },
+      "createdTime" : "2015-08-26T09:52:25+0530",
+      "updatedTime" : "2015-12-16T19:20:05+0530",
+      "escalationShiftDetails" : [ {
+        "id" : 13,
+        "shiftName" : "SHIFT name",
+        "shiftType" : 2,
+        "sunday" : false,
+        "monday" : false,
+        "tuesday" : false,
+        "wednesday" : false,
+        "thursday" : false,
+        "friday" : false,
+        "saturday" : false,
+        "startDateandTime" : "2015-12-18T11:26:00+0530",
+        "endDateandTime" : "2015-12-21T10:37:00+0530",
+        "shiftUsers" : [ {
+          "id" : "USR0000002115",
+          "loginName" : "deepu@partner",
+          "lastName" : "mungamuri",
+          "firstName" : "partner_deepu",
+          "email" : "deepu.mungamuri@vistarait.com",
+          "changePassword" : false
+        } ],
+        "primaryContact" : {
+          "id" : "USR0000002115",
+          "loginName" : "deepu@partner",
+          "lastName" : "mungamuri",
+          "firstName" : "partner_deepu",
+          "email" : "deepu.mungamuri@vistarait.com",
+          "changePassword" : false
+        }
+      } ]
+    },
+    "severityTypes" : [ "WARNING", "CRITICAL" ]
+  } ],
+  "clients" : [ {
+    "id" : 93,
+    "uniqueId" : "client_93",
+    "name" : "Brocade Lab",
+    "updatedTime" : "2014-11-10T13:15:01+0530",
+    "createdTime" : "2013-01-29T09:45:04+0530",
+    "lastUpdatedBy" : {
+      "id" : "USR0000000001",
+      "loginName" : "superadmin",
+      "lastName" : "Admin",
+      "firstName" : "Super",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    }
+  } ],
+  "assignedLocations" : [ {
+    "id" : 69659,
+    "name" : "API Location 11",
+    "clientId" : 93,
+    "mspId" : 92,
+    "description" : "Testing for Creating Site",
+    "address" : "testing 123",
+    "phoneNumber" : "9999999999",
+    "primaryContact" : {
+      "id" : "USR0000002111",
+      "loginName" : "rajesh",
+      "lastName" : "bokka",
+      "firstName" : "rajesh",
+      "email" : "rajeshbokka481@gmail.com",
+      "changePassword" : false
+    }
+  } ],
+  "assignedDeviceGroups" : [ {
+    "id" : "1664",
+    "name" : "A",
+    "description" : "",
+    "assignDevices" : [ {
+      "uniqueId" : "DEV0000015773",
+      "name" : "Active.Director",
+      "type" : "DEVICE"
+    } ],
+    "createdTime" : 1428989650000,
+    "updatedTime" : 1428989650000,
+    "deviceCount" : 1
+  } ],
+  "assignedDevices" : [ {
+    "id" : "DEV0000016029",
+    "generalInfo" : {
+      "ipAddresses" : "172.2.2.1",
+      "make" : "",
+      "hostName" : "hydlpt124test.ne.com",
+      "deviceType" : "Desktop",
+      "buildNumber" : 0,
+      "createdTime" : "2013-07-15T13:46:54+0530",
+      "updatedTime" : "2014-12-17T10:47:41+0530",
+      "agentDeploytime" : ""
+    },
+    "bios" : {
+      "systemModel" : ""
+    },
+    "consoles" : [ ],
+    "status" : "UNKNOWN",
+    "state" : "active",
+    "clientUniqueId" : "client_93",
+    "ipAddress" : "172.2.2.1",
+    "type" : "DEVICE"
+  } ]
+}
+
+Response Code: 200 OK

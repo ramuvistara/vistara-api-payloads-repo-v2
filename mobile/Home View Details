@@ -1,0 +1,152 @@
+Method: GET
+URL: /api/basic/home/details
+ 
+Headers:
+	Authorization : Basic c3N2Ok5ldCF0aXZhbW81YjY=
+	Content-Type : application/json
+	Accept : application/json 
+	
+Response Payload:
+	{
+	"totalDevicesCount": 100,
+	"upDevicesCount": 75,
+	"downDevicesCount": 5,
+	"unknownDevicesCount": 20,
+	"openAlertsCount": 300,
+	"openRequestCount": 11,
+	"resolvedRequestCount": 7,
+	"recentTickets": [
+		{
+			"id": "INC0000000134",
+			"subject": "create incident on Friday 20 ",
+			"description": "few to to end KNVB hzhfn",
+			"status": "New",
+			"priority": "Very Low",
+			"requester": {
+				"id": "USR0000000047",
+				"loginName": "tulasirao.jogi@vistarait.com",
+				"email": "tulasirao.jogi@vistarait.com",
+				"phoneNumber": "",
+				"orgId": "client_12",
+				"profileImage": {
+					"logoPath": "https://itop.vistarait.net/images/users/47/profileImages/9.jpg?1423551874000",
+					"thumbPath": "https://itop.vistarait.net/images/users/47/profileImages/thumb-9.jpg?1423551874000",
+					"tinyThumbPath": "https://itop.vistarait.net/images/users/47/profileImages/tiny-thumb-9.jpg?1423551874000",
+					"imageType": "image/jpeg"
+				},
+				"changePassword": false,
+				"organizationName": "ITSM Mob App"
+			},
+			"ticketArisedTime": "",
+			"createdDate": "2015-02-20T06:47:47+0000",
+			"resolutionSummary": "",
+			"allowedStatus": [
+				{
+					"id": "2",
+					"name": "Open"
+				}
+			]
+		},
+		{
+			"id": "INC0000000126",
+			"subject": "Sample description to test the CCs field in Create Incident api",
+			"description": "Sample description to test the create incident CCs field",
+			"status": "Closed",
+			"priority": "Very Low",
+			"requester": {
+				"id": "USR0000000046",
+				"loginName": "krishna.kothapalli",
+				"email": "krishna.kothapalli@vistarait.com",
+				"phoneNumber": "",
+				"orgId": "client_12",
+				"profileImage": {
+					"logoPath": "https://itop.vistarait.net/images/users/46/profileImages/10.jpg?1423220564000",
+					"thumbPath": "https://itop.vistarait.net/images/users/46/profileImages/thumb-10.jpg?1423220564000",
+					"tinyThumbPath": "https://itop.vistarait.net/images/users/46/profileImages/tiny-thumb-10.jpg?1423220564000",
+					"imageType": "image/jpeg"
+				},
+				"changePassword": false,
+				"organizationName": "ITSM Mob App"
+			},
+			"assignedUser": {
+				"id": "USR0000000046",
+				"loginName": "krishna.kothapalli",
+				"email": "krishna.kothapalli@vistarait.com",
+				"phoneNumber": "",
+				"orgId": "client_12",
+				"profileImage": {
+					"logoPath": "https://itop.vistarait.net/images/users/46/profileImages/10.jpg?1423220564000",
+					"thumbPath": "https://itop.vistarait.net/images/users/46/profileImages/thumb-10.jpg?1423220564000",
+					"tinyThumbPath": "https://itop.vistarait.net/images/users/46/profileImages/tiny-thumb-10.jpg?1423220564000",
+					"imageType": "image/jpeg"
+				},
+				"changePassword": false,
+				"organizationName": "ITSM Mob App"
+			},
+			"assigneeGroup": {
+				"name": "iOS Mobile app",
+				"userCount": 0,
+				"unAssignUsers": []
+			},
+			"ticketArisedTime": "",
+			"createdDate": "2015-02-09T14:32:51+0000",
+			"suspendReason": "Awaiting Transport of Device",
+			"suspendEndDate": "2015-02-10T06:45:41+0000",
+			"closureData": "Not Applicable",
+			"resolutionSummary": "",
+			"allowedStatus": []
+		},
+		{
+			"id": "INC0000000127",
+			"subject": "Sample description to test the CCs field in Create Incident api",
+			"description": "Sample description to test the create incident CCs field",
+			"status": "Resolved",
+			"priority": "Very Low",
+			"requester": {
+				"id": "USR0000000046",
+				"loginName": "krishna.kothapalli",
+				"email": "krishna.kothapalli@vistarait.com",
+				"phoneNumber": "",
+				"orgId": "client_12",
+				"profileImage": {
+					"logoPath": "https://itop.vistarait.net/images/users/46/profileImages/10.jpg?1423220564000",
+					"thumbPath": "https://itop.vistarait.net/images/users/46/profileImages/thumb-10.jpg?1423220564000",
+					"tinyThumbPath": "https://itop.vistarait.net/images/users/46/profileImages/tiny-thumb-10.jpg?1423220564000",
+					"imageType": "image/jpeg"
+				},
+				"changePassword": false,
+				"organizationName": "ITSM Mob App"
+			},
+			"assignedUser": {
+				"id": "USR0000000046",
+				"loginName": "krishna.kothapalli",
+				"email": "krishna.kothapalli@vistarait.com",
+				"phoneNumber": "",
+				"orgId": "client_12",
+				"profileImage": {
+					"logoPath": "https://itop.vistarait.net/images/users/46/profileImages/10.jpg?1423220564000",
+					"thumbPath": "https://itop.vistarait.net/images/users/46/profileImages/thumb-10.jpg?1423220564000",
+					"tinyThumbPath": "https://itop.vistarait.net/images/users/46/profileImages/tiny-thumb-10.jpg?1423220564000",
+					"imageType": "image/jpeg"
+				},
+				"changePassword": false,
+				"organizationName": "ITSM Mob App"
+			},
+			"assigneeGroup": {
+				"name": "iOS Mobile app",
+				"userCount": 0,
+				"unAssignUsers": []
+			},
+			"ticketArisedTime": "",
+			"createdDate": "2015-02-09T14:35:44+0000",
+			"resolutionCategory": "Hardware",
+			"resolutionSummary": "kljklfdggfsd ",
+			"allowedStatus": []
+		}
+	]
+}
+	
+Response Code: 200 OK
+ 
+Note: Encode username and password with colon(:) in between using Base64 algorithm.
+base64_encode(loginName:password). Include this with 'Basic' prefix in Authorization header.

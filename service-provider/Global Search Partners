@@ -1,0 +1,194 @@
+URL: https://api.vistara.io/api/v2/serviceProvider/partners/search
+
+METHOD: GET
+
+HEADER:
+	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+	Content-Type : application/json
+	Accept : application/json 
+
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=msp.id [optional]
+5.	queryString = {queryString} [optional]
+
+QUERY VARIABLES:
+ ...............
+1.	uniqueId		[ex : msp_1]
+2.	name
+3.	startCreationDate	[ex : 2015-11-01T11:49:21 0530]
+4.	endCreationDate
+5.	startUpdationDate
+6.	endUpdationDate
+
+EX : https://api.vistara.io/api/v2/serviceProvider/partners/search?pageSize:5&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+
+RESPONSE : 
+{
+   "results": [
+      {
+         "id": 69855,
+         "uniqueId": "msp_69855",
+         "name": "Tru Technical Partners",
+         "activated": true,
+         "updatedTime": "2014-04-02T11:39:57+0530",
+         "createdTime": "2014-04-01T16:15:20+0530",
+         "channel": {
+            "id": 1,
+            "name": "Ingram Micro",
+            "timeZone": "America/Los_Angeles"
+         },
+         "timeZone": "America/Los_Angeles",
+         "address": "286 East Hamilton Avenue, Suite D",
+         "city": "Campbell",
+         "state": "CA",
+         "country": "United States",
+         "zip": "95008",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "showCopyClipBoard": true,
+         "primaryAdmin": {
+            "id": "USR0000002107",
+            "loginName": "Test User",
+            "firstName": "Test User",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sp": false,
+         "nsp": false,
+         "isp": false,
+         "partnerCommunity": false,
+         "primaryLocationSupportRadius": 0,
+         "tncAccepted": false,
+         "mspDetails": {
+            "escStatus": 0,
+            "skuSupport": false,
+            "applicationPatchSupport": false,
+            "rsaSupport": false,
+            "kbSupport": true,
+            "scheduledTaskSupport": true,
+            "ticketModule": "LEGACY",
+            "slaModule": false,
+            "ticketingModule": true,
+            "tcksSupport": true,
+            "ticketingSystem": {
+               "webLoginURL": "http://connect.trutechnicaljagu.com",
+               "companyName": "sai",
+               "userName": "netenrich",
+               "deviceIntegrationEnabled": true
+            },
+            "legacyTicketingIntegration": false
+         }
+      },
+      {
+         "id": 69848,
+         "uniqueId": "msp_69848",
+         "name": "test var123",
+         "activated": true,
+         "updatedTime": "",
+         "createdTime": "2013-12-20T08:57:30+0530",
+         "channel": {
+            "id": 1,
+            "name": "Ingram Micro",
+            "timeZone": "America/Los_Angeles"
+         },
+         "timeZone": "America/Los_Angeles",
+         "address": "hyderabad",
+         "city": "",
+         "state": "",
+         "country": "United States",
+         "zip": "",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "showCopyClipBoard": true,
+         "primaryAdmin": {
+            "id": "USR0000002100",
+            "loginName": "abcd@ne.com",
+            "firstName": "abcd@ne.com",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sp": false,
+         "nsp": false,
+         "isp": false,
+         "partnerCommunity": false,
+         "primaryLocationSupportRadius": 0,
+         "tncAccepted": false,
+         "mspDetails": {
+            "escStatus": 0,
+            "skuSupport": false,
+            "applicationPatchSupport": false,
+            "rsaSupport": false,
+            "kbSupport": true,
+            "scheduledTaskSupport": true,
+            "ticketModule": "LEGACY",
+            "slaModule": false,
+            "ticketingModule": false,
+            "tcksSupport": false,
+            "legacyTicketingIntegration": false
+         }
+      },
+      {
+         "id": 69847,
+         "uniqueId": "msp_69847",
+         "name": "NetApp Inc",
+         "activated": true,
+         "updatedTime": "",
+         "createdTime": "2013-11-29T12:02:25+0530",
+         "channel": {
+            "id": 3,
+            "name": "NetEnrich",
+            "timeZone": "America/Los_Angeles"
+         },
+         "timeZone": "Asia/Calcutta",
+         "address": "Hyd",
+         "city": "",
+         "state": "",
+         "country": "India",
+         "zip": "",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "showCopyClipBoard": true,
+         "primaryAdmin": {
+            "id": "USR0000002099",
+            "loginName": "netadmin",
+            "lastName": ".",
+            "firstName": "netadmin",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "sp": false,
+         "nsp": false,
+         "isp": false,
+         "partnerCommunity": false,
+         "primaryLocationSupportRadius": 0,
+         "tncAccepted": false,
+         "mspDetails": {
+            "escStatus": 0,
+            "skuSupport": false,
+            "applicationPatchSupport": false,
+            "rsaSupport": false,
+            "kbSupport": true,
+            "scheduledTaskSupport": true,
+            "ticketModule": "VISTARA",
+            "slaModule": false,
+            "ticketingModule": false,
+            "tcksSupport": false,
+            "legacyTicketingIntegration": false
+         }
+      }
+   ],
+   "totalResults": 33,
+   "orderBy": "msp.id",
+   "pageNo": 1,
+   "pageSize": 3,
+   "totalPages": 11,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
+}
+
+RESPONSE CODE : 200 OK

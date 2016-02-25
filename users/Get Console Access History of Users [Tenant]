@@ -1,0 +1,112 @@
+URL : https://api.vistara.io/api/v2/tenants/{tenantId}/devices/auditRecordings/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.	queryString={field} [optional]
+
+QUERY VARIABLES : 
+1.	id
+2.	uniqueId
+3.	userId            [EX : USR0000000001]
+4.	startDate  
+5.	endDate
+
+EX :  1. https://api.vistara.io/api/v2/tenants/client_93/devices/auditRecordings/search?pageSize=2&queryString=userId:USR0000002114+startDate:2014-12-12T01:13:12 0530+startDate:2015-12-12T01:13:12 0530
+      2. https://api.vistara.io/api/v2/tenants/msp_92/devices/auditRecordings/search?pageSize=2&queryString=userId:USR0000002113+startDate:2014-12-12T01:13:12 0530+startDate:2015-12-12T01:13:12 0530
+
+NOTE : 
+    	special characters in queryString:
+    	1.	%2B -- indicate next field
+    	2.	: -- indicate equals to
+    	3.	dataformate should be in yyyy-MM-dd'T'HH:mm:ssZ
+
+RESPONSE : 
+{
+  "results" : [ {
+    "id" : 2,
+    "client" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    },
+    "parnterName" : "Brocade Inc",
+    "partnerId" : "msp_92",
+    "user" : {
+      "id" : "USR0000002114",
+      "loginName" : "deepu@client",
+      "lastName" : "mungamuri",
+      "firstName" : "client_deepu",
+      "email" : "deepu.mungamuri@vistarait.com",
+      "changePassword" : false
+    },
+    "device" : {
+      "id" : "DEV0000015773",
+      "generalInfo" : {
+        "ipAddresses" : "11.0.0.26",
+        "hostName" : "Active.Director",
+        "buildNumber" : 0
+      },
+      "clientUniqueId" : "client_93",
+      "type" : "DEVICE"
+    },
+    "protocol" : "NSS",
+    "ipAddress" : "10.2.3.50",
+    "startTime" : "2016-02-03T13:18:25+0530",
+    "endTime" : "2016-02-03T13:18:25+0530",
+    "notes" : "notes test",
+    "recordingUrl": "https://app.vistarait.com/computer.do?action=launchPlayer&recId=2"
+  }, {
+    "id" : 1,
+    "client" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    },
+    "parnterName" : "Brocade Inc",
+    "partnerId" : "msp_92",
+    "user" : {
+      "id" : "USR0000002114",
+      "loginName" : "deepu@client",
+      "lastName" : "mungamuri",
+      "firstName" : "client_deepu",
+      "email" : "deepu.mungamuri@vistarait.com",
+      "changePassword" : false
+    },
+    "device" : {
+      "id" : "DEV0000015773",
+      "generalInfo" : {
+        "ipAddresses" : "11.0.0.26",
+        "hostName" : "Active.Director",
+        "buildNumber" : 0
+      },
+      "clientUniqueId" : "client_93",
+      "type" : "DEVICE"
+    },
+    "protocol" : "NSS",
+    "ipAddress" : "10.2.4.3",
+    "recordingUrl": "https://app.vistarait.com/computer.do?action=launchPlayer&recId=2"
+  } ],
+  "totalResults" : 2,
+  "orderBy" : "id",
+  "pageNo" : 1,
+  "pageSize" : 10,
+  "totalPages" : 1,
+  "nextPage" : false,
+  "nextPageNo" : 0,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+RESPONSE CODE : 200 OK

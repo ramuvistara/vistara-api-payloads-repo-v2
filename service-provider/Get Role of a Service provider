@@ -1,0 +1,52 @@
+URL: https://api.vistara.io/api/v2/serviceProvider/roles/{roleId}
+ 
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX : https://api.vistara.io/api/v2/serviceProvider/roles/79
+ 
+RESPONSE : 
+{
+   "id": 79,
+   "name": "testing for service provider",
+   "description": "test case 1",
+   "users": [
+      {
+         "id": "USR0000000004",
+         "loginName": "ambuj.jain@netenrich.com",
+         "lastName": "Jain",
+         "firstName": "Ambuj",
+         "email": "sarma519@gmail.com",
+         "changePassword": false
+      },
+      {
+         "id": "USR0000000078",
+         "loginName": "amitabh",
+         "lastName": "Mishra",
+         "firstName": "Amitabh",
+         "email": "sarma519@gmail.com",
+         "changePassword": false
+      }
+   ],
+   "permissions": [
+      {
+         "id": 1,
+         "name": "Service Provider Administrator",
+         "description": "Service Provider Admin"
+      },
+      {
+         "id": 74,
+         "name": "SERVICE_PROVIDER_STANDARD",
+         "description": "STANDARD"
+      }
+   ],
+   "allDevices": true,
+   "allCredentials": true,
+   "allClients": true
+}
+
+RESPONSE CODE : 200 OK

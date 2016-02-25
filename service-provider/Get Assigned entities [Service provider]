@@ -1,0 +1,184 @@
+URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeId}/assignedEntities/search
+
+METHOD : GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
+QUERY PARAMS:
+1.	pageNo={pageNo} defaultValue=1 [optional]
+2.	pageSize={pageSize} defaultValue=10 [optional]
+3.	isDescendingOrder={true/false} defaultValue=true [optional]
+4.	sortName={field} defaultValue=id [optional]
+5.	queryString={field} [optional]
+
+QUERY VARIABLES : 
+1.	id
+2.	value
+3.	source
+
+EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/assignedEntities/search
+     
+NOTE : This api can be used to get list of assigned entities of a service provider.
+
+RESPONSE :
+{
+  "results" : [ {
+    "id" : 1277,
+    "customAttributeValue" : {
+      "id" : 410,
+      "customAttribute" : {
+        "id" : 71,
+        "name" : "custom_attr_type_for_service_provider",
+        "description" : "creating custom_type for provider-update",
+        "organization" : {
+          "id" : 1,
+          "uniqueId" : "org_1",
+          "name" : "Vistara SaaS Platform",
+          "activated" : true
+        }
+      },
+      "value" : "test_val_1_for_custom_attr_type_for_sp_1",
+      "description" : "creating first value for s provider update"
+    },
+    "taggable" : {
+      "id" : "client_93",
+      "name" : "Brocade Lab",
+      "entityType" : "Client"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1276,
+    "customAttributeValue" : {
+      "id" : 410,
+      "customAttribute" : {
+        "id" : 71,
+        "name" : "custom_attr_type_for_service_provider",
+        "description" : "creating custom_type for provider-update",
+        "organization" : {
+          "id" : 1,
+          "uniqueId" : "org_1",
+          "name" : "Vistara SaaS Platform",
+          "activated" : true
+        }
+      },
+      "value" : "test_val_1_for_custom_attr_type_for_sp_1",
+      "description" : "creating first value for s provider update"
+    },
+    "taggable" : {
+      "id" : "client_69856",
+      "name" : "Brocade Inc Client",
+      "entityType" : "Client"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1275,
+    "customAttributeValue" : {
+      "id" : 409,
+      "customAttribute" : {
+        "id" : 71,
+        "name" : "custom_attr_type_for_service_provider",
+        "description" : "creating custom_type for provider-update",
+        "organization" : {
+          "id" : 1,
+          "uniqueId" : "org_1",
+          "name" : "Vistara SaaS Platform",
+          "activated" : true
+        }
+      },
+      "value" : "test_val_2_for_custom_attr_type_for_sp",
+      "description" : "creating second value for s provider 2"
+    },
+    "taggable" : {
+      "id" : "1674",
+      "name" : "BB",
+      "entityType" : "ServiceGroup"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1274,
+    "customAttributeValue" : {
+      "id" : 408,
+      "customAttribute" : {
+        "id" : 71,
+        "name" : "custom_attr_type_for_service_provider",
+        "description" : "creating custom_type for provider-update",
+        "organization" : {
+          "id" : 1,
+          "uniqueId" : "org_1",
+          "name" : "Vistara SaaS Platform",
+          "activated" : true
+        }
+      },
+      "value" : "test_val_1_for_custom_attr_type_for_sp",
+      "description" : "creating first value for s provider 1"
+    },
+    "taggable" : {
+      "id" : "1675",
+      "name" : "Auto",
+      "entityType" : "ServiceGroup"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1273,
+    "customAttributeValue" : {
+      "id" : 408,
+      "customAttribute" : {
+        "id" : 71,
+        "name" : "custom_attr_type_for_service_provider",
+        "description" : "creating custom_type for provider-update",
+        "organization" : {
+          "id" : 1,
+          "uniqueId" : "org_1",
+          "name" : "Vistara SaaS Platform",
+          "activated" : true
+        }
+      },
+      "value" : "test_val_1_for_custom_attr_type_for_sp",
+      "description" : "creating first value for s provider 1"
+    },
+    "taggable" : {
+      "id" : "1672",
+      "name" : "A",
+      "entityType" : "ServiceGroup"
+    },
+    "tagSource" : "VISTARA"
+  }, {
+    "id" : 1250,
+    "customAttributeValue" : {
+      "id" : 411,
+      "customAttribute" : {
+        "id" : 71,
+        "name" : "custom_attr_type_for_service_provider",
+        "description" : "creating custom_type for provider-update",
+        "organization" : {
+          "id" : 1,
+          "uniqueId" : "org_1",
+          "name" : "Vistara SaaS Platform",
+          "activated" : true
+        }
+      },
+      "value" : "test_val_2_for_custom_attr_type_for_sp_2",
+      "description" : "updated check"
+    },
+    "taggable" : {
+      "id" : "msp_92",
+      "name" : "Brocade Inc",
+      "entityType" : "MSP"
+    },
+    "tagSource" : "VISTARA"
+  } ],
+  "totalResults" : 6,
+  "orderBy" : "id",
+  "pageNo" : 1,
+  "pageSize" : 10,
+  "totalPages" : 1,
+  "nextPage" : false,
+  "nextPageNo" : 0,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
+}
+
+RESPONSE CODE : 200 OK

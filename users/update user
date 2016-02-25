@@ -1,0 +1,44 @@
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/users/{userid}
+
+METHOD: POST
+
+HEADER:
+1.	Authorization = "Bearer  {accessToken}"	
+2.	Accept  = "application/json"
+ 
+ MANDATORY FIELDS:
+ .................
+ 1) firstName
+ 
+ REQUEST:
+.........
+ {
+	"lastName": "testing_api_client",
+	"firstName": "testing_api",
+	"email": "test@gmail.com",
+	"address": "hyderabad",
+	"city": "hyderabad",
+	"state": "Andra Pradesh",
+	"country": "United States",
+	"timeZone": {"code" : "PSTM"},
+	"phoneNumber": "09887485473",
+	"mobileNumber": "9432434453",
+	"userGroups": [{
+		"name": "user_group_new"
+	},
+	{
+		"name": "user_group_dell_client"
+	}],
+	"acls": [{
+	"name":"ACS Client Administrator"
+	}]
+}
+
+ex(/api/v2/tenants/client_69919/users/USR0000002258)
+
+1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
+2.	Accept  = "application/json"
+ 
+ RESPONSE:
+ .........
+Status 200 Ok

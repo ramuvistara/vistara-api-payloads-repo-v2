@@ -1,0 +1,14 @@
+[
+  {
+    "sourceType":"DEVICE",
+    "metricName":"system.cpu.utilization",
+    "instanceVal":"13.49",
+    "ts":"1448274610"
+  },
+ {
+  "sourceType":"DEVICE",
+  "metricName":"system.ping.rta",
+  "instanceVal":"10.49",
+  "ts":"1448274620"
+  }
+]
