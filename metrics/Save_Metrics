@@ -1,10 +1,25 @@
 Action : To save list of Metrics
 URI    : https://api.vistara.io/api/v2/tenants/{tenant}/rtypes/{rtype}/resources/{resource}/metrics
 Method : POST
-PayLoad: list_dataLogs.json
 
 HEADER:
 	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
 	Content-Type : application/json
 	Accept : application/json 
+
+Payload:	
+[
+  {
+    "sourceType":"DEVICE",
+    "metricName":"system.cpu.utilization",
+    "instanceVal":"13.49",
+    "ts":"1448274610"
+  },
+ {
+  "sourceType":"DEVICE",
+  "metricName":"system.ping.rta",
+  "instanceVal":"10.49",
+  "ts":"1448274620"
+  }
+]
 
