@@ -34,71 +34,76 @@ NOTE :
 
 RESPONSE :
 {
-   "results": [
-      {
-         "id": 12716,
-         "partnerName": "Brocade Inc",
-         "partnerId": "msp_92",
-         "client": {
-            "id": 93,
-            "uniqueId": "client_93",
-            "name": "Brocade Lab",
-            "activated": true
-         },
-         "user": {
-            "id": "USR0000002114",
-            "loginName": "deepu@client",
-            "lastName": "mungamuri",
-            "firstName": "client_deepu",
-            "email": "deepu.mungamuri@vistarait.com",
-            "changePassword": false
-         },
-         "sourceIp": "127.0.0.1",
-         "sourceHost": "127.0.0.1",
-         "sessionId": "DD8288A5906A694C67C982ADF0E54750",
-         "status": "Logged Out",
-         "loginType": "Success",
-         "logoutType": "Normal",
-         "loginTime": "2016-01-28T07:58:54+0530",
-         "logoutTime": "2016-01-28T09:59:57+0530"
-      },
-      {
-         "id": 12709,
-         "partnerName": "Brocade Inc",
-         "partnerId": "msp_92",
-         "client": {
-            "id": 93,
-            "uniqueId": "client_93",
-            "name": "Brocade Lab",
-            "activated": true
-         },
-         "user": {
-            "id": "USR0000002114",
-            "loginName": "deepu@client",
-            "lastName": "mungamuri",
-            "firstName": "client_deepu",
-            "email": "deepu.mungamuri@vistarait.com",
-            "changePassword": false
-         },
-         "sourceIp": "127.0.0.1",
-         "sourceHost": "127.0.0.1",
-         "sessionId": "1BC85D994F8B2919A24BCE82D61D8AEB",
-         "status": "Logged Out",
-         "loginType": "Success",
-         "logoutType": "Normal",
-         "loginTime": "2016-01-25T07:01:11+0530",
-         "logoutTime": "2016-01-25T07:01:31+0530"
-      }
-   ],
-   "totalResults": 94,
-   "orderBy": "id",
-   "pageNo": 1,
-   "pageSize": 2,
-   "totalPages": 47,
-   "nextPage": true,
-   "nextPageNo": 2,
-   "previousPageNo": 0,
-   "descendingOrder": true
+  "results" : [ {
+    "id" : 12716,
+    "partner" : {
+      "id" : 92,
+      "uniqueId" : "msp_92",
+      "name" : "Brocade Inc",
+      "activated" : true
+    },
+    "client" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    },
+    "user" : {
+      "id" : "USR0000002114",
+      "loginName" : "deepu@client",
+      "lastName" : "mungamuri",
+      "firstName" : "client_deepu",
+      "email" : "deepu.mungamuri@vistarait.com",
+      "changePassword" : false
+    },
+    "sourceIp" : "127.0.0.1",
+    "sourceHost" : "127.0.0.1",
+    "sessionId" : "DD8288A5906A694C67C982ADF0E54750",
+    "status" : "Logged Out",
+    "loginType" : "Success",
+    "logoutType" : "Normal",
+    "loginTime" : "2016-01-28T07:58:54+0530",
+    "logoutTime" : "2016-01-28T09:59:57+0530"
+  }, {
+    "id" : 12709,
+    "partner" : {
+      "id" : 92,
+      "uniqueId" : "msp_92",
+      "name" : "Brocade Inc",
+      "activated" : true
+    },
+    "client" : {
+      "id" : 93,
+      "uniqueId" : "client_93",
+      "name" : "Brocade Lab",
+      "activated" : true
+    },
+    "user" : {
+      "id" : "USR0000002114",
+      "loginName" : "deepu@client",
+      "lastName" : "mungamuri",
+      "firstName" : "client_deepu",
+      "email" : "deepu.mungamuri@vistarait.com",
+      "changePassword" : false
+    },
+    "sourceIp" : "127.0.0.1",
+    "sourceHost" : "127.0.0.1",
+    "sessionId" : "1BC85D994F8B2919A24BCE82D61D8AEB",
+    "status" : "Logged Out",
+    "loginType" : "Success",
+    "logoutType" : "Normal",
+    "loginTime" : "2016-01-25T07:01:11+0530",
+    "logoutTime" : "2016-01-25T07:01:31+0530"
+  } ],
+  "totalResults" : 94,
+  "orderBy" : "id",
+  "pageNo" : 1,
+  "pageSize" : 2,
+  "totalPages" : 47,
+  "nextPage" : true,
+  "nextPageNo" : 2,
+  "previousPageNo" : 0,
+  "descendingOrder" : true
 }
 
 RESPONSE CODE : 200 OK
