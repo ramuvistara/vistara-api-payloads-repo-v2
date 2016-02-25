@@ -1,0 +1,13 @@
+URL: https://api.vistara.io/api/v2/
+ 
+Method: GET
+ 
+Headers:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
+
+Request:
+
+Response Code: 200 OK
+Response:
