@@ -8,8 +8,12 @@ Headers:
 	Accept: application/json
 
 Mandatory Fields:
+	Field1	[Example/Format]
+	Field2	[Example/Format]
 	
 Optional Fields:
+	Field3	[Example/Format]
+	Field4	[Example/Format]
 	
 Request:
 	{
