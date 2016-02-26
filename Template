@@ -7,6 +7,10 @@ Headers:
 	Content-Type: application/json
 	Accept: application/json
 
+Mandatory Fields:
+	
+Optional Fields:
+	
 Request:
 	{
 		
