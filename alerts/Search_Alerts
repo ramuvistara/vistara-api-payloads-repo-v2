@@ -20,17 +20,17 @@ QUERY VARIABLES:
 	2.	startDate		[Ex: 2015-08-10T05:39:51 0000]
 	3.	endDate			[Ex: 2015-08-10T05:39:51 0000]
 	4.	priority     	[P0, P1, P2, P3, P4, P5]
-	5.  uniqueId
+	5.	uniqueId
 	6.	deviceStatus	[manage, unmanage, all]
 	7.	resourceType  	[LOAD_BALANCER, SQS, EBS, DEVICE, SNS, REDSHIFT, SERVICE]
-	8.	resourceIds  	[(comma separated resourceIds)]
+	8.	resourceIds		[(comma separated resourceIds)]
 	9.	actions			[ACKNOWLEDGED, TICKETED, CLOSED, IGNORE, SUPPRESSED, OPEN, ALL - (Comma Separated actions)]
 	10	alertTypes    	[Monitoring, Maintenance, Appliance, Agent, Scheduled Maintenance, Obsolete, all - (comma separated alertTypes)]
-	11.	metrics		 	[comma separated metric names]
+	11.	metrics			[comma separated metric names]
 	12.	duration      	[1, 7, 30]
 	13	alertTimeBase 	[updated, created]
-	14. clientIds		[client_1, client_2 - (comma separated client uniqueIds)]
-	15. ticketId		[Ex: INC0000000001]
+	14.	clientIds		[client_1, client_2 - (comma separated client uniqueIds)]
+	15.	ticketId		[Ex: INC0000000001]
 
 EX: https://api.vistara.io/api/v2/tenants/client_593972/alerts/search?pageNo=1&pageSize=2&isDescendingOrder=true&sortName=ts&queryString=clientIds:client_1,client_2+startDate:2015-06-10T05:39:51 0000+endDate:2015-08-10T05:39:51 0000+priority:P0,P1+states:CRITICAL,OK+uniqueId:10+deviceStatus:manage+resourceType:REDSHIFT+resourceIds:15494,15218+actions:closed,ticketed+alertTypes:agent,obsolete+metrics:zenoss,xenapp+duration:7+alertTimeBase:updated+ticketId:INC0000000001
 
@@ -39,7 +39,7 @@ NOTE:
 	
 	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
 	2.	(:) Indicates Equals (Ex. Key : Value)
-	3.  (,) Indicates Multiple values for a key (Ex: Priority:P0,P1)
+	3.	(,) Indicates Multiple values for a key (Ex: Priority:P0,P1)
 	4.	Space Characters should be URL Encoded (Then Automatically converts to %20)
 	5.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (Ex: 2016-02-26T05:17:58 0000)
 
