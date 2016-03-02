@@ -1,4 +1,4 @@
-URL : https://api.vistara.io/api/basic/tenants/{tenantId}/clients/minimal
+URL : https://api.vistara.io/api/v2/tenants/{varId}/clients/minimal
 
 METHOD : GET
 
@@ -7,7 +7,9 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-RESPONSE :
+EX: https://api.vistara.io/api/v2/tenants/msp_92/clients/minimal
+
+RESPONSE:
 [
    {
       "id": "93",
@@ -26,5 +28,4 @@ RESPONSE :
    }
 ]
 
-
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

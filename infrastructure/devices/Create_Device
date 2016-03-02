@@ -1,15 +1,17 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices [Ex: /api/v2/tenants/client_12/devices]
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices
 
 METHOD: POST
 
-HEADER:
-	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+HEADERS:
+	Authorization : Bearer {accessToken}
 	Content-Type : application/json
-	Accept : application/json 
+	Accept : application/json
 	
 MANDATORY FIELDS:
 	1.hostName
-	2.resourceNetworkInterface [atleast one network interface with an ipAddress is required]
+	2.resourceNetworkInterface
+
+EX: https://api.vistara.io/api/v2/tenants/client_12/devices
 
 REQUEST:
 {
@@ -41,8 +43,10 @@ REQUEST:
 	}]
 }
 
-RESPONSE: 200 OK
+RESPONSE:
 {
-	resourceUUID: "612acfb0-6890-4d52-950b-1c4ec17a7248"
-	tenantID: "client_12"
+	"resourceUUID": "612acfb0-6890-4d52-950b-1c4ec17a7248",
+	"tenantID": "client_12"
 }
+
+RESPONSE CODE: 200 OK

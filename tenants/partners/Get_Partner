@@ -7,21 +7,16 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
  
-RESPONSE : 
+EX:  https://api.vistara.io/api/v2/tenants/msp_92/ 
+ 
+RESPONSE: 
 {
    "id": 92,
    "uniqueId": "msp_92",
    "name": "Brocade Inc",
-   "updatedTime": "2014-04-01T16:03:45+0530",
+   "activated": true,
+   "updatedTime": "2016-02-15T09:40:50+0530",
    "createdTime": "2013-01-29T09:42:56+0530",
-   "createdBy": {
-      "id": "USR0000000001",
-      "loginName": "superadmin",
-      "lastName": "Admin",
-      "firstName": "Super",
-      "email": "sarma519@gmail.com",
-      "changePassword": false
-   },
    "lastUpdatedBy": {
       "id": "USR0000000001",
       "loginName": "superadmin",
@@ -45,19 +40,12 @@ RESPONSE :
    "mobileNumber": "",
    "showCopyClipBoard": true,
    "primaryAdmin": {
-      "id": "USR0000000210",
       "loginName": "test@autotask.19",
       "lastName": "Autotask",
       "firstName": "Admin",
       "email": "sarma519@gmail.com",
       "changePassword": false
    },
-   "sp": false,
-   "nsp": false,
-   "isp": false,
-   "partnerCommunity": false,
-   "primaryLocationSupportRadius": 0,
-   "tncAccepted": false,
    "primaryLocation": {
       "id": 1919,
       "name": "Main Office",
@@ -71,7 +59,7 @@ RESPONSE :
       "rsaSupport": false,
       "kbSupport": true,
       "scheduledTaskSupport": true,
-      "ticketModule": "VISTARA",
+      "ticketModule": "BOTH",
       "slaModule": false,
       "ticketingModule": true,
       "tcksSupport": true,
@@ -85,4 +73,4 @@ RESPONSE :
    }
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

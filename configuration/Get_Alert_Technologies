@@ -3,77 +3,43 @@ URL: https://api.vistara.io/api/v2/cfg/alertTechnologies
 METHOD: GET
  
 HEADERS:
-	Authorization : Bearer {accessToken}
-	Content-Type : application/json
-	Accept : application/json
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
+
+EX: https://api.vistara.io/api/v2/cfg/alertTechnologies
 	
 RESPONSE :
 [
    {
-      "id": 15,
+      "id": 19,
+      "name": "Alert Logic",
+      "displayName": "Alert Logic",
+      "techUid": "ALERTLOGIC"
+   },
+   {
+      "id": 16,
       "name": "Dell Compellent",
       "displayName": "Dell Compellent",
       "techUid": "DELLCOMPELLENT"
    },
    {
-      "id": 11,
-      "name": "NewRelic",
-      "displayName": "New Relic",
-      "techUid": "NEWRELIC"
+      "id": 7,
+      "name": "Email",
+      "displayName": "Email",
+      "techUid": "Email Alerts"
    },
    {
-      "id": 12,
-      "name": "Nimsoft",
-      "displayName": "Nimsoft",
-      "techUid": "NIMSOFT"
+      "id": 21,
+      "name": "Jenkins",
+      "displayName": "Jenkins",
+      "techUid": "JENKINS"
    },
    {
-      "id": 14,
-      "name": "OpsManager",
-      "displayName": "OpsManager",
-      "techUid": "OPSMANAGER"
-   },
-   {
-      "id": 16,
-      "name": "Oracle",
-      "displayName": "Oracle",
-      "techUid": "ORACLE"
-   },
-   {
-      "id": 17,
-      "name": "Pingdom",
-      "displayName": "Pingdom",
-      "techUid": "PINGDOM"
-   },
-   {
-      "id": 10,
-      "name": "SAPSolutionManager",
-      "displayName": "SAP Solution Manager",
-      "techUid": "SAPSOLUTIONMANAGER"
-   },
-   {
-      "id": 9,
-      "name": "Solarwinds",
-      "displayName": "Solarwinds",
-      "techUid": "SOLARWINDS"
-   },
-   {
-      "id": 8,
-      "name": "Vistara",
-      "displayName": "Vistara",
-      "techUid": "VISTARA"
-   },
-   {
-      "id": 5,
-      "name": "Vistara Agent",
-      "displayName": "Vistara Agent",
-      "techUid": "NCARE"
-   },
-   {
-      "id": 3,
-      "name": "Vistara Gateway",
-      "displayName": "Vistara Gateway",
-      "techUid": "SEISMICGATEWAY"
+      "id": 4,
+      "name": "Nagios",
+      "displayName": "Nagios",
+      "techUid": "NAGIOS"
    }
 ]
 

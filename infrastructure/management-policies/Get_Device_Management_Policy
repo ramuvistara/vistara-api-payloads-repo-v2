@@ -2,14 +2,14 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/{id}
 
 METHOD: GET
 
-HEADER:
-1. Authorization = Bearer {accessToken}
-2. Accept = application/json
-
-ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/management/2327
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/management/2327
 
 RESPONSE:
-.........
 {
     "id": 2327,
     "name": "Mysql-policy",
@@ -51,3 +51,5 @@ RESPONSE:
     ],
     "executionOrder": 0
 }
+
+RESPONSE CODE: 200 OK

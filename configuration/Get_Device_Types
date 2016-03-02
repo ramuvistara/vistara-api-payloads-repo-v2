@@ -6,8 +6,10 @@ HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
+
+EX: https://api.vistara.io/api/v2/cfg/devices/types
 	
-RESPONSE : 
+RESPONSE: 
 [
    {
       "id": 59,
@@ -16,18 +18,100 @@ RESPONSE :
       "parentDeviceType": {
          "id": 58,
          "name": "Mobile",
-         "path": "Mobile"
-      }
+         "path": "Mobile",
+         "categoryId": 0
+      },
+      "categoryId": 1
+   },
+   {
+      "id": 79,
+      "name": "Cisco Contact Center",
+      "path": "Network Device >> Cisco Contact Center",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device",
+         "categoryId": 0
+      },
+      "categoryId": 3
+   },
+   {
+      "id": 80,
+      "name": "Cisco Contact Center Express",
+      "path": "Network Device >> Cisco Contact Center Express",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device",
+         "categoryId": 0
+      },
+      "categoryId": 3
+   },
+   {
+      "id": 57,
+      "name": "Cisco UCM",
+      "path": "Network Device >> Cisco UCM",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device",
+         "categoryId": 0
+      },
+      "categoryId": 3
+   },
+   {
+      "id": 78,
+      "name": "Cisco UCM Express",
+      "path": "Network Device >> Cisco UCM Express",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device",
+         "categoryId": 0
+      },
+      "categoryId": 3
    },
    {
       "id": 51,
       "name": "Cisco UCS",
-      "path": "Cisco UCS"
+      "path": "Cisco UCS",
+      "categoryId": 2
+   },
+   {
+      "id": 81,
+      "name": "Cisco Unity",
+      "path": "Network Device >> Cisco Unity",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device",
+         "categoryId": 0
+      },
+      "categoryId": 3
+   },
+   {
+      "id": 82,
+      "name": "Cisco Unity Express",
+      "path": "Network Device >> Cisco Unity Express",
+      "parentDeviceType": {
+         "id": 39,
+         "name": "Network Device",
+         "path": "Network Device",
+         "categoryId": 0
+      },
+      "categoryId": 3
    },
    {
       "id": 4,
       "name": "Desktop",
-      "path": "Desktop"
+      "path": "Desktop",
+      "categoryId": 1
+   },
+   {
+      "id": 107,
+      "name": "Docker",
+      "path": "Docker",
+      "categoryId": 4
    },
    {
       "id": 73,
@@ -36,8 +120,10 @@ RESPONSE :
       "parentDeviceType": {
          "id": 47,
          "name": "Storage",
-         "path": "Storage"
-      }
+         "path": "Storage",
+         "categoryId": 0
+      },
+      "categoryId": 4
    },
    {
       "id": 83,
@@ -46,18 +132,10 @@ RESPONSE :
       "parentDeviceType": {
          "id": 47,
          "name": "Storage",
-         "path": "Storage"
-      }
-   },
-   {
-      "id": 70,
-      "name": "EMC VMAX",
-      "path": "Storage >> EMC VMAX",
-      "parentDeviceType": {
-         "id": 47,
-         "name": "Storage",
-         "path": "Storage"
-      }
+         "path": "Storage",
+         "categoryId": 0
+      },
+      "categoryId": 4
    },
    {
       "id": 72,
@@ -66,74 +144,23 @@ RESPONSE :
       "parentDeviceType": {
          "id": 47,
          "name": "Storage",
-         "path": "Storage"
-      }
+         "path": "Storage",
+         "categoryId": 0
+      },
+      "categoryId": 4
    },
    {
       "id": 49,
       "name": "EMC VNX",
-      "path": "Storage >> EMC VNXx",
+      "path": "Storage >> EMC VNX",
       "parentDeviceType": {
          "id": 47,
          "name": "Storage",
-         "path": "Storage"
-      }
-   },
-   {
-      "id": 50,
-      "name": "EMC VNXe",
-      "path": "Storage >> EMC VNXe",
-      "parentDeviceType": {
-         "id": 47,
-         "name": "Storage",
-         "path": "Storage"
-      }
-   },
-   {
-      "id": 9,
-      "name": "Firewall",
-      "path": "Network Device >> Firewall",
-      "parentDeviceType": {
-         "id": 39,
-         "name": "Network Device",
-         "path": "Network Device"
-      }
-   },
-   {
-      "id": 66,
-      "name": "FlexPod",
-      "path": "FlexPod"
-   },
-   {
-      "id": 76,
-      "name": "HP 3Par",
-      "path": "Storage >> HP 3Par",
-      "parentDeviceType": {
-         "id": 47,
-         "name": "Storage",
-         "path": "Storage"
-      }
-   },
-   {
-      "id": 74,
-      "name": "HP EVA",
-      "path": "Storage >> HP EVA",
-      "parentDeviceType": {
-         "id": 47,
-         "name": "Storage",
-         "path": "Storage"
-      }
-   },
-   {
-      "id": 71,
-      "name": "IBM STORWIZE",
-      "path": "Storage >> IBM Storwize",
-      "parentDeviceType": {
-         "id": 47,
-         "name": "Storage",
-         "path": "Storage"
-      }
+         "path": "Storage",
+         "categoryId": 0
+      },
+      "categoryId": 4
    }
 ]
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

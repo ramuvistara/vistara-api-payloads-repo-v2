@@ -1,0 +1,62 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices/{deviceId}/remoteConsoles
+ 
+METHOD: POST
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+MADATORY FIELDS:
+	I. FOR MANAGEMENT CONSOLES
+		1. consoleConnector
+		2. consoleProtocol
+		3. ipAddress
+		4. port
+	II. FOR ADMIN CONSOLES
+		1. type
+		2. url
+		3. adminService
+		4. adminDeviceName
+
+OPTIONAL FIELDS:
+	1. consoleAuthType
+	2. type
+	3. userName
+	4. password
+
+REFERENCE DATA:
+	1. type					[MANAGEMENTCONSOLE, ADMINCONSOLE]
+	2. consoleConnector		[NSG, NCARE, DIRECT]
+	3. consoleAuthType		[PASSWORD, PUBLICKEY]
+	4. consoleProtocol		[SSH, RDP, TELNET, VNC]
+	
+EX: https://api.vistara.io/api/v2/tenants/client_93/devices/23e5721a-b1a6-4347-938c-7e9ee28f1592/remoteConsoles
+ 
+REQUEST: (Ex. for create admin console)
+[
+  {
+    "type": "ADMINCONSOLE",
+    "url": "https://www.google.com",
+    "adminService": "test-service",
+    "adminDeviceName": "test-admin-device"
+  }
+]
+
+REQUEST: (Ex. for create management console)
+[
+  {
+    "type": "MANAGEMENTCONSOLE",
+    "consoleProtocol": "TELNET",
+    "consoleConnector": "Gateway",
+    "consoleAuthType": "PASSWORD",
+    "ipAddress": "10.10.133.79",
+    "port": "23",
+    "userName": "VistaraIT",
+    "password": "******"
+  }
+]
+ 
+RESPONSE: null
+
+RESPONSE CODE: 200 OK

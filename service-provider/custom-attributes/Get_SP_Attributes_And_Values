@@ -8,14 +8,14 @@ HEADERS:
 	Accept : application/json
 	
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=id [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=id [optional]
 
-EX : 1. https://api.vistara.io/api/v2/serviceProvider/customAttributes/search
+EX: 1. https://api.vistara.io/api/v2/serviceProvider/customAttributes/search
      
-NOTE : This api can be used to get list of custom attribute types and its corresponding values.
+NOTE: This API can be used to get the List of custom attribute types and its corresponding values.
   
 RESPONSE : 
 {

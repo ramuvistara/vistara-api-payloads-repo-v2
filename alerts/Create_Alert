@@ -1,60 +1,55 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/alert
 
 METHOD: POST
  
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Content-Type  = "application/json"
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 
 MADATORY FIELDS:
-................
-	device
-	alertTime
-	currentState
-	serviceName
-	subject
-	app (valid apps : VISTARA,LOGMEIN,Zabbix,SCOM)
+	1. device
+	2. alertTime
+	3. currentState	[Ok, Warning, Critical, Info]
+	4. serviceName
+	5. subject
+	6. app 			[VISTARA, LOGMEIN, Zabbix, SCOM]
 
 OPTIONAL FEILDS:
-................
-	component
-	alertType
-	deviceName
-	oldState
-	description
-	monitorName
-	sender
+	1. component
+	2. alertType
+	3. ResourceName
+	4. description
+	5. monitorName
+	6. createdTime		[Ex. 2014-11-05 11:26:00]
+	7. ackUrl
+	8. rtype
+	9. extAlertId
+
+EX: https://api.vistara.io/api/v2/tenants/client_93/alert
 
 REQUEST:
-........
-    [
-	{
-		"serviceName": "CPU",
-		"device":
-			{
-				"hostName":"Think-pad",
-				"resourceUUID":"DEV0000011767",
-				"providerUUID":"11767",
-				"systemUUID":"11767",
-				"macAddress":"2E:8B:EB:32:7A:F9",
-				"ipAddress":"172.2.229.109"
-			},
-		"subject":"Test API Alert for car", 
-		"alertTime":"2014-11-05 11:26:00",
-		"currentState":"CRITICAL", 
-		"app":"Vistara",
-		"alertType":"Maintenance",
-		"component": "C",
-		"oldState": "OK",
-		"description":"api calls",
-		"monitorName":"test",
-		"sender":"Zabbix123"
-		
-	}
-]
+{
+	"serviceName": "CPU",
+	"device":
+		{
+			"hostName":"Think-pad",
+			"resourceUUID":"DEV0000011767",
+			"providerUUID":"11767",
+			"systemUUID":"11767",
+			"macAddress":"2E:8B:EB:32:7A:F9",
+			"ipAddress":"172.2.229.109"
+		},
+	"subject":"Test API Alert for car", 
+	"alertTime":"2014-11-05 11:26:00",
+	"currentState":"CRITICAL", 
+	"app":"VISTARA",
+	"alertType":"Maintenance",
+	"component": "C",
+	"description":"api calls",
+	"monitorName":"test"
+}
 
-RESPONSE:
-.........
-status:
- 
-200 ok
+RESPONSE: null
+
+RESPONSE CODE : 200 OK

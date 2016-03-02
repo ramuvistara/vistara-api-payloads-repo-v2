@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management
 
 METHOD: PUT
 
@@ -7,12 +7,9 @@ HEADER:
   Accept = application/json
   Content-Type = application/json
 
-ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/management/
-
-Note: response returned can be posted again with any modification required
+EX: https://api.vistara.io/api/v2/tenants/client_105261/policies/management
 
 REQUEST:
-........
 [
   {
     "id": 1790,
@@ -47,3 +44,41 @@ REQUEST:
     "executionOrder": 0
   }
 ]
+
+RESPONSE:
+[
+  {
+    "id": 1790,
+    "name": "Mysql-policy",
+    "resourceType": "DEVICE",
+    "matchType": "ALL",
+    "rules": [
+      {
+        "key": "Device Name",
+        "operator": "Contains",
+        "value": "dc01-mysql-"
+      }
+    ],
+    "actions": [
+      {
+        "action": "ASSIGN MONITORINGTEMPLATE",
+        "items": [
+          "1",
+          "2"
+        ],
+        "parameters": {}
+      },
+      {
+        "action": "ASSIGN CREDENTIALSET",
+        "items": [
+          "1",
+          "2"
+        ],
+        "parameters": {}
+      }
+    ],
+    "executionOrder": 0
+  }
+]
+
+RESPONSE CODE: 200 OK

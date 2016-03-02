@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/deviceGroups/minimal
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/deviceGroups/minimal
 
 METHOD: GET
  
@@ -7,7 +7,9 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-RESPONSE :
+EX: https://api.vistara.io/api/v2/tenants/client_93/deviceGroups/minimal
+
+RESPONSE:
 [
    {
       "id": 1664,
@@ -32,4 +34,4 @@ RESPONSE :
    }
 ]
 
-STATUS CODE : 200 OK
+RESPONSE CODE: 200 OK

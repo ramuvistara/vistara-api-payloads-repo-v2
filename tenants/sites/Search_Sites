@@ -8,145 +8,65 @@ HEADERS:
 	Accept : application/json 
 	
 QUERY PARAMS:
-        pageNo={pageNo} defaultValue=1 [optional]
-        pageSize={pageSize} defaultValue=10 [optional]
-        isDescendingOrder={true/false} defaultValue=true [optional]
-        sortName={sortName} defaultValue=id [optional]
-        queryString={queryString} [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={sortName} defaultValue=id [optional]
+	5. queryString={queryString} [optional]
         
 QUERY VARIABLES:
-	siteId
-	name
-	parentId
+	1. siteId
+	2. name
+	3. parentId		[parent site id]
 
-EX : https://api.vistara.io/api/v2/tenants/{tenantId}/sites/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id&queryString=siteId:69621+name:site name+parentId:69600
+EX : https://api.vistara.io/api/v2/tenants/client_69856/sites/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id&queryString=siteId:69621+name:site%20name+parentId:69600
 
-NOTE : 
-	special characters in queryString:
-	1.	+ -- indicate next field and it must be URL encoded (then it automatically converts to %2B)
-	2.	: -- indicate equals to
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
 
 RESPONSE:
 {
    "results": [
       {
-         "id": 69677,
-         "name": "1. Api site after search 2",
-         "clientId": 93,
+         "id": 69678,
+         "name": "CREATE SITE - TESTING - API - UPDATE",
+         "clientId": 69856,
          "mspId": 92,
-         "description": "Testing for Creating Site",
-         "address": "testing 123",
-         "phoneNumber": "9999999999",
+         "description": "TESTING SITE PLEASE IGNORE",
+         "address": "Madhapur, Near Global Edge, Vistara Inc",
+         "phoneNumber": "9876543219",
          "primaryContact": {
-            "id": "USR0000002111",
-            "loginName": "rajesh",
-            "lastName": "bokka",
-            "firstName": "rajesh",
-            "email": "rajeshbokka481@gmail.com",
-            "phoneNumber": "",
-            "orgId": "client_93",
-            "profileImage": {
-               "description": "",
-               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-               "imageType": ""
-            },
-            "changePassword": false,
-            "organizationName": "Brocade Lab"
+            "id": "USR0000002128",
+            "loginName": "deepu@inc_client",
+            "lastName": "_inc_client",
+            "firstName": "deepu",
+            "email": "google@gmail.com",
+            "changePassword": false
          }
       },
       {
-         "id": 69676,
-         "name": "Api site after search 2 updated from msp",
-         "clientId": 93,
+         "id": 69674,
+         "name": "site from brocade inc client",
+         "clientId": 69856,
          "mspId": 92,
-         "description": "Testing for Creating Site",
-         "address": "testing 123",
-         "phoneNumber": "9999999999",
-         "primaryContact": {
-            "id": "USR0000002111",
-            "loginName": "rajesh",
-            "lastName": "bokka",
-            "firstName": "rajesh",
-            "email": "rajeshbokka481@gmail.com",
-            "phoneNumber": "",
-            "orgId": "client_93",
-            "profileImage": {
-               "description": "",
-               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-               "imageType": ""
-            },
-            "changePassword": false,
-            "organizationName": "Brocade Lab"
-         }
-      },
-      {
-         "id": 69673,
-         "name": "API 1 update",
-         "clientId": 93,
-         "mspId": 92,
-         "description": "sldjf",
-         "address": "lfdjdljs",
-         "phoneNumber": "",
-         "primaryContact": {
-            "id": "USR0000002111",
-            "loginName": "rajesh",
-            "lastName": "bokka",
-            "firstName": "rajesh",
-            "email": "rajeshbokka481@gmail.com",
-            "phoneNumber": "",
-            "orgId": "client_93",
-            "profileImage": {
-               "description": "",
-               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-               "imageType": ""
-            },
-            "changePassword": false,
-            "organizationName": "Brocade Lab"
-         }
-      },
-      {
-         "id": 69672,
-         "name": "1.creating from ui",
-         "clientId": 93,
-         "mspId": 92,
-         "description": "sjdfl",
-         "address": "ljslfdj",
-         "phoneNumber": "9999999999",
-         "primaryContact": {
-            "id": "USR0000002114",
-            "loginName": "deepu@client",
-            "lastName": "mungamuri",
-            "firstName": "client_deepu",
-            "email": "deepu.mungamuri@vistarait.com",
-            "phoneNumber": "",
-            "orgId": "client_93",
-            "profileImage": {
-               "description": "",
-               "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-               "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-               "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-               "imageType": ""
-            },
-            "changePassword": false,
-            "organizationName": "Brocade Lab"
-         }
+         "description": "TESTING",
+         "address": "VISTARA INC",
+         "phoneNumber": ""
       }
    ],
-   "totalResults": 4,
+   "totalResults": 2,
    "orderBy": "id",
    "pageNo": 1,
    "pageSize": 10,
    "totalPages": 1,
    "nextPage": false,
-   "nextPageNo": 2,
+   "nextPageNo": 0,
    "previousPageNo": 0,
    "descendingOrder": true
 }
 
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

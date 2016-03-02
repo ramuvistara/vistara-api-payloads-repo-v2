@@ -9,14 +9,14 @@ HEADERS:
 
 EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/values/411
 
-NOTE : This api can be used for updating the description of a custom attribute value (value cannot be updated , only description).
+NOTE : This API can be used for updating the description of a custom attribute value (value cannot be updated).
 
-INPUT JSON / PAYLOAD :
+REQUEST:
 {
   "description" : "update for description"
 }
 
-RESPONSE : 
+RESPONSE: 
 {
   "id" : 411,
   "vlaue" : "value of the custom attribute value",

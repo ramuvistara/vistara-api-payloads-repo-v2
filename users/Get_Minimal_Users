@@ -7,7 +7,10 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-RESPONSE : 
+EX: 1. https://api.vistara.io/api/v2/tenants/client_93/users/minimal
+	2. https://api.vistara.io/api/v2/tenants/msp_92/users/minimal
+
+RESPONSE: 
 [
    {
       "id": "USR0000000453",
@@ -22,7 +25,7 @@ RESPONSE :
       "loginName": "asuri@brocade.com",
       "lastName": "Suri",
       "firstName": "Anika",
-      "email": "sarma519@gmail.com",
+      "email": "sarma520@gmail.com",
       "changePassword": false
    },
    {
@@ -30,7 +33,7 @@ RESPONSE :
       "loginName": "brocade_test",
       "lastName": "Test",
       "firstName": "Brocade",
-      "email": "sarma519@gmail.com",
+      "email": "sarma521@gmail.com",
       "changePassword": false
    },
    {
@@ -43,4 +46,4 @@ RESPONSE :
    }
 ]
 
-STATUS CODE : 200 OK
+RESPONSE CODE: 200 OK

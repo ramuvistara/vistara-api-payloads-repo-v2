@@ -2,18 +2,17 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/search
 
 METHOD: GET
 
-HEADER:
-    Authorization = Bearer {accessToken}
-    Accept = application/json
-
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+	
 QUERY PARAMS:
-.............
-name=<name>
+	1. name
 
-ex:  https://api.vistara.io/api/v2/tenants/client_105261/policies/management/search?name=Web
+EX: https://api.vistara.io/api/v2/tenants/client_105261/policies/management/search?name=Web
 
 RESPONSE:
-.........
 [
     {
         "id": 210,
@@ -139,3 +138,5 @@ RESPONSE:
         "executionOrder": 0
     }
 ]
+
+RESPONSE CODE: 200 OK

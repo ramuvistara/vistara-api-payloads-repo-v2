@@ -1,22 +1,86 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alert_id}/escalation
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alertId}/escalation
  
 METHOD: GET
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 
-ex:(/api/v2/tenants/client_4/alerts/51/escalation)
-
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+EX: https://api.vistara.io/api/v2/tenants/client_4/alerts/51/escalation
 
 RESPONSE:
-.........
-	[{
-		"id":"USR0000000005",
-		"loginName":"saasrimm",
-		"email":"pcvarma@netenrich.com",
-		"phoneNumber":"94256824467",
-		"orgId":"3",
-	}]
+[
+   {
+      "id": "USR0000002111",
+      "loginName": "rajesh",
+      "lastName": "bokka",
+      "firstName": "rajesh",
+      "email": "rajeshbokka481@gmail.com",
+      "phoneNumber": "",
+      "mobileNumber": "",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 66,
+            "name": "test role2"
+         }
+      ],
+      "orgId": "client_93",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Brocade Lab",
+      "createdTime": "2015-06-01T14:11:27+0530",
+      "updatedTime": "2015-06-01T14:11:27+0530"
+   },
+   {
+      "id": "USR0000002109",
+      "loginName": "btestusr",
+      "lastName": "Test  User",
+      "firstName": "Brocade",
+      "email": "rkukunuri@netenrich.com",
+      "phoneNumber": "",
+      "mobileNumber": "",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 4,
+            "name": "Client Administrator"
+         },
+         {
+            "id": 76,
+            "name": "Testing"
+         }
+      ],
+      "orgId": "client_93",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Brocade Lab",
+      "createdTime": "2015-01-08T06:29:34+0530",
+      "updatedTime": "2015-01-08T06:29:34+0530"
+   }
+]
+
+RESPONSE CODE: 200 OK

@@ -1,6 +1,6 @@
-URL : https://api.vistara.io/api/v2/tenants/{tenantId}/discoveryProfiles/search
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/discoveryProfiles/search
 
-METHOD : GET
+METHOD: GET
 
 HEADERS:
 	Authorization : Bearer {accessToken}
@@ -8,18 +8,17 @@ HEADERS:
 	Accept : application/json
 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=false [optional]
-4.	sortName={field} defaultValue=id [optional]
-5.  	queryString = {queryString} [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=false [optional]
+	4. sortName={field} defaultValue=id [optional]
+	5. queryString = {queryString} [optional]
 
-NOTE : 
-  * EX : https://api.vistara.io/api/v2/tenants/{tenantId}/discoveryProfiles/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id&queryString=172.22.22.1
-  * queringString is optional : if you hasn't provided any thing in that then all profiles under that msp/client will comes.
-  *	it supports for only one parameter in queryString .i.e., either ipRange or profileName (only 1 can be pass)
+EX: https://api.vistara.io/api/v2/tenants/client_93/discoveryProfiles/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id&queryString=172.22.22.1
   
-RESPONSE :
+NOTE: queryString supports either ipAddress or profileName [Ex. queryString=API - testing 1 (or) queryString=172.22.22.1]
+
+RESPONSE:
 {
    "results": [
       {
@@ -127,4 +126,4 @@ RESPONSE :
    "descendingOrder": true
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

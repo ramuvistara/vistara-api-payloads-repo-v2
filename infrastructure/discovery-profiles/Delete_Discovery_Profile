@@ -3,8 +3,29 @@ URL: https://api.vistara.io/api/v2/tenants/{clientId}/policies/discovery/{discov
 METHOD: DELETE
  
 HEADERS:
-  Authorization : Bearer {accessToken}
+	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
+
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/discovery/54
 	
-Response Code: 200 OK
+RESPONSE:
+{
+	"status" : 200,
+	"entity" : "Removeddiscoveryprofilewithid:54",
+	"metadata" : {},
+	"length" : -1,
+	"headers" : {},
+	"cookies" : {},
+	"actualEntity" : "Removeddiscoveryprofilewithid:54",
+	"links" : [],
+	"stringHeaders" : {},
+	"statusInfo" : {
+		"family" : "SUCCESSFUL",
+		"statusCode" : 200,
+		"reasonPhrase" : "OK"
+	},
+	"allowedMethods" : []
+}
+
+RESPONSE CODE: 200 OK

@@ -8,15 +8,15 @@ HEADERS:
 	Accept : application/json
 	
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=id [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=id [optional]
 
-EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/search
-     2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/search
+EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id
+     2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=id
      
-NOTE : This api can be used to get list of custom attribute types and its corresponding values.
+NOTE : This API can be used to get the List of custom attribute types and its corresponding values.
   
 RESPONSE : 
 {
@@ -122,82 +122,7 @@ RESPONSE :
     }, {
       "id" : 381,
       "value" : "acme-ecomm-aws-cache2"
-    }, {
-      "id" : 366,
-      "value" : "acme-ecomm-aws-cache3"
-    }, {
-      "id" : 386,
-      "value" : "acme-ecomm-aws-web1"
-    }, {
-      "id" : 369,
-      "value" : "acme-ecomm-aws-web2"
-    }, {
-      "id" : 377,
-      "value" : "acme-ecomm-aws-web3"
-    }, {
-      "id" : 388,
-      "value" : "ADFS"
-    }, {
-      "id" : 358,
-      "value" : "allow-out"
-    }, {
-      "id" : 389,
-      "value" : "amazon2015"
-    }, {
-      "id" : 376,
-      "value" : "itson-olf2"
-    }, {
-      "id" : 357,
-      "value" : "Modern Enterprise VPC"
-    }, {
-      "id" : 372,
-      "value" : "mwiki2"
-    }, {
-      "id" : 383,
-      "value" : "OSController"
-    }, {
-      "id" : 390,
-      "value" : "qainstance1"
-    }, {
-      "id" : 391,
-      "value" : "rhel7.1"
-    }, {
-      "id" : 374,
-      "value" : "sqs-test-12345"
-    }, {
-      "id" : 363,
-      "value" : "testinginstancesgr"
-    }, {
-      "id" : 360,
-      "value" : "Vagrant Devops"
-    }, {
-      "id" : 359,
-      "value" : "VISTARA"
-    }, {
-      "id" : 384,
-      "value" : "Vistara Gateway 178"
-    }, {
-      "id" : 370,
-      "value" : "Vistara update 1.9.0"
-    }, {
-      "id" : 368,
-      "value" : "vistara-matainence"
-    }, {
-      "id" : 362,
-      "value" : "vistara-prod"
-    }, {
-      "id" : 371,
-      "value" : "vistara-prod-app01"
-    }, {
-      "id" : 380,
-      "value" : "vistara-prod-db01"
-    }, {
-      "id" : 378,
-      "value" : "vistara-prod-nat"
-    }, {
-      "id" : 379,
-      "value" : "vw-media3-decomm"
-    } ],
+    }],
     "organization" : {
       "id" : 93,
       "uniqueId" : "client_93",

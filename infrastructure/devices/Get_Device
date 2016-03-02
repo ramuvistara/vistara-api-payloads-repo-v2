@@ -1,74 +1,130 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}
 
-Method: GET
+METHOD: GET
  
-HEADER:
+HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
-	Accept : application/json 
+	Accept : application/json
+	
+EX: https://api.vistara.io/api/v2/tenants/client_93/devices/DEV0001520157
 	
 RESPONSE:
-.........
-	{
-		"id": "43e1f369-0f74-4dce-b775-555069b26bba",
-		"generalInfo": {
-			"osName": "Microsoft Windows 7 Professional  Service Pack 1",
-			"domain": "net",
-			"ipAddresses": "172.24.221.118",
-			"description": "Phoenix BIOS SC-T v2.2",
-			"hostName": "HYDLPT220",
-			"dns": "hydlpt220",
-			"deviceType": "Laptop",
-			"domainRole": "0",
-			"macAddress": "28:D2:44:2F:11:41",
-			"keyboardType": "US104",
-			"encodingType": "UTF8",
-			"wmiUserName": "netenrich1",
-			"wmiPassword": "nandu",
-			"physicalMemory": "7.58",
-			"buildNumber": 0,
-			"createdTime": "2014-12-03 13:39:41",
-			"agentDeploytime": ""
+{
+	"id" : "DEV0001520157",
+	"generalInfo" : {
+		"osName" : "MicrosoftWindows7ServicePack1",
+		"ipAddresses" : "192.168.56.1",
+		"make" : "LENOVO",
+		"description" : "PhoenixBIOSSC-Tv2.1",
+		"hostName" : "hydlpt311.netenrich.com",
+		"dns" : "HYDLPT311",
+		"deviceType" : "Laptop",
+		"domainRole" : "1",
+		"keyboardType" : "US104",
+		"encodingType" : "UTF8",
+		"physicalMemory" : "7.72",
+		"buildNumber" : 0,
+		"aliasName" : "hydlpt311.netenrich.com",
+		"createdTime" : "2014-08-20T08:47:45+0530",
+		"updatedTime" : "2014-12-04T05:55:20+0530",
+		"agentDeploytime" : ""
+	},
+	"bios" : {
+		"biosName" : "PhoenixBIOSSC-Tv2.1",
+		"biosVersion" : "J9ET58WW(1.58)",
+		"smBiosVersion" : "J9ET58WW(1.58)",
+		"smBiosMajorVersion" : "2",
+		"smBiosMinorVersion" : "7",
+		"smBiosPresent" : "True",
+		"systemSerial" : "PF00XNRM",
+		"systemModel" : "20C600AAUS",
+		"systemManufacturer" : "MicrosoftCorporation"
+	},
+	"consoles" : [
+		{
+			"ipAddress" : "127.0.0.1",
+			"port" : "3389",
+			"consoleConnector" : "Agent",
+			"consoleAuthType" : "PASSWORD",
+			"consoleProtocol" : "RDP",
+			"type" : "MANAGEMENTCONSOLE"
 		},
-		"bios": {
-			"biosName": "Phoenix BIOS SC-T v2.2",
-			"biosVersion": "HEET36WW (1.17 )",
-			"smBiosVersion": "HEET36WW (1.17 )",
-			"smBiosMajorVersion": "2",
-			"smBiosMinorVersion": "7",
-			"smBiosPresent": "True",
-			"systemSerial": "PF0VNPL",
-			"systemModel": "68855TU",
-			"systemManufacturer": "Microsoft Corporation"
+		{
+			"ipAddress" : "127.0.0.1",
+			"port" : "0",
+			"consoleConnector" : "Agent",
+			"consoleAuthType" : "PASSWORD",
+			"consoleProtocol" : "FTRANSFER",
+			"type" : "MANAGEMENTCONSOLE"
 		},
-		"consoles": [
-			{
-				"ipAddress": "127.0.0.1",
-				"port": "3389",
-				"consoleConnector": "Agent",
-				"consoleAuthType": "PASSWORD",
-				"consoleProtocol": "RDP",
-				"type": "MANAGEMENTCONSOLE"
-			},
-			{
-				"ipAddress": "127.0.0.1",
-				"port": "0",
-				"consoleConnector": "Agent",
-				"consoleAuthType": "PASSWORD",
-				"consoleProtocol": "FTRANSFER",
-				"type": "MANAGEMENTCONSOLE"
-			},
-			{
-				"ipAddress": "127.0.0.1",
-				"port": "0",
-				"consoleConnector": "Agent",
-				"consoleAuthType": "PASSWORD",
-				"consoleProtocol": "RMSHELL",
-				"type": "MANAGEMENTCONSOLE"
-			}
-		],
-		"status": "UP",
-		"state": "active",
-		 "clientUniqueId" : "client_93",
-		"ipAddress": "172.24.221.118"
-	}
+		{
+			"ipAddress" : "127.0.0.1",
+			"port" : "0",
+			"consoleConnector" : "Agent",
+			"consoleAuthType" : "PASSWORD",
+			"consoleProtocol" : "RMSHELL",
+			"type" : "MANAGEMENTCONSOLE"
+		}
+	],
+	"drives" : [
+		{
+			"id" : 645,
+			"total" : 150,
+			"free" : 80,
+			"name" : "C:"
+		},
+		{
+			"id" : 646,
+			"total" : 0,
+			"free" : 0,
+			"name" : "D:"
+		},
+		{
+			"id" : 647,
+			"total" : 150,
+			"free" : 122,
+			"name" : "E:"
+		},
+		{
+			"id" : 648,
+			"total" : 149,
+			"free" : 125,
+			"name" : "F:"
+		},
+		{
+			"id" : 649,
+			"total" : 14,
+			"free" : 3,
+			"name" : "Q:"
+		}
+	],
+	"networkCardDetails" : [
+		{
+			"id" : 245387,
+			"gateway" : "192.168.1.1;"
+		},
+		{
+			"id" : 245388
+		}
+	],
+	"location" : {
+		"id" : 69646,
+		"name" : "testingsitechild1",
+		"clientId" : 93,
+		"mspId" : 92,
+		"description" : "testingsitechild1isbeingcreated"
+	},
+	"deviceWarranty" : {
+		"id" : 7,
+		"purchaseDate" : "2014-12-01T10:10:00+0530",
+		"warrantyExpireDate" : "2015-12-01T10:10:00+0530"
+	},
+	"status" : "UNKNOWN",
+	"state" : "active",
+	"clientUniqueId" : "client_93",
+	"ipAddress" : "192.168.56.1",
+	"type" : "DEVICE"
+}
+
+RESPONSE CODE: 200 OK

@@ -2,28 +2,30 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/deviceGroups/{dgI
  
 METHOD: DELETE
  
-HEADER:
-1. Authorization = Bearer {accessToken}
-2. Accept = application/json
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
-URL: https://api.vistara.io/api/v2/tenants/client_105261/policies/deviceGroups/2835
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/deviceGroups/2835
  
 RESPONSE:
-.........
 {
-  "status": 200,
-  "entity": "Removed DeviceGroup with id: 2835",
-  "metadata": {},
-  "length": -1,
-  "headers": {},
-  "cookies": {},
-  "links": [],
-  "stringHeaders": {},
-  "allowedMethods": [],
-  "statusInfo": {
-    "family": "SUCCESSFUL",
-    "statusCode": 200,
-    "reasonPhrase": "OK"
-  },
-  "actualEntity": "Removed DeviceGroup with id: 2835"
+   "status": 200,
+   "entity": "Removed DeviceGroup with id: 1813",
+   "metadata": {},
+   "length": -1,
+   "headers": {},
+   "cookies": {},
+   "links": [],
+   "statusInfo": {
+      "family": "SUCCESSFUL",
+      "statusCode": 200,
+      "reasonPhrase": "OK"
+   },
+   "allowedMethods": [],
+   "actualEntity": "Removed DeviceGroup with id: 1813",
+   "stringHeaders": {}
 }
+
+RESPONSE CODE: 200 OK

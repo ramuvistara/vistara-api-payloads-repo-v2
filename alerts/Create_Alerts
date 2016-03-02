@@ -1,0 +1,77 @@
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/alerts
+
+METHOD: POST
+ 
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
+
+MADATORY FIELDS:
+	1. device
+	2. alertTime
+	3. currentState	[Ok, Warning, Critical, Info]
+	4. serviceName
+	5. subject
+	6. app 			[VISTARA, LOGMEIN, Zabbix, SCOM]
+
+OPTIONAL FEILDS:
+	1. component
+	2. alertType
+	3. ResourceName
+	4. description
+	5. monitorName
+	6. createdTime		[Ex. 2014-11-05 11:26:00]
+	7. ackUrl
+	8. rtype
+	9. extAlertId
+
+EX: https://api.vistara.io/api/v2/tenants/client_93/alerts
+
+REQUEST:
+[
+	{
+		"serviceName": "CPU",
+		"device":
+			{
+				"hostName":"Think-pad",
+				"resourceUUID":"DEV0000011767",
+				"providerUUID":"11767",
+				"systemUUID":"11767",
+				"macAddress":"2E:8B:EB:32:7A:F9",
+				"ipAddress":"172.2.229.109"
+			},
+		"subject":"Test API Alert 1 for car", 
+		"alertTime":"2014-11-05 11:26:00",
+		"currentState":"CRITICAL", 
+		"app":"VISTARA",
+		"alertType":"Maintenance",
+		"component": "C",
+		"description":"api call test",
+		"monitorName":"test"
+	},
+	{
+		"serviceName": "CPU",
+		"device":
+			{
+				"hostName":"Think-pad-i5",
+				"resourceUUID":"DEV0000011768",
+				"providerUUID":"11768",
+				"systemUUID":"11768",
+				"macAddress":"3B:5E:EB:52:3E:B5",
+				"ipAddress":"172.2.228.110"
+			},
+		"subject":"Test API Alert 2 for car", 
+		"alertTime":"2014-11-05 11:27:10",
+		"currentState":"CRITICAL", 
+		"app":"VISTARA",
+		"alertType":"Maintenance",
+		"component": "C",
+		"description":"api call test",
+		"monitorName":"test"
+	}
+]
+
+RESPONSE: null
+
+RESPONSE CODE : 200 OK

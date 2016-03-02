@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/sites/{siteId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/sites/{siteId}
 
 METHOD: POST
  
@@ -6,26 +6,45 @@ HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
+
+EX: https://api.vistara.io/api/v2/tenants/client_69856/sites/69678
+
+NOTE : No need to send every field in Update case, just send those fields required to update only.
 	
-INPUT JSON / PAYLOAD :	
+REQUEST:	
 {
-	"name":"API Location 11 UPDATING",
-	"description":"Testing for Creating Site",
-	"city":"hyderabad",
-	"state":"Telangana",
-	"country":"India",
-	"phoneNumber":"9999999999",
-	"phoneExtension":"91",
-	"primaryContact":{"loginName":"rajesh"},
-	"devices":[{"name":"AD-14"},{"name":"Campus-2"}]
+   "name": "CREATE SITE - TESTING - API",
+   "parent": {
+      "name": "site from brocade inc client"
+   },
+   "description": "TESTING SITE PLEASE IGNORE",
+   "address": "Madhapur, Near Global Edge, Vistara Inc",
+   "state": "Telangana",
+   "country": "India",
+   "primaryContact": {
+      "id": "USR0000002128",
+      "loginName": "deepu@inc_client"
+   },
+   "phoneNumber": "9876543219",
+   "phoneExtension": "+91",
+   "devices": [
+      {
+         "id": "b2646a9c-8dbe-421d-b0cd-ceaa6379de64",
+         "name": "Device-deepu"
+      },
+      {
+         "id": "ff1a4e7b-cf66-4adc-a72f-0249d5fc3295",
+         "name": "testdevice-api"
+      }
+   ]
 }
 
 RESPONSE:
-	{
-	"id":69667,
-	"name":"API 11 UPDATING",
-	"clientId":93,
-	"mspId":92
-	}
+{
+  "id" : 69678,
+  "name" : "CREATE SITE - TESTING - API - UPDATE",
+  "clientId" : 69856,
+  "mspId" : 92
+}
 	
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

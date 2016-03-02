@@ -9,7 +9,7 @@ HEADERS:
 
 EX : https://api.vistara.io/api/v2/tenants/client_93/customAttributes/71/values/411/devices
 
-INPUT JSON / PAYLOAD :
+REQUEST:
 [
 	{
 		"id" : "i-6408e569"
@@ -19,11 +19,21 @@ INPUT JSON / PAYLOAD :
 	}
 ]
 
-RESPONSE : 
+RESPONSE: (Ex. For Success)
 {
   "failedEntities" : { },
   "failedCount" : 0,
   "successCount" : 2
+}
+
+RESPONSE: (Ex. For Failures)
+{
+  "failedEntities" : {
+    "i-8408e56239" : "Invalid device id for client : 93",
+    "i-6408e56923" : "Invalid device id for client : 93"
+  },
+  "failedCount" : 2,
+  "successCount" : 0
 }
 
 RESPONSE CODE : 200 OK

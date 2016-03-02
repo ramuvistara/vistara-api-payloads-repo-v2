@@ -1,16 +1,16 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/subAlertTypes
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/subAlertTypes
 
 METHOD: GET
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 
 QUERY PARAMS:
-.............
-1.	alertTypes={alertType} defaultValue="" [optional]
+	1.	alertTypes={alertType} defaultValue="" [optional]
 
-ex:(/api/v2/tenants/client_4/subAlertTypes?alertTypes=Monitoring)
+EX: https://api.vistara.io/api/v2/tenants/client_4/subAlertTypes?alertTypes=Monitoring
 
 RESPONSE:
 [
@@ -30,3 +30,5 @@ RESPONSE:
    "Processor Usage",
    "TEMP"
 ]
+
+RESPONSE CODE: 200 OK

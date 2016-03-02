@@ -11,7 +11,7 @@ EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/values/41
 
 NOTE : only a service provider can assign partners to a custom attribute
 
-INPUT JSON / PAYLOAD :
+REQEUST:
 [
 	{
 		"id" : "msp_4"
@@ -21,11 +21,21 @@ INPUT JSON / PAYLOAD :
 	}
 ]
 
-RESPONSE : 
+RESPONSE: (Ex. For success)
 {
   "failedEntities" : { },
   "failedCount" : 0,
   "successCount" : 2
+}
+
+RESPONSE: (Ex. For Failures)
+{
+  "failedEntities" : {
+    "msp_100" : "Invalid partner id",
+    "msp_101" : "Invalid partner id"
+  },
+  "failedCount" : 2,
+  "successCount" : 0
 }
 
 RESPONSE CODE : 200 OK

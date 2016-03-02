@@ -1,65 +1,75 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/scheduleMaintenances/ 
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/scheduleMaintenances
  
 METHOD: POST
 
-HEADER:
-1. Authorization = "Bearer  {accessToken}"	
-2. Accept  = "application/json
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
 MANDATORY FIELDS:
-.................
-name
-description
-devices or deviceGroups
-schedule -> type
-schedule -> startTime
-schedule -> endTime
-schedule -> timezone
+	1. name
+	2. description
+	3. devices (or) deviceGroups (or) locations
+	4. schedule.type			[One-Time]
+	5. schedule.startTime		[Ex. 2015-05-28T10:55:27+0000]
+	6. schedule.endTime			[Ex. 2015-05-28T10:55:27+0000]
+	7. schedule.timezone		[Ex. Asia/Calcutta]
 
-Provide schedule 'type': One-Time
-Options for timezone:
-  1. Pacific/Apia       2. Pacific/Honolulu      3. America/Anchorage     4. America/Los_Angeles     5. America/Denver     6. America/Chicago      
-  7. America/New_York   8. America/Puerto_Rico   9. America/St_Johns     10. America/Buenos_Aires   11. Atlantic/Azores   12. GMT                  
- 13. Europe/Paris      14. Europe/Istanbul      15. Africa/Addis_Ababa   16. Asia/Tehran            17. Asia/Yerevan      18. Asia/Karachi         
- 19. Asia/Calcutta     20. Asia/Dacca           21. Asia/Saigon          22. Asia/Shanghai          23. Asia/Tokyo        24. Australia/Darwin     
- 25. Australia/Sydney  26. Pacific/Guadalcanal  27. Pacific/Auckland
- 	
+OPTIONAL FIELDS:
+	1. dontRunRBA			[true, false]
+	2. dontInstallPatch		[true, false]
+
+REFERENCE DATA (timezone):
+	1. Pacific/Apia       2. Pacific/Honolulu      3. America/Anchorage     4. America/Los_Angeles     5. America/Denver     6. America/Chicago      
+	7. America/New_York   8. America/Puerto_Rico   9. America/St_Johns      10. America/Buenos_Aires   11. Atlantic/Azores   12. GMT                  
+	13. Europe/Paris      14. Europe/Istanbul      15. Africa/Addis_Ababa   16. Asia/Tehran            17. Asia/Yerevan      18. Asia/Karachi         
+	19. Asia/Calcutta     20. Asia/Dacca           21. Asia/Saigon          22. Asia/Shanghai          23. Asia/Tokyo        24. Australia/Darwin     
+	25. Australia/Sydney  26. Pacific/Guadalcanal  27. Pacific/Auckland
+ 
+EX: https://api.vistara.io/api/v2/tenants/client_93/scheduleMaintenances
+
 REQUEST:
-........
 {
-   "name":"Onetime schedule",
-   "description":"Onetime schedule",
-   "dontRunRBA":"false",
-   "dontInstallPatch":"false",
-   "devices":[
-	{
- 	    "hostName":"device-1"
-	}, {
-	    "id":"10"
+	"name" : "Onetimeschedule",
+	"description" : "Onetimeschedule",
+	"dontRunRBA" : "false",
+	"dontInstallPatch" : "false",
+	"devices" : [
+		{
+			"hostName" : "device-1"
+		},
+		{
+			"id" : "10"
+		}
+	],
+	"deviceGroups" : [
+		{
+			"name" : "DG-1"
+		},
+		{
+			"id" : "11"
+		}
+	],
+	"locations" : [
+		{
+			"name" : "LOC-1"
+		},
+		{
+			"id" : "12"
+		}
+	],
+	"schedule" : {
+		"type" : "One-Time",
+		"startTime" : "2015-05-28T10:55:27+0000",
+		"endTime" : "2016-05-29T18:55:27+0000",
+		"timezone" : "America/Los_Angeles"
 	}
-   ],
-   "deviceGroups":[
-	{
-    	    "name":"DG-1"				
-	}, {
-	    "id":"11"
-	}
-   ],
-   "locations":[
-	 {
-	     "name":"LOC-1"
-	 }, {
-	     "id":"12"
-	 }
-    ],
-  "schedule": {
-	"type":"One-Time",
-	"startTime":"2015-05-28T10:55:27+0000",
-        "endTime":"2015-05-29T18:55:27+0000",
-        "timezone":"America/Los_Angeles"
-  }
 }
 
 RESPONSE:
-.........
-Status : 200 OK
+{
+  "id" : "28"
+}
+
+RESPONSE CODE: 200 OK

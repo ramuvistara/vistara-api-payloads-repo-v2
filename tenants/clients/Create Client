@@ -8,130 +8,126 @@ HEADERS:
 	Accept : application/json
 	
 MANDATORY FEILDS:
-  name
-  address
-  country
-  timeZone
+	1. name
+	2. address
+	3. timeZone		[Follow the NOTE to get timeZone details]
+	4. country
+	 
+EX: https://api.vistara.io/api/v2/tenants/msp_92/clients
 
-INPUT JSON / PAYLOAD :
+NOTE: 
+	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
+
+REQUEST:
 {
-   "name": "client from api 4",
-   "extOrgId": "93",
-   "address": "address field",
-   "city": "hyderabad",
-   "state": "Telangana",
-   "zip": "500081",
-   "emailAddress": "deepu.mungamuri94@gmail.com",
-   "country": "India",
-   "rdp2swfState": "true",
-   "enableCLIRecording": "true",
-   "phoneNumber": "9581963860",
-   "phoneExtension": "+91",
-   "mobileNumber": "9999988888",
-   "timeZone": "Asia/Calcutta",
-   "showCopyClipBoard": "true",
-   "clientDetails": {
-      "businessStartHour": "02",
-      "businessStartMin": "30",
-      "businessEndHour": "05",
-      "businessEndMin": "15",
-      "businessDayStart": "2",
-      "businessDayEnd": "6",
-      "companyId": "c_1234",
-      "companyName": "c_name"
-   },
-   "agentPolicies": [
-      {
-         "name": "Servers Policy",
-         "policies": [
-            {
-               "name": "PatchManagement",
-               "check": "true"
-            },
-            {
-               "name": "uvnc",
-               "check": "false"
-            },
-            {
-               "name": "ncaretrayicon",
-               "check": "true"
-            },
-            {
-               "name": "VCareCoreModule",
-               "check": "false"
-            },
-            {
-               "name": "sqlitedb",
-               "check": "true"
-            }
-         ]
-      },
-      {
-         "name": "Desktops Policy",
-         "policies": [
-            {
-               "name": "PatchManagement",
-               "check": "false"
-            },
-            {
-               "name": "uvnc",
-               "check": "false"
-            },
-            {
-               "name": "ncaretrayicon",
-               "check": "false"
-            },
-            {
-               "name": "VCareCoreModule",
-               "check": "false"
-            },
-            {
-               "name": "sqlitedb",
-               "check": "true"
-            }
-         ]
-      },
-      {
-         "name": "new Policy",
-         "policies": [
-            {
-               "name": "PatchManagement",
-               "check": "true"
-            },
-            {
-               "name": "uvnc",
-               "check": "true"
-            },
-            {
-               "name": "ncaretrayicon",
-               "check": "true"
-            },
-            {
-               "name": "VCareCoreModule",
-               "check": "false"
-            },
-            {
-               "name": "sqlitedb",
-               "check": "false"
-            }
-         ]
-      }
-   ],
-   "singleSignOnAuthentication": {
-      "enable": "true",
-      "type": "Okta",
-      "issuerUrl": "lksdjflsf",
-      "redirectionUrl": "lsjfslfssf",
-      "logoutUrl": "sldfjsfsf",
-      "certificate": "sdlfjslfs"
-   }
+	"name" : "Vistara_Client",
+	"extOrgId" : "200",
+	"address" : "Madhapur, Near Global Edge School, VistaraIT Inc",
+	"city" : "Hyderabad",
+	"state" : "Telangana",
+	"zip" : "500081",
+	"country" : "India",
+	"rdp2swfState" : "true",
+	"enableCLIRecording" : "true",
+	"phoneNumber" : "9875612345",
+	"phoneExtension" : "+91",
+	"mobileNumber" : "9756234567",
+	"timeZone" : "Asia/Calcutta",
+	"clientDetails" : {
+		"businessStartHour" : "02",
+		"businessStartMin" : "30",
+		"businessEndHour" : "05",
+		"businessEndMin" : "15",
+		"businessDayStart" : "2",
+		"businessDayEnd" : "6",
+		"companyId" : "c_1234",
+		"companyName" : "c_name"
+	},
+	"showCopyClipBoard" : "true",
+	"agentPolicies" : [
+		{
+			"name":"Servers Policy",
+			"policies" : [
+				{
+					"name" : "PatchManagement",
+					"check" : "true"
+				},
+				{
+					"name" : "uvnc",
+					"check" : "false"
+				},
+				{
+					"name" : "ncaretrayicon",
+					"check" : "true"
+				},
+				{
+					"name" : "VCareCoreModule",
+					"check" : "false"
+				},
+				{
+					"name" : "sqlitedb",
+					"check" : "true"
+				}
+			]
+		},
+		{
+			"name" : "Desktops Policy",
+			"policies" : [
+				{
+					"name" : "PatchManagement",
+					"check" : "false"
+				},
+				{
+					"name" : "uvnc",
+					"check" : "false"
+				},
+				{
+					"name" : "ncaretrayicon",
+					"check" : "false"
+				},
+				{
+					"name" : "VCareCoreModule",
+					"check" : "false"
+				},
+				{
+					"name" : "sqlitedb",
+					"check" : "true"
+				}
+			]
+		},
+		{
+			"name" : "new Policy",
+			"policies" : [
+				{
+					"name" : "PatchManagement",
+					"check" : "true"
+				},
+				{
+					"name" : "uvnc",
+					"check" : "true"
+				},
+				{
+					"name" : "ncaretrayicon",
+					"check" : "true"
+				},
+				{
+					"name" : "VCareCoreModule",
+					"check" : "false"
+				},
+				{
+					"name" : "sqlitedb",
+					"check" : "false"
+				}
+			]
+		}
+	]
 }
 
-RESPONSE :
+RESPONSE:
 {
-   "id" : "69878",
-  "uniqueId" : "client_69878",
-  "name" : "client from api 3"
+  "id" : 69883,
+  "uniqueId" : "client_69883",
+  "name" : "Vistara_Client"
 }
 
-STATUS CODE : 200 OK
+RESPONSE CODE: 200 OK

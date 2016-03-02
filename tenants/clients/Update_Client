@@ -7,17 +7,44 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
+EX: https://api.vistara.io/api/v2/tenants/msp_92/clients/client_69883
+
+NOTE: 
+	* No need to send every field in Update case, just send those fields required to update only.
 	
-INPUT JSON / PAYLOAD :	
+REQUEST:	
 {
-  "address" : "Madhapur, Vital Rao Nagar, Near Global Edge school"
+	"name" : "Vistara_Client",
+	"extOrgId" : "200",
+	"address" : "Madhapur, Near Global Edge School, VistaraIT Inc",
+	"city" : "Hyderabad",
+	"state" : "Telangana",
+	"zip" : "500081",
+	"country" : "India",
+	"rdp2swfState" : "true",
+	"enableCLIRecording" : "true",
+	"phoneNumber" : "9875612345",
+	"phoneExtension" : "+91",
+	"mobileNumber" : "9756234567",
+	"timeZone" : "Asia/Calcutta",
+	"clientDetails" : {
+		"businessStartHour" : "02",
+		"businessStartMin" : "30",
+		"businessEndHour" : "05",
+		"businessEndMin" : "15",
+		"businessDayStart" : "2",
+		"businessDayEnd" : "6",
+		"companyId" : "c_1234",
+		"companyName" : "c_name"
+	},
+	"showCopyClipBoard" : "true"
 }
 
 RESPONSE:
 {
-  "id" : "69878",
-  "uniqueId" : "client_69878",
-  "name" : "client from api 3"
+  "id" : 69883,
+  "uniqueId" : "client_69883",
+  "name" : "Vistara_Client"
 }
 	
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

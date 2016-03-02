@@ -7,44 +7,45 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 	
-MANDATORY FEILD:
-	name
-	clientId
+MANDATORY FEILDS:
+	1. name
+
+EX: https://api.vistara.io/api/v2/tenants/client_93/sites
 	
-INPUT JSON / PAYLOAD :
+REQUEST:
 {
-   "name": "API Location 111",
-   "parent": {
-      "id": 69641
-   },
-   "clientId": 93,
-   "description": "Testing for Creating Site",
-   "address": "testing 123",
-   "city": "hyderabad",
-   "state": "Telangana",
-   "country": "India",
-   "phoneNumber": "9999999999",
-   "phoneExtension": "91",
-   "primaryContact": {
-      "loginName": "rajesh"
-   },
-   "devices": [
-      {
-         "id": "DEV0001520157"
-      },
-      {
-         "id": "DEV0000015781"
-      }
-   ]
- }
+   "name": "CREATE SITE - TESTING - API",
+   "parent": {
+      "name": "site from brocade inc client"
+   },
+   "description": "TESTING SITE PLEASE IGNORE",
+   "address": "Madhapur, Near Global Edge, Vistara Inc",
+   "state": "Telangana",
+   "country": "India",
+   "primaryContact": {
+      "id": "USR0000002128",
+      "loginName": "deepu@inc_client"
+   },
+   "phoneNumber": "9876543219",
+   "phoneExtension": "+91",
+   "devices": [
+      {
+         "id": "b2646a9c-8dbe-421d-b0cd-ceaa6379de64",
+         "name": "Device-deepu"
+      },
+      {
+         "id": "ff1a4e7b-cf66-4adc-a72f-0249d5fc3295",
+         "name": "testdevice-api"
+      }
+   ]
+}
 
 RESPONSE:
-	{
-	"id":69667,
-	"name":"API update 1",
-	"clientId":93,
-	"mspId":92
-	}
+{
+  "id" : 69678,
+  "name" : "CREATE SITE - TESTING - API",
+  "clientId" : 69856,
+  "mspId" : 92
+}
 
-
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

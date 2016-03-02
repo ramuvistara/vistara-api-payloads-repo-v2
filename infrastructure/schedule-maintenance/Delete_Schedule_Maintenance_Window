@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/scheduleMaintenances/{smId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/scheduleMaintenances/{smId}
  
 METHOD: DELETE
  
@@ -6,5 +6,9 @@ HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
-	
-Response Code: 200 OK
+
+EX: https://api.vistara.io/api/v2/tenants/client_69856/scheduleMaintenances/28
+
+RESPONSE: null
+
+RESPONSE CODE: 200 OK

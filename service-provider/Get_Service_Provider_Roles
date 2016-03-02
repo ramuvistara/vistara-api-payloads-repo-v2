@@ -7,9 +7,9 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-EX : https://api.vistara.io/api/v2/serviceProvider/roles/79
+EX: https://api.vistara.io/api/v2/serviceProvider/roles/79
  
-RESPONSE : 
+RESPONSE: 
 {
    "id": 79,
    "name": "testing for service provider",
@@ -49,4 +49,4 @@ RESPONSE :
    "allClients": true
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

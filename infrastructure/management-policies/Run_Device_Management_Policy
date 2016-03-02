@@ -2,28 +2,30 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/{id}/a
  
 METHOD: GET
  
-HEADER:
- Authorization = Bearer {accessToken}
- Accept = application/json
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
-ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/management/2327/action/run
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/management/2327/action/run
 
 RESPONSE:
-.........
 {
-  "status": 200,
-  "entity": "Request to run the policy has been initiated",
-  "metadata": {},
-  "headers": {},
-  "length": -1,
-  "cookies": {},
-  "allowedMethods": [],
-  "actualEntity": "Request to run the policy has been initiated",
-  "links": [],
-  "statusInfo": {
-    "family": "SUCCESSFUL",
-    "statusCode": 200,
-    "reasonPhrase": "OK"
-  },
-  "stringHeaders": {}
+	"status" : 200,
+	"entity" : "Requesttorunthepolicyhasbeeninitiated",
+	"metadata" : {},
+	"headers" : {},
+	"length" : -1,
+	"cookies" : {},
+	"allowedMethods" : [],
+	"actualEntity" : "Requesttorunthepolicyhasbeeninitiated",
+	"links" : [],
+	"statusInfo" : {
+		"family" : "SUCCESSFUL",
+		"statusCode" : 200,
+		"reasonPhrase" : "OK"
+	},
+	"stringHeaders" : {}
 }
+
+RESPONSE CODE: 200 OK

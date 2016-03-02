@@ -3,9 +3,9 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alertViews/{viewId}
 METHOD: GET
 
 HEADERS:
-	Authorization : Bearer {accessToken}
-	Content-Type : application/json
-	Accept : application/json
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 	
 SAMPLE DATA :
   	actions       :  {Open=Open, Acknowledged=Acknowledged, Ticketed=Ticketed, Permanent Suppressed=Permanent Suppressed, Closed=Closed, Suppressed=Suppressed}
@@ -20,7 +20,10 @@ SAMPLE DATA :
 	technologies  :  {11=NewRelic, 12=Nimsoft, 14=OpsManager, 10=SAPSolutionManager, 9=Solarwinds, 8=Vistara, 5=Vistara Agent, 3=Vistara Gateway}
 	duration      :  {1=Last one day, 7=Last one week, 30=Last one month}
 	
-RESPONSE JSON/DATA : (Ex for client)
+EX: 1. https://api.vistara.io/api/v2/tenants/client_93/alertViews/0
+	2. https://api.vistara.io/api/v2/tenants/msp_92/alertViews/0
+	
+RESPONSE: (Example for Client)
 {
    "id": 0,
    "clients": [
@@ -295,7 +298,7 @@ RESPONSE JSON/DATA : (Ex for client)
    ]
 }
 
-RESPONSE DATA : (example for MSP)
+RESPONSE: (Example for Partner)
 {
    "id": 0,
    "clients": [
@@ -513,4 +516,4 @@ RESPONSE DATA : (example for MSP)
    ]
 }
 
-STATUS CODE : 200 OK
+RESPONSE CODE: 200 OK

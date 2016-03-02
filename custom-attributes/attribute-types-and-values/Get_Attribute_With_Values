@@ -10,7 +10,7 @@ HEADERS:
 EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/63
      2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/64
 
-NOTE : This api will get the custom attribute and its values
+NOTE : This API will get a custom attribute and its values
 
 RESPONSE : 
 {

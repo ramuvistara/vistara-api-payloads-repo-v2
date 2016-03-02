@@ -10,30 +10,57 @@ HEADERS:
 EX : https://api.vistara.io/api/v2/tenants/client_93/serviceGroups/1674/customAttributes
 
 RESPONSE : 
-[ {
-  "id" : 1275,
-  "customAttributeValue" : {
-    "id" : 409,
-    "customAttribute" : {
-      "id" : 71,
-      "name" : "custom_attr_type_for_service_provider",
-      "description" : "creating custom_type for provider-update",
-      "organization" : {
-        "id" : 1,
-        "uniqueId" : "org_1",
-        "name" : "Vistara SaaS Platform",
-        "activated" : true
-      }
-    },
-    "value" : "test_val_2_for_custom_attr_type_for_sp",
-    "description" : "creating second value for s provider 2"
-  },
-  "taggable" : {
-    "id" : "1674",
-    "name" : "BB",
-    "entityType" : "ServiceGroup"
-  },
-  "tagSource" : "VISTARA"
-} ]
+[
+   {
+      "id": 1290,
+      "customAttributeValue": {
+         "id": 397,
+         "customAttribute": {
+            "id": 64,
+            "name": "custom_attr_from_API_test_1",
+            "description": "custom_attr_from_API_test_1_update",
+            "organization": {
+               "id": 92,
+               "uniqueId": "msp_92",
+               "name": "Brocade Inc",
+               "activated": true
+            }
+         },
+         "value": "custom_attr_from_API_test__msp_1",
+         "description": "desc_custom_attr_from_API_test_1_update_msp_1"
+      },
+      "taggable": {
+         "id": "1674",
+         "name": "BB",
+         "entityType": "ServiceGroup"
+      },
+      "tagSource": "VISTARA"
+   },
+   {
+      "id": 1275,
+      "customAttributeValue": {
+         "id": 409,
+         "customAttribute": {
+            "id": 71,
+            "name": "custom_attr_type_for_service_provider",
+            "description": "creating custom_type for provider-update",
+            "organization": {
+               "id": 1,
+               "uniqueId": "org_1",
+               "name": "Vistara SaaS Platform",
+               "activated": true
+            }
+         },
+         "value": "test_val_2_for_custom_attr_type_for_sp",
+         "description": "creating second value for s provider 2"
+      },
+      "taggable": {
+         "id": "1674",
+         "name": "BB",
+         "entityType": "ServiceGroup"
+      },
+      "tagSource": "VISTARA"
+   }
+]
 
 RESPONSE CODE : 200 OK

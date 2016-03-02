@@ -1,96 +1,263 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/deviceGroups/search
+URL: https://api.vistara.io/api/v2/tenants/{client}/policies/deviceGroups/search
  
 METHOD: GET
  
-HEADER:
-1. Authorization = Bearer {accessToken}
-2. Accept = application/json
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
 QUERY PARAMS:
-.............
-name=<name>
+	1. name={field} [mandatory]
  
-ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/deviceGroups/search?name=HR
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/deviceGroups/search?name=A
 
 RESPONSE:
-.........
 [
-  {
-    "id":1615,
-    "name":"HR Mgnt",
-    "type":"DEVICE_GROUP",
-    "childs":[
-	      { 
-		"id":836,
-		"name":"vistara-prod-app01",
-		"type":"DEVICE",
-		"childs":[],
-		"kbArticlesIds":[]
-	      },
-	      {
-		"id":844,
-		"name":"vistara-prod-db01",
-		"type":"DEVICE",
-		"childs":[],
-		"kbArticlesIds":[]
-	     }
-    ],
-    "policy":{ 
-		"id":0,
-		"matchType":"ALL",	
-		"rules":[
-		    {
-		      "key":"Device Name",
-		      "operator":"Ends with",
-                      "value":"01"
-                    }
-                ],
-               "actions":[],
-               "executionOrder":0
-             },
-    "kbArticlesIds":[]
-  },
-  {
-    "id":1617,
-    "name":"HRD",
-    "type":"DEVICE_GROUP",
-    "childs":[
-              {
-                "id":835,
-                "name":"acme-ecomm-aws-web2",
-                "type":"DEVICE",
-                "childs":[],
-                "kbArticlesIds":[]
-             },
-             {
-               "id":841,
-               "name":"acme-ecomm-aws-web3",
-               "type":"DEVICE",
-               "childs":[],
-               "kbArticlesIds":[]
-             },
-             {
-               "id":849,
-               "name":"acme-ecomm-aws-web1",
-               "type":"DEVICE",
-               "childs":[],
-               "kbArticlesIds":[]
-             }
-     ],
-     "policy":
-              {
-                "id":0,
-                "matchType":"ALL",
-                "rules":[
-                          {
-                            "key":"Device Name",
-                            "operator":"Contains",
-                            "value":"web"
-                          }
-                 ],
-                "actions":[],
-                "executionOrder":0
-              },
-     "kbArticlesIds":[]
-  }
+   {
+      "id": 1664,
+      "name": "A",
+      "type": "DEVICE_GROUP",
+      "childs": [
+         {
+            "id": 1665,
+            "name": "C",
+            "type": "DEVICE_GROUP",
+            "childs": [
+               {
+                  "id": 15767,
+                  "name": "AD-14",
+                  "type": "DEVICE",
+                  "childs": [],
+                  "kbArticlesIds": []
+               }
+            ],
+            "policy": {
+               "id": 0,
+               "matchType": "ALL",
+               "rules": [
+                  {
+                     "key": "Device Name",
+                     "operator": "Contains",
+                     "value": "AD-14",
+                     "resourceType": "DEVICE"
+                  }
+               ],
+               "actions": [],
+               "executionOrder": 0
+            },
+            "kbArticlesIds": []
+         }
+      ],
+      "policy": {
+         "id": 0,
+         "matchType": "ALL",
+         "rules": [
+            {
+               "key": "Device Name",
+               "operator": "Contains",
+               "value": "active",
+               "resourceType": "DEVICE"
+            }
+         ],
+         "actions": [],
+         "executionOrder": 0
+      },
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1818,
+      "name": "Device group example",
+      "type": "DEVICE_GROUP",
+      "childs": [
+         {
+            "id": 1815,
+            "name": "Policy example",
+            "type": "DEVICE_GROUP",
+            "childs": [
+               {
+                  "id": 1814,
+                  "name": "Policy example subgroup",
+                  "type": "DEVICE_GROUP",
+                  "childs": [],
+                  "policy": {
+                     "id": 0,
+                     "matchType": "ALL",
+                     "rules": [
+                        {
+                           "key": "Device Name",
+                           "operator": "Contains",
+                           "value": "hydlpt311"
+                        },
+                        {
+                           "key": "Device Name",
+                           "operator": "Starts with",
+                           "value": "db-mysql",
+                           "resourceType": "DEVICE"
+                        },
+                        {
+                           "key": "Device Name",
+                           "operator": "Contains",
+                           "value": "redis-prod",
+                           "resourceType": "DEVICE"
+                        },
+                        {
+                           "key": "Device Name",
+                           "operator": "Ends with",
+                           "value": "cassandra-prod",
+                           "resourceType": "DEVICE"
+                        },
+                        {
+                           "key": "Device Name",
+                           "operator": "Regex",
+                           "value": "db.*.prod",
+                           "resourceType": "DEVICE"
+                        }
+                     ],
+                     "actions": [],
+                     "executionOrder": 0
+                  },
+                  "kbArticlesIds": []
+               }
+            ],
+            "kbArticlesIds": []
+         },
+         {
+            "id": 1817,
+            "name": "Static example",
+            "type": "DEVICE_GROUP",
+            "childs": [
+               {
+                  "id": 1816,
+                  "name": "Static example sub-group",
+                  "type": "DEVICE_GROUP",
+                  "childs": [],
+                  "kbArticlesIds": []
+               }
+            ],
+            "kbArticlesIds": []
+         }
+      ],
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1815,
+      "name": "Policy example",
+      "type": "DEVICE_GROUP",
+      "childs": [
+         {
+            "id": 1814,
+            "name": "Policy example subgroup",
+            "type": "DEVICE_GROUP",
+            "childs": [],
+            "policy": {
+               "id": 0,
+               "matchType": "ALL",
+               "rules": [
+                  {
+                     "key": "Device Name",
+                     "operator": "Contains",
+                     "value": "hydlpt311"
+                  },
+                  {
+                     "key": "Device Name",
+                     "operator": "Starts with",
+                     "value": "db-mysql",
+                     "resourceType": "DEVICE"
+                  },
+                  {
+                     "key": "Device Name",
+                     "operator": "Contains",
+                     "value": "redis-prod",
+                     "resourceType": "DEVICE"
+                  },
+                  {
+                     "key": "Device Name",
+                     "operator": "Ends with",
+                     "value": "cassandra-prod",
+                     "resourceType": "DEVICE"
+                  },
+                  {
+                     "key": "Device Name",
+                     "operator": "Regex",
+                     "value": "db.*.prod",
+                     "resourceType": "DEVICE"
+                  }
+               ],
+               "actions": [],
+               "executionOrder": 0
+            },
+            "kbArticlesIds": []
+         }
+      ],
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1814,
+      "name": "Policy example subgroup",
+      "type": "DEVICE_GROUP",
+      "childs": [],
+      "policy": {
+         "id": 0,
+         "matchType": "ALL",
+         "rules": [
+            {
+               "key": "Device Name",
+               "operator": "Contains",
+               "value": "hydlpt311"
+            },
+            {
+               "key": "Device Name",
+               "operator": "Starts with",
+               "value": "db-mysql",
+               "resourceType": "DEVICE"
+            },
+            {
+               "key": "Device Name",
+               "operator": "Contains",
+               "value": "redis-prod",
+               "resourceType": "DEVICE"
+            },
+            {
+               "key": "Device Name",
+               "operator": "Ends with",
+               "value": "cassandra-prod",
+               "resourceType": "DEVICE"
+            },
+            {
+               "key": "Device Name",
+               "operator": "Regex",
+               "value": "db.*.prod",
+               "resourceType": "DEVICE"
+            }
+         ],
+         "actions": [],
+         "executionOrder": 0
+      },
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1817,
+      "name": "Static example",
+      "type": "DEVICE_GROUP",
+      "childs": [
+         {
+            "id": 1816,
+            "name": "Static example sub-group",
+            "type": "DEVICE_GROUP",
+            "childs": [],
+            "kbArticlesIds": []
+         }
+      ],
+      "kbArticlesIds": []
+   },
+   {
+      "id": 1816,
+      "name": "Static example sub-group",
+      "type": "DEVICE_GROUP",
+      "childs": [],
+      "kbArticlesIds": []
+   }
 ]
+
+RESPONSE CODE: 200 OK

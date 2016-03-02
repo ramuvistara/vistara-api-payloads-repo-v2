@@ -6,117 +6,131 @@ HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
+
+EX: https://api.vistara.io/api/v2/tenants/msp_92/clients/client_93
  
 RESPONSE : 
 {
-   "id": 78,
-   "uniqueId": "client_78",
-   "name": "MindTree",
-   "updatedTime": "2015-12-11T07:04:21+0000",
-   "createdTime": "2015-09-29T09:57:20+0000",
-   "primaryChannel": {
+   "id": 93,
+   "uniqueId": "client_93",
+   "name": "Brocade Lab",
+   "activated": true,
+   "updatedTime": "2016-02-15T09:41:03+0530",
+   "createdTime": "2013-01-29T09:45:04+0530",
+   "lastUpdatedBy": {
+      "id": "USR0000000001",
+      "loginName": "superadmin",
+      "lastName": "Admin",
+      "firstName": "Super",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   "channel": {
       "id": 1,
-      "name": "ITOP",
+      "name": "Ingram Micro",
       "timeZone": "America/Los_Angeles"
    },
-   "createdBy": {
-      "id": "USR0000000016",
-      "loginName": "sunil.tatikonda@vistarait.com",
-      "lastName": "tatikonda",
-      "firstName": "sunil",
-      "email": "sunil.tatikonda@vistarait.com",
-      "changePassword": false
-   },
-   "lastUpdatedBy": {
-      "id": "USR0000000025",
-      "loginName": "qateam",
-      "lastName": "team",
-      "firstName": "qa",
-      "email": "srinivasaraju.uddaraju@vistarait.com",
-      "changePassword": false
-   },
-   "address": "Hyd",
-   "city": "",
-   "state": "",
-   "country": "India",
-   "zip": "",
-   "phoneNumber": "",
-   "mobileNumber": "",
-   "varId": "76",
+   "address": "130 Holger Way",
+   "city": "San Jose",
+   "state": "CA",
+   "country": "United States",
+   "zip": "95134",
+   "phoneNumber": "4083400162",
+   "mobileNumber": "4083400162",
+   "mspId": "msp_92",
    "clientDetails": {
-      "businessStartHour": 0,
+      "businessStartHour": 20,
       "businessStartMin": 0,
-      "businessEndHour": 0,
+      "businessEndHour": 6,
       "businessEndMin": 0,
-      "businessDayStart": 0,
-      "businessDayEnd": 0,
+      "businessDayStart": 2,
+      "businessDayEnd": 4,
       "ticketModuleName": "Vistara",
-      "clientTechnologies": [
-         "Vistara Gateway",
-         "Vistara Agent"
-      ],
-      "boughtServices": [
-         "vistara"
-      ]
+      "serviceStage": {
+         "id": 2,
+         "name": "Regular"
+      }
    },
    "agentPolicies": [
       {
-         "id": 77,
+         "id": 39,
          "name": "Desktops Policy",
-         "deviceCount": 9,
+         "deviceCount": 1,
          "policies": [
             {
                "id": 1,
-               "name": "VCareCoreModule",
+               "name": "PatchManagement",
                "check": true
             },
             {
+               "id": 2,
+               "name": "uvnc",
+               "check": false
+            },
+            {
                "id": 3,
-               "name": "UVNCModule",
+               "name": "ncaretrayicon",
                "check": true
             },
             {
                "id": 6,
-               "name": "TrayiconModule",
-               "check": true
+               "name": "VCareCoreModule",
+               "check": false
+            },
+            {
+               "id": 7,
+               "name": "sqlitedb",
+               "check": false
             }
          ]
       },
       {
-         "id": 76,
+         "id": 38,
          "name": "Servers Policy",
-         "deviceCount": 2,
+         "deviceCount": 0,
          "policies": [
             {
                "id": 1,
-               "name": "VCareCoreModule",
+               "name": "PatchManagement",
                "check": true
+            },
+            {
+               "id": 2,
+               "name": "uvnc",
+               "check": false
             },
             {
                "id": 3,
-               "name": "UVNCModule",
-               "check": true
+               "name": "ncaretrayicon",
+               "check": false
             },
             {
                "id": 6,
-               "name": "TrayiconModule",
-               "check": true
+               "name": "VCareCoreModule",
+               "check": false
+            },
+            {
+               "id": 7,
+               "name": "sqlitedb",
+               "check": false
             }
          ]
       }
    ],
-   "saClient": false,
+   "saClient": true,
    "nableClient": false,
-   "lpiClient": true,
-   "ncareAgent": true,
-   "ncareDevsCount": "2",
-   "noPolicyDevsCount": "0",
-   "desktopCount": "12",
-   "serverCount": "32",
-   "allDevicesCount": "133",
+   "lpiClient": false,
+   "ncareAgent": false,
+   "ncareDevsCount": "42",
+   "noPolicyDevsCount": "41",
+   "desktopCount": "3",
+   "serverCount": "34",
+   "networkDevicesCount": "2",
+   "allDevicesCount": "277",
+   "otherDevicesCount": "238",
    "nocDetails": {
-      "id": 1,
-      "name": "Default NOC"
+      "id": 4,
+      "name": "BVRM NOC"
    }
 }
 

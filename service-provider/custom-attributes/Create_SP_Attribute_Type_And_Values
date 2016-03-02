@@ -8,12 +8,16 @@ HEADERS:
 	Accept : application/json
 	
 MANDATORY FEILDS:
-  name
-  customAttributeValues.value
+	1. name
+	2. customAttributeValues.value
 
-EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes
+OPTIONAL FIELDS:
+	1. description
+	2. customAttributeValues.description
 
-INPUT JSON / PAYLOAD :
+EX: https://api.vistara.io/api/v2/serviceProvider/customAttributes
+
+REQUEST:
 {
 	"name" : "custom_attr_type_for_service_provider",
 	"description" : "creating custom_type for provider",

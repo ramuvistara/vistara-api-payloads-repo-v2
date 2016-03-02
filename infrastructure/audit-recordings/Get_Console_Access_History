@@ -8,29 +8,31 @@ HEADERS:
 	Accept : application/json
 	
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=id [optional]
-5.	queryString={field} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=id [optional]
+	5.	queryString={field} [optional]
 
-QUERY VARIABLES : 
-1.	id
-2.	uniqueId
-3.	userId            [EX : USR0000000001]
-4.	startDate  
-5.	endDate
+QUERY VARIABLES: 
+	1.	id
+	2.	clientId		[Ex : client_1]
+	3.	userId         	[Ex : USR0000000001]
+	4.	startDate  		[Ex: 2016-02-26T05:17:58 0000]
+	5.	endDate			[Ex: 2016-02-26T05:17:58 0000]
 
-EX :  1. https://api.vistara.io/api/v2/tenants/client_93/devices/auditRecordings/search?pageSize=2&queryString=userId:USR0000002114+startDate:2014-12-12T01:13:12 0530+startDate:2015-12-12T01:13:12 0530
-      2. https://api.vistara.io/api/v2/tenants/msp_92/devices/auditRecordings/search?pageSize=2&queryString=userId:USR0000002113+startDate:2014-12-12T01:13:12 0530+startDate:2015-12-12T01:13:12 0530
+EX: 1. https://api.vistara.io/api/v2/tenants/client_93/devices/auditRecordings/search?pageSize=2&queryString=userId:USR0000002114+startDate:2014-12-12T01:13:12 0000+startDate:2015-12-12T01:13:12 0000
+    2. https://api.vistara.io/api/v2/tenants/msp_92/devices/auditRecordings/search?pageSize=2&queryString=userId:USR0000002113+startDate:2014-12-12T01:13:12 0000+startDate:2015-12-12T01:13:12 0000
 
-NOTE : 
-    	special characters in queryString:
-    	1.	%2B -- indicate next field
-    	2.	: -- indicate equals to
-    	3.	dataformate should be in yyyy-MM-dd'T'HH:mm:ssZ
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (Ex: 2016-02-26T05:17:58 0000)
 
-RESPONSE : 
+RESPONSE: 
 {
   "results" : [ {
     "id" : "3",
@@ -65,8 +67,8 @@ RESPONSE :
       "clientUniqueId" : "client_93",
       "type" : "DEVICE"
     },
-    "startTime" : "2016-02-11T17:10:48+0530",
-    "endTime" : "2016-02-11T17:10:48+0530",
+    "startTime" : "2016-02-11T17:10:48+0000",
+    "endTime" : "2016-02-11T17:10:48+0000",
     "consoleProtocol" : "NSS",
     "ipAddress" : "10.4.18.56",
     "port" : "8443",
@@ -105,8 +107,8 @@ RESPONSE :
       "clientUniqueId" : "client_93",
       "type" : "DEVICE"
     },
-    "startTime" : "2016-02-03T13:18:25+0530",
-    "endTime" : "2016-02-03T13:18:25+0530",
+    "startTime" : "2016-02-03T13:18:25+0000",
+    "endTime" : "2016-02-03T13:18:25+0000",
     "consoleProtocol" : "NSS",
     "ipAddress" : "10.2.3.50",
     "port" : "0",

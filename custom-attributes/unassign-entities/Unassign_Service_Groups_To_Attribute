@@ -9,7 +9,7 @@ HEADERS:
 
 EX : https://api.vistara.io/api/v2/tenants/client_93/customAttributes/64/values/397/serviceGroups
 
-INPUT JSON / PAYLOAD :
+REQUEST:
 [
 	{
 		"id" : "1458"
@@ -19,11 +19,21 @@ INPUT JSON / PAYLOAD :
 	}
 ]
 
-RESPONSE : 
+RESPONSE: (Ex. For Success) 
 {
   "FailedEntities" : { },
   "FailedCount" : 0,
   "SuccessCount" : 2
+}
+
+RESPONSE: (Ex. For Failures)
+{
+  "FailedEntities" : {
+    "10202" : "Invalid service group id for client : 93",
+    "10203" : "Invalid service group id for client : 93"
+  },
+  "FailedCount" : 2,
+  "SuccessCount" : 0
 }
 
 RESPONSE CODE : 200 OK

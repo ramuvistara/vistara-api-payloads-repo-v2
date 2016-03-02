@@ -2,84 +2,87 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/escalationPolicies/search
 
 METHOD: GET
 
-HEADER:
-	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+HEADERS:
+	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json 
 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=false [optional]
-4.	sortName={field} defaultValue=escalation.name [optional]
-5.	queryString = {queryString} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=false [optional]
+	4.	sortName={field} defaultValue=escalation.name [optional]
+	5.	queryString = {queryString} [optional]
 
 QUERY VARIABLES:
- ...............
-1.	id
-2.	name
-3.	createdBy	[EX : USR00000001]
-4.	updatedBy	[EX : USR00000001]
-5.	startCreationDate
-6.	endCreationDate
-7.	startUpdationDate
-8.	endUpdationDate
+	1.	id
+	2.	name
+	3.	createdBy			[Ex. USR00000001]
+	4.	updatedBy			[Ex. USR00000001]
+	5.	startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
+	6.	endCreationDate		[Ex. 2015-11-10T10:40:20 0000]
+	7.	startUpdationDate	[Ex. 2015-11-10T10:40:20 0000]
+	8.	endUpdationDate		[Ex. 2015-11-10T10:40:20 0000]
 
-EX : https://api.vistara.io/api/v2/tenants/client_93/escalationPolicies/search
-EX : https://api.vistara.io/api/v2/tenants/client_93/escalationPolicies/search?pageNo=2&pageSize=5&queryString=id:25+name:policy+timeZoneId:5+createdBy:USR0000002240+updatedBy:USR0000002240
-EX : https://api.vistara.io/api/v2/tenants/client_93/escalationPolicies/search?pageNo=2&pageSize=5&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
-EX : https://api.vistara.io/api/v2/tenants/client_93/escalationPolicies/search?pageNo=1&pageSize=10&queryString=startCreationDate:2015-11-01T11:49:21 0530+endCreationDate:2015-11-20T11:49:21 0530
+EX: 1. https://api.vistara.io/api/v2/tenants/client_7/escalationPolicies/search?pageNo=2&pageSize=5&queryString=id:25+name:policy+createdBy:USR0000002240+updatedBy:USR0000002240+startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+	2. https://api.vistara.io/api/v2/tenants/msp_4/escalationPolicies/search?
+	
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
 
-Note: The value of queryString parameter must be url encoded, to ensure handling of special characters.
-
-RESPONSE :
+RESPONSE:
 {
    "results": [
       {
-         "id": 30,
-         "mspId": 92,
-         "mspUniqueId": "msp_92",
-         "mspName": "Brocade Inc",
-         "name": "escalation policy created using api 3 schedule testing",
-         "description": "description for create escalation example from api",
+         "id": 37,
+         "mspId": 4,
+         "mspUniqueId": "msp_4",
+         "mspName": "FSSL Inc",
+         "name": "Test-Policy",
+         "description": "Testing-please ignore",
          "allclients": false,
          "timeZone": {
-            "id": 5,
+            "id": 19,
             "version": 0,
-            "name": "America/Phoenix",
-            "label": "GMT -07:00 Mountain",
-            "code": "MST",
-            "timezoneCodeWithDST": "MST",
-            "labelWithDST": "GMT -07:00 Mountain Standard Time"
+            "name": "Asia/Calcutta",
+            "label": "GMT +05:30 India",
+            "code": "IST",
+            "timezoneCodeWithDST": "IST",
+            "labelWithDST": "GMT +05:30 India Standard Time"
          },
          "createdBy": {
-            "id": "USR0000002095",
-            "loginName": "vistara_system_user",
-            "lastName": " ",
-            "firstName": "Vistara System User",
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
             "email": "sarma519@gmail.com",
             "changePassword": false
          },
-         "createdTime": "2015-08-26T12:30:27+0530",
+         "createdTime": "2016-03-01T09:05:11+0530",
          "updatedTime": "",
          "autoNotification": true
       },
       {
-         "id": 35,
-         "mspId": 92,
-         "mspUniqueId": "msp_92",
-         "mspName": "Brocade Inc",
-         "name": "escalation policy created using api 3 schedule testing 3",
-         "description": "description for create escalation example from api",
+         "id": 38,
+         "mspId": 4,
+         "mspUniqueId": "msp_4",
+         "mspName": "FSSL Inc",
+         "name": "Testing-Policy",
+         "description": "Testing-Policy-Creation",
          "allclients": false,
          "timeZone": {
-            "id": 5,
+            "id": 19,
             "version": 0,
-            "name": "America/Phoenix",
-            "label": "GMT -07:00 Mountain",
-            "code": "MST",
-            "timezoneCodeWithDST": "MST",
-            "labelWithDST": "GMT -07:00 Mountain Standard Time"
+            "name": "Asia/Calcutta",
+            "label": "GMT +05:30 India",
+            "code": "IST",
+            "timezoneCodeWithDST": "IST",
+            "labelWithDST": "GMT +05:30 India Standard Time"
          },
          "createdBy": {
             "id": "USR0000002095",
@@ -89,7 +92,7 @@ RESPONSE :
             "email": "sarma519@gmail.com",
             "changePassword": false
          },
-         "createdTime": "2015-08-26T17:41:52+0530",
+         "createdTime": "2016-03-01T09:06:22+0530",
          "updatedTime": "",
          "autoNotification": true
       }
@@ -100,9 +103,9 @@ RESPONSE :
    "pageSize": 10,
    "totalPages": 1,
    "nextPage": false,
-   "nextPageNo": 2,
+   "nextPageNo": 0,
    "previousPageNo": 0,
    "descendingOrder": false
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

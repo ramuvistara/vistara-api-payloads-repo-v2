@@ -7,10 +7,16 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-EX : 1.https://api.vistara.io/api/v2/tenants/client_93/roles/10
-     2.https://api.vistara.io/api/v2/tenants/msp_92/roles/11
+EX: 1.https://api.vistara.io/api/v2/tenants/client_93/roles/10
+    2.https://api.vistara.io/api/v2/tenants/msp_92/roles/11
+
+NOTE:
+	* This API will fetch all the permissions, devices, deviceGroups, users, userGroups against a Role.
+	* Get Users APIs will give roles against a user (Below are those API's)
+		I.  Get User 	 - https://api.vistara.io/api/v2/tenants/{tenantId}/users/{userId}
+		II. Search Users - https://api.vistara.io/api/v2/tenants/api/v2/tenants/{tenantId}/users/search
  
-RESPONSE : 
+RESPONSE: 
 {
    "id": 78,
    "name": "Testing with partner",
@@ -144,4 +150,4 @@ RESPONSE :
    ]
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

@@ -1,53 +1,48 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alertid}
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alertId}
 
 METHOD: GET
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 
-ex: (/api/v2/tenants/client_31/alerts/1239702)
-
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+EX: https://api.vistara.io/api/v2/tenants/client_593972/alerts/111414
 
 RESPONSE:
-.........
 {
-   "uniqueId": "1239702",
-   "subject": "Warning. CPU Load Averages: 107.86 45.5 16.69",
-   "description": "The CPU Load on the device is Load in last 1 minute: 107.86 Load in last 5 minute: 45.5 Load in last 15 minute: 16.69 ",
+   "uniqueId": "111414",
+   "subject": "Vistara Agent version 5.84.0002 installed on device HYDLPT215 by user netenrich bvrm",
+   "description": "Vistara Agent version 5.84.0002 installed on device HYDLPT215 by user netenrich bvrm",
    "currentState": "Ok",
-   "oldState": "Warning",
-   "serviceName": "LOAD",
+   "serviceName": "Install",
    "acknowledged": false,
    "suppressed": false,
    "permanentlySuppressed": false,
-   "closed": false,
-   "clientUniqueId": "client_31",
-   "alertType": "Monitoring",
+   "closed": true,
+   "clientUniqueId": "client_593972",
+   "alertType": "Agent",
    "app": "Vistara",
-   "alertTime": "2015-10-14T10:31:39+0000",
+   "alertTime": "2015-12-20T10:28:14+0000",
    "device": {
-      "id": "62816a2e-c1ea-4d59-8c0d-fd48ccfd634e",
-      "name": "vg-perf-test-01",
-      "ipAddress": "172.30.2.177",
-      "type" : "DEVICE"
+      "name": "HYDLPT215",
+      "type": "DEVICE"
    },
    "resource": {
-      "id": "62816a2e-c1ea-4d59-8c0d-fd48ccfd634e",
-      "name": "vg-perf-test-01",
-      "ipAddress": "172.30.2.177",
-      "type" : "DEVICE"
+      "name": "HYDLPT215"
    },
-   "repeatCount": "2",
-   "tenantId": 31,
-   "status": "Ticketed",
+   "repeatCount": "1",
+   "tenantId": 593972,
+   "status": "Closed",
    "priority": "N/A",
-   "elapsedTimeString": "18h 54m ",
-   "healedTimeString": "46s",
-   "updatedTime": "2015-10-14T10:31:11+0000",
-   "rba": "false",
-   "tenantName": "NM-HYD1",
-   "incidentId":"INC0000001018"
+   "elapsedTimeString": "70d 21h 4m ",
+   "healedTimeString": "",
+   "updatedTime": "2015-12-20T10:27:57+0000",
+   "rba": false,
+   "tenantName": "Client_Test",
+   "managedByVistara": false,
+   "incidentId": "INC0000000060",
+   "actedTs": 0
 }
+
+RESPONSE CODE: 200 OK

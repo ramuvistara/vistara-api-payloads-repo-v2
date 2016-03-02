@@ -2,53 +2,233 @@ URL: https://api.vistara.io/api/v2/serviceProvider/users/search
 
 METHOD: GET
 
-HEADER:
-	Authorization : Bearer {access_token} [Ex: Bearer c81c9dd6-5b5f-4a82-af2e-41427af90467]
+HEADERS:
+	Authorization : Bearer {accessToken}
 	Content-Type : application/json
-	Accept : application/json 
+	Accept : application/json
 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDecendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=user.id [optional]
-5.	queryString = {queryString} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=user.id [optional]
+	5.	queryString = {queryString} [optional]
 
 QUERY VARIABLES:
- ...............
-1.	uniqueId		[ex : USR0000002128]
-2.	name
-3.	startCreationDate	[ex : 2015-11-01T11:49:21 0530]
-4.	endCreationDate
-5.	startUpdationDate
-6.	endUpdationDate
-7. 	orgUniqueId		[ex : client_1, msp_1]
+	1.	uniqueId			[Ex. USR0000002128]
+	2.	name
+	3.	startCreationDate	[Ex. 2015-11-01T11:49:21 0530]
+	4.	endCreationDate		[Ex. 2015-11-01T11:49:21 0530]
+	5.	startUpdationDate	[Ex. 2015-11-01T11:49:21 0530]
+	6.	endUpdationDate		[Ex. 2015-11-01T11:49:21 0530]
+	7. 	orgUniqueId			[Ex. client_1, msp_1]
 
 EX : https://api.vistara.io/api/v2/serviceProvider/users/search?pageSize:5&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
 
 RESPONSE : 
 {
    "results": [
       {
-         "id": "USR0000002128",
-         "loginName": "deepu@inc_client",
-         "lastName": "_inc_client",
-         "firstName": "deepu",
-         "email": "google@gmail.com",
-         "altEmail": "",
+         "id": "USR0000002144",
+         "loginName": "Vistara-Testing-User",
+         "lastName": "Satyam",
+         "firstName": "Nilam",
+         "email": "vistaraTester1@vistarait.com",
+         "altEmail": "vistaraTester2@vistarait.com",
+         "userAccountType": "REGULAR",
+         "designation": "Tester",
+         "address": "Madhapur, Near Global Edge School",
+         "city": "Hyderabad",
+         "state": "Telangana",
+         "country": "India",
+         "zip": "500081",
+         "phoneNumber": "9876678901",
+         "mobileNumber": "9128475620",
+         "timeZone": {
+            "id": "12",
+            "name": "GMT",
+            "label": "Greenwich Mean Time",
+            "code": "GMT"
+         },
+         "roles": [
+            {
+               "id": 1,
+               "name": "Service Provider Administrator"
+            },
+            {
+               "id": 23,
+               "name": "Business User"
+            }
+         ],
+         "authType": "LOCAL",
+         "status": "active",
+         "orgId": "org_1",
+         "profileImage": {
+            "description": "",
+            "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+            "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+            "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+            "imageType": ""
+         },
+         "changePassword": true,
+         "organizationName": "Vistara SaaS Platform",
+         "userNotifications": [
+            {
+               "notifyType": "Account Information",
+               "notifyMethod": "Email",
+               "notifyInputType": "Primary Email",
+               "notifyRecurringReport": true
+            },
+            {
+               "notifyType": "Alert Notification",
+               "notifyMethod": "No Notify",
+               "notifyRecurringReport": false
+            },
+            {
+               "notifyType": "Report Notification",
+               "notifyMethod": "Email",
+               "notifyInputType": "Primary Email",
+               "notifyRecurringReport": true
+            }
+         ],
+         "createdTime": "2016-02-29T13:44:12+0530",
+         "updatedTime": "2016-02-29T13:44:12+0530"
+      },
+      {
+         "id": "USR0000002143",
+         "loginName": "Trivalley_Test_User",
+         "lastName": "Mungamuri",
+         "firstName": "Deepu",
+         "email": "deepu.mungamuri94@gmail.com",
+         "altEmail": "deepu.mungamuri@vistarait.com",
+         "userAccountType": "REGULAR",
+         "designation": "designation",
+         "address": "near global edge school",
+         "city": "Hyderabad",
+         "state": "Telangana",
+         "country": "India",
+         "zip": "500081",
+         "phoneNumber": "9999999999 Extn 91",
+         "mobileNumber": "9999999999",
+         "timeZone": {
+            "id": "19",
+            "name": "Asia/Calcutta",
+            "label": "GMT +05:30 India",
+            "code": "IST"
+         },
+         "roles": [
+            {
+               "id": 4,
+               "name": "Client Administrator"
+            },
+            {
+               "id": 5,
+               "name": "Client User"
+            },
+            {
+               "id": 6,
+               "name": "Customer"
+            },
+            {
+               "id": 25,
+               "name": "ITOP Client Administrator"
+            },
+            {
+               "id": 70,
+               "name": "IM Link Client Administrator"
+            },
+            {
+               "id": 71,
+               "name": "IM Link Client User"
+            }
+         ],
+         "authType": "LOCAL",
+         "userGroups": [
+            {
+               "id": 0,
+               "name": "City School Client user group",
+               "userCount": 0,
+               "assignUsers": [],
+               "unAssignUsers": []
+            }
+         ],
+         "status": "active",
+         "orgId": "client_13",
+         "profileImage": {
+            "description": "",
+            "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+            "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+            "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+            "imageType": ""
+         },
+         "changePassword": true,
+         "organizationName": "City School District",
+         "userNotifications": [
+            {
+               "notifyType": "Account Information",
+               "notifyMethod": "Email",
+               "notifyInputType": "Primary Email",
+               "notifyRecurringReport": false
+            },
+            {
+               "notifyType": "Alert Notification",
+               "notifyMethod": "Email",
+               "notifyInputType": "Primary Email",
+               "notifyRecurringReport": false
+            },
+            {
+               "notifyType": "Report Notification",
+               "notifyMethod": "Email",
+               "notifyInputType": "Alternate Email",
+               "notifyRecurringReport": false
+            }
+         ],
+         "createdTime": "2016-02-04T14:06:13+0530",
+         "updatedTime": "2016-02-04T14:06:13+0530"
+      },
+      {
+         "id": "USR0000002141",
+         "loginName": "TestFromUI",
+         "lastName": "TestClient",
+         "firstName": "TestUser",
+         "email": "email@gmail.com",
+         "altEmail": "testing1@gmail.com",
          "userAccountType": "REGULAR",
          "designation": "",
          "address": "",
          "city": "",
          "state": "",
-         "country": "India",
+         "country": "United States",
          "zip": "",
          "phoneNumber": "",
-         "mobileNumber": "",
-         "timeZone": "Asia/Calcutta",
+         "mobileNumber": "9876543210",
+         "timeZone": {
+            "id": "19",
+            "name": "Asia/Calcutta",
+            "label": "GMT +05:30 India",
+            "code": "IST"
+         },
+         "roles": [
+            {
+               "id": 23,
+               "name": "Business User"
+            },
+            {
+               "id": 74,
+               "name": "SERVICE PROVIDER STANDARD"
+            }
+         ],
          "authType": "LOCAL",
          "status": "active",
-         "orgId": "client_69856",
+         "orgId": "org_1",
          "profileImage": {
             "description": "",
             "logoPath": "https://app.vistarait.com/img/nophoto.gif",
@@ -56,8 +236,8 @@ RESPONSE :
             "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
             "imageType": ""
          },
-         "changePassword": false,
-         "organizationName": "Brocade Inc Client",
+         "changePassword": true,
+         "organizationName": "Vistara SaaS Platform",
          "userNotifications": [
             {
                "notifyType": "Account Information",
@@ -76,115 +256,19 @@ RESPONSE :
                "notifyRecurringReport": false
             }
          ],
-         "createdTime": "2015-11-23T11:39:32+0530",
-         "updatedTime": "2015-11-23T11:39:32+0530",
-         "acls": [
-            {
-               "name": "IM Link Client User"
-            },
-            {
-               "name": "FULL PERMISSIONS-CLIENT"
-            }
-         ]
-      },
-      {
-         "id": "USR0000002127",
-         "loginName": "partner@NELAB",
-         "lastName": "mungamuri",
-         "firstName": "deepu",
-         "email": "deepu.mungamuri94@gmail.com",
-         "altEmail": "deepu.mungamuri@gmail.com",
-         "userAccountType": "REGULAR",
-         "designation": "sldfj",
-         "address": "lsdflj",
-         "city": "lsdfj",
-         "state": "lsdlf",
-         "country": "India",
-         "zip": "sdflj",
-         "phoneNumber": "",
-         "mobileNumber": "",
-         "timeZone": "Asia/Calcutta",
-         "authType": "LOCAL",
-         "status": "active",
-         "orgId": "msp_69818",
-         "profileImage": {
-            "description": "",
-            "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-            "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-            "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-            "imageType": ""
-         },
-         "changePassword": false,
-         "organizationName": "NE lab",
-         "userNotifications": [
-            {
-               "notifyType": "Account Information",
-               "notifyMethod": "Email",
-               "notifyInputType": "Primary Email",
-               "notifyRecurringReport": false
-            },
-            {
-               "notifyType": "Alert Notification",
-               "notifyMethod": "No Notify",
-               "notifyRecurringReport": false
-            },
-            {
-               "notifyType": "Report Notification",
-               "notifyMethod": "No Notify",
-               "notifyRecurringReport": false
-            }
-         ],
-         "createdTime": "2015-10-06T08:28:04+0530",
-         "updatedTime": "2015-10-06T08:28:04+0530",
-         "acls": [
-            {
-               "name": "Var Administrator"
-            },
-            {
-               "name": "VAR User"
-            },
-            {
-               "name": "ITOP Administrator"
-            },
-            {
-               "name": "Service Desk VAR"
-            },
-            {
-               "name": "Auditor Manage"
-            },
-            {
-               "name": "Auditor View"
-            },
-            {
-               "name": "Auditor Manage"
-            },
-            {
-               "name": "Auditor View"
-            },
-            {
-               "name": "ACS VAR Administrator"
-            },
-            {
-               "name": "ITOP VAR Administrator"
-            },
-            {
-               "name": "NetApp Admin"
-            },
-            {
-               "name": "FULL PERMISSIONS"
-            }
-         ]
+         "createdTime": "2016-02-03T16:03:08+0530",
+         "updatedTime": "2016-02-03T16:03:08+0530"
       }
    ],
-   "totalResults": 166,
+   "totalResults": 171,
    "orderBy": "user.id",
    "pageNo": 1,
-   "pageSize": 2,
-   "totalPages": 83,
+   "pageSize": 3,
+   "totalPages": 57,
    "nextPage": true,
    "nextPageNo": 2,
    "previousPageNo": 0,
    "descendingOrder": true
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

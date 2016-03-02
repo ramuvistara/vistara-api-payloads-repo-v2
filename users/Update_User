@@ -1,44 +1,113 @@
-URL: https://api.vistara.io/api/v2/tenants/{orgId}/users/{userid}
+URL: https://api.vistara.io/api/tenants/{orgId}/users
 
 METHOD: POST
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
- 
- MANDATORY FIELDS:
- .................
- 1) firstName
- 
- REQUEST:
-.........
- {
-	"lastName": "testing_api_client",
-	"firstName": "testing_api",
-	"email": "test@gmail.com",
-	"address": "hyderabad",
-	"city": "hyderabad",
-	"state": "Andra Pradesh",
-	"country": "United States",
-	"timeZone": {"code" : "PSTM"},
-	"phoneNumber": "09887485473",
-	"mobileNumber": "9432434453",
-	"userGroups": [{
-		"name": "user_group_new"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX: 1. https://api.vistara.io/api/tenants/client_69881/users
+	2. https://api.vistara.io/api/tenants/msp_92/users
+
+NOTE: 
+	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
+	* No need to send every field in Update case, just send those fields required to update only.
+
+REQUEST:
+{
+	"loginName" : "Vistara-Testing-Client-User",
+	"password" : "VistaraIT123",
+	"firstName": "Nilam-Tester",
+	"lastName" : "Satyam-Tester",
+	"designation" : "Tester",
+	"address" : "Madhapur, Near Global Edge School",
+	"city"	  : "Hyderabad",
+	"state"   : "Telangana",
+	"zip"	  : "500081",
+	"country" : "India",
+	"email" : "vistaraTester3@vistarait.com",
+	"altEmail" : "vistaraTester4@vistarait.com",
+	"phoneNumber" : "9876678901",
+	"mobileNumber" : "9128475620",
+	"timeZone" : {
+		"code" : "GMT"
 	},
-	{
-		"name": "user_group_dell_client"
-	}],
-	"acls": [{
-	"name":"ACS Client Administrator"
-	}]
+	"userNotifications" : [
+		{
+			"notifyType" : "Account Information",
+			"notifyMethod" : "Email",
+			"notifyInputType" : "Primary Email",
+			"notifyRecurringReport" : "true"
+		},
+		{
+			"notifyType" : "Alert Notification",
+			"notifyMethod" : "No Notify",
+			"notifyInputType" : "Alternate Email",
+			"notifyRecurringReport" : "false"
+		},
+		{
+			"notifyType" : "Report Notification",
+			"notifyMethod" : "Email",
+			"notifyInputType" : "Primary Email",
+			"notifyRecurringReport" : "true"
+		}
+	],
+	"roles" : [
+		{
+			"name" : "ACS Client Administrator"
+		},
+		{
+			"name" : "FULL PERMISSIONS-CLIENT"
+		}
+	],
+	"userGroups" : [
+		{
+			"name" : "Testing group"
+		},
+		{
+			"name" : "Testing group 2"
+		}
+	]
 }
 
-ex(/api/v2/tenants/client_69919/users/USR0000002258)
+RESPONSE:
+{
+   "id": "USR0000002145",
+   "loginName": "Vistara-Testing-Client-User",
+   "lastName": "Satyam-Tester",
+   "firstName": "Nilam-Tester",
+   "email": "vistaraTester3@vistarait.com",
+   "phoneNumber": "9876678901",
+   "mobileNumber": "9128475620",
+   "timeZone": {
+      "id": "12",
+      "name": "GMT",
+      "label": "Greenwich Mean Time",
+      "code": "GMT"
+   },
+   "roles": [
+      {
+         "id": 28,
+         "name": "ACS Client Administrator"
+      },
+      {
+         "id": 73,
+         "name": "FULL PERMISSIONS-CLIENT"
+      }
+   ],
+   "orgId": "client_69881",
+   "profileImage": {
+      "description": "",
+      "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+      "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+      "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+      "imageType": ""
+   },
+   "changePassword": false,
+   "organizationName": "test client",
+   "createdTime": "2016-02-29T18:21:53+0530",
+   "updatedTime": "2016-02-29T18:21:53+0530"
+}
 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
- 
- RESPONSE:
- .........
-Status 200 Ok
+RESPONSE CODE: 200 OK

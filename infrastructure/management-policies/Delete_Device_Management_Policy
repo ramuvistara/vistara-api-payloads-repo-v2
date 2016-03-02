@@ -2,14 +2,14 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/{id}
 
 METHOD: DELETE
 
-HEADER:
-1. Authorization = Bearer {accessToken}
-2. Accept = application/json
-
-ex : /api/v2/tenants/client_105261/policies/management/2325
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/management/2325
 
 RESPONSE:
-.........
 {
   "status": 200,
   "entity": "Removed policy with id: 2325",
@@ -27,3 +27,5 @@ RESPONSE:
   },
   "actualEntity": "Removed policy with id: 2325"
 }
+
+RESPONSE CODE: 200 OK

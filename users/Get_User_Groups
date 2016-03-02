@@ -1,41 +1,44 @@
-URL: https://api.vistara.io/api/v2//tenants/{orgId}/userGroups 
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/userGroups 
 
 METHOD: GET
-
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
  
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-ex: https://api.vistara.io/api/v2//tenants/client_69919/userGroups
+QUERY PARAMS:
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={field} defaultValue=userGroup.id [optional]
 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+EX: 1. https://api.vistara.io/api/v2/tenants/client_93/userGroups?pageNo=1&pageSize=5&isDescendingOrder=true&sortName=userGroup.id
+	2. https://api.vistara.io/api/v2/tenants/msp_92/userGroups?pageNo=1&pageSize=5&isDescendingOrder=true&sortName=userGroup.id
 
 RESPONSE:
-.........
 {
-	"results": [{
-		"name": "test_api",
-		"userCount": 0,
-		"unAssignUsers": []
-	},
-	{
-		"name": "user_group_new",
-		"userCount": 0,
-		"unAssignUsers": []
-	},
-	{
-		"name": "user_group_dell_client",
-		"userCount": 0,
-		"unAssignUsers": []
-	}],
-	"totalResults": 3,
-	"pageNo": 1,
-	"pageSize": 10,
-	"totalPages": 1,
-	"nextPage": false,
-	"nextPageNo": 0,
-	"previousPageNo": 0,
-	"decendingOrder": false
+   "results": [
+      {
+         "id": 13,
+         "name": "test group 2",
+         "userCount": 2
+      },
+      {
+         "id": 10,
+         "name": "grp1",
+         "userCount": 13
+      }
+   ],
+   "totalResults": 2,
+   "orderBy": "userGroup.id",
+   "pageNo": 1,
+   "pageSize": 10,
+   "totalPages": 1,
+   "nextPage": false,
+   "nextPageNo": 0,
+   "previousPageNo": 0,
+   "descendingOrder": true
 }
+
+RESPONSE CODE: 200 OK

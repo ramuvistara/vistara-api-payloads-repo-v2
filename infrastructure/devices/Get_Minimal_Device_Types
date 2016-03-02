@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/deviceTypes/minimal
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/deviceTypes/minimal
 
 METHOD: GET
  
@@ -7,52 +7,82 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-RESPONSE :
+EX: https://api.vistara.io/api/v2/tenants/client_93/deviceTypes/minimal
+
+RESPONSE:
 [
-   {
-      "id": 4,
-      "path": "Desktop"
-   },
-   {
-      "id": 33,
-      "path": "Desktop >> Laptop"
-   },
-   {
-      "id": 59,
-      "path": "Mobile >> Android"
-   },
-   {
-      "id": 7,
-      "path": "Network Device >> Switch"
-   },
-   {
-      "id": 82,
-      "path": "OpenStack"
-   },
-   {
-      "id": 100,
-      "path": "Other"
-   },
-   {
-      "id": 3,
-      "path": "Server"
-   },
-   {
-      "id": 12,
-      "path": "Server >> Linux"
-   },
-   {
-      "id": 11,
-      "path": "Server >> Windows"
-   },
-   {
-      "id": 50,
-      "path": "Storage >> EMC VNXe"
-   },
-   {
-      "id": 42,
-      "path": "VMware"
-   }
+	{
+		"id" : 4,
+		"name" : "Desktop",
+		"path" : "Desktop",
+		"categoryId" : 0
+	},
+	{
+		"id" : 33,
+		"name" : "Laptop",
+		"path" : "Desktop>>Laptop",
+		"categoryId" : 0
+	},
+	{
+		"id" : 44,
+		"name" : "HypervisorCluster",
+		"path" : "HypervisorCluster",
+		"categoryId" : 0
+	},
+	{
+		"id" : 59,
+		"name" : "Android",
+		"path" : "Mobile>>Android",
+		"categoryId" : 0
+	},
+	{
+		"id" : 7,
+		"name" : "Switch",
+		"path" : "NetworkDevice>>Switch",
+		"categoryId" : 0
+	},
+	{
+		"id" : 82,
+		"name" : "OpenStack",
+		"path" : "OpenStack",
+		"categoryId" : 0
+	},
+	{
+		"id" : 100,
+		"name" : "Other",
+		"path" : "Other",
+		"categoryId" : 0
+	},
+	{
+		"id" : 3,
+		"name" : "Server",
+		"path" : "Server",
+		"categoryId" : 0
+	},
+	{
+		"id" : 12,
+		"name" : "Linux",
+		"path" : "Server>>Linux",
+		"categoryId" : 0
+	},
+	{
+		"id" : 11,
+		"name" : "Windows",
+		"path" : "Server>>Windows",
+		"categoryId" : 0
+	},
+	{
+		"id" : 50,
+		"name" : "EMCVNXe",
+		"path" : "Storage>>EMCVNXe",
+		"categoryId" : 0
+	},
+	{
+		"id" : 42,
+		"name" : "VMware",
+		"path" : "VMware",
+		"categoryId" : 0
+	}
 ]
 
-STATUS CODE : 200 OK
+RESPONSE CODE: 200 OK

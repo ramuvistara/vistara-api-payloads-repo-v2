@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{orgId}/shiftSchedules/{shiftScheduleId}
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/shiftSchedules/{shiftScheduleId}
  
 METHOD: GET
  
@@ -7,69 +7,110 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
  
+EX: 1. https://api.vistara.io/api/v2/tenants/client_7/shiftSchedules/16
+	2. https://api.vistara.io/api/v2/tenants/msp_4/shiftSchedules/17
+ 
 RESPONSE:
 {
-  "id" : 8,
-  "mspId" : 92,
-  "timeZone" : {
-    "id" : 5,
-    "version" : 0,
-    "name" : "America/Phoenix",
-    "label" : "GMT -07:00 Mountain",
-    "code" : "MST",
-    "timezoneCodeWithDST" : "MST",
-    "labelWithDST" : "GMT -07:00 Mountain Standard Time"
-  },
-  "allClients" : true,
-  "scheduleName" : "1. created from UI for all clients",
-  "createdBy" : {
-    "id" : "USR0000002113",
-    "loginName" : "deepu@superadmin",
-    "lastName" : "DEEPU",
-    "firstName" : "MUNGAMURI",
-    "email" : "deepu.mungamuri@vistarait.com",
-    "changePassword" : false
-  },
-  "updatedBy" : {
-    "id" : "USR0000000001",
-    "loginName" : "superadmin",
-    "lastName" : "Admin",
-    "firstName" : "Super",
-    "email" : "sarma519@gmail.com",
-    "changePassword" : false
-  },
-  "createdTime" : "2015-08-26T09:31:36+0530",
-  "updatedTime" : "2015-12-16T19:18:51+0530",
-  "escalationShiftDetails" : [ {
-    "id" : 8,
-    "shiftName" : "shift 1",
-    "shiftType" : 1,
-    "startTime" : "17:00:00",
-    "endTime" : "18:00:00",
-    "sunday" : true,
-    "monday" : false,
-    "tuesday" : false,
-    "wednesday" : false,
-    "thursday" : false,
-    "friday" : false,
-    "saturday" : false,
-    "shiftUsers" : [ {
-      "id" : "USR0000000453",
-      "loginName" : "test@autotask.19",
-      "lastName" : "Autotask",
-      "firstName" : "Admin",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    } ],
-    "primaryContact" : {
-      "id" : "USR0000000453",
-      "loginName" : "test@autotask.19",
-      "lastName" : "Autotask",
-      "firstName" : "Admin",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  } ]
+   "id": 16,
+   "mspId": 4,
+   "timeZone": {
+      "id": 19,
+      "version": 0,
+      "name": "Asia/Calcutta",
+      "label": "GMT +05:30 India",
+      "code": "IST",
+      "timezoneCodeWithDST": "IST",
+      "labelWithDST": "GMT +05:30 India Standard Time"
+   },
+   "allClients": false,
+   "clients": [
+      {
+         "id": 7,
+         "uniqueId": "client_7",
+         "name": "API Lab",
+         "activated": true,
+         "updatedTime": "",
+         "createdTime": "2012-10-09T11:49:34+0530"
+      }
+   ],
+   "scheduleName": "Test-Schedule",
+   "createdBy": {
+      "id": "USR0000002095",
+      "loginName": "vistara_system_user",
+      "lastName": " ",
+      "firstName": "Vistara System User",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   "createdTime": "2016-03-01T08:13:22+0530",
+   "updatedTime": "",
+   "escalationShiftDetails": [
+      {
+         "id": 16,
+         "shiftName": "Test-Shift-1",
+         "shiftType": 1,
+         "startTime": "10:00:00",
+         "endTime": "20:30:00",
+         "sunday": false,
+         "monday": true,
+         "tuesday": false,
+         "wednesday": false,
+         "thursday": false,
+         "friday": true,
+         "saturday": false,
+         "shiftUsers": [
+            {
+               "id": "USR0000002146",
+               "loginName": "FSSL-API-Lab-User-1",
+               "lastName": "API-Lab",
+               "firstName": "FSSL",
+               "email": "tester@gmail.com",
+               "changePassword": false
+            },
+            {
+               "id": "USR0000002147",
+               "loginName": "FSSL-API-Lab-User-2",
+               "lastName": "API-Lab-2",
+               "firstName": "FSSL",
+               "email": "tester3@gmail.com",
+               "changePassword": false
+            }
+         ]
+      },
+      {
+         "id": 17,
+         "shiftName": "Test-Shift-2",
+         "shiftType": 2,
+         "sunday": false,
+         "monday": false,
+         "tuesday": false,
+         "wednesday": false,
+         "thursday": false,
+         "friday": false,
+         "saturday": false,
+         "startDateandTime": "2016-08-27T11:26:00+0530",
+         "endDateandTime": "2016-08-28T10:37:00+0530",
+         "shiftUsers": [
+            {
+               "id": "USR0000002146",
+               "loginName": "FSSL-API-Lab-User-1",
+               "lastName": "API-Lab",
+               "firstName": "FSSL",
+               "email": "tester@gmail.com",
+               "changePassword": false
+            },
+            {
+               "id": "USR0000002147",
+               "loginName": "FSSL-API-Lab-User-2",
+               "lastName": "API-Lab-2",
+               "firstName": "FSSL",
+               "email": "tester3@gmail.com",
+               "changePassword": false
+            }
+         ]
+      }
+   ]
 }
 
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

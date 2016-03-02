@@ -1,57 +1,84 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management
  
 METHOD: POST
  
-HEADER:
-1. Authorization = Bearer {accessToken}
-2. Accept = application/json
-3. Content-Type = application/json
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
-ex: https://api.vistara.io//api/v2/tenants/client_105261/policies/management/
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/management
  
-Note: response returned can be posted again with any modification required
- 
-RESPONSE:
-.........
+REQUEST:
 [
-  {
-    "name": "Mysql-policy",
-    "resourceType": "DEVICE",
-    "matchType": "ALL",
-    "rules": [
-      {
-        "key": "Device Name",
-        "operator": "Contains",
-        "value": "mysql"
-      }
-    ],
-    "actions": [
-      {
-        "action": "ASSIGN MONITORINGTEMPLATE",
-        "items": [
-          {
-            "item": "19",
-            "parameters": {
-              "MYSQL IPAddress": "127.0.0.1",
-              "MYSQL Username": "root",
-              "MYSQL Port": "3306",
-              "MYSQL Password": "mysql"
-            },
-            "instances": {}
-          }
-        ]
-      },
-      {
-        "action": "ASSIGN CREDENTIALSET",
-        "items": [
-          {
-            "item": "1",
-            "parameters": {},
-            "instances": {}
-          }
-        ]
-      }
-    ],
-    "executionOrder": 0
-  }
+	{
+		"name" : "Mysql-policy",
+		"resourceType" : "DEVICE",
+		"matchType" : "ALL",
+		"rules" : [
+			{
+				"key" : "DeviceName",
+				"operator" : "Contains",
+				"value" : "mysql"
+			}
+		],
+		"actions" : [
+			{
+				"action" : "ASSIGNMONITORINGTEMPLATE",
+				"items" : [
+					{
+						"item" : "19",
+						"parameters" : {
+							"MYSQLIPAddress" : "127.0.0.1",
+							"MYSQLUsername" : "root",
+							"MYSQLPort" : "3306",
+							"MYSQLPassword" : "mysql"
+						},
+						"instances" : {}
+					}
+				]
+			},
+			{
+				"action" : "ASSIGNCREDENTIALSET",
+				"items" : [
+					{
+						"item" : "1",
+						"parameters" : {},
+						"instances" : {}
+					}
+				]
+			}
+		],
+		"executionOrder" : 0
+	}
 ]
+
+RESPONSE:
+[
+	{
+		"id" : 268,
+		"name" : "Mysql-policy",
+		"matchType" : "ALL",
+		"rules" : [
+			{
+				"key" : "DeviceName",
+				"operator" : "Contains",
+				"value" : "mysql",
+				"resourceType" : "DEVICE"
+			}
+		],
+		"actions" : [
+			{
+				"action" : "ASSIGNMONITORINGTEMPLATE",
+				"items" : []
+			},
+			{
+				"action" : "ASSIGNCREDENTIALSET",
+				"items" : []
+			}
+		],
+		"executionOrder" : 0
+	}
+]
+
+RESPONSE CODE: 200 OK

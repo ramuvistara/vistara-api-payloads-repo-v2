@@ -1,151 +1,98 @@
-URL: https://api.vistara.io/api/basic/tenants/{clientId}/notes
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/notes
 
 METHOD: GET
 
-HEADER:
-	Authorization : Basic c3N2Ok5ldCF0aXZhbW81YjY=
+HEADERS:
+	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDecendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=note.id [optional]
-5.	queryString = {queryString} [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={field} defaultValue=note.id [optional]
+	5. queryString = {queryString} [optional]
 
 QUERY VARIABLES:
- ...............
-1.	searchWord         [description, subject]
-2.	startCreationDate
-3.	endCreationDate
-4.	startUpdationDate
-5.	endUpdationDate
-6.	id
+	1. searchWord       	[description, subject]
+	2. startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
+	3. endCreationDate		[Ex. 2015-11-10T10:40:20 0000]
+	4. startUpdationDate	[Ex. 2015-11-10T10:40:20 0000]
+	5. endUpdationDate		[Ex. 2015-11-10T10:40:20 0000]
+	6. id
 
-EX : https://api.vistara.io/api/basic/tenants/client_93/notes?pageNo=2&pageSize=3&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+EX : https://api.vistara.io/api/v2/tenants/client_93/notes?pageNo=2&pageSize=3&queryString=startUpdationDate:2015-11-01T11:49:21 0530+endUpdationDate:2015-11-20T11:49:21 0530
+
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
 	
 RESPONSE:
-.........
 {
-  "results" : [ {
-    "id" : 26,
-    "subject" : "safsdfsda",
-    "description" : "<p>asfasdfs adfasd fasd</p>",
-    "createdTime" : "2014-03-25T09:54:52+0530",
-    "updatedTime" : "2014-03-25T09:54:52+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  }, {
-    "id" : 25,
-    "subject" : "asdfgasd fsad",
-    "description" : "<p>fsadf sdaf sdaf sda</p>",
-    "createdTime" : "2014-03-25T09:54:08+0530",
-    "updatedTime" : "2014-03-25T09:54:08+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  }, {
-    "id" : 24,
-    "subject" : "dsfgdfg",
-    "description" : "<p>sdfgdfsgdfsg</p>",
-    "createdTime" : "2014-03-25T09:43:21+0530",
-    "updatedTime" : "2014-03-25T09:43:21+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  }, {
-    "id" : 23,
-    "subject" : "sdfg sfdg dsfg",
-    "description" : "<p>fgfsdgs dfgdfsg dsfg</p>",
-    "createdTime" : "2014-03-25T09:38:38+0530",
-    "updatedTime" : "2014-03-25T09:38:38+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  }, {
-    "id" : 22,
-    "subject" : "asdfgsdgdf",
-    "description" : "gdsfgdfsg",
-    "createdTime" : "2014-03-25T09:34:12+0530",
-    "updatedTime" : "2014-03-25T09:34:12+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  }, {
-    "id" : 21,
-    "subject" : "test note2",
-    "description" : "<p>bsdfg dsfg fdsgdfsg</p>",
-    "createdTime" : "2014-03-25T09:25:15+0530",
-    "updatedTime" : "2014-03-25T09:25:15+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  }, {
-    "id" : 20,
-    "subject" : "asfdsdaf",
-    "description" : "<p>asdfsdf</p>",
-    "createdTime" : "2014-01-29T06:49:35+0530",
-    "updatedTime" : "2014-01-29T06:49:35+0530",
-    "expiryTime" : "",
-    "createdBy" : {
-      "id" : "USR0000000001",
-      "loginName" : "superadmin",
-      "lastName" : "Admin",
-      "firstName" : "Super",
-      "email" : "sarma519@gmail.com",
-      "changePassword" : false
-    }
-  } ],
-  "totalResults" : 7,
-  "orderBy" : "note.id",
-  "pageNo" : 1,
-  "pageSize" : 10,
-  "totalPages" : 1,
-  "nextPage" : false,
-  "nextPageNo" : 1,
-  "previousPageNo" : 0,
-  "descendingOrder" : true
+   "results": [
+      {
+         "id": 26,
+         "subject": "safsdfsda",
+         "description": "<p>asfasdfs adfasd fasd<\/p>",
+         "createdTime": "2014-03-25T09:54:52+0530",
+         "updatedTime": "2014-03-25T09:54:52+0530",
+         "expiryTime": "",
+         "createdBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         }
+      },
+      {
+         "id": 25,
+         "subject": "asdfgasd fsad",
+         "description": "<p>fsadf sdaf sdaf sda<\/p>",
+         "createdTime": "2014-03-25T09:54:08+0530",
+         "updatedTime": "2014-03-25T09:54:08+0530",
+         "expiryTime": "",
+         "createdBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         }
+      },
+      {
+         "id": 24,
+         "subject": "dsfgdfg",
+         "description": "<p>sdfgdfsgdfsg<\/p>",
+         "createdTime": "2014-03-25T09:43:21+0530",
+         "updatedTime": "2014-03-25T09:43:21+0530",
+         "expiryTime": "",
+         "createdBy": {
+            "id": "USR0000000001",
+            "loginName": "superadmin",
+            "lastName": "Admin",
+            "firstName": "Super",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         }
+      }
+   ],
+   "totalResults": 7,
+   "orderBy": "note.id",
+   "pageNo": 1,
+   "pageSize": 3,
+   "totalPages": 3,
+   "nextPage": true,
+   "nextPageNo": 2,
+   "previousPageNo": 0,
+   "descendingOrder": true
 }	
 
-RESPONSE CODE : 200 OK
- 
-Note: Encode username and password with colon(:) in between using Base64 algorithm.
-base64_encode(loginName:password). Include this with 'Basic' prefix in Authorization header.
+RESPONSE CODE: 200 OK

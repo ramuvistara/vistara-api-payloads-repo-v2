@@ -7,79 +7,90 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 	
-MANDATORY FEILD:
-  allclients || clients
-  name
-  timeZone
-  severityTypes
-  schedule
+MANDATORY FEILDS:
+	1. allClients (or) clients
+	2. name
+  	3. timeZone.id			[Follow the NOTE to get timeZone details]
+  	4. severityTypes		[CRITICAL, WARNING, OK]
+	5. schedule.id			[Shift schedule id created with the same timeZone]
+ 
+EX: 1. https://api.vistara.io/api/v2/tenants/client_7/escalationPolicy
+	2. https://api.vistara.io/api/v2/tenants/msp_4/escalationPolicy
+
+NOTE: 
+	* allClients and clients is only available for partner level creation, no need to send for client level creation
+	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
+	* To use Shift Schedule created, in new policy the timeZones must be same.
   
-INPUT JSON / PAYLOAD :
+REQUEST:
 {
    "allclients": "false",
    "clients": [
       {
-         "id": "93"
+         "uniqueId": "client_7"
       }
    ],
-   "name": "escalation policy created using api",
-   "description": "description for create escalation example from api",
-   "timeZone": {
-      "id": "5"
-   },
-   "autoNotification": "true",
    "assignedLocations": [
       {
-         "id": "69659"
-      },
-      {
-         "id": "69669"
+         "id": "69679"
       }
    ],
    "assignedDeviceGroups": [
       {
-         "id": "1664"
+         "id": "92"
+      },
+      {
+         "id": "94"
       }
    ],
    "assignedDevices": [
       {
-         "uniqueId": "DEV0000016029"
+         "uniqueId": "1a08b17a-85e4-4615-8b49-061f5ad1a1b9"
+      },
+      {
+         "uniqueId": "481af404-33a6-4d61-af77-c483ca6641fa"
       }
    ],
+   "name": "Testing-Policy",
+   "description": "Testing-Policy-Creation",
+   "timeZone": {
+      "id": 19
+   },
+   "autoNotification": "true",
    "escalationIndiceDetails": [
       {
+         "schedule": {
+            "id": "16"
+         },
          "priority": "1",
          "repeatCount": "2",
-         "repeatFreqHours": "0",
+         "repeatFreqHours": "5",
          "repeatFreqMinutes": "10",
          "severityTypes": [
             "CRITICAL",
             "WARNING"
-         ],
-         "schedule": {
-            "id": "18"
-         }
+         ]
       }
    ]
 }
 
-RESPONSE :
+RESPONSE:
 {
-   "id": 20,
-   "mspId": 92,
-   "name": "escalation policy created using api",
-   "description": "description for create escalation example from api",
+   "id": 38,
+   "mspId": 4,
+   "name": "Testing-Policy",
+   "description": "Testing-Policy-Creation",
    "allclients": false,
    "timeZone": {
-      "id": 5,
+      "id": 19,
       "version": 0,
-      "name": "America/Phoenix",
-      "label": "GMT -07:00 Mountain",
-      "code": "MST",
-      "timezoneCodeWithDST": "MST",
-      "labelWithDST": "GMT -07:00 Mountain Standard Time"
+      "name": "Asia/Calcutta",
+      "label": "GMT +05:30 India",
+      "code": "IST",
+      "timezoneCodeWithDST": "IST",
+      "labelWithDST": "GMT +05:30 India Standard Time"
    },
    "autoNotification": true
 }
 
-Response Code : 200 OK
+RESPONSE CODE: 200 OK

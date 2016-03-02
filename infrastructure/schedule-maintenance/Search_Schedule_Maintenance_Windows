@@ -1,144 +1,151 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/scheduleMaintenances/search
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/scheduleMaintenances/search
  
 METHOD: GET
  
 HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
-	Accept : application/json 
-	
+	Accept : application/json
+
 QUERY PARAMS:
-        pageNo={pageNo} defaultValue=1 [optional]
-        pageSize={pageSize} defaultValue=10 [optional]
-        isDescendingOrder={true/false} defaultValue=true[optional]
-        queryString={queryString} [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={field} defaultValue=id [optional]
+	5. queryString = {queryString} [optional]
  
 QUERY VARIABLES:
-	id
-	name
-	startDate [Format: yyyy-MM-ddTHH:mm:ssZ (Ex: 2015-05-15T10:25:58 0000)]
-	endDate   [Format: yyyy-MM-ddTHH:mm:ssZ (Ex: 2015-05-15T10:25:58 0000)]
-	deviceId
-	deviceName
-	deviceGroupId
-	deviceGroupName
-	siteId
-	siteName
+	1. id
+	2. name
+	3. startDate			[Ex. 2015-05-15T10:25:58 0000]
+	4. endDate   			[Ex. 2015-05-15T10:25:58 0000]
+	5. deviceId
+	6. deviceName
+	7. deviceGroupId
+	8. deviceGroupName
+	9. siteId
+	10.siteName
+	11.startCreationDate	[Ex. 2015-05-15T10:25:58 0000]
+	12.endCreationDate		[Ex. 2015-05-15T10:25:58 0000]
+	13.startUpdationDate	[Ex. 2015-05-15T10:25:58 0000]
+	14.endUpdationDate		[Ex. 2015-05-15T10:25:58 0000]
 
+EX: https://api.vistara.io/api/v2/tenants/client_69856/scheduleMaintenances/search?queryString=deviceName:HYDLPT220+siteName:SJC+deviceName:HYDLPT220+deviceId:60c6f02e-5080-46a7-856b-f1f2a1997603+deviceGroupName:Application Server
 
-SAMPLE QUERYSTRINGS:
-	queryString=deviceName:HYDLPT220
-	queryString=siteName:SJC+deviceName:HYDLPT220
-	queryString=deviceId:60c6f02e-5080-46a7-856b-f1f2a1997603+deviceGroupName:Application Server
+NOTE:
+	Special Characters in Query String
 	
-NOTE: If queryString is included in the URL, it is safe to perfrom URL-encoding.
-	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
+
 RESPONSE:
-	{
-   "results": [
-      {
-         "id": "8",
-         "name": "Linux DG Window 2",
-         "dontRunRBA": "false",
-         "dontInstallPatch": "false",
-         "schedule": {
-            "type": "one-time",
-            "startTime": "2015-07-21T02:00:00+0530",
-            "endTime": "2015-07-29T04:00:00+0530"
-         },
-         "devices": [],
-         "deviceGroups": [
-            {
-               "name": "Linux DG",
-               "description": "Linux DG",
-               "assignDevices": [
-                  {
-                     "uniqueId": "aed5beb5-fb33-4499-b691-a1108fdd19f3",
-                     "name": "kafka-cass"
-                  },
-                  {
-                     "uniqueId": "b967d5f4-a8d1-4348-8a43-e7fe32c78c9c",
-                     "name": "nsg12-kickstart"
-                  }
-               ],
-               "unAssignDevices": [],
-               "createdTime": 1435820084000,
-               "updatedTime": 1435820729000,
-               "deviceCount": 2
-            }
-         ]
-      },
-      {
-         "id": "7",
-         "name": "Windows DG Window",
-         "dontRunRBA": "false",
-         "dontInstallPatch": "false",
-         "schedule": {
-            "type": "recurring",
-            "startTime": "2015-07-02T02:00:00+0530",
-            "endTime": "2015-07-30T03:00:00+0530",
-            "pattern": {
-               "dayOfWeek": "every weekday"
-            }
-         },
-         "devices": [],
-         "deviceGroups": [
-            {
-               "name": "Windows DG",
-               "description": "Windows DG",
-               "assignDevices": [
-                  {
-                     "name": "HYDLPT084"
-                  },
-                  {
-                     "uniqueId": "43e1f369-0f74-4dce-b775-555069b26bba",
-                     "name": "HYDLPT220"
-                  }
-               ],
-               "unAssignDevices": [],
-               "createdTime": 1435818454000,
-               "updatedTime": 1435820703000,
-               "deviceCount": 2
-            }
-         ]
-      },
-      {
-         "id": "6",
-         "name": "Linux Site Window 1",
-         "dontRunRBA": "false",
-         "dontInstallPatch": "false",
-         "schedule": {
-            "type": "one-time",
-            "startTime": "2015-07-06T01:00:00+0530",
-            "endTime": "2015-07-29T03:00:00+0530"
-         },
-         "devices": []
-      },
-      {
-         "id": "5",
-         "name": "Windows Site Window",
-         "dontRunRBA": "false",
-         "dontInstallPatch": "false",
-         "schedule": {
-            "type": "recurring",
-            "startTime": "2015-07-02T00:10:00+0530",
-            "endTime": "2015-07-30T04:04:00+0530",
-            "pattern": {
-               "dayOfWeek": "every weekday"
-            }
-         },
-         "devices": []
-      }
-   ],
-   "totalResults": 7,
-   "orderBy": "id",
-   "pageNo": 1,
-   "pageSize": 4,
-   "totalPages": 2,
-   "nextPage": true,
-   "nextPageNo": 2,
-   "previousPageNo": 0,
-   "descendingOrder": true
+{
+	"results" : [
+		{
+			"id" : "8",
+			"name" : "LinuxDGWindow2",
+			"dontRunRBA" : "false",
+			"dontInstallPatch" : "false",
+			"schedule" : {
+				"type" : "one-time",
+				"startTime" : "2015-07-21T02:00:00+0530",
+				"endTime" : "2015-07-29T04:00:00+0530"
+			},
+			"devices" : [],
+			"deviceGroups" : [
+				{
+					"name" : "LinuxDG",
+					"description" : "LinuxDG",
+					"assignDevices" : [
+						{
+							"uniqueId" : "aed5beb5-fb33-4499-b691-a1108fdd19f3",
+							"name" : "kafka-cass"
+						},
+						{
+							"uniqueId" : "b967d5f4-a8d1-4348-8a43-e7fe32c78c9c",
+							"name" : "nsg12-kickstart"
+						}
+					],
+					"unAssignDevices" : [],
+					"createdTime" : 1435820084000,
+					"updatedTime" : 1435820729000,
+					"deviceCount" : 2
+				}
+			]
+		},
+		{
+			"id" : "7",
+			"name" : "WindowsDGWindow",
+			"dontRunRBA" : "false",
+			"dontInstallPatch" : "false",
+			"schedule" : {
+				"type" : "recurring",
+				"startTime" : "2015-07-02T02:00:00+0530",
+				"endTime" : "2015-07-30T03:00:00+0530",
+				"pattern" : {
+					"dayOfWeek" : "everyweekday"
+				}
+			},
+			"devices" : [],
+			"deviceGroups" : [
+				{
+					"name" : "WindowsDG",
+					"description" : "WindowsDG",
+					"assignDevices" : [
+						{
+							"name" : "HYDLPT084"
+						},
+						{
+							"uniqueId" : "43e1f369-0f74-4dce-b775-555069b26bba",
+							"name" : "HYDLPT220"
+						}
+					],
+					"unAssignDevices" : [],
+					"createdTime" : 1435818454000,
+					"updatedTime" : 1435820703000,
+					"deviceCount" : 2
+				}
+			]
+		},
+		{
+			"id" : "6",
+			"name" : "LinuxSiteWindow1",
+			"dontRunRBA" : "false",
+			"dontInstallPatch" : "false",
+			"schedule" : {
+				"type" : "one-time",
+				"startTime" : "2015-07-06T01:00:00+0530",
+				"endTime" : "2015-07-29T03:00:00+0530"
+			},
+			"devices" : []
+		},
+		{
+			"id" : "5",
+			"name" : "WindowsSiteWindow",
+			"dontRunRBA" : "false",
+			"dontInstallPatch" : "false",
+			"schedule" : {
+				"type" : "recurring",
+				"startTime" : "2015-07-02T00:10:00+0530",
+				"endTime" : "2015-07-30T04:04:00+0530",
+				"pattern" : {
+					"dayOfWeek" : "everyweekday"
+				}
+			},
+			"devices" : []
+		}
+	],
+	"totalResults" : 7,
+	"orderBy" : "id",
+	"pageNo" : 1,
+	"pageSize" : 3,
+	"totalPages" : 3,
+	"nextPage" : true,
+	"nextPageNo" : 2,
+	"previousPageNo" : 0,
+	"descendingOrder" : true
 }
  
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

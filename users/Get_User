@@ -7,43 +7,53 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-EX : https://api.vistara.io/api/v2/tenants/client_93/users/USR0000002114
+EX: https://api.vistara.io/api/v2/tenants/client_93/users/USR0000002114
  
-RESPONSE : 
+RESPONSE: 
 {
-   "id": "USR0000002114",
-   "loginName": "deepu@client",
-   "lastName": "mungamuri",
-   "firstName": "client_deepu",
-   "email": "deepu.mungamuri@vistarait.com",
-   "altEmail": "deepu.mungamuri94@gmail.com",
+   "id": "USR0000002145",
+   "loginName": "Vistara-Testing-Client-User",
+   "lastName": "Satyam-Tester",
+   "firstName": "Nilam-Tester",
+   "email": "vistaraTester3@vistarait.com",
+   "altEmail": "vistaraTester4@vistarait.com",
    "userAccountType": "REGULAR",
-   "designation": "client purpose",
-   "address": "",
-   "city": "rajahmundry",
-   "state": "telangana",
+   "designation": "Tester",
+   "address": "Madhapur, Near Global Edge School",
+   "city": "Hyderabad",
+   "state": "Telangana",
    "country": "India",
    "zip": "500081",
-   "phoneNumber": "",
-   "mobileNumber": "9581963860",
+   "phoneNumber": "9876678901",
+   "mobileNumber": "9128475620",
    "timeZone": {
-      "id": "19",
-      "name": "Asia/Calcutta",
-      "label": "GMT +05:30 India",
-      "code": "IST"
+      "id": "12",
+      "name": "GMT",
+      "label": "Greenwich Mean Time",
+      "code": "GMT"
    },
+   "roles": [
+      {
+         "id": 28,
+         "name": "ACS Client Administrator"
+      },
+      {
+         "id": 73,
+         "name": "FULL PERMISSIONS-CLIENT"
+      }
+   ],
    "authType": "LOCAL",
    "userGroups": [
       {
          "id": 0,
-         "name": "grp1",
+         "name": "Testing group",
          "userCount": 0,
          "assignUsers": [],
          "unAssignUsers": []
       }
    ],
    "status": "active",
-   "orgId": "client_93",
+   "orgId": "client_69881",
    "profileImage": {
       "description": "",
       "logoPath": "https://app.vistarait.com/img/nophoto.gif",
@@ -51,47 +61,29 @@ RESPONSE :
       "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
       "imageType": ""
    },
-   "changePassword": false,
-   "organizationName": "Brocade Lab",
+   "changePassword": true,
+   "organizationName": "test client",
    "userNotifications": [
-      {
-         "notifyType": "Report Notification",
-         "notifyMethod": "Email",
-         "notifyInputType": "Primary Email",
-         "notifyRecurringReport": false
-      },
       {
          "notifyType": "Account Information",
          "notifyMethod": "Email",
          "notifyInputType": "Primary Email",
-         "notifyRecurringReport": false
+         "notifyRecurringReport": true
       },
       {
          "notifyType": "Alert Notification",
          "notifyMethod": "No Notify",
          "notifyRecurringReport": false
+      },
+      {
+         "notifyType": "Report Notification",
+         "notifyMethod": "Email",
+         "notifyInputType": "Primary Email",
+         "notifyRecurringReport": true
       }
    ],
-   "createdTime": "2015-08-08T18:56:57+0530",
-   "updatedTime": "2015-08-08T18:56:57+0530",
-   "roles": [
-      {
-         "id": 4,
-         "name": "Client Administrator"
-      },
-      {
-         "id": 5,
-         "name": "Client User"
-      },
-      {
-         "id": 6,
-         "name": "Customer"
-      },
-      {
-         "id": 9,
-         "name": "IT Administrator"
-      }
-   ]
+   "createdTime": "2016-02-29T18:21:53+0530",
+   "updatedTime": "2016-02-29T18:21:53+0530"
 }
 
-RESONSE CODE : 200 OK
+RESONSE CODE: 200 OK

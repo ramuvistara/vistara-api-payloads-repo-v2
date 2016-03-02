@@ -7,12 +7,12 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-NOTE : This api can be used to update custom attribute description or to add new values
-
 EX : 1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/11
      2. https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/12
 
-INPUT JSON / PAYLOAD :
+NOTE : This API can be used to update custom attribute description or to add new custom attribute values
+
+REQUEST:
 {
 	"description" : "creating custom_type for tenant update",
 	"customAttributeValues" : [

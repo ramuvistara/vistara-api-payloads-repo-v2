@@ -1,4 +1,4 @@
-URL : https://api.vistara.io/api/v2/tenants/{orgId}/shiftSchedules/{shiftScheduleId}
+URL : https://api.vistara.io/api/v2/tenants/{tenantId}/shiftSchedules/{shiftScheduleId}
 
 METHOD: DELETE
  
@@ -6,5 +6,10 @@ HEADERS:
   	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
+
+EX: 1. https://api.vistara.io/api/v2/tenants/client_7/shiftSchedules/17
+	2. https://api.vistara.io/api/v2/tenants/msp_4/shiftSchedules/16
+
+RESPONSE: null
 	
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

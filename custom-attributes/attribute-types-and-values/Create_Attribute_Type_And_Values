@@ -8,13 +8,17 @@ HEADERS:
 	Accept : application/json
 	
 MANDATORY FEILDS:
-  name
-  customAttributeValues.value
+	1. name
+	2. customAttributeValues.value
 
-EX : 1. https://api.vistara.io/api/v2/tenants/client_1/customAttributes
-     2. https://api.vistara.io/api/v2/tenants/msp_1/customAttributes
+OPTIONAL FIELDS:
+	1. description
+	2. customAttributeValues.description
 
-INPUT JSON / PAYLOAD :
+EX :1. https://api.vistara.io/api/v2/tenants/client_1/customAttributes
+    2. https://api.vistara.io/api/v2/tenants/msp_1/customAttributes
+
+REQUEST:
 {
 	"name" : "custom_attr_type_for_tenant",
 	"description" : "creating custom_type for tenant-create",
@@ -30,7 +34,7 @@ INPUT JSON / PAYLOAD :
 	]
 }
 
-RESPONSE : 
+RESPONSE: 
 {
   "id" : 1,
   "name" : "custom_attr_type_for_tenant",

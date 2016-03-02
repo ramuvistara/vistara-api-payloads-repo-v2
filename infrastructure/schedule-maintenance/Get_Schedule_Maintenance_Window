@@ -1,4 +1,4 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/scheduleMaintenances/{smId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/scheduleMaintenances/{smId}
  
 METHOD: GET
  
@@ -7,55 +7,44 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json 
 
+EX: https://api.vistara.io/api/v2/tenants/client_69856/scheduleMaintenances/28
+
 RESPONSE:
-	{
-   "id": "1",
-   "name": "OneTime",
-   "dontRunRBA": "true",
-   "dontInstallPatch": "true",
-   "schedule": {
-      "type": "one-time",
-      "startTime": "2015-06-30T05:06:00+0530",
-      "endTime": "2015-07-01T00:00:00+0530"
-   },
-   "devices": [
-      {
-         "id": "43e1f369-0f74-4dce-b775-555069b26bba",
-         "generalInfo": {
-            "ipAddresses": "172.24.221.139",
-            "hostName": "HYDLPT220",
-            "deviceType": "Laptop",
-            "buildNumber": 0
-         },
-         "bios": {
-            "biosName": "Phoenix BIOS SC-T v2.2",
-            "biosVersion": "HEET36WW (1.17 )",
-            "systemSerial": "PF0VNPL",
-            "systemModel": "68855TU"
-         },
-         "consoles": [
-            {
-               "ipAddress": "127.0.0.1",
-               "port": "3389",
-               "consoleConnector": "Agent",
-               "consoleAuthType": "PASSWORD",
-               "consoleProtocol": "RDP",
-               "type": "MANAGEMENTCONSOLE"
-            },
-            {
-               "ipAddress": "127.0.0.1",
-               "port": "0",
-               "consoleConnector": "Agent",
-               "consoleAuthType": "PASSWORD",
-               "consoleProtocol": "FTRANSFER",
-               "type": "MANAGEMENTCONSOLE"
-            }
-         ],
-         "status": "UNKNOWN",
-         "state": "active",
-         "ipAddress": "172.24.221.139"
-      }
-   ]
+{
+	"id" : "28",
+	"name" : "Onetimeschedule",
+	"dontRunRBA" : "false",
+	"dontInstallPatch" : "false",
+	"schedule" : {
+		"type" : "one-time",
+		"startTime" : "2015-05-28T16:25:27-0700",
+		"endTime" : "2016-05-30T00:25:27-0700"
+	},
+	"devices" : [
+		{
+			"id" : "b2646a9c-8dbe-421d-b0cd-ceaa6379de64",
+			"generalInfo" : {
+				"osName" : "",
+				"ipAddresses" : "10.4.18.2",
+				"hostName" : "Device-deepu",
+				"dns" : "",
+				"deviceType" : "Laptop",
+				"buildNumber" : 0,
+				"createdTime" : "2016-02-23T10:47:33+0530",
+				"updatedTime" : "2016-02-24T11:28:18+0530",
+				"agentDeploytime" : ""
+			},
+			"bios" : {
+				"systemSerial" : "",
+				"systemModel" : ""
+			},
+			"status" : "UNKNOWN",
+			"state" : "active",
+			"clientUniqueId" : "client_69856",
+			"ipAddress" : "10.4.18.2",
+			"type" : "DEVICE"
+		}
+	]
 }
 
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

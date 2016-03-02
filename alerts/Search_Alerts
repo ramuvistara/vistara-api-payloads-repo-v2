@@ -2,133 +2,195 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/search
 
 METHOD: GET
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 
 QUERY PARAMS:
-.............
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=ts [optional]
-5.	queryString={queryString} [optional]
-6.	viewId={viewId} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=ts [optional]
+	5.	queryString={queryString} [optional]
+	6.	viewId={viewId} [optional]
 
 QUERY VARIABLES:
-................ 
-1.	states        [Ok,Warning,Critical,Info]
-2.	startDate
-3.	endDate
-4.	priority      [P0,P1,P2,P3,P4,P5]
-5.      alertId
-6.	deviceStatus  [manage,unmanage,all]
-7.	resourceTypes  [LOAD_BALANCER,SQS,EBS,DEVICE,SNS,REDSHIFT,SERVICE]
-8.	resourceIds  
-9.	actions	      [ACKNOWLEDGED,TICKETED,CLOSED,IGNORE,SUPPRESSED,OPEN,ALL]
-10.	apps		 
-11	alertTypes    [Monitoring,Maintenance,Appliance,Agent,Scheduled Maintenance,Obsolete,all]
-12.	metrics		 
-13.	duration      [1,7,30]
-14	alertTimeBase [updated,created]
-15.     clientIds
-16. 	ticketId
+	1.	states			[Ok, Warning, Critical, Info]
+	2.	startDate		[Ex: 2015-08-10T05:39:51 0000]
+	3.	endDate			[Ex: 2015-08-10T05:39:51 0000]
+	4.	priority     	[P0, P1, P2, P3, P4, P5]
+	5.  uniqueId
+	6.	deviceStatus	[manage, unmanage, all]
+	7.	resourceType  	[LOAD_BALANCER, SQS, EBS, DEVICE, SNS, REDSHIFT, SERVICE]
+	8.	resourceIds  	[(comma separated resourceIds)]
+	9.	actions			[ACKNOWLEDGED, TICKETED, CLOSED, IGNORE, SUPPRESSED, OPEN, ALL - (Comma Separated actions)]
+	10	alertTypes    	[Monitoring, Maintenance, Appliance, Agent, Scheduled Maintenance, Obsolete, all - (comma separated alertTypes)]
+	11.	metrics		 	[comma separated metric names]
+	12.	duration      	[1, 7, 30]
+	13	alertTimeBase 	[updated, created]
+	14. clientIds		[client_1, client_2 - (comma separated client uniqueIds)]
+	15. ticketId		[Ex: INC0000000001]
 
-ex:(/api/v2/tenants/client_31/alerts/search?pageNo=1&pageSize=10&isDecendingOrder=true&sortName=id&queryString=clientIds:client_1,client_2+startDate:2015-06-10T05:39:51 0000+endDate:2015-08-10T05:39:51 0000+priority:P0,P1+states:CRITICAL,OK+uniqueId:10+deviceStatus:manage+resourceTypes:REDSHIFT+resourceIds:15494,15218+actions:closed,ticketed+apps:vistara,solarwinds+alertTypes:agent,obsolete+metrics:zenoss,xenapp+duration:7+alertTimeBase:updated+ticketId:INC00000976)
+EX: https://api.vistara.io/api/v2/tenants/client_593972/alerts/search?pageNo=1&pageSize=2&isDescendingOrder=true&sortName=ts&queryString=clientIds:client_1,client_2+startDate:2015-06-10T05:39:51 0000+endDate:2015-08-10T05:39:51 0000+priority:P0,P1+states:CRITICAL,OK+uniqueId:10+deviceStatus:manage+resourceType:REDSHIFT+resourceIds:15494,15218+actions:closed,ticketed+alertTypes:agent,obsolete+metrics:zenoss,xenapp+duration:7+alertTimeBase:updated+ticketId:INC0000000001
 
-Note:
-	special characters in queryString:
+NOTE:
+	Special Characters in Query String
 	
-	1.	+ -- indicate next field and it must be URL encoded (then it automatically converts to %2B)
-	2.	: -- indicate equals to
-	3.	dateformat should be in yyyy-MM-ddTHH:mm:ssZ (ex: 2015-05-15T10:25:58 0000)
-	4.      , -- indicates multiple values for a key (ex: priority:P0,P1)
-
-Header params
-
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.  (,) Indicates Multiple values for a key (Ex: Priority:P0,P1)
+	4.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	5.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (Ex: 2016-02-26T05:17:58 0000)
 
 RESPONSE:
-.........
 {
    "results": [
       {
-         "uniqueId": "1239705",
-         "subject": "Critical. System Uptime is 0 minute(s)",
-         "currentState": "Ok",
-         "serviceName": "UPTIME",
+         "uniqueId": "389547",
+         "subject": "Testing Alert-2-info state",
+         "currentState": "Info",
+         "serviceName": "Windows Event Log",
          "acknowledged": false,
          "suppressed": false,
          "permanentlySuppressed": false,
          "closed": false,
-         "clientUniqueId": "client_31",
+         "clientUniqueId": "client_593972",
          "alertType": "Monitoring",
-         "alertTime": "2015-10-14T13:01:28+0000",
+         "alertTime": "2016-02-24T02:10:00+0000",
          "device": {
-            "id": "62816a2e-c1ea-4d59-8c0d-fd48ccfd634e",
-            "name": "vg-perf-test-01",
-            "ipAddress": "172.30.2.177",
-            "type" : "DEVICE"
+            "id": "f72f2af8-73d7-4755-8a65-8d327078808e",
+            "name": "HYDLPT250",
+            "ipAddress": "172.28.2.106",
+            "type": "DEVICE"
          },
          "resource": {
-            "id": "62816a2e-c1ea-4d59-8c0d-fd48ccfd634e",
-            "name": "vg-perf-test-01",
-            "ipAddress": "172.30.2.177",
-            "type" : "DEVICE"
-          },
-         "repeatCount": "5",
-         "tenantId": 31,
+            "id": "f72f2af8-73d7-4755-8a65-8d327078808e",
+            "name": "HYDLPT250",
+            "ipAddress": "172.28.2.106",
+            "type": "DEVICE"
+         },
+         "repeatCount": "1",
+         "tenantId": 593972,
          "status": "New",
          "priority": "N/A",
-         "elapsedTimeString": "16h 35m ",
-         "healedTimeString": "52m ",
-         "updatedTime": "2015-10-14T13:53:09+0000",
+         "elapsedTimeString": "4d 22h 21m ",
+         "updatedTime": "2016-02-24T09:19:47+0000",
          "rba": false,
-         "tenantName": "NM-HYD1"
+         "tenantName": "Client_Test",
+         "managedByVistara": false,
+         "actedTs": 0
       },
       {
-         "uniqueId": "1239700",
-         "subject": "Critical. System Uptime is 4 minute(s)",
-         "currentState": "Ok",
-         "serviceName": "UPTIME",
+         "uniqueId": "389548",
+         "subject": "Testing Alert-1-info state",
+         "currentState": "Info",
+         "serviceName": "Windows Event Log",
          "acknowledged": false,
          "suppressed": false,
          "permanentlySuppressed": false,
          "closed": false,
-         "clientUniqueId": "client_31",
+         "clientUniqueId": "client_593972",
          "alertType": "Monitoring",
-         "alertTime": "2015-10-14T10:20:02+0000",
+         "alertTime": "2016-02-24T02:00:00+0000",
          "device": {
-            "id": "62816a2e-c1ea-4d59-8c0d-fd48ccfd634e",
-            "name": "vg-perf-test-01",
-            "ipAddress": "172.30.2.177",
-            "type" : "DEVICE"
+            "id": "7f8dc319-6f1b-4094-935d-fcfd5f23b110",
+            "name": "HYDLPT223",
+            "ipAddress": "172.24.221.192",
+            "type": "DEVICE"
          },
          "resource": {
-            "id": "62816a2e-c1ea-4d59-8c0d-fd48ccfd634e",
-            "name": "vg-perf-test-01",
-            "ipAddress": "172.30.2.177",
-             "type" : "DEVICE"
+            "id": "7f8dc319-6f1b-4094-935d-fcfd5f23b110",
+            "name": "HYDLPT223",
+            "ipAddress": "172.24.221.192",
+            "type": "DEVICE"
          },
-         "repeatCount": "3",
-         "tenantId": 31,
+         "repeatCount": "1",
+         "tenantId": 593972,
          "status": "New",
          "priority": "N/A",
-         "elapsedTimeString": "19h 17m ",
-         "healedTimeString": "40m ",
-         "updatedTime": "2015-10-14T11:00:07+0000",
+         "elapsedTimeString": "4d 22h 21m ",
+         "updatedTime": "2016-02-24T09:19:47+0000",
          "rba": false,
-         "tenantName": "NM-HYD1"
+         "tenantName": "Client_Test",
+         "managedByVistara": false,
+         "actedTs": 0
+      },
+      {
+         "uniqueId": "389546",
+         "subject": "Testing Alert-3-info state",
+         "currentState": "Info",
+         "serviceName": "Windows Event Log",
+         "acknowledged": false,
+         "suppressed": false,
+         "permanentlySuppressed": false,
+         "closed": false,
+         "clientUniqueId": "client_593972",
+         "alertType": "Monitoring",
+         "alertTime": "2016-02-24T02:20:00+0000",
+         "device": {
+            "id": "7f8dc319-6f1b-4094-935d-fcfd5f23b110",
+            "name": "HYDLPT223",
+            "ipAddress": "172.24.221.192",
+            "type": "DEVICE"
+         },
+         "resource": {
+            "id": "7f8dc319-6f1b-4094-935d-fcfd5f23b110",
+            "name": "HYDLPT223",
+            "ipAddress": "172.24.221.192",
+            "type": "DEVICE"
+         },
+         "repeatCount": "1",
+         "tenantId": 593972,
+         "status": "New",
+         "priority": "N/A",
+         "elapsedTimeString": "4d 22h 21m ",
+         "updatedTime": "2016-02-24T09:19:47+0000",
+         "rba": false,
+         "tenantName": "Client_Test",
+         "managedByVistara": false,
+         "actedTs": 0
+      },
+      {
+         "uniqueId": "111509",
+         "subject": "TESTING ALERTS",
+         "currentState": "Critical",
+         "serviceName": "Windows Event Log",
+         "acknowledged": false,
+         "suppressed": true,
+         "permanentlySuppressed": false,
+         "closed": false,
+         "clientUniqueId": "client_593972",
+         "alertType": "Monitoring",
+         "alertTime": "2015-12-17T11:26:00+0000",
+         "device": {
+            "name": "apc7831left",
+            "type": "DEVICE"
+         },
+         "resource": {
+            "name": "apc7831left"
+         },
+         "repeatCount": "1",
+         "tenantId": 593972,
+         "status": "Ticketed",
+         "priority": "N/A",
+         "elapsedTimeString": "69d 23h 24m ",
+         "updatedTime": "2015-12-21T08:17:01+0000",
+         "rba": false,
+         "tenantName": "Client_Test",
+         "managedByVistara": false,
+         "actedTs": 0
       }
    ],
-   "totalResults": 831594,
+   "totalResults": 25,
    "orderBy": "ts",
    "pageNo": 1,
-   "pageSize": 2,
-   "totalPages": 415797,
+   "pageSize": 4,
+   "totalPages": 7,
    "nextPage": true,
    "nextPageNo": 2,
    "previousPageNo": 0,
    "descendingOrder": true
 }
+
+RESPONSE CODE: 200 OK

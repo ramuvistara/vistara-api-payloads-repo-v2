@@ -7,11 +7,12 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-NOTE : This api can be used to update custom attribute description or to add new values
 
-EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/10
+EX: https://api.vistara.io/api/v2/serviceProvider/customAttributes/10
 
-INPUT JSON / PAYLOAD :
+NOTE: This API can be used to update custom attribute description or to add new custom attribute values
+
+REQUEST:
 {
 	"description" : "creating custom_type for provider update",
 	"customAttributeValues" : [
@@ -26,11 +27,11 @@ INPUT JSON / PAYLOAD :
 	]
 }
 
-RESPONSE : 
+RESPONSE: 
 {
   "id" : 2,
   "name" : "custom_attr_type_for_service_provider",
   "description" : "creating custom_type for provider update"
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

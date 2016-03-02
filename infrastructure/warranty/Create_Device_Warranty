@@ -2,35 +2,29 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}/deviceW
 
 METHOD: POST
 
-HEADER:
-1. Authorization = "Bearer {accessToken}"
-2. Accept = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
 MANDATORY FIELDS:
-.................
-
-purchaseDate
-warrantyExpireDate
+	1. purchaseDate			[Ex. 2016-02-29 15:40:00 UTC]
+	2. warrantyExpireDate	[Ex. 2016-02-29 15:40:00 UTC]
  
+EX: https://api.vistara.io/api/v2/tenants/client_93/devices/DEV0001520157/deviceWarranty
+
 REQUEST:
-........
 {
-    "purchaseDate": "2015-11-09 12:30:00 UTC",
-    "warrantyExpireDate": "2020-12-09 12:30:00 UTC"
+	"purchaseDate" : "2016-02-29 15:40:00 UTC",
+	"warrantyExpireDate" : "2016-03-30 15:40:00 UTC"
 }
  
-
-ex: api/v2/tenants/client_12354/device/fb3d81e9-cb01-4178-a7c7-7336ddd3c756/deviceWarranty
- 
-1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
-2. Accept = "application/json"
- 
 RESPONSE:
-.........
-[
-  {
-    "purchaseDate": "2015-11-09 12:30:00 UTC",
-    "warrantyExpireDate": "2016-12-09 12:30:00 UTC",
-    "deviceId": "DEV0000011576"
-  }
-]
+{
+	"id" : 7,
+	"purchaseDate" : "2016-02-29T21:10:00+0530",
+	"warrantyExpireDate" : "2016-03-30T21:10:00+0530",
+	"deviceId" : "DEV0001520157"
+}
+
+RESPONSE CODE: 200 OK

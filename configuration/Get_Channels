@@ -3,9 +3,11 @@ URL: https://api.vistara.io/api/v2/cfg/tenants/channels
 METHOD: GET
  
 HEADERS:
-	Authorization : Bearer {accessToken}
-	Content-Type : application/json
-	Accept : application/json
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
+
+EX: https://api.vistara.io/api/v2/cfg/tenants/channels
 	
 RESPONSE : 
 [

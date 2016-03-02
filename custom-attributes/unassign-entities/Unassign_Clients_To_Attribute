@@ -9,7 +9,7 @@ HEADERS:
 
 EX : https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/64/values/397/clients
 
-INPUT JSON / PAYLOAD :
+REQUEST:
 [
 	{
 		"id" : "client_93"
@@ -19,11 +19,21 @@ INPUT JSON / PAYLOAD :
 	}
 ]
 
-RESPONSE : 
+RESPONSE: (Ex. For Success) 
 {
   "FailedEntities" : { },
   "FailedCount" : 0,
   "SuccessCount" : 2
+}
+
+RESPONSE: (Ex. For Failures)
+{
+  "FailedEntities" : {
+    "1458" : "Invalid client id for organization : 92",
+    "1692" : "Invalid client id for organization : 92"
+  },
+  "FailedCount" : 2,
+  "SuccessCount" : 0
 }
 
 RESPONSE CODE : 200 OK

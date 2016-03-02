@@ -3,13 +3,15 @@ URL: https://api.vistara.io/api/v2/tenants/{orgId}/users/{userId}/alertViews
 METHOD: GET
 
 HEADERS:
-	Authorization : Bearer {accessToken}
-	Content-Type : application/json
-	Accept : application/json
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
 	
 QUERY PARAMS:
-        isDescendingOrder={true/false} defaultValue=true[optional]
-        sortName={sortName} defaultValue=id [optional]
+    isDescendingOrder={true/false} defaultValue=true[optional]
+    sortName={sortName} defaultValue=id [optional]
+        
+EX: https://api.vistara.io/api/v2/tenants/client_93/users/USR0000002115/alertViews?isDescendingOrder=true&sortName=id
         
 RESPONSE:
 [
@@ -35,4 +37,4 @@ RESPONSE:
    }
 ]
 
-Response Code : 200 OK
+RESPONSE CODE: 200 OK

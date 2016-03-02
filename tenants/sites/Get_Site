@@ -6,92 +6,86 @@ HEADERS:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
+
+EX: https://api.vistara.io/api/v2/tenants/client_69856/sites/69678
  
 RESPONSE : 
 {
-   "id": 69672,
-   "name": "1.creating from ui",
-   "clientId": 93,
+   "id": 69678,
+   "name": "CREATE SITE - TESTING - API - UPDATE",
+   "parent": {
+      "id": 69674,
+      "name": "site from brocade inc client",
+      "clientId": 69856,
+      "mspId": 92,
+      "description": "lsdfj",
+      "address": "ljdsdlfj",
+      "phoneNumber": ""
+   },
+   "clientId": 69856,
    "mspId": 92,
-   "description": "sjdfl",
-   "address": "ljslfdj",
-   "city": "ljjssldfj",
-   "state": "ljslfjf",
+   "description": "TESTING SITE PLEASE IGNORE",
+   "address": "Madhapur, Near Global Edge, Vistara Inc",
+   "state": "Telangana",
    "country": "India",
-   "phoneNumber": "9999999999",
+   "phoneNumber": "9876543219",
    "primaryContact": {
-      "id": "USR0000002114",
-      "loginName": "deepu@client",
-      "lastName": "mungamuri",
-      "firstName": "client_deepu",
-      "email": "deepu.mungamuri@vistarait.com",
-      "phoneNumber": "",
-      "orgId": "client_93",
-      "profileImage": {
-         "description": "",
-         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-         "imageType": ""
-      },
-      "changePassword": false,
-      "organizationName": "Brocade Lab"
+      "id": "USR0000002128",
+      "loginName": "deepu@inc_client",
+      "lastName": "_inc_client",
+      "firstName": "deepu",
+      "email": "google@gmail.com",
+      "changePassword": false
    },
    "devices": [
       {
-         "id": "DEV0000015773",
+         "id": "b2646a9c-8dbe-421d-b0cd-ceaa6379de64",
          "generalInfo": {
-            "ipAddresses": "11.0.0.26",
-            "hostName": "Active.Director",
-            "deviceType": "Windows",
-            "buildNumber": 0
+            "osName": "",
+            "ipAddresses": "10.4.18.2",
+            "hostName": "Device-deepu",
+            "dns": "",
+            "deviceType": "Laptop",
+            "buildNumber": 0,
+            "createdTime": "2016-02-23T10:47:33+0530",
+            "updatedTime": "2016-02-24T11:28:18+0530",
+            "agentDeploytime": ""
          },
          "bios": {
-            "biosVersion": "",
             "systemSerial": "",
             "systemModel": ""
          },
-         "consoles": [],
          "status": "UNKNOWN",
          "state": "active",
-         "clientUniqueId": "client_93",
-         "ipAddress": "11.0.0.26"
+         "clientUniqueId": "client_69856",
+         "ipAddress": "10.4.18.2",
+         "type": "DEVICE"
       },
       {
-         "id": "d7bce6fe-d19f-4ad7-8c50-2f639f2dd778",
+         "id": "ff1a4e7b-cf66-4adc-a72f-0249d5fc3295",
          "generalInfo": {
-            "ipAddresses": "2.36.41.14",
-            "hostName": "Agent Not Installed",
-            "deviceType": "Windows",
-            "buildNumber": 0
+            "osName": "Ubuntu 12.04.5 LTS",
+            "ipAddresses": "192.168.56.86",
+            "hostName": "testdevice-api",
+            "dns": "testdevice-api.vistara.com",
+            "deviceType": "Server",
+            "macAddress": "2E:8B:EB:32:7A:F9",
+            "buildNumber": 0,
+            "createdTime": "2016-02-28T12:31:47+0530",
+            "updatedTime": "2016-02-28T12:31:47+0530",
+            "agentDeploytime": ""
          },
          "bios": {
-            "systemModel": "Dell"
+            "systemSerial": "564D35B8-3FF8-D31F-935D-558A15B81234",
+            "systemModel": "Ubuntu model"
          },
-         "consoles": [],
          "status": "UNKNOWN",
          "state": "active",
-         "clientUniqueId": "client_93",
-         "ipAddress": "2.36.41.14"
-      },
-      {
-         "id": "05c5a19c-f440-4b81-95b0-bac7837751f6",
-         "generalInfo": {
-            "ipAddresses": "10.5.5.58",
-            "hostName": "Agent Not Installed2",
-            "deviceType": "Windows",
-            "buildNumber": 0
-         },
-         "bios": {
-            "systemModel": "Dell"
-         },
-         "consoles": [],
-         "status": "UNKNOWN",
-         "state": "active",
-         "clientUniqueId": "client_93",
-         "ipAddress": "10.5.5.58"
+         "clientUniqueId": "client_69856",
+         "ipAddress": "192.168.56.86",
+         "type": "DEVICE"
       }
    ]
 }
 
-Response Code: 200 OK
+RESPONSE CODE: 200 OK

@@ -7,6 +7,8 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 	
+EX: https://api.vistara.io/api/v2/cfg/timezones
+	
 RESPONSE : 
 [
    {

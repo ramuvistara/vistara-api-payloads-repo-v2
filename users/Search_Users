@@ -8,28 +8,35 @@ HEADERS:
 	Accept : application/json
 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=false [optional]
-4.	sortName={field} defaultValue=id [optional]
-5.	queryString = {queryString} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=false [optional]
+	4.	sortName={field} defaultValue=id [optional]
+	5.	queryString = {queryString} [optional]
 
 QUERY VARIABLES:
- ...............
-1.	uniqueId
-2.	loginName
-3.	firstName
-4.	lastName
-5.	mailId
-6.	startCreationDate
-7.	endCreationDate
-8.	startUpdationDate
-9.	endUpdationDate
+	1.	uniqueId			[Ex. client_1, msp_1]
+	2.	loginName
+	3.	firstName
+	4.	lastName
+	5.	mailId
+	6.	startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
+	7.	endCreationDate		[Ex. 2015-11-10T10:40:20 0000]
+	8.	startUpdationDate	[Ex. 2015-11-10T10:40:20 0000]
+	9.	endUpdationDate		[Ex. 2015-11-10T10:40:20 0000]
 
-EX : https://api.vistara.io/api/v2/tenants/api/v2/tenants/client_93/users/search
-EX : https://api.vistara.io/api/v2/tenants/api/v2/tenants/client_93/users/search?pageSize:5&queryString=loginName:brocade+lastName:lab
+EX: 1. https://api.vistara.io/api/v2/tenants/api/v2/tenants/client_93/users/search?pageSize:5&queryString=loginName:brocade+lastName:lab
+	2. https://api.vistara.io/api/v2/tenants/api/v2/tenants/msp_92/users/search?pageSize:5&queryString=loginName:brocade+lastName:inc
 
-RESPONSE :
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
+
+RESPONSE:
 {
    "results": [
       {
@@ -46,6 +53,16 @@ RESPONSE :
             "label": "GMT +05:30 India",
             "code": "IST"
          },
+         "roles": [
+            {
+               "id": 2,
+               "name": "Var Administrator"
+            },
+            {
+               "id": 3,
+               "name": "VAR User"
+            }
+         ],
          "orgId": "msp_92",
          "profileImage": {
             "description": "",
@@ -57,21 +74,7 @@ RESPONSE :
          "changePassword": false,
          "organizationName": "Brocade Inc",
          "createdTime": "2015-08-08T19:05:50+0530",
-         "updatedTime": "2015-08-08T19:05:50+0530",
-         "roles": [
-            {
-               "id": 2,
-               "name": "Var Administrator"
-            },
-            {
-               "id": 3,
-               "name": "VAR User"
-            },
-            {
-               "id": 8,
-               "name": "ITOP Administrator"
-            }
-         ]
+         "updatedTime": "2015-08-08T19:05:50+0530"
       },
       {
          "id": "USR0000002097",
@@ -87,6 +90,16 @@ RESPONSE :
             "label": "GMT -11:00 Samoa",
             "code": "SST"
          },
+         "roles": [
+            {
+               "id": 72,
+               "name": "FULL PERMISSIONS"
+            },
+            {
+               "id": 78,
+               "name": "Testing with partner"
+            }
+         ],
          "orgId": "msp_92",
          "profileImage": {
             "description": "",
@@ -98,28 +111,87 @@ RESPONSE :
          "changePassword": false,
          "organizationName": "Brocade Inc",
          "createdTime": "2013-09-02T05:14:49+0530",
-         "updatedTime": "2013-09-02T05:14:49+0530",
+         "updatedTime": "2013-09-02T05:14:49+0530"
+      },
+      {
+         "id": "USR0000000453",
+         "loginName": "test@autotask.19",
+         "lastName": "Autotask",
+         "firstName": "Admin",
+         "email": "sarma519@gmail.com",
+         "phoneNumber": "518-720-3500",
+         "mobileNumber": "",
+         "timeZone": {
+            "id": "4",
+            "name": "America/Los_Angeles",
+            "label": "GMT -08:00 Pacific",
+            "code": "PST"
+         },
          "roles": [
             {
-               "id": 72,
-               "name": "FULL PERMISSIONS"
+               "id": 30,
+               "name": "Partner Administrator"
+            }
+         ],
+         "orgId": "msp_92",
+         "profileImage": {
+            "description": "",
+            "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+            "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+            "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+            "imageType": ""
+         },
+         "changePassword": false,
+         "organizationName": "Brocade Inc",
+         "createdTime": "2013-03-22T17:07:51+0530",
+         "updatedTime": "2013-03-22T17:07:51+0530"
+      },
+      {
+         "id": "USR0000000216",
+         "loginName": "asuri@brocade.com",
+         "lastName": "Suri",
+         "firstName": "Anika",
+         "email": "sarma519@gmail.com",
+         "phoneNumber": "",
+         "mobileNumber": "",
+         "timeZone": {
+            "id": "4",
+            "name": "America/Los_Angeles",
+            "label": "GMT -08:00 Pacific",
+            "code": "PST"
+         },
+         "roles": [
+            {
+               "id": 2,
+               "name": "Var Administrator"
             },
             {
                "id": 78,
                "name": "Testing with partner"
             }
-         ]
+         ],
+         "orgId": "msp_92",
+         "profileImage": {
+            "logoPath": "https://app.vistarait.com/images/users/216/profileImages/90.jpg",
+            "thumbPath": "https://app.vistarait.com/images/users/216/profileImages/thumb-90.jpg",
+            "tinyThumbPath": "https://app.vistarait.com/images/users/216/profileImages/tiny-thumb-90.jpg",
+            "imageType": "image/jpeg"
+         },
+         "changePassword": false,
+         "organizationName": "Brocade Inc",
+         "createdTime": "2013-01-29T09:43:33+0530",
+         "updatedTime": "2013-01-29T09:43:33+0530"
       }
    ],
    "totalResults": 4,
    "orderBy": "user.id",
    "pageNo": 1,
-   "pageSize": 2,
-   "totalPages": 2,
-   "nextPage": true,
-   "nextPageNo": 2,
+   "pageSize": 10,
+   "totalPages": 1,
+   "nextPage": false,
+   "nextPageNo": 0,
    "previousPageNo": 0,
    "descendingOrder": true
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

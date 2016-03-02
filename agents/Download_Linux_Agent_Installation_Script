@@ -2,18 +2,21 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/agents/deployAgentsScript?
  
 METHOD: GET
  
-HEADER:
- 1. Authorization = "Bearer {accessToken}"
- 2. Accept = "application/json"
+HEADERS:
+	Authorization: Bearer {accessToken}
+	Content-Type: application/json
+	Accept: application/json
  
 REQUEST PARAMS:
  profileId = <id of the gateway profile through agents needs to be connected, if not not specified agent will directly connect to the cloud>
 
-ex: Download a linux agent (direct connect)
+EX: Download a Linux agent (direct connect)
 URL: https://api.vistara.io/api/v2/tenants/client_1/agents/deployAgentsScript
 
-ex: Download a linux agent (connect thru gateway)
+EX: Download a Linux agent (connect through gateway)
 URL: https://api.vistara.io/api/v2/tenants/client_1/agents/deployAgentsScript?profileId=1
  
 RESPONSE:
- downloads the deployAgent.py (python) script
+	Downloads the deployAgent.py (python) script
+
+RESPONSE CODE: 200 OK

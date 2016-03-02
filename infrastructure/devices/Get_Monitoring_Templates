@@ -1,18 +1,24 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/monitoringTemplates
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/monitoringTemplates
 
 METHOD: GET
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=false [optional]
-4.	sortName={field} defaultValue=name [optional]
-5.	templateType = {templateType} defaultValue=1 [optional]
-6.	collectorType = {collectorType} defaultValue=0 [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=false [optional]
+	4. sortName={field} defaultValue=name [optional]
+	5. templateType = {templateType} defaultValue=1 [optional]
+	6. collectorType = {collectorType} defaultValue=0 [optional]
+
+EX: https://api.vistara.io/api/v2/tenants/{clientId}/monitoringTemplates?pageNo=1&pageSize=10&isDescendingOrder=true
+
+NOTE: 	templateType  [1 = global templates, 6 = partner or client templates, 2 = vistara templates, 3 = service provider templates]
+		collectorType [0 = all, 1 = Agent, 2 = Gateway, 3 = Vistara Cloud, 4 = AWS, 5 = Google, 6 = Azure]
 
 RESPONSE:
 {
@@ -141,3 +147,5 @@ RESPONSE:
    "previousPageNo": 0,
    "descendingOrder": false
 }
+
+RESPONSE CODE: 200 OK

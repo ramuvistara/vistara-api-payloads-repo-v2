@@ -8,28 +8,30 @@ HEADERS:
 	Accept : application/json
 	
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=id [optional]
-5.	queryString={field} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=id [optional]
+	5.	queryString={field} [optional]
 
 QUERY VARIABLES : 
-1.	id
-2.	loginName
-3.	userId            [EX : USR0000000001]
-4.	startLoginDate    
-5.	endLoginDate
-6.	startLogoutDate
-7.	endLogoutDate
+	1.	id					
+	2.	loginName
+	3.	userId            	[Ex. USR0000000001]
+	4.	startLoginDate    	[Ex. 2015-11-10T10:40:20 0000]
+	5.	endLoginDate		[Ex. 2015-11-10T10:40:20 0000]
+	6.	startLogoutDate		[Ex. 2015-11-10T10:40:20 0000]
+	7.	endLogoutDate		[Ex. 2015-11-10T10:40:20 0000]
 
 EX : 1. https://api.vistara.io/api/v2/serviceProvider/users/loginHistory/search?pageSize=2&queryString=userId:USR0000000001+startLoginDate:2014-12-12T01:13:12 0530+endLoginDate:2015-12-12T01:13:12 0530
      
-NOTE : 
-    	special characters in queryString:
-    	1.	%2B -- indicate next field
-    	2.	: -- indicate equals to
-    	3.	dataformate should be in yyyy-MM-dd'T'HH:mm:ssZ
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
 
 RESPONSE :
 {

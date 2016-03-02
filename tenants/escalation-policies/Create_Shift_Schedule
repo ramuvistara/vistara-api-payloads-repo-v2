@@ -1,76 +1,99 @@
-URL : https://api.vistara.io/api/v2/tenants/{orgId}/shiftSchedules
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/shiftSchedules
 
-METHOD : POST
+METHOD: POST
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-MANDATORY FEILDS:
-	allClients || clients
-	scheduleName
-	timeZone
-	shiftName
-	shiftType [1 || 2]
-	shiftUsers
+MANDATORY FIELDS:
+	1. allClients (or) clients
+	2. scheduleName
+	3. timeZone.id	[Follow the NOTE to get timeZone details]
+	4. shiftName
+	5. shiftType 	[1 - Week Days, 2 - Date Range]
+	6. shiftUsers	[id and loginName]		
+
+EX: 1. https://api.vistara.io/api/v2/tenants/client_7/shiftSchedules
+	2. https://api.vistara.io/api/v2/tenants/msp_4/shiftSchedules
+
+NOTE: 
+	* allClients and clients is only available for partner level creation, no need to send for client level creation
+	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
 	
-JSON/PAYLOAD :
+REQUEST:
 {
-   "timeZone": {
-      "id": "5"
-   },
-   "allClients": "true",
-   "clients": [
-      {
-         "id": "93"
-      }
-   ],
-   "scheduleName": "SCHEDULE created from api",
-   "escalationShiftDetails": [
-      {
-         "shiftName": "SHIFT name",
-         "shiftType": "2",
-         "startDateandTime": "2015-08-27T11:26:00+0530",
-         "endDateandTime": "2015-08-28T10:37:00+0530",
-         "weekDayStartHour": "10",
-         "weekDayStartMin": "30",
-         "weekDayEndHour": "13",
-         "weekDayEndMin": "30",
-         "sunday": "false",
-         "monday": "false",
-         "tuesday": "false",
-         "wednesday": "false",
-         "thursday": "false",
-         "friday": "true",
-         "saturday": "false",
-         "primaryContact": {
-            "loginName": "deepu@partner"
-         },
-         "shiftUsers": [
-            {
-               "loginName": "deepu@partner"
-            }
-         ]
-      }
-   ]
+	"allClients" : "false",
+	"clients" : [
+		{
+			"uniqueId" : "client_7"
+		}
+	],
+	"scheduleName" : "Test-Schedule",
+	"timeZone" : {
+		"id" : "19"
+	},
+	"escalationShiftDetails" : [
+		{
+			"shiftName" : "Test-Shift-1",
+			"shiftType" : 1,
+			"weekDayStartHour"	: "10",
+			"weekDayStartMin"	: "00",
+			"weekDayEndHour"	: "20",
+			"weekDayEndMin"		: "30",
+			"sunday"	:	"false",
+			"monday"	:	"true",
+			"tuesday"	:	"false",
+			"wednesday"	:	"true",
+			"thursday"	:	"false",
+			"friday"	:	"true",
+			"saturday"	:	"false",
+			"shiftUsers" : [
+				{
+					"id" : "USR0000002146",
+					"loginName" : "FSSL-API-Lab-User-1"
+				},
+				{
+					"id" : "USR0000002147",
+					"loginName" : "FSSL-API-Lab-User-2"
+				}
+			]
+		},
+		{
+			"shiftName" : "Test-Shift-2",
+			"shiftType" : 2,
+			"startDateandTime":"2016-08-27T11:26:00+0530",
+			"endDateandTime":"2016-08-28T10:37:00+0530",
+			"shiftUsers" : [
+				{
+					"id" : "USR0000002146",
+					"loginName" : "FSSL-API-Lab-User-1"
+				},
+				{
+					"id" : "USR0000002147",
+					"loginName" : "FSSL-API-Lab-User-2"
+				}
+			]
+		}
+	]
 }
 
-RESPONSE DATA: 
+RESPONSE: 
 {
-   "id": 20,
-   "mspId": 92,
-   "timeZone": {
-      "id": 5,
-      "version": 0,
-      "name": "America/Phoenix",
-      "label": "GMT -07:00 Mountain",
-      "code": "MST",
-      "timezoneCodeWithDST": "MST",
-      "labelWithDST": "GMT -07:00 Mountain Standard Time"
-   },
-   "allClients": false,
-   "scheduleName": "SCHEDULE created from api",
-   "createdBy": 2095,
-   "updatedBy": 0
+  "id" : 16,
+  "mspId" : 4,
+  "timeZone" : {
+    "id" : 19,
+    "version" : 0,
+    "name" : "Asia/Calcutta",
+    "label" : "GMT +05:30 India",
+    "code" : "IST",
+    "timezoneCodeWithDST" : "IST",
+    "labelWithDST" : "GMT +05:30 India Standard Time"
+  },
+  "allClients" : false,
+  "scheduleName" : "Test-Schedule"
 }
-Response Code : 200 OK
+
+RESPONSE CODE: 200 OK

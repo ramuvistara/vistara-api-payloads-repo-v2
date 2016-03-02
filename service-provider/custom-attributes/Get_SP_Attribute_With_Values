@@ -7,9 +7,9 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json 
 
-EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71
+EX: https://api.vistara.io/api/v2/serviceProvider/customAttributes/71
 
-NOTE : This api will get the custom attribute and its values
+NOTE: This API will get a custom attribute and its values
 
 RESPONSE : 
 {

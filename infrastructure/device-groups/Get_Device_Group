@@ -1,93 +1,89 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/deviceGroups/{dgId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/policies/deviceGroups/{dgId}
  
 METHOD: GET
  
-HEADER: 
-1. Authorization = Bearer {accessToken}
-2. Accept = application/json
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
-ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/deviceGroups/2835
+EX: https://api.vistara.io/api/v2/tenants/client_93/policies/deviceGroups/1818
  
 RESPONSE:
-.........
-[
-  {
-    "id": 8391,
-    "name": "Device group example",
-    "type": "DEVICE_GROUP",
-    "childs": [
-      {
-        "id": 8390,
-        "name": "Policy example",
-        "type": "DEVICE_GROUP",
-        "childs": [
-          {
-            "id": 8389,
-            "name": "Policy example subgroup",
-            "type": "DEVICE_GROUP",
-            "policy": {
-              "matchType": "ALL",
-              "rules": [
-                {
-                  "key": "Device Name",
-                  "operator": "Starts with",
-                  "value": "db-mysql"
-                },
-                {
-                  "key": "Device Name",
-                  "operator": "Contains",
-                  "value": "redis-prod"
-                },
-                {
-                  "key": "Device Name",
-                  "operator": "Ends with",
-                  "value": "cassandra-prod"
-                },
-                {
-                  "key": "Device Name",
-                  "operator": "Regex",
-                  "value": "db.*.prod"
-                }
-              ],
-              "actions": [],
-              "executionOrder": 0
-            },
-            "kbArticlesIds": []
-          }
-        ],
-        "kbArticlesIds": []
-      },
-      {
-        "id": 8398,
-        "name": "Static example",
-        "type": "DEVICE_GROUP",
-        "childs": [
-          {
-            "id": 8397,
-            "name": "Static example sub-group",
-            "type": "DEVICE_GROUP",
-            "childs": [
-              {
-                "id": 381961,
-                "name": "Desktop001",
-                "type": "DEVICE",
-                "childs": [],
-                "kbArticlesIds": []
-              },
-              {
-                "id": 381971,
-                "name": "ne-esx12",
-                "type": "DEVICE",
-                "childs": [],
-                "kbArticlesIds": []
-              }
-            ],
-            "kbArticlesIds": []
-          }
-        ],
-        "kbArticlesIds": []
-      }
-    ],
-    "kbArticlesIds": []
-  }
-]
+{
+   "id": 1818,
+   "name": "Device group example",
+   "type": "DEVICE_GROUP",
+   "childs": [
+      {
+         "id": 1815,
+         "name": "Policy example",
+         "type": "DEVICE_GROUP",
+         "childs": [
+            {
+               "id": 1814,
+               "name": "Policy example subgroup",
+               "type": "DEVICE_GROUP",
+               "childs": [],
+               "policy": {
+                  "id": 0,
+                  "matchType": "ALL",
+                  "rules": [
+                     {
+                        "key": "Device Name",
+                        "operator": "Contains",
+                        "value": "hydlpt311"
+                     },
+                     {
+                        "key": "Device Name",
+                        "operator": "Starts with",
+                        "value": "db-mysql",
+                        "resourceType": "DEVICE"
+                     },
+                     {
+                        "key": "Device Name",
+                        "operator": "Contains",
+                        "value": "redis-prod",
+                        "resourceType": "DEVICE"
+                     },
+                     {
+                        "key": "Device Name",
+                        "operator": "Ends with",
+                        "value": "cassandra-prod",
+                        "resourceType": "DEVICE"
+                     },
+                     {
+                        "key": "Device Name",
+                        "operator": "Regex",
+                        "value": "db.*.prod",
+                        "resourceType": "DEVICE"
+                     }
+                  ],
+                  "actions": [],
+                  "executionOrder": 0
+               },
+               "kbArticlesIds": []
+            }
+         ],
+         "kbArticlesIds": []
+      },
+      {
+         "id": 1817,
+         "name": "Static example",
+         "type": "DEVICE_GROUP",
+         "childs": [
+            {
+               "id": 1816,
+               "name": "Static example sub-group",
+               "type": "DEVICE_GROUP",
+               "childs": [],
+               "kbArticlesIds": []
+            }
+         ],
+         "kbArticlesIds": []
+      }
+   ],
+   "kbArticlesIds": []
+}
+
+RESPONSE CODE: 200 OK

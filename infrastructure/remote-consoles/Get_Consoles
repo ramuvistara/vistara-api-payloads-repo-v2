@@ -2,16 +2,18 @@ URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}/remoteC
 
 METHOD: GET
 
-HEADER:
-1. Authorization = "Bearer {accessToken}"
-2. Accept = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
 QUERY PARAMS:
-1. pageNo={pageNo} defaultValue=1 [optional]
-2. pageSize={pageSize} defaultValue=10 [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+
+EX: https://api.vistara.io/api/v2/tenants/client_93/devices/23e5721a-b1a6-4347-938c-7e9ee28f1592/remoteConsoles
  
 RESPONSE:
-.........
 {
   "results": [
     {
@@ -48,3 +50,5 @@ RESPONSE:
   "previousPageNo": 0,
   "decendingOrder": false
 }
+
+RESPONSE CODE: 200 OK

@@ -10,54 +10,57 @@ HEADERS:
 EX : https://api.vistara.io/api/v2/serviceProvider/partners/msp_92/customAttributes
 
 RESPONSE :
-[ {
-  "id" : 1250,
-  "customAttributeValue" : {
-    "id" : 411,
-    "customAttribute" : {
-      "id" : 71,
-      "name" : "custom_attr_type_for_service_provider",
-      "description" : "creating custom_type for provider-update",
-      "organization" : {
-        "id" : 1,
-        "uniqueId" : "org_1",
-        "name" : "Vistara SaaS Platform",
-        "activated" : true
-      }
-    },
-    "value" : "test_val_2_for_custom_attr_type_for_sp_2",
-    "description" : "updated check"
-  },
-  "taggable" : {
-    "id" : "msp_92",
-    "name" : "Brocade Inc",
-    "entityType" : "MSP"
-  },
-  "tagSource" : "VISTARA"
-}, {
-  "id" : 1246,
-  "customAttributeValue" : {
-    "id" : 398,
-    "customAttribute" : {
-      "id" : 66,
-      "name" : "Test",
-      "description" : "",
-      "organization" : {
-        "id" : 1,
-        "uniqueId" : "org_1",
-        "name" : "Vistara SaaS Platform",
-        "activated" : true
-      }
-    },
-    "value" : "custom attribute val for partner",
-    "description" : "test case"
-  },
-  "taggable" : {
-    "id" : "msp_92",
-    "name" : "Brocade Inc",
-    "entityType" : "MSP"
-  },
-  "tagSource" : "VISTARA"
-} ]
+[
+   {
+      "id": 1250,
+      "customAttributeValue": {
+         "id": 411,
+         "customAttribute": {
+            "id": 71,
+            "name": "custom_attr_type_for_service_provider",
+            "description": "creating custom_type for provider-update",
+            "organization": {
+               "id": 1,
+               "uniqueId": "org_1",
+               "name": "Vistara SaaS Platform",
+               "activated": true
+            }
+         },
+         "value": "test_val_2_for_custom_attr_type_for_sp_2",
+         "description": "updated check"
+      },
+      "taggable": {
+         "id": "msp_92",
+         "name": "Brocade Inc",
+         "entityType": "MSP"
+      },
+      "tagSource": "VISTARA"
+   },
+   {
+      "id": 1246,
+      "customAttributeValue": {
+         "id": 398,
+         "customAttribute": {
+            "id": 66,
+            "name": "Test",
+            "description": "",
+            "organization": {
+               "id": 1,
+               "uniqueId": "org_1",
+               "name": "Vistara SaaS Platform",
+               "activated": true
+            }
+         },
+         "value": "custom attribute val for partner",
+         "description": "test case"
+      },
+      "taggable": {
+         "id": "msp_92",
+         "name": "Brocade Inc",
+         "entityType": "MSP"
+      },
+      "tagSource": "VISTARA"
+   }
+]
 
 RESPONSE CODE : 200 OK
