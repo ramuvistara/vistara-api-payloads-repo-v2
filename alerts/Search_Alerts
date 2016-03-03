@@ -31,6 +31,7 @@ QUERY VARIABLES:
 	13	alertTimeBase 	[updated, created]
 	14.	clientIds		[client_1, client_2 - (comma separated client uniqueIds)]
 	15.	ticketId		[Ex: INC0000000001]
+	16.	apps			[Ex. Email,Nagios]
 
 EX: https://api.vistara.io/api/v2/tenants/client_593972/alerts/search?pageNo=1&pageSize=2&isDescendingOrder=true&sortName=ts&queryString=clientIds:client_1,client_2+startDate:2015-06-10T05:39:51 0000+endDate:2015-08-10T05:39:51 0000+priority:P0,P1+states:CRITICAL,OK+uniqueId:10+deviceStatus:manage+resourceType:REDSHIFT+resourceIds:15494,15218+actions:closed,ticketed+alertTypes:agent,obsolete+metrics:zenoss,xenapp+duration:7+alertTimeBase:updated+ticketId:INC0000000001
 
@@ -42,6 +43,7 @@ NOTE:
 	3.	(,) Indicates Multiple values for a key (Ex: Priority:P0,P1)
 	4.	Space Characters should be URL Encoded (Then Automatically converts to %20)
 	5.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (Ex: 2016-02-26T05:17:58 0000)
+	6.	To get the Filter Data use API (https://api.vistara.io/api/v2/tenants/{tenantId}/alertViews/{viewId})
 
 RESPONSE:
 {
