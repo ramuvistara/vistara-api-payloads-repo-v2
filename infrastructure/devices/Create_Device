@@ -11,6 +11,20 @@ MANDATORY FIELDS:
 	1.hostName
 	2.resourceNetworkInterface
 
+OPTIONAL FIELDS:
+	1. dnsName
+	2. deviceType			[Ex. Laptop]
+	3. pluginName
+	4. os
+	5. serialNumber
+	6. make
+	7. model
+	8. managementProfile
+	9. systemUID
+	10.providerUID
+	11.providerType
+	12.agentPlatform		[Ex. LINUX]
+
 EX: https://api.vistara.io/api/v2/tenants/client_12/devices
 
 REQUEST:
@@ -23,6 +37,9 @@ REQUEST:
 	"make":"Ubuntu make",
 	"model":"Ubuntu model",
 	"managementProfile":"VG 2",
+	"providerType" : "AWS",
+	"providerUID" : "PVDR10",
+	"systemUID"	: "LINUX100",
 	"resourceNetworkInterface": [{
 		"ipAddressType": "STATIC",
 		"macAddress": "2E:8B:EB:32:7A:F9",
