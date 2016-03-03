@@ -1,90 +1,101 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/incidents/{incidentId}/responses
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/responses
 
 METHOD: GET
  
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Content-Type  = "application/json"
-
-
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDecendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=response.id [optional]
-5.	queryString = {queryString} [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={field} defaultValue=response.id [optional]
+	5. queryString = {queryString} [optional]
 
 QUERY VARIABLES:
- ...............
-1.	startCreationDate
-2.	endCreationDate
+	1. startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
+	2. endCreationDate		[Ex. 2015-12-10T10:40:20 0000]
 
-(ex:api/v2/tenants/client_69919/incidents/INC0000002281/responses?queryString=startCreationDate:2014-08-20T08:47:45 0530)
+EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses?pageNo=1&pageSize=10&queryString=startCreationDate:2014-08-20T08:47:45 0530+endCreationDate:2014-09-20T08:47:45 0530)
 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
 
 RESPONSE:
-.........
- {
-	"results": [{
-		"creator": {
-			"loginName": "vistara_system_user",
-			"lastName": " ",
-			"firstName": "Vistara System User",
-			"email": "helpdesk@vistarait.com",
-			"changePassword": false
-		},
-		"createdDate": "2015-12-09T06:47:51+0000",
-		"attachments": [{
-			"id": 115428,
-			"name": "logo_ingram_test.png",
-			"createdDate": "2015-12-09T06:47:51+0000",
-			"contentURL": "https://api.vistara.io/api/v2/tenants/client_100795/incidents/INC0001681818/responses/15009033/resources/115428"
-		},
-		{
-			"id": 115433,
-			"name": "Service_Request_1735.xml",
-			"createdDate": "2015-12-09T06:47:51+0000",
-			"contentURL": "https://api.vistara.io/api/v2/tenants/client_100795/incidents/INC0001681818/responses/15009033/resources/115433"
-		}],
-		"hasAttachments": true,
-		"description": "Test Response 1 - Please Ignore",
-		"tags":"tag1,tag 2"
-	},
-	{
-		"creator": {
-			"loginName": "vistara_system_user",
-			"lastName": " ",
-			"firstName": "Vistara System User",
-			"email": "helpdesk@vistarait.com",
-			"changePassword": false
-		},
-		"createdDate": "2015-12-09T06:44:30+0000",
-		"attachments": [{
-			"id": 115418,
-			"name": "logo_ingram_test.png",
-			"createdDate": "2015-12-09T06:44:29+0000",
-			"contentURL": "https://api.vistara.io/api/v2/tenants/client_100795/incidents/INC0001681818/responses/15009003/resources/115418"
-		},
-		{
-			"id": 115423,
-			"name": "Service_Request_1735.xml",
-			"createdDate": "2015-12-09T06:44:29+0000",
-			"contentURL": "https://api.vistara.io/api/v2/tenants/client_100795/incidents/INC0001681818/responses/15009003/resources/115423"
-		}],
-		"hasAttachments": true,
-		"description": "Test Incident 1- Please Ignore",
-		"tags":"tag1,tag 2"
-	}],
-	"totalResults": 2,
-	"orderBy": "response.id",
-	"pageNo": 1,
-	"pageSize": 2,
-	"totalPages": 1,
-	"nextPage": false,
-	"nextPageNo": 2,
-	"previousPageNo": 0,
-	"descendingOrder": true
+{
+   "results": [
+      {
+         "creator": {
+            "id": "USR0000002095",
+            "loginName": "vistara_system_user",
+            "lastName": " ",
+            "firstName": "Vistara System User",
+            "email": "sarma519@gmail.com",
+            "changePassword": false
+         },
+         "createdDate": "2016-03-03T09:13:02+0530",
+         "attachments": [
+            {
+               "id": 9,
+               "name": "test.png",
+               "createdDate": "2016-03-03T09:13:02+0530",
+               "contentURL": "https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses/1729/resources/9"
+            },
+            {
+               "id": 10,
+               "name": "test2.png",
+               "createdDate": "2016-03-03T09:13:02+0530",
+               "contentURL": "https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses/1729/resources/10"
+            }
+         ],
+         "hasAttachments": true,
+         "tags": "tag value, tag",
+         "description": "created to plugin api"
+      },
+      {
+         "creator": {
+            "id": "USR0000002146",
+            "loginName": "FSSL-API-Lab-User-1",
+            "lastName": "API-Lab",
+            "firstName": "FSSL",
+            "email": "tester@gmail.com",
+            "changePassword": false
+         },
+         "createdDate": "2016-03-03T01:20:48+0530",
+         "attachments": [
+            {
+               "id": 7,
+               "name": "2.jpg",
+               "createdDate": "2016-03-02T19:50:47+0530",
+               "contentURL": "https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses/1728/resources/7"
+            },
+            {
+               "id": 8,
+               "name": "1.jpg",
+               "createdDate": "2016-03-02T19:50:47+0530",
+               "contentURL": "https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses/1728/resources/8"
+            }
+         ],
+         "hasAttachments": true,
+         "description": "creating Incidents using Payload"
+      }
+   ],
+   "totalResults": 2,
+   "orderBy": "response.id",
+   "pageNo": 1,
+   "pageSize": 2,
+   "totalPages": 1,
+   "nextPage": false,
+   "nextPageNo": 0,
+   "previousPageNo": 0,
+   "descendingOrder": true
 }
 
+RESPONSE CODE: 200 OK

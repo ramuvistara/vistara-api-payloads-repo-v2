@@ -1,112 +1,304 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/changeRequests/{changeRequestId} 
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/changeRequests/{changeRequestId} 
 
 METHOD: GET
  
-HEADER:
- Authorization = "Bearer  {accessToken}"	
- Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-ex( /api/v2//tenants/client_69919/changeRequests/CHG0000000497)
- 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+EX: https://api.vistara.io/api/v2/tenants/client_7/changeRequests/CHG0000001027
 
 RESPONSE:
-.........
 {
-  "id": "CHG0000000497",
-  "subject": "New Change Request",
-  "description": "New Change Request",
-  "status": "Open",
-  "priority": "High",
-  "requester": {
-    "loginName": "superadmin",
-    "lastName": "G",
-    "firstName": "Sravanthi",
-    "email": "sravanthig17@gmail.com",
-    "phoneNumber": "4084365900",
-    "profileImage": {
-      "description": "",
-      "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-      "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-      "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-      "imageType": "image/gif"
-    },
-    "changePassword": false
-  },
-  "assignedUser": {
-    "id": "USR0000002252",
-    "loginName": "latest_api_test",
-    "lastName": "testing_api_client",
-    "firstName": "testing_api",
-    "email": "test@gmail.com",
-    "phoneNumber": "09887485473",
-    "orgId": "client_69919",
-    "profileImage": {
-      "description": "",
-      "logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-      "thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-      "tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-      "imageType": "image/gif"
-    },
-    "changePassword": false
-  },
-  "devices": [
-    {
-      "id": "DEV0011732",
-      "generalInfo": {
-        "ipAddresses": "192.168.100.146",
-        "hostName": "windows2008r6",
-        "deviceType": "Desktop",
-        "ramCapacity": 0,
-        "buildNumber": 0
-      },
-      "bios": {},
-      "consoles": [
-        {
-          "ipAddress": "192.168.1.200",
-          "port": "3389",
-          "consoleConnector": "Gateway",
-          "consoleAuthType": "PASSWORD",
-          "consoleProtocol": "RDP",
-          "type": "MANAGEMENTCONSOLE",
-          "userName": "admin"
-        }
-      ],
-      "status": "Active"
-    }
-  ],
-  "ticketArisedTime": "",
-  "createdDate": "2014-06-30T11:07:58+0530",
-  "allowedStatus": [
-    {
-      "id": "3",
-      "name": "Pending"
-    },
-    {
-      "id": "4",
-      "name": "Resolved"
-    },
-    {
-      "id": "6",
-      "name": "On Hold"
-    },
-    {
-      "id": "5",
-      "name": "Closed"
-    }
-  ],
-  "client":
-    {
-      "id": "93",
-      "uniqueId": "client_93",
-      "name": "Brocade Lab"
-    },
-  "changePlan": "New Change Request",
-  "rollbackPlan": "New Change Request",
-  "testPlan": "New Change Request",
-  "plannedStart": "2014-06-30T00:00:00+0530",
-  "plannedEnd": "2014-07-09T23:59:59+0530",
-  "workStart": "2014-06-30T00:00:00+0530",
-  "workEnd": "2014-07-09T23:59:59+0530"
+   "id": "CHG0000001027",
+   "subject": "Testing Change request- please ignore",
+   "description": "Test case for change request",
+   "status": "New",
+   "oldStatus": "New",
+   "priority": "Normal",
+   "oldPriority": "Normal",
+   "requester": {
+      "id": "USR0000002141",
+      "loginName": "TestFromUI",
+      "lastName": "TestClient",
+      "firstName": "TestUser",
+      "email": "email@gmail.com",
+      "phoneNumber": "",
+      "mobileNumber": "9876543210",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 23,
+            "name": "Business User"
+         },
+         {
+            "id": 74,
+            "name": "SERVICE PROVIDER STANDARD"
+         }
+      ],
+      "orgId": "org_1",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Vistara SaaS Platform",
+      "createdTime": "2016-02-03T16:03:08+0530",
+      "updatedTime": "2016-02-03T16:03:08+0530"
+   },
+   "assignedUser": {
+      "id": "USR0000002146",
+      "loginName": "FSSL-API-Lab-User-1",
+      "lastName": "API-Lab",
+      "firstName": "FSSL",
+      "email": "tester@gmail.com",
+      "phoneNumber": "9876543210 Extn 91",
+      "mobileNumber": "8976493645",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 4,
+            "name": "Client Administrator"
+         },
+         {
+            "id": 12,
+            "name": "Service Desk Client Admin"
+         }
+      ],
+      "orgId": "client_7",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "API Lab",
+      "createdTime": "2016-03-01T07:52:18+0530",
+      "updatedTime": "2016-03-01T07:52:18+0530"
+   },
+   "devices": [
+      {
+         "id": "481af404-33a6-4d61-af77-c483ca6641fa",
+         "name": "Testing-Dev-2",
+         "type": "DEVICE"
+      }
+   ],
+   "customFields": [
+      {
+         "id": "UDF0000003790",
+         "classCode": "CHANGE",
+         "displayLabel": "drop-down-api-lab",
+         "name": "drop_down_api_lab_3790",
+         "fieldType": "TYPE_DROPDOWN",
+         "mandatory": false,
+         "editable": true,
+         "description": "Test case",
+         "options": [
+            {
+               "label": "first",
+               "value": "1"
+            },
+            {
+               "label": "second",
+               "value": "2"
+            }
+         ],
+         "value": "1",
+         "selectedOption": {
+            "label": "first",
+            "value": "1"
+         }
+      },
+      {
+         "id": "UDF0000003791",
+         "classCode": "CHANGE",
+         "displayLabel": "text-api-lab",
+         "name": "text_api_lab_3791",
+         "fieldType": "TYPE_TEXT",
+         "mandatory": false,
+         "editable": true,
+         "description": "test case for text field",
+         "value": "request custom field - text"
+      },
+      {
+         "id": "UDF0000003792",
+         "classCode": "CHANGE",
+         "displayLabel": "multi line text-api-lab",
+         "name": "multi_line_text_api_lab_3792",
+         "fieldType": "TYPE_TEXTAREA",
+         "mandatory": false,
+         "editable": true,
+         "description": "test case for multi line text",
+         "value": "request custom field - multi line text"
+      },
+      {
+         "id": "UDF0000003793",
+         "classCode": "CHANGE",
+         "displayLabel": "Numeric-api-lab",
+         "name": "numeric_api_lab_3793",
+         "fieldType": "TYPE_NUMBER",
+         "mandatory": false,
+         "editable": true,
+         "description": "numeric test case",
+         "value": "10"
+      },
+      {
+         "id": "UDF0000003794",
+         "classCode": "CHANGE",
+         "displayLabel": "checkbox-api-lab",
+         "name": "checkbox_api_lab_3794",
+         "fieldType": "TYPE_CHECKBOX",
+         "mandatory": false,
+         "editable": true,
+         "description": "test case for check box",
+         "options": [
+            {
+               "label": "yes",
+               "value": "1"
+            }
+         ],
+         "value": "1",
+         "selectedOption": {
+            "label": "yes",
+            "value": "1"
+         }
+      },
+      {
+         "id": "UDF0000003795",
+         "classCode": "CHANGE",
+         "displayLabel": "Date-ap-lab",
+         "name": "date_ap_lab_3795",
+         "fieldType": "TYPE_DATE",
+         "mandatory": false,
+         "editable": true,
+         "description": "test case for date field",
+         "value": "2016-03-14T18:30:00+0530"
+      },
+      {
+         "id": "UDF0000003796",
+         "classCode": "CHANGE",
+         "displayLabel": "dateTime-api-lab",
+         "name": "datetime_api_lab_3796",
+         "fieldType": "TYPE_DATETIME",
+         "mandatory": false,
+         "editable": true,
+         "description": "test case for Date and time",
+         "value": "2016-03-22T01:56:00+0530"
+      }
+   ],
+   "cc": "test@gmail.com,tester@gmail.com",
+   "ticketArisedTime": "",
+   "createdUser": {
+      "id": "USR0000000001",
+      "loginName": "superadmin",
+      "lastName": "Admin",
+      "firstName": "Super",
+      "email": "sarma519@gmail.com",
+      "phoneNumber": "4084365900",
+      "mobileNumber": "4084365900",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 1,
+            "name": "Service Provider Administrator"
+         },
+         {
+            "id": 74,
+            "name": "SERVICE PROVIDER STANDARD"
+         }
+      ],
+      "orgId": "org_1",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "Vistara SaaS Platform",
+      "createdTime": "2012-03-28T21:53:11+0530",
+      "updatedTime": "2012-03-28T21:53:11+0530"
+   },
+   "alertIds": [],
+   "createdDate": "2016-03-02T10:52:15+0530",
+   "allowedStatus": [
+      {
+         "id": "2",
+         "name": "Open",
+         "reasonsEnabled": false,
+         "reasonsDefined": false
+      },
+      {
+         "id": "5",
+         "name": "Closed",
+         "reasonsEnabled": false,
+         "reasonsDefined": false
+      }
+   ],
+   "client": {
+      "id": 7,
+      "uniqueId": "client_7",
+      "name": "API Lab",
+      "activated": true,
+      "updatedTime": "",
+      "createdTime": "2012-10-09T11:49:34+0530"
+   },
+   "updatedDate": "2016-03-02T10:52:15+0530",
+   "priorityUpdatedBy": {
+      "id": "USR0000002141",
+      "loginName": "TestFromUI",
+      "lastName": "TestClient",
+      "firstName": "TestUser",
+      "email": "email@gmail.com",
+      "changePassword": false
+   },
+   "priorityUpdatedDate": "2016-03-02T10:52:15+0530",
+   "statusUpdatedBy": {
+      "id": "USR0000002141",
+      "loginName": "TestFromUI",
+      "lastName": "TestClient",
+      "firstName": "TestUser",
+      "email": "email@gmail.com",
+      "changePassword": false
+   },
+   "statusUpdatedDate": "2016-03-02T10:52:15+0530",
+   "slaDetails": {
+      "resolutionTime": 0,
+      "responseTime": 0,
+      "responseBreach": false,
+      "resolutionBreach": false,
+      "responseBreachDate": "",
+      "resolutionBreachDate": ""
+   },
+   "changePlan": "Change plan field testing",
+   "rollbackPlan": "rollback plan field testing",
+   "testPlan": "test plan field testing",
+   "plannedStart": "2016-03-21T10:47:00+0530",
+   "plannedEnd": "2016-03-24T11:47:59+0530",
+   "workStart": "2016-03-22T10:47:00+0530",
+   "workEnd": "2016-03-23T00:46:59+0530"
 }
+
+RESPONSE CODE: 200 OK

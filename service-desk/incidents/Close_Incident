@@ -1,67 +1,230 @@
-URL: https://api.vistara.io/api/v2//tenants/{tenantId}/incidents/{incidentId}/close
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/close
 
 METHOD: POST
  
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Content-Type  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
-MANDATORY FIELD : 
-	closureData || reason  [closureData is for supporting old versions]
-	
+MANDATORY FIELDS: 
+	1. reason		[if Reasons enabled for closing incident in service desk settings]
+
+EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/close
+
 NOTE:
-	* Close Request need to pass closureData [or reason] by creating the status change reasons for closing incident.
+	1. Check the status flows, reasons enabled or not and existence of status change reasons for closing incident in service desk settings.
+	2. Status Flows and existence of reasons will be given in Get Incident API with key (allowedStatus).
+	3. To get the reasons use API Get status Change Reasons (https://api.vistara.io/api/v2/tenants/{tenantId}/sdesk/statusReasons/{module}).
 		
 
 REQUEST:
-........
 {
-  "closureData" :"Not Applicable"
+  "reason" : "Reason Configured to Close Incident"
 }
-/api/v2/tenants/client_69919/incidents/INC0000002335/close
 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
- 
 RESPONSE:
-.........
 {
-	"id": "INC0000002403",
-	"subject": "vistara",
-	"description": "vistara",
-	"status": "Closed",
-	"priority": "Very Low",
-	"requester": {
-		"loginName": "superadmin",
-		"email": "sravanthig17@gmail.com",
-		"phoneNumber": "4084365900",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
-		},
-		"changePassword": false,
-		"organizationName": "Vistara SaaS Platform"
-	},
-	"customFields": [{
-		"id": "UDF0000005057",
-		"displayLabel": "Partner Custom Field Text",
-		"name": "partner_custom_field_text",
-		"mandatory": false,
-		"editable": true
-	},
-	{
-		"id": "UDF0000005058",
-		"displayLabel": "Client custom field text",
-		"name": "client_custom_field_text",
-		"mandatory": false,
-		"editable": true
-	}],
-	"ticketArisedTime": "",
-	"createdDate": "2015-01-23T06:48:48+0530",
-	"closureData": "Not Applicable",
-	"allowedStatus": []
+   "id": "INC0000001030",
+   "subject": "Incident Creation",
+   "description": "creating Incidents using Payload",
+   "status": "Closed",
+   "oldStatus": "New",
+   "priority": "High",
+   "oldPriority": "High",
+   "requester": {
+      "id": "USR0000002146",
+      "loginName": "FSSL-API-Lab-User-1",
+      "lastName": "API-Lab",
+      "firstName": "FSSL",
+      "email": "tester@gmail.com",
+      "phoneNumber": "9876543210 Extn 91",
+      "mobileNumber": "8976493645",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 4,
+            "name": "Client Administrator"
+         },
+         {
+            "id": 12,
+            "name": "Service Desk Client Admin"
+         }
+      ],
+      "orgId": "client_7",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "API Lab",
+      "createdTime": "2016-03-01T07:52:18+0530",
+      "updatedTime": "2016-03-01T07:52:18+0530"
+   },
+   "assignedUser": {
+      "id": "USR0000002146",
+      "loginName": "FSSL-API-Lab-User-1",
+      "lastName": "API-Lab",
+      "firstName": "FSSL",
+      "email": "tester@gmail.com",
+      "phoneNumber": "9876543210 Extn 91",
+      "mobileNumber": "8976493645",
+      "timeZone": {
+         "id": "19",
+         "name": "Asia/Calcutta",
+         "label": "GMT +05:30 India",
+         "code": "IST"
+      },
+      "roles": [
+         {
+            "id": 4,
+            "name": "Client Administrator"
+         }
+      ],
+      "orgId": "client_7",
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "API Lab",
+      "createdTime": "2016-03-01T07:52:18+0530",
+      "updatedTime": "2016-03-01T07:52:18+0530"
+   },
+   "assigneeGroup": {
+      "id": 17,
+      "name": "API-Lab-Group-1",
+      "userCount": 1
+   },
+   "devices": [
+      {
+         "id": "481af404-33a6-4d61-af77-c483ca6641fa",
+         "name": "Testing-Dev-2",
+         "type": "DEVICE"
+      },
+      {
+         "id": "481af404-33a6-4d61-af77-c483ca6641fa",
+         "name": "Testing-Dev-2",
+         "type": "DEVICE"
+      }
+   ],
+   "extTicketId": "000042526342",
+   "customFields": [
+      {
+         "id": "UDF0000003778",
+         "classCode": "INCIDENT",
+         "displayLabel": "for service provider",
+         "name": "for_service_provider_3778",
+         "fieldType": "TYPE_TEXT",
+         "mandatory": false,
+         "editable": true,
+         "description": "all clients and all partners"
+      },
+      {
+         "id": "UDF0000003779",
+         "classCode": "INCIDENT",
+         "displayLabel": "for service prov 2",
+         "name": "for_service_prov_2_3779",
+         "fieldType": "TYPE_CHECKBOX",
+         "mandatory": false,
+         "editable": true,
+         "description": "all partners and clients",
+         "options": [
+            {
+               "label": "yes",
+               "value": "1"
+            }
+         ]
+      },
+      {
+         "id": "UDF0000003780",
+         "classCode": "INCIDENT",
+         "displayLabel": "for service pro 3",
+         "name": "for_service_pro_3_3780",
+         "fieldType": "TYPE_TEXT",
+         "mandatory": false,
+         "editable": true,
+         "description": "service provider"
+      }
+   ],
+   "cc": "tester1@gmail.com",
+   "ticketArisedTime": "2016-02-26T12:13:00+0530",
+   "createdUser": {
+      "id": "USR0000002095",
+      "loginName": "vistara_system_user",
+      "lastName": " ",
+      "firstName": "Vistara System User",
+      "email": "sarma519@gmail.com",
+      "roles": [
+         {
+            "id": 75,
+            "name": "System User Acl"
+         }
+      ],
+      "profileImage": {
+         "description": "",
+         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
+         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
+         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
+         "imageType": ""
+      },
+      "changePassword": false,
+      "organizationName": "System Organization",
+      "createdTime": "2013-05-10T00:00:00+0530",
+      "updatedTime": "2013-05-10T00:00:00+0530"
+   },
+   "reason" : "Reason Configured to Close Incident",
+   "alertIds": [],
+   "toEmail": "tester2@gmail.com",
+   "createdDate": "2016-03-02T19:50:46+0530",
+   "serviceRestoreDate": "2016-03-26T12:13:00+0530",
+   "allowedStatus": [],
+   "client": {
+      "id": 7,
+      "uniqueId": "client_7",
+      "name": "API Lab",
+      "activated": true,
+      "updatedTime": "",
+      "createdTime": "2012-10-09T11:49:34+0530"
+   },
+   "updatedDate": "2016-03-03T07:02:43+0530",
+   "priorityUpdatedBy": {
+      "id": "USR0000002146",
+      "loginName": "FSSL-API-Lab-User-1",
+      "lastName": "API-Lab",
+      "firstName": "FSSL",
+      "email": "tester@gmail.com",
+      "changePassword": false
+   },
+   "priorityUpdatedDate": "2016-03-02T19:50:46+0530",
+   "statusUpdatedBy": {
+      "id": "USR0000002095",
+      "loginName": "vistara_system_user",
+      "lastName": " ",
+      "firstName": "Vistara System User",
+      "email": "sarma519@gmail.com",
+      "changePassword": false
+   },
+   "statusUpdatedDate": "2016-03-03T07:02:42+0530",
+   "slaDetails": {
+      "resolutionTime": 40315,
+      "responseTime": 40316,
+      "responseBreach": false,
+      "resolutionBreach": false,
+      "responseBreachDate": "",
+      "resolutionBreachDate": ""
+   }
 }
 
+RESPONSE CODE: 200 OK

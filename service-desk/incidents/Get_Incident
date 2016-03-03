@@ -1,259 +1,233 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/incidents/{incidentId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}
 
 METHOD: GET
  
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Content-Type  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-REQUEST : None
-.........
-
-EX : https://api.vistara.io/api/v2/tenants/client_93/incidents/INC0000000965
+EX: https://api.vistara.io/api/v2/tenants/client_93/incidents/INC0000001024
 
 RESPONSE:
-.........
 {
-   "id": "INC0000001018",
-   "subject": "creating incident from API",
-   "description": "Description",
-   "status": "New",
-   "oldStatus": "New",
-   "priority": "High",
-   "oldPriority": "Normal",
-   "requester": {
-      "id": "USR0000000453",
-      "loginName": "test@autotask.19",
-      "lastName": "Autotask",
-      "firstName": "Admin",
-      "email": "sarma519@gmail.com",
-      "phoneNumber": "518-720-3500",
-      "mobileNumber": "",
-      "timeZone": "America/Los_Angeles",
-      "orgId": "msp_92",
-      "profileImage": {
-         "description": "",
-         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-         "imageType": ""
-      },
-      "changePassword": false,
-      "organizationName": "Brocade Inc",
-      "createdTime": "2013-03-22T17:07:51+0530",
-      "updatedTime": "2013-03-22T17:07:51+0530"
-   },
-   "assignedUser": {
-      "id": "USR0000000453",
-      "loginName": "test@autotask.19",
-      "lastName": "Autotask",
-      "firstName": "Admin",
-      "email": "sarma519@gmail.com",
-      "phoneNumber": "518-720-3500",
-      "mobileNumber": "",
-      "timeZone": "America/Los_Angeles",
-      "orgId": "msp_92",
-      "profileImage": {
-         "description": "",
-         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-         "imageType": ""
-      },
-      "changePassword": false,
-      "organizationName": "Brocade Inc",
-      "createdTime": "2013-03-22T17:07:51+0530",
-      "updatedTime": "2013-03-22T17:07:51+0530"
-   },
-   "customFields": [
-      {
-         "id": "UDF0000003778",
-         "classCode": "INCIDENT",
-         "displayLabel": "for service provider",
-         "name": "for_service_provider_3778",
-         "fieldType": "TYPE_TEXT",
-         "mandatory": false,
-         "editable": true,
-         "description": "all clients and all partners"
-      },
-      {
-         "id": "UDF0000003779",
-         "classCode": "INCIDENT",
-         "displayLabel": "for service prov 2",
-         "name": "for_service_prov_2_3779",
-         "fieldType": "TYPE_CHECKBOX",
-         "mandatory": false,
-         "editable": true,
-         "description": "all partners and clients",
-         "options": [
-            {
-               "label": "yes",
-               "value": "1"
-            }
-         ]
-      },
-      {
-         "id": "UDF0000003780",
-         "classCode": "INCIDENT",
-         "displayLabel": "for service pro 3",
-         "name": "for_service_pro_3_3780",
-         "fieldType": "TYPE_TEXT",
-         "mandatory": false,
-         "editable": true,
-         "description": "service provider"
-      },
-      {
-         "id": "UDF0000003781",
-         "classCode": "INCIDENT",
-         "displayLabel": "date",
-         "name": "date_3781",
-         "fieldType": "TYPE_DATE",
-         "mandatory": false,
-         "editable": true,
-         "description": "date field"
-      },
-      {
-         "id": "UDF0000003782",
-         "classCode": "INCIDENT",
-         "displayLabel": "date and time label",
-         "name": "date_and_time_label_3782",
-         "fieldType": "TYPE_DATETIME",
-         "mandatory": false,
-         "editable": true,
-         "description": "date and time description"
-      },
-      {
-         "id": "UDF0000003783",
-         "classCode": "INCIDENT",
-         "displayLabel": "dropdown for incident",
-         "name": "dropdown_for_incident_3783",
-         "fieldType": "TYPE_DROPDOWN",
-         "mandatory": false,
-         "editable": true,
-         "description": "DROPDOWN label",
-         "options": [
-            {
-               "label": "one",
-               "value": "1"
-            },
-            {
-               "label": "two",
-               "value": "2"
-            },
-            {
-               "label": "THREE",
-               "value": "3"
-            }
-         ],
-         "value": "3",
-         "selectedOption": {
-            "label": "THREE",
-            "value": "3"
-         }
-      },
-      {
-         "id": "UDF0000003784",
-         "classCode": "INCIDENT",
-         "displayLabel": "multi line text",
-         "name": "multi_line_text_3784",
-         "fieldType": "TYPE_TEXTAREA",
-         "mandatory": false,
-         "editable": true,
-         "description": "multi line text custom field"
-      },
-      {
-         "id": "UDF0000003785",
-         "classCode": "INCIDENT",
-         "displayLabel": "numeric custom",
-         "name": "numeric_custom_3785",
-         "fieldType": "TYPE_NUMBER",
-         "mandatory": false,
-         "editable": true,
-         "description": "numeric custom field for incident"
-      }
-   ],
-   "cc": "testmail@gmail.comm",
-   "ticketArisedTime": "",
-   "createdUser": {
-      "id": "USR0000002095",
-      "loginName": "vistara_system_user",
-      "lastName": " ",
-      "firstName": "Vistara System User",
-      "email": "sarma519@gmail.com",
-      "timeZone": "Asia/Calcutta",
-      "profileImage": {
-         "description": "",
-         "logoPath": "https://app.vistarait.com/img/nophoto.gif",
-         "thumbPath": "https://app.vistarait.com/img/nophoto.gif",
-         "tinyThumbPath": "https://app.vistarait.com/img/wall_img1.gif",
-         "imageType": ""
-      },
-      "changePassword": false,
-      "organizationName": "System Organization",
-      "createdTime": "2013-05-10T00:00:00+0530",
-      "updatedTime": "2013-05-10T00:00:00+0530"
-   },
-   "alertIds": [],
-   "toEmail": "testmail2@gmail.com",
-   "createdDate": "2015-12-29T09:32:22+0530",
-   "serviceRestoreDate": "2015-12-29T11:05:00+0530",
-   "resolutionSummary": "",
-   "allowedStatus": [
-      {
-         "id": "2",
-         "name": "Open"
-      },
-      {
-         "id": "5",
-         "name": "Closed"
-      }
-   ],
-   "client": {
-      "id": 93,
-      "uniqueId": "client_93",
-      "name": "Brocade Lab",
-      "activated": false,
-      "updatedTime": "2014-11-10T13:15:01+0530",
-      "createdTime": "2013-01-29T09:45:04+0530",
-      "lastUpdatedBy": {
-         "id": "USR0000000001",
-         "loginName": "superadmin",
-         "lastName": "Admin",
-         "firstName": "Super",
-         "email": "sarma519@gmail.com",
-         "changePassword": false
-      }
-   },
-   "updatedDate": "2015-12-30T08:00:27+0530",
-   "priorityUpdatedBy": {
-      "id": "USR0000000001",
-      "loginName": "superadmin",
-      "lastName": "Admin",
-      "firstName": "Super",
-      "email": "sarma519@gmail.com",
-      "changePassword": false
-   },
-   "priorityUpdatedDate": "2015-12-30T08:00:27+0530",
-   "statusUpdatedBy": {
-      "id": "USR0000002129",
-      "loginName": "Deepu.Mungamuri",
-      "lastName": "Mungamuri",
-      "firstName": "Deepu",
-      "email": "deepu.mungamuri@gmail.com",
-      "changePassword": false
-   },
-   "statusUpdatedDate": "2015-12-29T09:32:22+0530",
-   "requestedDate": "2015-12-29T09:32:22+0530",
-   "slaDetails": {
-      "slaPolicy": {
-         "id": 1,
-         "name": "test"
-      },
-      "resolutionTime": 0,
-      "responseTime": 334,
-      "responseBreach": "false",
-      "resolutionBreach": "false"
-   }
+	"id" : "INC0000001024",
+	"subject" : "API:Incident creation Feb 24th 01 PM",
+	"description" : "API:Incident creation Aug 6th 10pm",
+	"status" : "On Hold",
+	"oldStatus" : "Open",
+	"priority" : "Normal",
+	"oldPriority" : "Normal",
+	"requester" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"roles" : [
+			{
+				"id" : 75,
+				"name" : "System User Acl"
+			}
+		],
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "System Organization",
+		"createdTime" : "2013-05-10T00:00:00+0530",
+		"updatedTime" : "2013-05-10T00:00:00+0530"
+	},
+	"extTicketId" : "BMCARQ1234",
+	"customFields" : [
+		{
+			"id" : "UDF0000003778",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "for service provider",
+			"name" : "for_service_provider_3778",
+			"fieldType" : "TYPE_TEXT",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "all clients and all partners"
+		},
+		{
+			"id" : "UDF0000003779",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "for service prov 2",
+			"name" : "for_service_prov_2_3779",
+			"fieldType" : "TYPE_CHECKBOX",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "all partners and clients",
+			"options" : [
+				{
+					"label" : "yes",
+					"value" : "1"
+				}
+			]
+		},
+		{
+			"id" : "UDF0000003780",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "for service pro 3",
+			"name" : "for_service_pro_3_3780",
+			"fieldType" : "TYPE_TEXT",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "service provider"
+		},
+		{
+			"id" : "UDF0000003781",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "date",
+			"name" : "date_3781",
+			"fieldType" : "TYPE_DATE",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "date field"
+		},
+		{
+			"id" : "UDF0000003782",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "date and time label",
+			"name" : "date_and_time_label_3782",
+			"fieldType" : "TYPE_DATETIME",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "date and time description"
+		},
+		{
+			"id" : "UDF0000003783",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "dropdown for incident",
+			"name" : "dropdown_for_incident_3783",
+			"fieldType" : "TYPE_DROPDOWN",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "DROPDOWN label",
+			"options" : [
+				{
+					"label" : "one",
+					"value" : "1"
+				},
+				{
+					"label" : "two",
+					"value" : "2"
+				},
+				{
+					"label" : "THREE",
+					"value" : "3"
+				}
+			]
+		},
+		{
+			"id" : "UDF0000003784",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "multi line text",
+			"name" : "multi_line_text_3784",
+			"fieldType" : "TYPE_TEXTAREA",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "multi line text custom field"
+		},
+		{
+			"id" : "UDF0000003785",
+			"classCode" : "INCIDENT",
+			"displayLabel" : "numeric custom",
+			"name" : "numeric_custom_3785",
+			"fieldType" : "TYPE_NUMBER",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "numeric custom field for incident"
+		}
+	],
+	"cc" : "",
+	"ticketArisedTime" : "",
+	"createdUser" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"roles" : [
+			{
+				"id" : 75,
+				"name" : "System User Acl"
+			}
+		],
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "System Organization",
+		"createdTime" : "2013-05-10T00:00:00+0530",
+		"updatedTime" : "2013-05-10T00:00:00+0530"
+	},
+	"reason" : "change open to on hold",
+	"alertIds" : [],
+	"toEmail" : "",
+	"createdDate" : "2016-02-24T07:39:55+0530",
+	"suspendEndDate" : "2016-02-29T14:15:00+0530",
+	"resolutionSummary" : "Reason to incident open request from srvc provider",
+	"allowedStatus" : [
+		{
+			"id" : "2",
+			"name" : "Open",
+			"reasonsEnabled" : true,
+			"reasonsDefined" : true
+		}
+	],
+	"client" : {
+		"id" : 93,
+		"uniqueId" : "client_93",
+		"name" : "Brocade Lab",
+		"activated" : true,
+		"updatedTime" : "2016-02-15T09:41:03+0530",
+		"createdTime" : "2013-01-29T09:45:04+0530",
+		"lastUpdatedBy" : {
+			"id" : "USR0000000001",
+			"loginName" : "superadmin",
+			"lastName" : "Admin",
+			"firstName" : "Super",
+			"email" : "sarma519@gmail.com",
+			"changePassword" : false
+		}
+	},
+	"updatedDate" : "2016-02-29T08:43:23+0530",
+	"priorityUpdatedBy" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"priorityUpdatedDate" : "2016-02-24T07:39:55+0530",
+	"statusUpdatedBy" : {
+		"id" : "USR0000000001",
+		"loginName" : "superadmin",
+		"lastName" : "Admin",
+		"firstName" : "Super",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"statusUpdatedDate" : "2016-02-29T08:43:23+0530",
+	"slaDetails" : {
+		"resolutionTime" : 0,
+		"responseTime" : 435176,
+		"responseBreach" : false,
+		"resolutionBreach" : false,
+		"responseBreachDate" : "",
+		"resolutionBreachDate" : ""
+	}
 }
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

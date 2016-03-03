@@ -1,109 +1,340 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/changeRequests
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/changeRequests
 
 METHOD: POST
 
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
 MANDATORY FIELDS:
-.................
-	subject
-	description
-	priority
-	changePlan
-	rollbackPlan
-	testPlan
-	plannedStart
-	plannedEnd
-	workStart
-	workEnd
- 
- priority field should contain :
-........................................
-	 Low
-	 Normal
-	 High
-	 Urgent
-	 Very Low
+	1. subject
+	2. description
+	3. priority			[Low, Normal, High, Urgent, Very Low]
+	4. changePlan
+	5. rollbackPlan
+	6. testPlan
+	7. plannedStart		[Ex. 2015-11-10T10:40:20+0000]
+	8. plannedEnd		[Ex. 2015-11-10T10:40:20+0000]
+	9. workStart		[Ex. 2015-11-10T10:40:20+0000]
+	10.workEnd			[Ex. 2015-11-10T10:40:20+0000]
 
-ex:(/api/v2/tenants/client_69919/changeRequests)
-
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+EX: https://api.vistara.io/api/v2/tenants/client_7/changeRequests
 
 REQUEST:
-........
- {
-	"subject": "change_request",
-	"description": "change request",
-	"priority": "High",
-	"changePlan": "changing plan",
-	"rollbackPlan": "change request roll back",
-	"testPlan":"testing change request",
- 	"plannedStart":"2015-01-22T00:00:00+0530",
- 	"plannedEnd":"2015-01-26T00:00:00+0530",
- 	"workStart":"2015-01-22T00:00:00+0530",
- 	"workEnd":"2015-01-27T00:00:00+0530",
-	"assignedUser": {
-		"id": "USR0000002256",
-		"loginName": "client_user"
+{
+	"subject" : "Change Request-Test",
+	"description" : "Testing Change request",
+	"priority" : "High",
+	"extTicketId" : "BM023456",
+	"changePlan" : "changing plan",
+	"rollbackPlan" : "change request roll back",
+	"testPlan" : "testing change request",
+	"plannedStart" : "2016-03-22T00:00:00+0530",
+	"plannedEnd" : "2016-03-26T00:00:00+0530",
+	"workStart" : "2016-03-23T00:00:00+0530",
+	"workEnd" : "2016-03-25T00:00:00+0530",
+	"cc" : "vistaraTester@gmail.com",
+	"channelId" : "2",
+	"tags" : "testTag, testTag2",
+	"location" : "location@test",
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2"
-	}]
+	"requester" : {
+		"id" : "USR0000002147",
+		"loginName" : "FSSL-API-Lab-User-2"
+	},
+	"devices" : [
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing Dev-1"
+		}
+	],
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"name" : "drop_down_api_lab_3790",
+			"value" : "2"
+		},
+		{
+			"id" : "UDF0000003791",
+			"name" : "text_api_lab_3791",
+			"value" : "request custom field - text"
+		}
+	]
 }
 
 RESPONSE:
-.........
 {
-	"id": "CHG0000002408",
-	"subject": "change_request",
-	"description": "change request",
-	"status": "New",
-	"priority": "High",
-	"requester": {
-		"loginName": "vistara_system_user",
-		"email": "sravanthig17@gmail.com",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+	"id" : "CHG0000001028",
+	"subject" : "Change Request-Test",
+	"description" : "Testing Change request",
+	"status" : "New",
+	"oldStatus" : "New",
+	"priority" : "High",
+	"oldPriority" : "High",
+	"requester" : {
+		"id" : "USR0000002147",
+		"loginName" : "FSSL-API-Lab-User-2",
+		"lastName" : "API-Lab-2",
+		"firstName" : "FSSL",
+		"email" : "tester3@gmail.com",
+		"phoneNumber" : "9876543219",
+		"mobileNumber" : "8976493646",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
 		},
-		"changePassword": false,
-		"organizationName": "Vistara SaaS Platform"
-	},
-	"assignedUser": {
-		"id": "USR0000002256",
-		"loginName": "client_user",
-		"email": "test@gmail.com",
-		"phoneNumber": "09887485473",
-		"orgId": "client_69919",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 5,
+				"name" : "Client User"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
 		},
-		"changePassword": false,
-		"organizationName": "Dell Client1"
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:54:46+0530",
+		"updatedTime" : "2016-03-01T07:54:46+0530"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-		"name": "Device_1"
-	}],
-	"ticketArisedTime": "",
-	"createdDate": "2015-01-27T13:59:43+0530",
-	"changePlan": "changing plan",
-	"rollbackPlan": "change request roll back",
-	"testPlan": "testing change request",
-	"plannedStart": "2015-01-28T00:00:00+0530",
-	"plannedEnd": "2015-01-31T00:00:00+0530",
-	"workStart": "2015-01-28T00:00:00+0530",
-	"workEnd": "2015-01-30T00:00:00+0530"
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 12,
+				"name" : "Service Desk Client Admin"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
+	},
+	"devices" : [
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing-Dev-2",
+			"type" : "DEVICE"
+		}
+	],
+	"extTicketId" : "BM023456",
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"classCode" : "CHANGE",
+			"displayLabel" : "drop-down-api-lab",
+			"name" : "drop_down_api_lab_3790",
+			"fieldType" : "TYPE_DROPDOWN",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "Test case",
+			"options" : [
+				{
+					"label" : "first",
+					"value" : "1"
+				},
+				{
+					"label" : "second",
+					"value" : "2"
+				}
+			],
+			"value" : "2",
+			"selectedOption" : {
+				"label" : "second",
+				"value" : "2"
+			}
+		},
+		{
+			"id" : "UDF0000003791",
+			"classCode" : "CHANGE",
+			"displayLabel" : "text-api-lab",
+			"name" : "text_api_lab_3791",
+			"fieldType" : "TYPE_TEXT",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for text field",
+			"value" : "request custom field - text"
+		},
+		{
+			"id" : "UDF0000003792",
+			"classCode" : "CHANGE",
+			"displayLabel" : "multi line text-api-lab",
+			"name" : "multi_line_text_api_lab_3792",
+			"fieldType" : "TYPE_TEXTAREA",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for multi line text"
+		},
+		{
+			"id" : "UDF0000003793",
+			"classCode" : "CHANGE",
+			"displayLabel" : "Numeric-api-lab",
+			"name" : "numeric_api_lab_3793",
+			"fieldType" : "TYPE_NUMBER",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "numeric test case"
+		},
+		{
+			"id" : "UDF0000003794",
+			"classCode" : "CHANGE",
+			"displayLabel" : "checkbox-api-lab",
+			"name" : "checkbox_api_lab_3794",
+			"fieldType" : "TYPE_CHECKBOX",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for check box",
+			"options" : [
+				{
+					"label" : "yes",
+					"value" : "1"
+				}
+			]
+		},
+		{
+			"id" : "UDF0000003795",
+			"classCode" : "CHANGE",
+			"displayLabel" : "Date-ap-lab",
+			"name" : "date_ap_lab_3795",
+			"fieldType" : "TYPE_DATE",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for date field"
+		},
+		{
+			"id" : "UDF0000003796",
+			"classCode" : "CHANGE",
+			"displayLabel" : "dateTime-api-lab",
+			"name" : "datetime_api_lab_3796",
+			"fieldType" : "TYPE_DATETIME",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for Date and time"
+		}
+	],
+	"cc" : "vistaraTester@gmail.com",
+	"ticketArisedTime" : "",
+	"createdUser" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"roles" : [
+			{
+				"id" : 75,
+				"name" : "System User Acl"
+			}
+		],
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "System Organization",
+		"createdTime" : "2013-05-10T00:00:00+0530",
+		"updatedTime" : "2013-05-10T00:00:00+0530"
+	},
+	"alertIds" : [],
+	"createdDate" : "2016-03-02T12:50:35+0530",
+	"allowedStatus" : [
+		{
+			"id" : "2",
+			"name" : "Open",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		},
+		{
+			"id" : "5",
+			"name" : "Closed",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		}
+	],
+	"client" : {
+		"id" : 7,
+		"uniqueId" : "client_7",
+		"name" : "API Lab",
+		"activated" : true,
+		"updatedTime" : "",
+		"createdTime" : "2012-10-09T11:49:34+0530"
+	},
+	"updatedDate" : "2016-03-02T12:50:41+0530",
+	"priorityUpdatedBy" : {
+		"id" : "USR0000002147",
+		"loginName" : "FSSL-API-Lab-User-2",
+		"lastName" : "API-Lab-2",
+		"firstName" : "FSSL",
+		"email" : "tester3@gmail.com",
+		"changePassword" : false
+	},
+	"priorityUpdatedDate" : "2016-03-02T12:50:35+0530",
+	"statusUpdatedBy" : {
+		"id" : "USR0000002147",
+		"loginName" : "FSSL-API-Lab-User-2",
+		"lastName" : "API-Lab-2",
+		"firstName" : "FSSL",
+		"email" : "tester3@gmail.com",
+		"changePassword" : false
+	},
+	"statusUpdatedDate" : "2016-03-02T12:50:35+0530",
+	"slaDetails" : {
+		"resolutionTime" : 0,
+		"responseTime" : 0,
+		"responseBreach" : false,
+		"resolutionBreach" : false,
+		"responseBreachDate" : "",
+		"resolutionBreachDate" : ""
+	},
+	"changePlan" : "changing plan",
+	"rollbackPlan" : "change request roll back",
+	"testPlan" : "testing change request",
+	"plannedStart" : "2016-03-22T00:00:00+0530",
+	"plannedEnd" : "2016-03-26T00:00:00+0530",
+	"workStart" : "2016-03-23T00:00:00+0530",
+	"workEnd" : "2016-03-25T00:00:00+0530"
 }
  
- 
+RESPONSE CODE: 200 OK

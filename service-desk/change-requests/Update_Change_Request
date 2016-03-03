@@ -1,91 +1,363 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/changeRequests/{changeRequestId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/changeRequests/{changeRequestId}
 
 METHOD: POST
 
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
-updating status from Resolved to Open need to give reopen reason in "notes" field. 
- 
-"status": "Open",
-"notes": "reopen the ticket"
+UPDATABLE FIELDS:
+	1.	devices
+	2.	priority			[Low, Normal, High, Urgent, Very Low]
+	3.	status				[Check allowedStatus field in Get ChangeRequest API]
+	4.	reason
+	5.	suspendEndDate		[Ex. 2013-05-10T00:00:00+0530]
+	6.	resolutionSummary
+	7.	notes
+	8.	assignedUser
+	9.	customFields
+	10.	responses
+	11.	cc					[comma separated mail Ids]
 
-ex :/api/v2/tenants/client_69919/changeRequests/CHG0000002408
+EX: https://api.vistara.io/api/v2/tenants/client_7/changeRequests/CHG0000001028
 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
-
+NOTE:
+	* Follow the steps while updating status
+		1. Check the Status Flows in Service Desk
+		2. Check the Status change reasons enabled or not for particular status of the module (ChangeRequest) in Service Desk Settings
+		3. reasons must be configured in Status Change Reasons of Service Desk.
+	* Examples for different statuses
+		1. Open
+			{ "status":"Open","reason":"reason configured to Open","notes":"Re-Open note (Required Resolved to Open)" }
+		2. Pending
+			{ "status":"Pending","reason":"reason configured to Pending" }
+		3. Resolved
+			{ "status":"Resolved","reason":"reason configured to Resolve","resolutionSummary":"summary for resolving" }
+		4. Closed
+			{ "status":"Closed","reason":"reason configured to Close" }
+		5. On Hold
+			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
+			
 REQUEST:
-........
 {
-  "assignedUser": {
-    "id": "USR0000002252",
-    "loginName": "latest_api_test"
-  },
-  "devices": [
-    {
-      "id": "3f29b570-3368-4b0e-bec2-fd11aaeb6a9a"
-    }
-  ],
-  "status": "Open",
-  "notes": "reopen",
-  "responses": [
-    {
-      "description": "change"
-    }
-  ]
+	"priority" : "High",
+	"status" : "On Hold",
+	"reason" : "On Hold Reason",
+	"cc" : "tester@gmail.com",
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
+	},
+	"devices" : [
+		{
+			"id" : "1a08b17a-85e4-4615-8b49-061f5ad1a1b9",
+			"name" : "Testing Dev-1"
+		},
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing Dev-2"
+		}
+	],
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"name" : "drop_down_api_lab_3790",
+			"value" : "1"
+		},
+		{
+			"id" : "UDF0000003791",
+			"name" : "text_api_lab_3791",
+			"value" : "request custom field - text"
+		}
+	],
+	"responses" : [
+		{
+			"description" : "response 1"
+		},
+		{
+			"description" : "response 2"
+		}
+	]
 }
-
 
 RESPONSE:
-.........
 {
-	"id": "CHG0000002408",
-	"subject": "change_request",
-	"description": "change request",
-	"status": "Open",
-	"priority": "High",
-	"requester": {
-		"loginName": "vistara_system_user",
-		"email": "sravanthig17@gmail.com",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+	"id" : "CHG0000001027",
+	"subject" : "Testing Change request- please ignore",
+	"description" : "Test case for change request",
+	"status" : "On Hold",
+	"oldStatus" : "New",
+	"priority" : "High",
+	"oldPriority" : "Normal",
+	"requester" : {
+		"id" : "USR0000002141",
+		"loginName" : "TestFromUI",
+		"lastName" : "TestClient",
+		"firstName" : "TestUser",
+		"email" : "email@gmail.com",
+		"phoneNumber" : "",
+		"mobileNumber" : "9876543210",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
 		},
-		"changePassword": false,
-		"organizationName": "Vistara SaaS Platform"
-	},
-	"assignedUser": {
-		"id": "USR0000002252",
-		"loginName": "latest_api_test",
-		"email": "test@gmail.com",
-		"phoneNumber": "09887485473",
-		"orgId": "client_69919",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+		"roles" : [
+			{
+				"id" : 23,
+				"name" : "Business User"
+			},
+			{
+				"id" : 74,
+				"name" : "SERVICE PROVIDER STANDARD"
+			}
+		],
+		"orgId" : "org_1",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
 		},
-		"changePassword": false,
-		"organizationName": "Dell Client1"
+		"changePassword" : false,
+		"organizationName" : "Vistara SaaS Platform",
+		"createdTime" : "2016-02-03T16:03:08+0530",
+		"updatedTime" : "2016-02-03T16:03:08+0530"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-		"name": "Device_1"
-	}],
-	"ticketArisedTime": "",
-	"createdDate": "2015-01-27T13:59:43+0530",
-	"changePlan": "changing plan",
-	"rollbackPlan": "change request roll back",
-	"testPlan": "testing change request",
-	"plannedStart": "2015-01-28T00:00:00+0530",
-	"plannedEnd": "2015-01-31T00:00:00+0530",
-	"workStart": "2015-01-28T00:00:00+0530",
-	"workEnd": "2015-01-30T00:00:00+0530"
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 12,
+				"name" : "Service Desk Client Admin"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
+	},
+	"devices" : [
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing-Dev-2",
+			"type" : "DEVICE"
+		}
+	],
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"classCode" : "CHANGE",
+			"displayLabel" : "drop-down-api-lab",
+			"name" : "drop_down_api_lab_3790",
+			"fieldType" : "TYPE_DROPDOWN",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "Test case",
+			"options" : [
+				{
+					"label" : "first",
+					"value" : "1"
+				},
+				{
+					"label" : "second",
+					"value" : "2"
+				}
+			],
+			"value" : "1",
+			"selectedOption" : {
+				"label" : "first",
+				"value" : "1"
+			}
+		},
+		{
+			"id" : "UDF0000003791",
+			"classCode" : "CHANGE",
+			"displayLabel" : "text-api-lab",
+			"name" : "text_api_lab_3791",
+			"fieldType" : "TYPE_TEXT",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for text field",
+			"value" : "request custom field - text"
+		},
+		{
+			"id" : "UDF0000003792",
+			"classCode" : "CHANGE",
+			"displayLabel" : "multi line text-api-lab",
+			"name" : "multi_line_text_api_lab_3792",
+			"fieldType" : "TYPE_TEXTAREA",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for multi line text",
+			"value" : "request custom field - multi line text"
+		},
+		{
+			"id" : "UDF0000003793",
+			"classCode" : "CHANGE",
+			"displayLabel" : "Numeric-api-lab",
+			"name" : "numeric_api_lab_3793",
+			"fieldType" : "TYPE_NUMBER",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "numeric test case",
+			"value" : "10"
+		},
+		{
+			"id" : "UDF0000003794",
+			"classCode" : "CHANGE",
+			"displayLabel" : "checkbox-api-lab",
+			"name" : "checkbox_api_lab_3794",
+			"fieldType" : "TYPE_CHECKBOX",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for check box",
+			"options" : [
+				{
+					"label" : "yes",
+					"value" : "1"
+				}
+			],
+			"value" : "1",
+			"selectedOption" : {
+				"label" : "yes",
+				"value" : "1"
+			}
+		},
+		{
+			"id" : "UDF0000003795",
+			"classCode" : "CHANGE",
+			"displayLabel" : "Date-ap-lab",
+			"name" : "date_ap_lab_3795",
+			"fieldType" : "TYPE_DATE",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for date field",
+			"value" : "2016-03-14T18:30:00+0530"
+		},
+		{
+			"id" : "UDF0000003796",
+			"classCode" : "CHANGE",
+			"displayLabel" : "dateTime-api-lab",
+			"name" : "datetime_api_lab_3796",
+			"fieldType" : "TYPE_DATETIME",
+			"mandatory" : false,
+			"editable" : true,
+			"description" : "test case for Date and time",
+			"value" : "2016-03-22T01:56:00+0530"
+		}
+	],
+	"cc" : "tester@gmail.com",
+	"ticketArisedTime" : "",
+	"createdUser" : {
+		"id" : "USR0000000001",
+		"loginName" : "superadmin",
+		"lastName" : "Admin",
+		"firstName" : "Super",
+		"email" : "sarma519@gmail.com",
+		"phoneNumber" : "4084365900",
+		"mobileNumber" : "4084365900",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 1,
+				"name" : "Service Provider Administrator"
+			},
+			{
+				"id" : 74,
+				"name" : "SERVICE PROVIDER STANDARD"
+			}
+		],
+		"orgId" : "org_1",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "Vistara SaaS Platform",
+		"createdTime" : "2012-03-28T21:53:11+0530",
+		"updatedTime" : "2012-03-28T21:53:11+0530"
+	},
+	"alertIds" : [],
+	"createdDate" : "2016-03-02T10:52:15+0530",
+	"allowedStatus" : [],
+	"client" : {
+		"id" : 7,
+		"uniqueId" : "client_7",
+		"name" : "API Lab",
+		"activated" : true,
+		"updatedTime" : "",
+		"createdTime" : "2012-10-09T11:49:34+0530"
+	},
+	"updatedDate" : "2016-03-02T17:50:05+0530",
+	"priorityUpdatedBy" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"priorityUpdatedDate" : "2016-03-02T17:50:05+0530",
+	"statusUpdatedBy" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"statusUpdatedDate" : "2016-03-02T17:50:05+0530",
+	"slaDetails" : {
+		"resolutionTime" : 0,
+		"responseTime" : 25070,
+		"responseBreach" : false,
+		"resolutionBreach" : false,
+		"responseBreachDate" : "",
+		"resolutionBreachDate" : ""
+	},
+	"changePlan" : "Change plan field testing",
+	"rollbackPlan" : "rollback plan field testing",
+	"testPlan" : "test plan field testing",
+	"plannedStart" : "2016-03-21T10:47:00+0530",
+	"plannedEnd" : "2016-03-24T11:47:59+0530",
+	"workStart" : "2016-03-22T10:47:00+0530",
+	"workEnd" : "2016-03-23T00:46:59+0530"
 }
+
+RESPONSE CODE: 200 OK
