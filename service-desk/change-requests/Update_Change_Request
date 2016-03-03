@@ -7,7 +7,7 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
  
-UPDATABLE FIELDS:
+OPTIONAL FIELDS:
 	1.	devices
 	2.	priority			[Low, Normal, High, Urgent, Very Low]
 	3.	status				[Check allowedStatus field in Get ChangeRequest API]
