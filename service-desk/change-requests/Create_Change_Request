@@ -19,6 +19,17 @@ MANDATORY FIELDS:
 	9. workStart		[Ex. 2015-11-10T10:40:20+0000]
 	10.workEnd			[Ex. 2015-11-10T10:40:20+0000]
 
+OPTIONAL FIELDS:
+	1. extTicketId
+	2. cc
+	3. channelId
+	4. tags
+	5. location
+	6. assignedUser
+	7. requester
+	8. devices
+	9. customFields
+
 EX: https://api.vistara.io/api/v2/tenants/client_7/changeRequests
 
 REQUEST:
