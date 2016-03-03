@@ -12,6 +12,29 @@ MADATORY FIELDS:
 	2. description
 	3. priority		[Low, Normal, High, Urgent, Very Low]
 
+OPTIONAL FIELDS:
+	1. requester
+	2. assignedUser
+	3. assigneeGroup
+	4. devices
+	5. dueDate
+	6. location
+	7. extTicketId
+	8. alertId
+	9. cc
+	10.toEmail
+	11.customFields
+	12.ticketArisedTime
+	13.parentId
+	14.changeRequest/problem
+	15.channelId
+	16.sourceId
+	17.categoryId
+	18.subCategoryId
+	19.tags
+	20.rating
+	21.attachments
+
 EX: https://api.vistara.io/api/v2/tenants/client_7/incidents
 
 NOTE : 
@@ -24,7 +47,6 @@ REQUEST:
 {
 	"subject" : "Incident Creation",
 	"description" : "creating Incidents using Payload",
-	"status" : "Open",
 	"priority" : "High",
 	"requester" : {
 		"id" : "USR0000002146",
