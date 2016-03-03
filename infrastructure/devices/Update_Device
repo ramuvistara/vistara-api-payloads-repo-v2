@@ -9,20 +9,21 @@ HEADERS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_12/devices/612acfb0-6890-4d52-950b-1c4ec17a7248
 
-UPDATABLE FIELDS:
+MANDATORY FIELDS:
 	1. hostName
-	2. dnsName
-	3. os
-	4. resourceNetworkInterface.ipAddress
-	5. resourceNetworkInterface.macAddress
-	6. managementProfile
-	7. deviceType
-	8. systemUID
-	9. serialNumber
-	10.make
-	11.model
-	12.providerType
-	13.providerUID
+
+MANDATORY FIELDS:
+	1. dnsName
+	2. os
+	3. resourceNetworkInterface.ipAddress
+	4. resourceNetworkInterface.macAddress
+	5. managementProfile
+	6. systemUID
+	7. serialNumber
+	8. make
+	9. model
+	10.providerType
+	11.providerUID
 
 REQUEST:
 {
