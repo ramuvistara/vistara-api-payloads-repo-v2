@@ -13,19 +13,16 @@ UPDATABLE FIELDS:
 	1. hostName
 	2. dnsName
 	3. os
-	4. agentPlatform
-	5. pluginName
+	4. resourceNetworkInterface.ipAddress
+	5. resourceNetworkInterface.macAddress
 	6. managementProfile
 	7. deviceType
 	8. systemUID
 	9. serialNumber
-	10.resourceNetworkInterface.ipAddress
-	11.resourceNetworkInterface.macAddress
-	12.deviceState							[inactive, deleted-active, discovered]
-	13.providerType
-	14.providerUID
-	15.make
-	16.model
+	10.make
+	11.model
+	12.providerType
+	13.providerUID
 
 REQUEST:
 {

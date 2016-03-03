@@ -14,16 +14,14 @@ MANDATORY FIELDS:
 OPTIONAL FIELDS:
 	1. dnsName
 	2. deviceType			[Ex. Laptop]
-	3. pluginName
-	4. os
-	5. serialNumber
-	6. make
-	7. model
-	8. managementProfile
-	9. systemUID
-	10.providerUID
-	11.providerType
-	12.agentPlatform		[Ex. LINUX]
+	3. os
+	4. serialNumber
+	5. make
+	6. model
+	7. managementProfile
+	8. systemUID
+	9. providerUID
+	10.providerType
 
 EX: https://api.vistara.io/api/v2/tenants/client_12/devices
 
