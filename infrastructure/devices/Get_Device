@@ -24,6 +24,7 @@ RESPONSE:
 		"keyboardType" : "US104",
 		"encodingType" : "UTF8",
 		"physicalMemory" : "7.72",
+		"managementGatewayProfileName": "Test Profile",
 		"buildNumber" : 0,
 		"aliasName" : "hydlpt311.netenrich.com",
 		"createdTime" : "2014-08-20T08:47:45+0530",
