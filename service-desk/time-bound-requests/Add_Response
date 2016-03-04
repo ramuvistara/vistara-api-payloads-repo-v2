@@ -1,33 +1,28 @@
-URL: api/v2/tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}/responses
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/timeBoundRequests/{timeBountRequestId}/responses
  
-Header params
-
-1. Authorization = "Bearer {accessToken}"
-2. Accept = "application/json"
-
-Method: POST
-
-Mandatory Fileds:
-.....................
-creator
-description
+METHOD: POST
  
-INPUT JSON / PAYLOAD :
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
+MANDATORY FIELDS:
+	1. creator.loginName
+	2. description
+
+OPTIONAL FIELDS:
+	1. status	[Check allowedStatus field in Get time bound request API]
+ 
+REQUEST:
 {
-	    "creator": {
-		        "id": "USR0000000307",
-		        "loginName": "test_user"
-	    },
-	    "status": "Pending",
-	    "description": "This ticket update from API response added by satya"
+	"creator": {
+		"loginName": "FSSL-API-Lab-User-1"
+	},
+	"status": "On Hold",
+	"description": "Adding response to time bound request"
 }
  
-(ex:api/v2/tenants/client_69919/timeBoundRequests/TBT0000000193/responses)
+RESPONSE: null
 
-1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
-2. Accept = "application/json"
-
-output parameter:
- 
-Status : 200 OK 
+RESPONSE CODE: 200 OK

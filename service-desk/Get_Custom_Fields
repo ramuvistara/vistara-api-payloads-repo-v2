@@ -1,83 +1,114 @@
-URL : https://api.vistara.io/api/v2/tenants/{clientId}/customFields/{classCode}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/customFields/{classCode}
 
 METHOD: GET
 
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-Classcode parameter:
+EX: https://api.vistara.io/api/v2/tenants/client_7/customFields/INCIDENT
 
-  	Service Requests - SERVICEREQUEST
-	Time Bound Requests - ACSTICKET
-	Tasks - TASK
-	Incidents - INCIDENT
-	Problems - PROBLEM
-	Change Requests - CHANGE
-	Scheduled Tasks - SCHEDULEDTASK
-	Users - USER
-	KB Articles - KBARTICLE
+NOTE:
+	* classCode Params
+		1. Service Requests		- SERVICEREQUEST
+		2. Time Bound Requests	- ACSTICKET
+		3. Tasks 	- TASK
+		4. Incidents- INCIDENT
+		5. Problems - PROBLEM
+		6. Change Requests - CHANGE
+		7. Scheduled Tasks - SCHEDULEDTASK
+		8. KB Articles - KBARTICLE
+		9. Users - USER
 
-  Ex: https://api.vistara.io/api/v2/tenants/{clientId}/customFields/SERVICEREQUEST
-
-RESPONSE : 
+RESPONSE: 
 [
-   {
-      "id": "UDF0000003778",
-      "classCode": "INCIDENT",
-      "displayLabel": "for service provider",
-      "name": "for_service_provider_3778",
-      "fieldType": "TYPE_TEXT",
-      "mandatory": false,
-      "editable": true,
-      "description": "all clients and all partners"
-   },
-   {
-      "id": "UDF0000003779",
-      "classCode": "INCIDENT",
-      "displayLabel": "for service prov 2",
-      "name": "for_service_prov_2_3779",
-      "fieldType": "TYPE_CHECKBOX",
-      "mandatory": false,
-      "editable": true,
-      "description": "all partners and clients",
-      "options": [
-         {
-            "label": "yes",
-            "value": "1"
-         }
-      ]
-   },
-   {
-      "id": "UDF0000003780",
-      "classCode": "INCIDENT",
-      "displayLabel": "for service pro 3",
-      "name": "for_service_pro_3_3780",
-      "fieldType": "TYPE_TEXT",
-      "mandatory": false,
-      "editable": true,
-      "description": "service provider"
-   },
-   {
-      "id": "UDF0000003781",
-      "classCode": "INCIDENT",
-      "displayLabel": "date",
-      "name": "date_3781",
-      "fieldType": "TYPE_DATE",
-      "mandatory": false,
-      "editable": true,
-      "description": "date field"
-   },
-   {
-      "id": "UDF0000003782",
-      "classCode": "INCIDENT",
-      "displayLabel": "date and time label",
-      "name": "date_and_time_label_3782",
-      "fieldType": "TYPE_DATETIME",
-      "mandatory": false,
-      "editable": true,
-      "description": "date and time description"
-   }
+	{
+		"id" : "UDF0000003790",
+		"classCode" : "CHANGE",
+		"displayLabel" : "drop-down-api-lab",
+		"name" : "drop_down_api_lab_3790",
+		"fieldType" : "TYPE_DROPDOWN",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "Test case",
+		"options" : [
+			{
+				"label" : "first",
+				"value" : "1"
+			},
+			{
+				"label" : "second",
+				"value" : "2"
+			}
+		]
+	},
+	{
+		"id" : "UDF0000003791",
+		"classCode" : "CHANGE",
+		"displayLabel" : "text-api-lab",
+		"name" : "text_api_lab_3791",
+		"fieldType" : "TYPE_TEXT",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "test case for text field"
+	},
+	{
+		"id" : "UDF0000003792",
+		"classCode" : "CHANGE",
+		"displayLabel" : "multi line text-api-lab",
+		"name" : "multi_line_text_api_lab_3792",
+		"fieldType" : "TYPE_TEXTAREA",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "test case for multi line text"
+	},
+	{
+		"id" : "UDF0000003793",
+		"classCode" : "CHANGE",
+		"displayLabel" : "Numeric-api-lab",
+		"name" : "numeric_api_lab_3793",
+		"fieldType" : "TYPE_NUMBER",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "numeric test case"
+	},
+	{
+		"id" : "UDF0000003794",
+		"classCode" : "CHANGE",
+		"displayLabel" : "checkbox-api-lab",
+		"name" : "checkbox_api_lab_3794",
+		"fieldType" : "TYPE_CHECKBOX",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "test case for check box",
+		"options" : [
+			{
+				"label" : "yes",
+				"value" : "1"
+			}
+		]
+	},
+	{
+		"id" : "UDF0000003795",
+		"classCode" : "CHANGE",
+		"displayLabel" : "Date-ap-lab",
+		"name" : "date_ap_lab_3795",
+		"fieldType" : "TYPE_DATE",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "test case for date field"
+	},
+	{
+		"id" : "UDF0000003796",
+		"classCode" : "CHANGE",
+		"displayLabel" : "dateTime-api-lab",
+		"name" : "datetime_api_lab_3796",
+		"fieldType" : "TYPE_DATETIME",
+		"mandatory" : false,
+		"editable" : true,
+		"description" : "test case for Date and time"
+	}
 ]
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

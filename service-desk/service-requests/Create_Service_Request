@@ -1,78 +1,228 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/serviceRequests 
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests
 
 METHOD: POST
  
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
 MADATORY FIELDS:
-................
-subject
-priority
-description
+	1. subject
+	2. description
+	3. priority		[Low, Normal, High, Urgent, Very Low]
+
+OPTIONAL FIELDS:
+	1. location
+	2. cc
+	3. channelId
+	4. requester		[Ex. USR0000000001]
+	5. assignedUser		[Ex. USR0000000001]
+	6. assigneeGroup
+	7. devices
+	8. customFields
+	9. extTicketId
+	10.tags
+
+EX: https://api.vistara.io/api/v2/tenants/client_7/serviceRequests
 
 REQUEST:
-........
 {
-	"subject": "service_request",
-	"description": "service request",
-	"priority": "High",
-	"assignedUser": {
-		"id": "USR0000002256",
-		"loginName": "client_user"
+	"subject" : "Test-Service Request Create",
+	"description" : "testing please ignore",
+	"priority" : "Normal",
+	"location" : "Test location",
+	"cc" : "testUser@gmail.com",
+	"extTicketId" : "VNXC0090344",
+	"tags" : "test-tag, tag2",
+	"requester" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2"
-	}],
-	"assigneeGroup": {
-		"name": "user_group_dell_client"
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
 	},
-	"location": "Hyderabad",
-	"cc": "vistara@gmail.com",
-	"channelId": "MOBILE",
-	"tags": "vistara"
-	
+	"assigneeGroup" : {
+		"name" : "API-Lab-Group-1"
+	},
+	"devices" : [
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing Dev-1"
+		},
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing Dev-2"
+		}
+	],
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"name" : "drop_down_api_lab_3790",
+			"value" : "2"
+		},
+		{
+			"id" : "UDF0000003791",
+			"name" : "text_api_lab_3791",
+			"value" : "request custom field - text"
+		}
+	]
 }
-
-ex: /api/v2//tenants/client_69919/serviceRequests
-
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
 
 RESPONSE:
-.........
 {
-	"id": "SRQ0000002409",
-	"subject": "service_request",
-	"description": "service request",
-	"priority": "High",
-	"assignedUser": {
-		"id": "USR0000002256",
-		"loginName": "client_user",
-		"email": "test@gmail.com",
-		"phoneNumber": "09887485473",
-		"orgId": "client_69919",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+	"id" : "SRQ0000001035",
+	"subject" : "Test-Service Request Create",
+	"description" : "testing please ignore",
+	"priority" : "Normal",
+	"requester" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
 		},
-		"changePassword": false,
-		"organizationName": "Dell Client1"
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 12,
+				"name" : "Service Desk Client Admin"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
 	},
-	"assigneeGroup": {
-		"name": "user_group_dell_client",
-		"userCount": 0,
-		"unAssignUsers": []
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 12,
+				"name" : "Service Desk Client Admin"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-		"name": "Device_1"
-	}],
-	"ticketArisedTime": "",
-	"createdDate": "",
-	"serviceCatalogItemId": "0"
+	"assigneeGroup" : {
+		"id" : 17,
+		"name" : "API-Lab-Group-1",
+		"userCount" : 1
+	},
+	"devices" : [
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing-Dev-2",
+			"type" : "DEVICE"
+		},
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing-Dev-2",
+			"type" : "DEVICE"
+		}
+	],
+	"cc" : "testUser@gmail.com",
+	"ticketArisedTime" : "",
+	"alertIds" : [],
+	"createdDate" : "",
+	"allowedStatus" : [
+		{
+			"id" : "2",
+			"name" : "Open",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		},
+		{
+			"id" : "3",
+			"name" : "Pending",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		},
+		{
+			"id" : "4",
+			"name" : "Resolved",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		},
+		{
+			"id" : "5",
+			"name" : "Closed",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		},
+		{
+			"id" : "6",
+			"name" : "On Hold",
+			"reasonsEnabled" : false,
+			"reasonsDefined" : false
+		}
+	],
+	"client" : {
+		"id" : 7,
+		"uniqueId" : "client_7",
+		"name" : "API Lab",
+		"activated" : true,
+		"updatedTime" : "",
+		"createdTime" : "2012-10-09T11:49:34+0530"
+	},
+	"updatedDate" : "2016-03-04T08:41:47+0530",
+	"priorityUpdatedDate" : "",
+	"statusUpdatedDate" : "",
+	"slaDetails" : {
+		"resolutionTime" : 0,
+		"responseTime" : 0,
+		"responseBreach" : false,
+		"resolutionBreach" : false,
+		"responseBreachDate" : "",
+		"resolutionBreachDate" : ""
+	},
+	"serviceCatalogItemId" : "0"
 }
+
+RESPONSE CODE: 200 OK

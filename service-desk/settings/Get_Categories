@@ -7,28 +7,48 @@ HEADERS:
 	Content-Type : application/json
 	Accept : application/json
 
-NOTE : 
-  * categoryId = 0 for getting the categories of client
-  * categoryId > 0 for getting the subcategories based on the given category id
+EX: https://api.vistara.io/api/v2/tenants/client_93/sdesk/categories/0
+
+NOTE: 
+  1. Get Categories		- https://api.vistara.io/api/v2/tenants/{clientId}/sdesk/categories/0
+  2. Get SubCategories 	- https://api.vistara.io/api/v2/tenants/{clientId}/sdesk/categories/{categoryId}
  
-RESPONSE : 
+RESPONSE: (Ex. For Get Categories)
 [
-   {
-      "id": "3",
-      "clientId": "93",
-      "mspId": "92",
-      "categoryName": "child 2 for parent 1",
-      "parentCategoryName": "category 1 for incident",
-      "categoryType": 0
-   },
-   {
-      "id": "2",
-      "clientId": "93",
-      "mspId": "92",
-      "categoryName": "child for parent 1",
-      "parentCategoryName": "category 1 for incident",
-      "categoryType": 0
-   }
+	{
+		"id" : "1",
+		"clientId" : "93",
+		"mspId" : "92",
+		"categoryName" : "category 1 for incident",
+		"categoryType" : 0
+	},
+	{
+		"id" : "4",
+		"clientId" : "93",
+		"mspId" : "92",
+		"categoryName" : "parent 2 for incident",
+		"categoryType" : 0
+	}
 ]
 
-RESPONSE CODE : 200 OK
+RESPONSE: (Ex. For Get SubCategories)
+[
+	{
+		"id" : "3",
+		"clientId" : "93",
+		"mspId" : "92",
+		"categoryName" : "child 2 for parent 1",
+		"parentCategoryName" : "category 1 for incident",
+		"categoryType" : 0
+	},
+	{
+		"id" : "2",
+		"clientId" : "93",
+		"mspId" : "92",
+		"categoryName" : "child for parent 1",
+		"parentCategoryName" : "category 1 for incident",
+		"categoryType" : 0
+	}
+]
+
+RESPONSE CODE: 200 OK

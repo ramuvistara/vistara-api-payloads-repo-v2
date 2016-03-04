@@ -31,7 +31,7 @@ EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001029
 NOTE:
 	* Follow the steps while updating status
 		1. Check the Status Flows in Service Desk
-		2. Check the Status change reasons enabled or not for particular status of the module (ChangeRequest) in Service Desk Settings
+		2. Check the Status change reasons enabled or not for particular status of the module (Incident) in Service Desk Settings
 		3. reasons must be configured in Status Change Reasons of Service Desk.
 	* Examples for different statuses
 		1. Open

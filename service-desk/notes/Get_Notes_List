@@ -1,4 +1,6 @@
-URL : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
+URL: 
+	1. INCIDENTS 		- https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
+	2. SERVICE REQUESTS - https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes
 
 METHOD : GET 
 
@@ -7,28 +9,24 @@ HEADERS :
 	Content-Type : application/json
 	Accept : application/json
 
-
-NOTE :  
-	* URL for Incident : https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes
-	* URL for Service Request : https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes/search
-
 QUERY PARAMS:
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=true [optional]
-4.	sortName={field} defaultValue=note.id [optional]
-5.	queryString = {queryString} [optional]
+	1.	pageNo={pageNo} defaultValue=1 [optional]
+	2.	pageSize={pageSize} defaultValue=10 [optional]
+	3.	isDescendingOrder={true/false} defaultValue=true [optional]
+	4.	sortName={field} defaultValue=note.id [optional]
+	5.	queryString = {queryString} [optional]
 
 QUERY VARIABLES:
- ...............
-1.	searchWord         [description, subject]
-2.	startCreationDate
-3.	endCreationDate
-4.	startUpdationDate
-5.	endUpdationDate
-6.	id
+	1.	searchWord			[description, subject]
+	2.	startCreationDate	[Ex. 2015-11-02T09:17:09+0530]	
+	3.	endCreationDate		[Ex. 2015-11-02T09:17:09+0530]
+	4.	startUpdationDate	[Ex. 2015-11-02T09:17:09+0530]
+	5.	endUpdationDate		[Ex. 2015-11-02T09:17:09+0530]
+	6.	id
 
-RESPONSE : 
+EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/notes?pageNo=1&pageSize=5&queryString=startCreationDate:2015-11-02T09:17:09 0530+endCreationDate:2015-11-02T09:17:09 0530
+
+RESPONSE: 
 {
   "results" : [ {
     "id" : 12,
@@ -44,16 +42,44 @@ RESPONSE :
       "email" : "sarma519@gmail.com",
       "changePassword" : false
     }
+  }, {
+    "id" : 10,
+    "subject" : "note31",
+    "description" : "note31",
+    "createdTime" : "2015-10-27T13:39:17+0530",
+    "updatedTime" : "",
+    "createdBy" : {
+      "id" : "USR0000002113",
+      "loginName" : "deepu@superadmin",
+      "lastName" : "DEEPU",
+      "firstName" : "MUNGAMURI",
+      "email" : "deepu.mungamuri@vistarait.com",
+      "changePassword" : false
+    }
+  }, {
+    "id" : 8,
+    "subject" : "this notes",
+    "description" : "this notes is created and updated from api",
+    "createdTime" : "2015-10-27T13:19:01+0530",
+    "updatedTime" : "",
+    "createdBy" : {
+      "id" : "USR0000002095",
+      "loginName" : "vistara_system_user",
+      "lastName" : " ",
+      "firstName" : "Vistara System User",
+      "email" : "sarma519@gmail.com",
+      "changePassword" : false
+    }
   } ],
-  "totalResults" : 1,
+  "totalResults" : 6,
   "orderBy" : "note.id",
   "pageNo" : 1,
-  "pageSize" : 10,
-  "totalPages" : 1,
-  "nextPage" : false,
-  "nextPageNo" : 1,
+  "pageSize" : 3,
+  "totalPages" : 2,
+  "nextPage" : true,
+  "nextPageNo" : 2,
   "previousPageNo" : 0,
   "descendingOrder" : true
 }
 
-STATUS CODE : 200 OK
+RESPONSE CODE: 200 OK

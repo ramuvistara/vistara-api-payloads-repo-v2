@@ -1,0 +1,124 @@
+URL: https://api.vistara.io/api/v2/tenants/{orgId}/customFields/{classCode}/{customFieldId}
+
+METHOD: GET
+
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+
+EX: https://api.vistara.io/api/v2/tenants/client_93/customFields/INCIDENT/UDF0000003790
+
+NOTE:
+	* classCode Params
+		1. Service Requests		- SERVICEREQUEST
+		2. Time Bound Requests	- ACSTICKET
+		3. Tasks 	- TASK
+		4. Incidents- INCIDENT
+		5. Problems - PROBLEM
+		6. Change Requests - CHANGE
+		7. Scheduled Tasks - SCHEDULEDTASK
+		8. KB Articles - KBARTICLE
+		9. Users - USER
+
+RESPONSE: (Ex. Type DROPDOWN)
+{
+	"id" : "UDF0000003790",
+	"classCode" : "CHANGE",
+	"displayLabel" : "drop-down-api-lab",
+	"name" : "drop_down_api_lab_3790",
+	"fieldType" : "TYPE_DROPDOWN",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "Test case",
+	"options" : [
+		{
+			"label" : "first",
+			"value" : "1"
+		},
+		{
+			"label" : "second",
+			"value" : "2"
+		}
+	]
+}
+
+RESPONSE: (Ex. Type TEXT)
+{
+	"id" : "UDF0000003791",
+	"classCode" : "CHANGE",
+	"displayLabel" : "text-api-lab",
+	"name" : "text_api_lab_3791",
+	"fieldType" : "TYPE_TEXT",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "test case for text field"
+}
+
+RESPONSE: (Ex. Type TEXTAREA)
+{
+	"id" : "UDF0000003792",
+	"classCode" : "CHANGE",
+	"displayLabel" : "multi line text-api-lab",
+	"name" : "multi_line_text_api_lab_3792",
+	"fieldType" : "TYPE_TEXTAREA",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "test case for multi line text"
+}
+
+RESPONSE: (Ex. Type NUMERIC)
+{
+	"id" : "UDF0000003793",
+	"classCode" : "CHANGE",
+	"displayLabel" : "Numeric-api-lab",
+	"name" : "numeric_api_lab_3793",
+	"fieldType" : "TYPE_NUMBER",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "numeric test case"
+}
+
+RESPONSE: (Ex. Type CHECKBOX)
+{
+	"id" : "UDF0000003794",
+	"classCode" : "CHANGE",
+	"displayLabel" : "checkbox-api-lab",
+	"name" : "checkbox_api_lab_3794",
+	"fieldType" : "TYPE_CHECKBOX",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "test case for check box",
+	"options" : [
+		{
+			"label" : "yes",
+			"value" : "1"
+		}
+	]
+}
+
+RESPONSE: (Ex. Type DATE)
+{
+	"id" : "UDF0000003795",
+	"classCode" : "CHANGE",
+	"displayLabel" : "Date-ap-lab",
+	"name" : "date_ap_lab_3795",
+	"fieldType" : "TYPE_DATE",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "test case for date field"
+}
+
+RESPONSE: (Ex. Type DATETIME)
+{
+	"id" : "UDF0000003796",
+	"classCode" : "CHANGE",
+	"displayLabel" : "dateTime-api-lab",
+	"name" : "datetime_api_lab_3796",
+	"fieldType" : "TYPE_DATETIME",
+	"mandatory" : false,
+	"editable" : true,
+	"description" : "test case for Date and time"
+}
+
+RESPONSE CODE: 200 OK

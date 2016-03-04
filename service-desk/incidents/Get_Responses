@@ -18,7 +18,7 @@ QUERY VARIABLES:
 	1. startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
 	2. endCreationDate		[Ex. 2015-12-10T10:40:20 0000]
 
-EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses?pageNo=1&pageSize=10&queryString=startCreationDate:2014-08-20T08:47:45 0530+endCreationDate:2014-09-20T08:47:45 0530)
+EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses?pageNo=1&pageSize=10&queryString=startCreationDate:2014-08-20T08:47:45 0530+endCreationDate:2014-09-20T08:47:45 0530
 
 NOTE:
 	Special Characters in Query String

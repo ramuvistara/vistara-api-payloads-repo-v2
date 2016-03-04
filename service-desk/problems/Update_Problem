@@ -1,83 +1,242 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/problems/{problemId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/problems/{problemId}
 
 METHOD: GET
  
-HEADER:
-	Authorization = "Bearer  {accessToken}"	
-	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-updating status from Resolved to Open need to give reopen reason in "notes" field. 
+OPTIONAL FIELDS:
+	1. devices
+	2. priority		[Low, Normal, High, Urgent, Very Low]
+	3. status		[Check allowedStatus field in Get Incident API]
+	4. reason				
+	5. suspendEndDate	[Ex. 2013-05-10T00:00:00+0530]
+	6. resolutionSummary
+	7. notes
+	8. assignedUser		[Ex. USR0000000001]
+	9. customFields
+	10.responses
+	11.cc
 
-"status": "Open",
-"notes": "reopen the ticket"
+EX: https://api.vistara.io/api/v2/tenants/client_7/problems/PRB0000001032
+
+NOTE:
+	* Follow the steps while updating status
+		1. Check the Status Flows in Service Desk
+		2. Check the Status change reasons enabled or not for particular status of the module (Problem) in Service Desk Settings
+		3. reasons must be configured in Status Change Reasons of Service Desk.
+	* Examples for different statuses
+		1. Open
+			{ "status":"Open","reason":"reason configured to Open","notes":"Re-Open note (Required Resolved to Open)" }
+		2. Pending
+			{ "status":"Pending","reason":"reason configured to Pending" }
+		3. Resolved
+			{ "status":"Resolved","reason":"reason configured to Resolve","resolutionSummary":"summary for resolving" }
+		4. Closed
+			{ "status":"Closed","reason":"reason configured to Close" }
+		5. On Hold
+			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
 
 REQUEST:
-........
 {
-	"assignedUser": {
-		"id": "USR0000002251",
-		"loginName": "user_test_api"
+	"cc" : "tester@gmail.com",
+	"priority" : "Normal",
+	"status" : "On Hold",
+	"reason" : "On hold reason for problem",
+	"suspendEndDate" : "2016-03-10T00:00:00+0530",
+	"notes" : "testing notes",
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
 	},
-	"devices": [{
-		"id": "fb3d81e9-cb01-4178-a7c7-7336ddd3c756",
-		"name": "Device_5"
-	}],
-	"status": "Open",
-	"notes": "reopen resolved"
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"name" : "drop_down_api_lab_3790",
+			"value" : "2"
+		},
+		{
+			"id" : "UDF0000003791",
+			"name" : "text_api_lab_3791",
+			"value" : "request custom field - text"
+		}
+	],
+	"responses" : [
+		{
+			"description" : "test response one"
+		},
+		{
+			"description" : "test response two"
+		}
+	]
 }
-
-ex( /tenants/client_69919/problems/PRB0000002407)
- 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
 
 RESPONSE:
-.........
 {
-	"id": "PRB0000002407",
-	"subject": "problem_by_Api",
-	"description": "problem",
-	"status": "Open",
-	"priority": "High",
-	"requester": {
-		"id": "USR0000002258",
-		"loginName": "user_api_testing",
-		"email": "test@gmail.com",
-		"phoneNumber": "09887485473",
-		"orgId": "client_69919",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+	"id" : "PRB0000001032",
+	"subject" : "Create-Problem-Test-API",
+	"description" : "Testing-Please Ignore",
+	"status" : "On Hold",
+	"oldStatus" : "Open",
+	"priority" : "Normal",
+	"oldPriority" : "Normal",
+	"requester" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
 		},
-		"changePassword": false,
-		"organizationName": "Dell Client1"
-	},
-	"assignedUser": {
-		"id": "USR0000002251",
-		"loginName": "user_test_api",
-		"email": "test@gmail.com",
-		"phoneNumber": "09887485473",
-		"orgId": "client_69919",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 12,
+				"name" : "Service Desk Client Admin"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
 		},
-		"changePassword": false,
-		"organizationName": "Dell Client1"
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-		"name": "Device_1"
-	}],
-	"ticketArisedTime": "",
-	"createdDate": "2015-01-27T13:38:28+0530",
-	"rootCause": "root problem",
-	"workaround": "work problem",
-	"application": "itop"
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			},
+			{
+				"id" : 12,
+				"name" : "Service Desk Client Admin"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
+	},
+	"devices" : [
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing-Dev-2",
+			"type" : "DEVICE"
+		},
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing-Dev-2",
+			"type" : "DEVICE"
+		}
+	],
+	"extTicketId" : "BMCXC00907",
+	"cc" : "tester@gmail.com",
+	"ticketArisedTime" : "",
+	"createdUser" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"roles" : [
+			{
+				"id" : 75,
+				"name" : "System User Acl"
+			}
+		],
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "System Organization",
+		"createdTime" : "2013-05-10T00:00:00+0530",
+		"updatedTime" : "2013-05-10T00:00:00+0530"
+	},
+	"reason" : "On hold reason for problem",
+	"alertIds" : [],
+	"createdDate" : "2016-03-03T19:12:08+0530",
+	"allowedStatus" : [],
+	"client" : {
+		"id" : 7,
+		"uniqueId" : "client_7",
+		"name" : "API Lab",
+		"activated" : true,
+		"updatedTime" : "",
+		"createdTime" : "2012-10-09T11:49:34+0530"
+	},
+	"updatedDate" : "2016-03-04T09:39:46+0530",
+	"priorityUpdatedBy" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"changePassword" : false
+	},
+	"priorityUpdatedDate" : "2016-03-03T19:12:08+0530",
+	"statusUpdatedBy" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"statusUpdatedDate" : "2016-03-04T09:39:46+0530",
+	"slaDetails" : {
+		"resolutionTime" : 0,
+		"responseTime" : 50312,
+		"responseBreach" : false,
+		"resolutionBreach" : false,
+		"responseBreachDate" : "",
+		"resolutionBreachDate" : ""
+	},
+	"rootCause" : "Problem cause",
+	"workaround" : "repetation of work",
+	"application" : "itop"
 }
+
+RESPONSE CODE: 200 OK

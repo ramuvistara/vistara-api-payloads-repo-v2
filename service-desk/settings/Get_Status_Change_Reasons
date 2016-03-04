@@ -2,59 +2,81 @@ URL : https://api.vistara.io/api/v2/tenants/{tenantId}/sdesk/statusReasons/{modu
 
 METHOD: GET
 
-HEADER:
-  1.	Authorization = "Bearer  {accessToken}"	
-  2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-AVAILABLE VALUES : 
-  module  [INCIDENT, PROBLEM, CHANGE, TASK, ACSTICKET, SERVICEREQUEST, TICKETRESPONSE]
-  
-EX : (https://api.vistara.io/api/v2/tenants/client_93/sdesk/statusReasons/INCIDENT)
+EX : https://api.vistara.io/api/v2/tenants/client_93/sdesk/statusReasons/INCIDENT
 
 NOTE : 
-    * In the RESPONSE there will be a field Enabled= true/false, which confirms status is enabled in settings or not.
+	1. Options for {module} - [INCIDENT, PROBLEM, CHANGE, TASK, ACSTICKET, SERVICEREQUEST, TICKETRESPONSE]
+    2. The enabled field in response confirms that Status Change Reasons are enabled or not in Service Desk Settings.
     
 RESPONSE:
-.........
 [
-   {
-      "id": "17",
-      "module": "INCIDENT",
-      "status": "On Hold",
-      "enabled": "true",
-      "statusReasons": [
-         {
-            "id": "5",
-            "name": "on hold reason 2"
-         },
-         {
-            "id": "2",
-            "name": "Reason for On Hold"
-         }
-      ]
-   },
-   {
-      "id": "18",
-      "module": "INCIDENT",
-      "status": "Resolved",
-      "enabled": "false"
-   },
-   {
-      "id": "19",
-      "module": "INCIDENT",
-      "status": "Closed",
-      "enabled": "true",
-      "statusReasons": [
-         {
-            "id": "4",
-            "name": "closed reason 2"
-         },
-         {
-            "id": "1",
-            "name": "Closing Ticket Reason"
-         }
-      ]
-   }
+	{
+		"id" : "17",
+		"module" : "INCIDENT",
+		"status" : "On Hold",
+		"enabled" : "true",
+		"statusReasons" : [
+			{
+				"id" : "9",
+				"name" : "change open to on hold"
+			}
+		]
+	},
+	{
+		"id" : "18",
+		"module" : "INCIDENT",
+		"status" : "Resolved",
+		"enabled" : "true",
+		"statusReasons" : [
+			{
+				"id" : "3",
+				"name" : "Reason for Resolved status"
+			},
+			{
+				"id" : "6",
+				"name" : "resolved reason 2"
+			}
+		]
+	},
+	{
+		"id" : "19",
+		"module" : "INCIDENT",
+		"status" : "Closed",
+		"enabled" : "true",
+		"statusReasons" : [
+			{
+				"id" : "4",
+				"name" : "closed reason 2"
+			},
+			{
+				"id" : "1",
+				"name" : "Closing Ticket Reason"
+			}
+		]
+	},
+	{
+		"id" : "41",
+		"module" : "INCIDENT",
+		"status" : "Open",
+		"enabled" : "true",
+		"statusReasons" : [
+			{
+				"id" : "10",
+				"name" : "open incident reason"
+			}
+		]
+	},
+	{
+		"id" : "42",
+		"module" : "INCIDENT",
+		"status" : "Pending",
+		"enabled" : "false"
+	}
 ]
 
-RESPONSE CODE : 200 OK
+RESPONSE CODE: 200 OK

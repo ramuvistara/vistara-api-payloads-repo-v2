@@ -1,57 +1,85 @@
-url : api/v2/tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}/responses
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/timeBoundRequests/{timeBountRequestId}/responses
  
-Header params:
+METHOD: GET
+ 
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
+ 
+QUERY PARAMS:
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={field} defaultValue=response.id [optional]
+	5. queryString = {queryString} [optional]
 
-1. Authorization = "Bearer {accessToken}"
-2. Accept = "application/json"
- 
-Method: Get
- 
-ex: api/v2/tenants/{tenantId}/timeBoundRequests/TBT0000000193/responses
- 
-1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
-2. Accept = "application/json"
- 
-Output payload:
- 
-------------------- 
+QUERY VARIABLES:
+	1. startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
+	2. endCreationDate		[Ex. 2015-12-10T10:40:20 0000]
+
+EX: https://api.vistara.io/api/v2/tenants/client_7/timeBoundRequests/TBT0000001041/responses?pageNo=1&pageSize=10&queryString=startCreationDate:2014-08-20T08:47:45 0530+endCreationDate:2014-09-20T08:47:45 0530
+
+NOTE:
+	Special Characters in Query String
+	
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
+
+RESPONSE:
 {
-        "results":[{
-             "creator": {
-                   "loginName":"Test_user",
-                   "profileImage": {
-                        "description":"",
-                        "logoPath":"https://yourdomain/img/nophoto.gif",
-                        "thumbPath":"https://yourdomain/img/nophoto.gif",
-                        "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
-                        "imageType":""
-                        },
-                        "changePassword":false
-               },
-               "createDateString":"2015-02-24T18:49:17+0530",
-               "description":"This ticket update from API response added by satya"
-           },
-           {
-               "creator": {
-                    "loginName":"superadmin",
-                    "profileImage":{
-                             "description":"",
-                             "logoPath":"https://yourdomain/img/nophoto.gif",
-                             "thumbPath":"https://yourdomain/img/nophoto.gif",
-                             "tinyThumbPath":"https://yourdomain/img/wall_img1.gif",
-                             "imageType":""
-                             },
-                             "changePassword":false
-                      },
-                 "createDateString":"2015-02-24T18:16:44+0530",
-                 "description":"Time Bound Request Status changged"
-        }],
-        "totalResults":2,
-        "pageNo":1,
-        "pageSize":10,
-        "totalPages":1,
-        "nextPage":false,
-        "nextPageNo":0,
-        "previousPageNo":0,
-        "decendingOrder":false
- }
+	"results" : [
+		{
+			"creator" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"changePassword" : false
+			},
+			"createdDate" : "2016-03-04T18:47:56+0530",
+			"hasAttachments" : false,
+			"description" : "Adding response to time bound request-2"
+		},
+		{
+			"creator" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"changePassword" : false
+			},
+			"createdDate" : "2016-03-04T18:41:19+0530",
+			"hasAttachments" : false,
+			"description" : "Adding response to time bound request"
+		},
+		{
+			"creator" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"changePassword" : false
+			},
+			"createdDate" : "2016-03-04T17:37:31+0530",
+			"hasAttachments" : false,
+			"description" : "Testing - Please ignore"
+		}
+	],
+	"totalResults" : 3,
+	"orderBy" : "response.id",
+	"pageNo" : 1,
+	"pageSize" : 3,
+	"totalPages" : 1,
+	"nextPage" : false,
+	"nextPageNo" : 0,
+	"previousPageNo" : 0,
+	"descendingOrder" : true
+}
+
+RESPONSE CODE: 200 OK

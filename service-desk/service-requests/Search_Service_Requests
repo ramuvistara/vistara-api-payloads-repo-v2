@@ -1,270 +1,577 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantUniqueId}/serviceRequests/search
+URL: https://api.vistara.io/api/v2/tenants/{tenantId}/serviceRequests/search
  
 METHOD: GET
  
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
  
 QUERY PARAMS:
-.............
-1.	pageNo={pageNo} defaultValue=1 [optional]
-2.	pageSize={pageSize} defaultValue=10 [optional]
-3.	isDescendingOrder={true/false} defaultValue=false [optional]
-4.	queryString={queryString} [optional]
+	1. pageNo={pageNo} defaultValue=1 [optional]
+	2. pageSize={pageSize} defaultValue=10 [optional]
+	3. isDescendingOrder={true/false} defaultValue=true [optional]
+	4. sortName={field} defaultValue=ticket.id [optional]
+	5. queryString = {queryString} [optional]
  
 QUERY VARIABLES:
- ...............
-1.	status [ New,Open,Pending,Resolved,Closed,On Hold ]
-2.	startDate
-3.	endDate
-4.	priority [Low,Normal,High,Urgent,Very Low ]
-5.	appId
-6.	subject
-7.	assignedTo
-8.	requester
-9.	startCreationDate
-10.	endCreationDate
-11.	startUpdationDate
-12.	endUpdationDate
-13.	monitor [true, false]   (Note : true -- for getting  monitoring Tickets, and false -- for getting Non monitoring Tickets)
+	1.	uniqueId			[Ex. INC0000002401]
+	2.	status 				[New, Open, Pending, Resolved, Closed, On Hold]		[Ex. Closed, Resolved]
+	3.	priority 			[Low, Normal, High, Urgent, Very Low ]				[Ex. High, Urgent]
+	4.	subject
+	5.	assignedTo			[Ex. USR0000000001]
+	6.	requester			[Ex. USR0000000001]
+	7.	startCreationDate	[Ex. 2015-11-10T10:40:20 0000]
+	8.	endCreationDate		[Ex. 2015-11-10T10:40:20 0000]
+	9.	startUpdationDate	[Ex. 2015-11-10T10:40:20 0000]
+	10.	endUpdationDate		[Ex. 2015-11-10T10:40:20 0000]
+	11.	hasAlerts 			[true, false]
+	12. deviceId			[Ex. 481af404-33a6-4d61-af77-c483ca6641fa]
 
  
-ex:(/api/v2/tenants/client_69919/serviceRequests/search?pageNo=1&pageSize=10&isDecendingOrder=true&sortName=id&queryString=status:New,Open%2Bpriority:High,Urgent%2Brequester:USER0000000129%2Bsubject:5b6%2BstartDate:2013-12-12 11-5-33%2BendDate:2014-12-12 11-5-33)
- 
-Note:
-	special characters in queryString:
+EX: https://api.vistara.io/api/v2/tenants/client_7/serviceRequests/search?pageNo=1&pageSize=10&isDescendingOrder=true&sortName=ticket.id&queryString=status:New,Open+priority:High+requester:USR0000000129+startCreationDate:2015-11-10T10:40:20 0000+endCreationDate:2015-11-20T10:40:20 0000)
+
+NOTE:
+	Special Characters in Query String
 	
-	1.	%2B -- indicate next field
-	2.	: -- indicate equals to
-	3.	dataformate should be in yyyy-MM-dd HH-mm-ss
- 
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
+	1.	(+) Indicates Next Field and must be URL Encoded (Then Automatically converts to %2B)
+	2.	(:) Indicates Equals (Ex. Key : Value)
+	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
+	4.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (2015-11-10T10:40:20 0000)
  
 RESPONSE:
-.........
- {
-	"results": [{
-		"id": "SRQ0000002402",
-		"subject": "raji",
-		"description": "raji",
-		"status": "New",
-		"priority": "Very Low",
-		"requester": {
-			"loginName": "superadmin",
-			"email": "sravanthig17@gmail.com",
-			"phoneNumber": "4084365900",
-			"profileImage": {
-				"description": "",
-				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-				"imageType": "image/gif"
+{
+	"results" : [
+		{
+			"id" : "SRQ0000001035",
+			"subject" : "Test-Service Request Create",
+			"description" : "testing please ignore",
+			"status" : "New",
+			"priority" : "Normal",
+			"requester" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"phoneNumber" : "9876543210 Extn 91",
+				"mobileNumber" : "8976493645",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 4,
+						"name" : "Client Administrator"
+					},
+					{
+						"id" : 12,
+						"name" : "Service Desk Client Admin"
+					}
+				],
+				"orgId" : "client_7",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "API Lab",
+				"createdTime" : "2016-03-01T07:52:18+0530",
+				"updatedTime" : "2016-03-01T07:52:18+0530"
 			},
-			"changePassword": false,
-			"organizationName": "Vistara SaaS Platform"
-		},
-		"client": {
-      			"id": "93",
-      			"uniqueId": "client_93",
-      			"name": "Brocade Lab"
-   		},
-		"ticketArisedTime": "",
-		"createdDate": "2015-01-23T06:29:12+0530",
-		"serviceCatalogItemId": "0"
-	},
-	{
-		"id": "SRQ0000002366",
-		"subject": "service_request",
-		"description": "service request",
-		"status": "New",
-		"priority": "High",
-		"assignedUser": {
-			"id": "USR0000002256",
-			"loginName": "client_user",
-			"email": "test@gmail.com",
-			"phoneNumber": "09887485473",
-			"orgId": "client_69919",
-			"profileImage": {
-				"description": "",
-				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-				"imageType": "image/gif"
+			"assignedUser" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"phoneNumber" : "9876543210 Extn 91",
+				"mobileNumber" : "8976493645",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 4,
+						"name" : "Client Administrator"
+					},
+					{
+						"id" : 12,
+						"name" : "Service Desk Client Admin"
+					}
+				],
+				"orgId" : "client_7",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "API Lab",
+				"createdTime" : "2016-03-01T07:52:18+0530",
+				"updatedTime" : "2016-03-01T07:52:18+0530"
 			},
-			"changePassword": false,
-			"organizationName": "Dell Client1"
-		},
-		"assigneeGroup": {
-			"name": "user_group_dell_client",
-			"userCount": 0,
-			"unAssignUsers": []
-		},
-		"devices": [{
-			"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-			"name": "Device_1"
-		}],
-		"client": {
-      			"id": "93",
-      			"uniqueId": "client_93",
-      			"name": "Brocade Lab"
-   		},
-		"ticketArisedTime": "",
-		"createdDate": "2015-01-21T10:57:13+0530",
-		"serviceCatalogItemId": "0"
-	},
-	{
-		"id": "SRQ0000002364",
-		"subject": "service_request",
-		"description": "service request",
-		"status": "Open",
-		"priority": "High",
-		"assignedUser": {
-			"id": "USR0000002252",
-			"loginName": "latest_api_test",
-			"email": "test@gmail.com",
-			"phoneNumber": "09887485473",
-			"orgId": "client_69919",
-			"profileImage": {
-				"description": "",
-				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-				"imageType": "image/gif"
+			"assigneeGroup" : {
+				"id" : 17,
+				"name" : "API-Lab-Group-1",
+				"userCount" : 1
 			},
-			"changePassword": false,
-			"organizationName": "Dell Client1"
-		},
-		"assigneeGroup": {
-			"name": "user_group_dell_client",
-			"userCount": 0,
-			"unAssignUsers": []
-		},
-		"devices": [{
-			"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-			"name": "Device_1"
-		}],
-		"client": {
-      			"id": "93",
-      			"uniqueId": "client_93",
-      			"name": "Brocade Lab"
-   		},
-		"ticketArisedTime": "",
-		"createdDate": "2015-01-21T07:44:58+0530",
-		"serviceCatalogItemId": "0"
-	},
-	{
-		"id": "SRQ0000002356",
-		"subject": "service_request",
-		"description": "service_request",
-		"status": "Closed",
-		"priority": "Very Low",
-		"requester": {
-			"loginName": "superadmin",
-			"email": "sravanthig17@gmail.com",
-			"phoneNumber": "4084365900",
-			"profileImage": {
-				"description": "",
-				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-				"imageType": "image/gif"
+			"devices" : [
+				{
+					"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+					"name" : "Testing-Dev-2",
+					"type" : "DEVICE"
+				},
+				{
+					"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+					"name" : "Testing-Dev-2",
+					"type" : "DEVICE"
+				}
+			],
+			"cc" : "testUser@gmail.com",
+			"ticketArisedTime" : "",
+			"alertIds" : [],
+			"createdDate" : "2016-03-04T14:11:47+0530",
+			"allowedStatus" : [
+				{
+					"id" : "2",
+					"name" : "Open",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "3",
+					"name" : "Pending",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "4",
+					"name" : "Resolved",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "5",
+					"name" : "Closed",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "6",
+					"name" : "On Hold",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				}
+			],
+			"client" : {
+				"id" : 7,
+				"uniqueId" : "client_7",
+				"name" : "API Lab",
+				"activated" : true,
+				"updatedTime" : "",
+				"createdTime" : "2012-10-09T11:49:34+0530"
 			},
-			"changePassword": false,
-			"organizationName": "Vistara SaaS Platform"
-		},
-		"client": {
-      			"id": "93",
-      			"uniqueId": "client_93",
-      			"name": "Brocade Lab"
-   		},
-		"ticketArisedTime": "",
-		"createdDate": "2015-01-20T04:44:40+0530",
-		"serviceCatalogItemId": "0"
-	},
-	{
-		"id": "SRQ0000002022",
-		"subject": "This is test sservice request",
-		"description": "This is test sservice request",
-		"status": "New",
-		"priority": "Very Low",
-		"requester": {
-			"id": "USR0000002188",
-			"loginName": "dell_admin",
-			"email": "sravanthig17@gmail.com",
-			"phoneNumber": "",
-			"orgId": "msp_69918",
-			"profileImage": {
-				"logoPath": "https://staging.vistarait.com/images//users/2188/94.jpg",
-				"thumbPath": "https://staging.vistarait.com/images//users/2188/thumb-94.jpg",
-				"tinyThumbPath": "https://staging.vistarait.com/images/null",
-				"imageType": "image/jpeg"
+			"updatedDate" : "2016-03-04T08:41:47+0530",
+			"priorityUpdatedDate" : "",
+			"statusUpdatedDate" : "",
+			"slaDetails" : {
+				"resolutionTime" : 0,
+				"responseTime" : 0,
+				"responseBreach" : false,
+				"resolutionBreach" : false,
+				"responseBreachDate" : "",
+				"resolutionBreachDate" : ""
 			},
-			"changePassword": false,
-			"organizationName": "Dell Inc"
+			"serviceCatalogItemId" : "0"
 		},
-		"client": {
-      			"id": "93",
-      			"uniqueId": "client_93",
-      			"name": "Brocade Lab"
-   		},
-		"ticketArisedTime": "",
-		"createdDate": "2014-09-26T12:41:46+0530",
-		"serviceCatalogItemId": "0"
-	},
-	{
-		"id": "SRQ0000000073",
-		"subject": "Test \\request",
-		"description": "Test \\request",
-		"status": "New",
-		"priority": "High",
-		"requester": {
-			"id": "USR0000134",
-			"loginName": "orchuser",
-			"email": "sravanthig17@gmail.com",
-			"phoneNumber": "",
-			"profileImage": {
-				"description": "",
-				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-				"imageType": "image/gif"
+		{
+			"id" : "SRQ0000001034",
+			"subject" : "Testing Service Request",
+			"description" : "Creating service request for testing",
+			"status" : "New",
+			"oldStatus" : "New",
+			"priority" : "Normal",
+			"oldPriority" : "Normal",
+			"requester" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"phoneNumber" : "9876543210 Extn 91",
+				"mobileNumber" : "8976493645",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 4,
+						"name" : "Client Administrator"
+					},
+					{
+						"id" : 12,
+						"name" : "Service Desk Client Admin"
+					}
+				],
+				"orgId" : "client_7",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "API Lab",
+				"createdTime" : "2016-03-01T07:52:18+0530",
+				"updatedTime" : "2016-03-01T07:52:18+0530"
 			},
-			"changePassword": false,
-			"organizationName": "Vistara SaaS Platform"
-		},
-		"assignedUser": {
-			"id": "USR0000002189",
-			"loginName": "sravanthi",
-			"email": "sravanthig17@gmail.com",
-			"phoneNumber": "",
-			"orgId": "msp_69918",
-			"profileImage": {
-				"description": "",
-				"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-				"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-				"imageType": "image/gif"
+			"assignedUser" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"phoneNumber" : "9876543210 Extn 91",
+				"mobileNumber" : "8976493645",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 4,
+						"name" : "Client Administrator"
+					},
+					{
+						"id" : 12,
+						"name" : "Service Desk Client Admin"
+					}
+				],
+				"orgId" : "client_7",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "API Lab",
+				"createdTime" : "2016-03-01T07:52:18+0530",
+				"updatedTime" : "2016-03-01T07:52:18+0530"
 			},
-			"changePassword": false,
-			"organizationName": "Dell Inc"
+			"assigneeGroup" : {
+				"id" : 17,
+				"name" : "API-Lab-Group-1",
+				"userCount" : 1
+			},
+			"devices" : [
+				{
+					"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+					"name" : "Testing-Dev-2",
+					"type" : "DEVICE"
+				}
+			],
+			"cc" : "tester@gmail.com",
+			"ticketArisedTime" : "",
+			"createdUser" : {
+				"id" : "USR0000000001",
+				"loginName" : "superadmin",
+				"lastName" : "Admin",
+				"firstName" : "Super",
+				"email" : "sarma519@gmail.com",
+				"phoneNumber" : "4084365900",
+				"mobileNumber" : "4084365900",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 1,
+						"name" : "Service Provider Administrator"
+					},
+					{
+						"id" : 1,
+						"name" : "Service Provider Administrator"
+					}
+				],
+				"orgId" : "org_1",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "Vistara SaaS Platform",
+				"createdTime" : "2012-03-28T21:53:11+0530",
+				"updatedTime" : "2012-03-28T21:53:11+0530"
+			},
+			"alertIds" : [],
+			"createdDate" : "2016-03-04T07:55:06+0530",
+			"allowedStatus" : [
+				{
+					"id" : "2",
+					"name" : "Open",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "3",
+					"name" : "Pending",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "4",
+					"name" : "Resolved",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "5",
+					"name" : "Closed",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				},
+				{
+					"id" : "6",
+					"name" : "On Hold",
+					"reasonsEnabled" : false,
+					"reasonsDefined" : false
+				}
+			],
+			"client" : {
+				"id" : 7,
+				"uniqueId" : "client_7",
+				"name" : "API Lab",
+				"activated" : true,
+				"updatedTime" : "",
+				"createdTime" : "2012-10-09T11:49:34+0530"
+			},
+			"updatedDate" : "2016-03-04T07:55:06+0530",
+			"priorityUpdatedBy" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"changePassword" : false
+			},
+			"priorityUpdatedDate" : "2016-03-04T07:55:06+0530",
+			"statusUpdatedBy" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"changePassword" : false
+			},
+			"statusUpdatedDate" : "2016-03-04T07:55:06+0530",
+			"slaDetails" : {
+				"resolutionTime" : 0,
+				"responseTime" : 0,
+				"responseBreach" : false,
+				"resolutionBreach" : false,
+				"responseBreachDate" : "",
+				"resolutionBreachDate" : ""
+			},
+			"serviceCatalogItemId" : "0"
 		},
-		"client": {
-      			"id": "93",
-      			"uniqueId": "client_93",
-      			"name": "Brocade Lab"
-   		},
-		"ticketArisedTime": "",
-		"createdDate": "2013-12-24T10:08:13+0530",
-		"serviceCatalogItemId": "0"
-	}],
-	"totalResults": 6,
-	"pageNo": 1,
-	"pageSize": 10,
-	"totalPages": 1,
-	"nextPage": false,
-	"nextPageNo": 0,
-	"previousPageNo": 0,
-	"decendingOrder": false
+		{
+			"id" : "SRQ0000001033",
+			"subject" : "Testing servic request",
+			"description" : "testing please ignore",
+			"status" : "Closed",
+			"oldStatus" : "New",
+			"priority" : "Normal",
+			"oldPriority" : "Low",
+			"requester" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"phoneNumber" : "9876543210 Extn 91",
+				"mobileNumber" : "8976493645",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 4,
+						"name" : "Client Administrator"
+					},
+					{
+						"id" : 12,
+						"name" : "Service Desk Client Admin"
+					}
+				],
+				"orgId" : "client_7",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "API Lab",
+				"createdTime" : "2016-03-01T07:52:18+0530",
+				"updatedTime" : "2016-03-01T07:52:18+0530"
+			},
+			"assignedUser" : {
+				"id" : "USR0000002146",
+				"loginName" : "FSSL-API-Lab-User-1",
+				"lastName" : "API-Lab",
+				"firstName" : "FSSL",
+				"email" : "tester@gmail.com",
+				"phoneNumber" : "9876543210 Extn 91",
+				"mobileNumber" : "8976493645",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 4,
+						"name" : "Client Administrator"
+					},
+					{
+						"id" : 12,
+						"name" : "Service Desk Client Admin"
+					}
+				],
+				"orgId" : "client_7",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "API Lab",
+				"createdTime" : "2016-03-01T07:52:18+0530",
+				"updatedTime" : "2016-03-01T07:52:18+0530"
+			},
+			"assigneeGroup" : {
+				"id" : 17,
+				"name" : "API-Lab-Group-1",
+				"userCount" : 1
+			},
+			"cc" : "tester@gmail.com",
+			"ticketArisedTime" : "",
+			"createdUser" : {
+				"id" : "USR0000000001",
+				"loginName" : "superadmin",
+				"lastName" : "Admin",
+				"firstName" : "Super",
+				"email" : "sarma519@gmail.com",
+				"phoneNumber" : "4084365900",
+				"mobileNumber" : "4084365900",
+				"timeZone" : {
+					"id" : "19",
+					"name" : "Asia/Calcutta",
+					"label" : "GMT +05:30 India",
+					"code" : "IST"
+				},
+				"roles" : [
+					{
+						"id" : 1,
+						"name" : "Service Provider Administrator"
+					}
+				],
+				"orgId" : "org_1",
+				"profileImage" : {
+					"description" : "",
+					"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+					"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+					"imageType" : ""
+				},
+				"changePassword" : false,
+				"organizationName" : "Vistara SaaS Platform",
+				"createdTime" : "2012-03-28T21:53:11+0530",
+				"updatedTime" : "2012-03-28T21:53:11+0530"
+			},
+			"alertIds" : [],
+			"createdDate" : "2016-03-04T07:44:44+0530",
+			"allowedStatus" : [],
+			"client" : {
+				"id" : 7,
+				"uniqueId" : "client_7",
+				"name" : "API Lab",
+				"activated" : true,
+				"updatedTime" : "",
+				"createdTime" : "2012-10-09T11:49:34+0530"
+			},
+			"updatedDate" : "2016-03-04T07:50:15+0530",
+			"priorityUpdatedBy" : {
+				"id" : "USR0000002095",
+				"loginName" : "vistara_system_user",
+				"lastName" : " ",
+				"firstName" : "Vistara System User",
+				"email" : "sarma519@gmail.com",
+				"changePassword" : false
+			},
+			"priorityUpdatedDate" : "2016-03-04T07:50:15+0530",
+			"statusUpdatedBy" : {
+				"id" : "USR0000002095",
+				"loginName" : "vistara_system_user",
+				"lastName" : " ",
+				"firstName" : "Vistara System User",
+				"email" : "sarma519@gmail.com",
+				"changePassword" : false
+			},
+			"statusUpdatedDate" : "2016-03-04T07:50:15+0530",
+			"slaDetails" : {
+				"resolutionTime" : 330,
+				"responseTime" : 331,
+				"responseBreach" : false,
+				"resolutionBreach" : false,
+				"responseBreachDate" : "",
+				"resolutionBreachDate" : ""
+			},
+			"serviceCatalogItemId" : "0"
+		}
+	],
+	"totalResults" : 3,
+	"orderBy" : "ticket.id",
+	"pageNo" : 1,
+	"pageSize" : 3,
+	"totalPages" : 1,
+	"nextPage" : false,
+	"nextPageNo" : 0,
+	"previousPageNo" : 0,
+	"descendingOrder" : true
 }
+
+RESPONSE CODE: 200 OK
