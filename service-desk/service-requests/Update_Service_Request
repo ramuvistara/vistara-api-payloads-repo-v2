@@ -9,15 +9,15 @@ HEADERS:
 
 MANDATORY FIELDS:
 	1. devices
-	2. priority				[Low, Normal, High, Urgent, Very Low]
-	3. status				[Check allowedStatus field in Get Incident API]
+	2. priority		[Low, Normal, High, Urgent, Very Low]
+	3. status		[Check allowedStatus field in Get Incident API]
 	4. reason				
-	5. suspendEndDate		[Ex. 2013-05-10T00:00:00+0530]
+	5. suspendEndDate	[Ex. 2013-05-10T00:00:00+0530]
 	6. resolutionSummary
 	7. notes
-	8. assignedUser			[Ex. USR0000000001]
+	8. assignedUser		[Ex. USR0000000001]
 	9. assigneeGroup
-	10.requester			[Ex. USR0000000001]
+	10.requester		[Ex. USR0000000001]
 	11.customFields
 	12.responses
 
