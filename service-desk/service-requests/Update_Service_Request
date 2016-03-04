@@ -21,7 +21,7 @@ MANDATORY FIELDS:
 	11.customFields
 	12.responses
 
-EX: https://api.vistara.io/api/v2/tenants/client_7/serviceRequests/
+EX: https://api.vistara.io/api/v2/tenants/client_7/serviceRequests/SRQ0000001033
 
 NOTE:
 	* Follow the steps while updating status
