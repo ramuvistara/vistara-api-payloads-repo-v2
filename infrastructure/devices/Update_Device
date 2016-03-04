@@ -12,7 +12,7 @@ EX: https://api.vistara.io/api/v2/tenants/client_12/devices/612acfb0-6890-4d52-9
 MANDATORY FIELDS:
 	1. hostName
 
-MANDATORY FIELDS:
+OPTIONAL FIELDS:
 	1. dnsName
 	2. os
 	3. resourceNetworkInterface.ipAddress
