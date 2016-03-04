@@ -1,75 +1,248 @@
-URL: https://api.vistara.io/api/v2/tenants/{tenantId}/serviceRequests/{serviceReqId}
+URL: https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}
 
 METHOD: POST
  
-HEADER:
-1.	Authorization = "Bearer  {accessToken}"	
-2.	Accept  = "application/json"
+HEADERS:
+	Authorization : Bearer {accessToken}
+	Content-Type : application/json
+	Accept : application/json
 
-updating status from Resolved to Open need to give reopen reason in "notes" field. 
- 
-"status": "Open",
-"notes": "reopen the ticket"
+MANDATORY FIELDS:
+	1. devices
+	2. priority				[Low, Normal, High, Urgent, Very Low]
+	3. status				[Check allowedStatus field in Get Incident API]
+	4. reason				
+	5. suspendEndDate		[Ex. 2013-05-10T00:00:00+0530]
+	6. resolutionSummary
+	7. notes
+	8. assignedUser			[Ex. USR0000000001]
+	9. assigneeGroup
+	10.requester			[Ex. USR0000000001]
+	11.customFields
+	12.responses
 
+EX: https://api.vistara.io/api/v2/tenants/client_7/serviceRequests/
+
+NOTE:
+	* Follow the steps while updating status
+		1. Check the Status Flows in Service Desk
+		2. Check the Status change reasons enabled or not for particular status of the module (ChangeRequest) in Service Desk Settings
+		3. reasons must be configured in Status Change Reasons of Service Desk.
+	* Examples for different statuses
+		1. Open
+			{ "status":"Open","reason":"reason configured to Open","notes":"Re-Open note (Required Resolved to Open)" }
+		2. Pending
+			{ "status":"Pending","reason":"reason configured to Pending" }
+		3. Resolved
+			{ "status":"Resolved","reason":"reason configured to Resolve","resolutionSummary":"summary for resolving" }
+		4. Closed
+			{ "status":"Closed","reason":"reason configured to Close" }
+		5. On Hold
+			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
+	
 REQUEST:
-........
- {
-	"assigneeGroup": {
-		"name": "user_group_dell_client"
+{
+	"priority" : "Normal",
+	"status" : "Closed",
+	"reason" : "reason configured to Close",
+	"notes" : "Opening Incident",
+	"devices" : [
+		{
+			"id" : "1a08b17a-85e4-4615-8b49-061f5ad1a1b9",
+			"name" : "Testing Dev-1"
+		},
+		{
+			"id" : "481af404-33a6-4d61-af77-c483ca6641fa",
+			"name" : "Testing Dev-2"
+		}
+	],
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
 	},
-	"assignedUser": {
-		"id": "USR0000002252",
-		"loginName": "latest_api_test"
+	"assigneeGroup" : {
+		"name" : "API-Lab-Group-1"
 	},
-	"devices": [{
-		"id": "3f29b570-3368-4b0e-bec2-fd11aaeb6a9a"
-	}],
-	"status": "Open",
-	"notes": "reopen",
-	"responses": [{
-		"description": "change"
-	}]
+	"requester" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1"
+	},
+	"customFields" : [
+		{
+			"id" : "UDF0000003790",
+			"name" : "drop_down_api_lab_3790",
+			"value" : "2"
+		},
+		{
+			"id" : "UDF0000003791",
+			"name" : "text_api_lab_3791",
+			"value" : "request custom field - text"
+		}
+	],
+	"responses" : [
+		{
+			"description" : "test response one"
+		},
+		{
+			"description" : "test response two"
+		}
+	]
 }
-
-ex: /api/v2//tenants/client_69919/serviceRequests/SRQ0000002364
-
-1.	Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"	
-2.	Accept  = "application/json"
 
 RESPONSE:
-.........
 {
-	"id": "SRQ0000002409",
-	"subject": "service_request",
-	"description": "service request",
-	"status": "Open",
-	"priority": "High",
-	"assignedUser": {
-		"id": "USR0000002252",
-		"loginName": "latest_api_test",
-		"email": "test@gmail.com",
-		"phoneNumber": "09887485473",
-		"orgId": "client_69919",
-		"profileImage": {
-			"description": "",
-			"logoPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"thumbPath": "https://staging.vistarait.com/img/nophoto.gif",
-			"tinyThumbPath": "https://staging.vistarait.com/img/wall_img1.gif",
-			"imageType": "image/gif"
+	"id" : "SRQ0000001033",
+	"subject" : "Testing servic request",
+	"description" : "testing please ignore",
+	"status" : "Closed",
+	"oldStatus" : "New",
+	"priority" : "Normal",
+	"oldPriority" : "Low",
+	"requester" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
 		},
-		"changePassword": false,
-		"organizationName": "Dell Client1"
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
 	},
-	"assigneeGroup": {
-		"name": "user_group_dell_client",
-		"userCount": 0,
-		"unAssignUsers": []
+	"assignedUser" : {
+		"id" : "USR0000002146",
+		"loginName" : "FSSL-API-Lab-User-1",
+		"lastName" : "API-Lab",
+		"firstName" : "FSSL",
+		"email" : "tester@gmail.com",
+		"phoneNumber" : "9876543210 Extn 91",
+		"mobileNumber" : "8976493645",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 4,
+				"name" : "Client Administrator"
+			}
+		],
+		"orgId" : "client_7",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "API Lab",
+		"createdTime" : "2016-03-01T07:52:18+0530",
+		"updatedTime" : "2016-03-01T07:52:18+0530"
 	},
-	"devices": [{
-		"id": "3017ccf8-541f-4928-a5fb-d6556b9fe0d2",
-		"name": "Device_1"
-	}],
-	"ticketArisedTime": "",
-	"createdDate": "2015-01-27T19:34:57+0530",
-	"serviceCatalogItemId": "0"
+	"assigneeGroup" : {
+		"id" : 17,
+		"name" : "API-Lab-Group-1",
+		"userCount" : 1
+	},
+	"cc" : "tester@gmail.com",
+	"ticketArisedTime" : "",
+	"createdUser" : {
+		"id" : "USR0000000001",
+		"loginName" : "superadmin",
+		"lastName" : "Admin",
+		"firstName" : "Super",
+		"email" : "sarma519@gmail.com",
+		"phoneNumber" : "4084365900",
+		"mobileNumber" : "4084365900",
+		"timeZone" : {
+			"id" : "19",
+			"name" : "Asia/Calcutta",
+			"label" : "GMT +05:30 India",
+			"code" : "IST"
+		},
+		"roles" : [
+			{
+				"id" : 1,
+				"name" : "Service Provider Administrator"
+			}
+		],
+		"orgId" : "org_1",
+		"profileImage" : {
+			"description" : "",
+			"logoPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"thumbPath" : "https://app.vistarait.com/img/nophoto.gif",
+			"tinyThumbPath" : "https://app.vistarait.com/img/wall_img1.gif",
+			"imageType" : ""
+		},
+		"changePassword" : false,
+		"organizationName" : "Vistara SaaS Platform",
+		"createdTime" : "2012-03-28T21:53:11+0530",
+		"updatedTime" : "2012-03-28T21:53:11+0530"
+	},
+	"alertIds" : [],
+	"createdDate" : "2016-03-04T07:44:44+0530",
+	"allowedStatus" : [],
+	"client" : {
+		"id" : 7,
+		"uniqueId" : "client_7",
+		"name" : "API Lab",
+		"activated" : true,
+		"updatedTime" : "",
+		"createdTime" : "2012-10-09T11:49:34+0530"
+	},
+	"updatedDate" : "2016-03-04T07:50:15+0530",
+	"priorityUpdatedBy" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"priorityUpdatedDate" : "2016-03-04T07:50:15+0530",
+	"statusUpdatedBy" : {
+		"id" : "USR0000002095",
+		"loginName" : "vistara_system_user",
+		"lastName" : " ",
+		"firstName" : "Vistara System User",
+		"email" : "sarma519@gmail.com",
+		"changePassword" : false
+	},
+	"statusUpdatedDate" : "2016-03-04T07:50:15+0530",
+	"slaDetails" : {
+		"resolutionTime" : 330,
+		"responseTime" : 331,
+		"responseBreach" : false,
+		"resolutionBreach" : false,
+		"responseBreachDate" : "",
+		"resolutionBreachDate" : ""
+	},
+	"serviceCatalogItemId" : "0"
 }
+
+RESPONSE CODE: 200 OK
