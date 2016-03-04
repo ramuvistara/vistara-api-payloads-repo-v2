@@ -13,18 +13,18 @@ MADATORY FIELDS:
 	3. priority		[Low, Normal, High, Urgent, Very Low]
 
 OPTIONAL FIELDS:
-	1. requester
-	2. assignedUser
+	1. requester	[Ex. USR0000000001]
+	2. assignedUser	[Ex. USR0000000001]
 	3. assigneeGroup
 	4. devices
-	5. dueDate
+	5. dueDate		[Ex. 2016-03-26T06:43:00+0000]
 	6. location
 	7. extTicketId
 	8. alertId
 	9. cc
 	10.toEmail
 	11.customFields
-	12.ticketArisedTime
+	12.ticketArisedTime	[Ex. 2016-03-26T06:43:00+0000]
 	13.parentId
 	14.changeRequest/problem
 	15.channelId
