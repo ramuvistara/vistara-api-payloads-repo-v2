@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/problems/{problemId}
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. devices
 	2. priority		[Low, Normal, High, Urgent, Very Low]
 	3. status		[Check allowedStatus field in Get Incident API]
@@ -39,7 +39,7 @@ NOTE:
 		5. On Hold
 			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
 
-REQUEST:
+Request:
 {
 	"cc" : "tester@gmail.com",
 	"priority" : "Normal",
@@ -73,7 +73,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "PRB0000001032",
 	"subject" : "Create-Problem-Test-API",
@@ -239,4 +239,4 @@ RESPONSE:
 	"application" : "itop"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

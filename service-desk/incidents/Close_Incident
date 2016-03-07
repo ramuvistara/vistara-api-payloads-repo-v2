@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/close
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
-MANDATORY FIELDS: 
+Mandatory Fields: 
 	1. reason		[if Reasons enabled for closing incident in service desk settings]
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/close
@@ -18,12 +18,12 @@ NOTE:
 	3. To get the reasons use API Get status Change Reasons (https://api.vistara.io/api/v2/tenants/{tenantId}/sdesk/statusReasons/{module}).
 		
 
-REQUEST:
+Request:
 {
   "reason" : "Reason Configured to Close Incident"
 }
 
-RESPONSE:
+Response:
 {
    "id": "INC0000001030",
    "subject": "Incident Creation",
@@ -227,4 +227,4 @@ RESPONSE:
    }
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

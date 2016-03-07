@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/problems
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. subject
 	2. priority		[Low, Normal, High, Urgent, Very Low]
 	3. description
@@ -15,7 +15,7 @@ MANDATORY FIELDS:
 	5. workaround
 	6. application
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. extTicketId
 	2. location
 	3. cc
@@ -28,7 +28,7 @@ OPTIONAL FIELDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/problems
 
-REQUEST:
+Request:
 {
 	"subject" : "Create-Problem-Test-API",
 	"description" : "Testing-Please Ignore",
@@ -72,7 +72,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "PRB0000001032",
 	"subject" : "Create-Problem-Test-API",
@@ -268,4 +268,4 @@ RESPONSE:
 	"application" : "itop"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

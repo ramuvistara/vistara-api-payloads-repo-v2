@@ -2,14 +2,14 @@ URL : https://api.vistara.io/api/v2/tenants/{varId}/customAttributes/{attributeI
 
 METHOD : POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX : https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/64/values/397/clients
 
-REQUEST:
+Request:
 [
 	{
 		"id" : "client_93"
@@ -19,14 +19,14 @@ REQUEST:
 	}
 ]
 
-RESPONSE: (Ex. For Success)
+Response: (Ex. For Success)
 {
   "failedEntities" : { },
   "failedCount" : 0,
   "successCount" : 2
 }
 
-RESPONSE: (Ex. For Failures)
+Response: (Ex. For Failures)
 {
   "failedEntities" : {
     "client_1000000" : "Invalid client id",

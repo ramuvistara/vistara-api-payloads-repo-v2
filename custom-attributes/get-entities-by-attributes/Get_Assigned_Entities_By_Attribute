@@ -2,7 +2,7 @@ URL : https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/{attribu
 
 METHOD : GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -24,7 +24,7 @@ EX :1. https://api.vistara.io/api/v2/tenants/client_93/customAttributes/10/assig
      
 NOTE: This API can be used to get Paginated List of Assigned Entities.
 
-RESPONSE:
+Response:
 {
    "results": [
       {
@@ -164,4 +164,4 @@ RESPONSE:
    "descendingOrder": true
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

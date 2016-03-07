@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ MADATORY FIELDS:
 	2. description
 	3. priority		[Low, Normal, High, Urgent, Very Low]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. requester	[Ex. USR0000000001]
 	2. assignedUser	[Ex. USR0000000001]
 	3. assigneeGroup
@@ -43,7 +43,7 @@ NOTE :
 	3. To Attach an incident use field parentId [Ex. "parentId" : "INC0000000965"]
 	4. For attachments, files must be converted to bytes stream and then encoded with base64
 
-REQUEST:
+Request:
 {
 	"subject" : "Incident Creation",
 	"description" : "creating Incidents using Payload",
@@ -110,7 +110,7 @@ REQUEST:
 	]
 }
 			
-RESPONSE:
+Response:
 {
 	"id" : "INC0000001030",
 	"subject" : "Incident Creation",
@@ -348,4 +348,4 @@ RESPONSE:
 	}
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

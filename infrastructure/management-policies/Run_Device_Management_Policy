@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management/{id}/action/run
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
 EX: https://api.vistara.io/api/v2/tenants/client_93/policies/management/2327/action/run
 
-RESPONSE:
+Response:
 {
 	"status" : 200,
 	"entity" : "Requesttorunthepolicyhasbeeninitiated",
@@ -28,4 +28,4 @@ RESPONSE:
 	"stringHeaders" : {}
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

@@ -2,14 +2,14 @@ URL : https://api.vistara.io/api/v2/tenants/{varId}/customAttributes/{attributeI
 
 METHOD : DELETE
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX : https://api.vistara.io/api/v2/tenants/msp_92/customAttributes/64/values/397/clients
 
-REQUEST:
+Request:
 [
 	{
 		"id" : "client_93"
@@ -19,14 +19,14 @@ REQUEST:
 	}
 ]
 
-RESPONSE: (Ex. For Success) 
+Response: (Ex. For Success) 
 {
   "FailedEntities" : { },
   "FailedCount" : 0,
   "SuccessCount" : 2
 }
 
-RESPONSE: (Ex. For Failures)
+Response: (Ex. For Failures)
 {
   "FailedEntities" : {
     "1458" : "Invalid client id for organization : 92",

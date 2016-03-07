@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/policies/deviceGroups
  
-METHOD: PUT
+Method: PUT
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
 EX: https://api.vistara.io/api/v2/tenants/client_93/policies/deviceGroups
  
-REQUEST:
+Request:
 [
   {
     "id": 8391,
@@ -17,7 +17,7 @@ REQUEST:
   }
 ]
 
-RESPONSE:
+Response:
 [
 	{
 	   "id": 8391,
@@ -28,4 +28,4 @@ RESPONSE:
 	}
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

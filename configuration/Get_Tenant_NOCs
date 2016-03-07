@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/cfg/tenants/nocs
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json

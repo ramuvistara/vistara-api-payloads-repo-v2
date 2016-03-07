@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}/auditRecordings/search
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -30,7 +30,7 @@ NOTE:
 	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
 	4.	Date Format should be in yyyy-MM-dd HH-mm-ss (Ex: 2016-02-26 05-17-58)
 
-RESPONSE:
+Response:
 {
   "results": [
     {
@@ -74,4 +74,4 @@ RESPONSE:
   "decendingOrder": false
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

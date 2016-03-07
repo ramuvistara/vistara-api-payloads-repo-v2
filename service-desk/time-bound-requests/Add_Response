@@ -1,20 +1,20 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/timeBoundRequests/{timeBountRequestId}/responses
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. creator.loginName
 	2. description
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. status	[Check allowedStatus field in Get time bound request API]
  
-REQUEST:
+Request:
 {
 	"creator": {
 		"loginName": "FSSL-API-Lab-User-1"
@@ -23,6 +23,6 @@ REQUEST:
 	"description": "Adding response to time bound request"
 }
  
-RESPONSE: null
+Response: null
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

@@ -1,20 +1,20 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/responses
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. description
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/responses
 
 NOTE: For attachments, files must be converted to bytes stream and then encoded with base64
 
-REQUEST: 
+Request: 
 {
 	"description":"Added Example attachments",
 	"tags" : "API, Incidents",
@@ -30,7 +30,7 @@ REQUEST:
 	]
 }
 
-RESPONSE: 
+Response: 
 {
   "creator" : {
     "id" : "USR0000002095",
@@ -57,4 +57,4 @@ RESPONSE:
   "description" : "Added Example attachments"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

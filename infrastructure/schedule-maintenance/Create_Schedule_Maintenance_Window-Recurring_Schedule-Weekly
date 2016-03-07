@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/scheduleMaintenances
  
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. name
 	2. description
 	3. devices (or) deviceGroups (or) locations
@@ -18,7 +18,7 @@ MANDATORY FIELDS:
 	8. schedule.pattern.type					[weekly]
 	9. schedule.pattern.weekDays				[Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. dontRunRBA			[true, false]
 	2. dontInstallPatch		[true, false]
 
@@ -29,7 +29,7 @@ REFERENCE DATA (timezone):
 	19. Asia/Calcutta     20. Asia/Dacca           21. Asia/Saigon          22. Asia/Shanghai          23. Asia/Tokyo        24. Australia/Darwin     
 	25. Australia/Sydney  26. Pacific/Guadalcanal  27. Pacific/Auckland
 
-REQUEST:
+Request:
 {
 	"name" : "Recurring-weeklyschedule",
 	"description" : "Recurring-weeklyschedule",
@@ -71,9 +71,9 @@ REQUEST:
 	}
 }
 
-RESPONSE:
+Response:
 {
   "id" : "31"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

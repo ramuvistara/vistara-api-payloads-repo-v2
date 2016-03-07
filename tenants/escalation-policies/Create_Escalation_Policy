@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/escalationPolicy
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -22,7 +22,7 @@ NOTE:
 	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
 	* To use Shift Schedule created, in new policy the timeZones must be same.
   
-REQUEST:
+Request:
 {
    "allclients": "false",
    "clients": [
@@ -74,7 +74,7 @@ REQUEST:
    ]
 }
 
-RESPONSE:
+Response:
 {
    "id": 38,
    "mspId": 4,
@@ -93,4 +93,4 @@ RESPONSE:
    "autoNotification": true
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

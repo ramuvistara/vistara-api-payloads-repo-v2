@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. devices
 	2. priority		[Low, Normal, High, Urgent, Very Low]
 	3. status		[Check allowedStatus field in Get Incident API]
@@ -40,7 +40,7 @@ NOTE:
 		5. On Hold
 			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
 	
-REQUEST:
+Request:
 {
 	"priority" : "Normal",
 	"status" : "Closed",
@@ -89,7 +89,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "SRQ0000001033",
 	"subject" : "Testing servic request",
@@ -245,4 +245,4 @@ RESPONSE:
 	"serviceCatalogItemId" : "0"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. cc
 	2. devices
 	3. priority				[Low, Normal, High, Urgent, Very Low]
@@ -45,7 +45,7 @@ NOTE:
 		5. On Hold
 			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
  
-REQUEST: 
+Request: 
 {
 	"cc" : "vistaraTester@gmail.com",
 	"priority" : "Normal",
@@ -101,7 +101,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "INC0000001029",
 	"subject" : "Test-Incident-API-Lab",
@@ -510,4 +510,4 @@ RESPONSE:
 	}
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

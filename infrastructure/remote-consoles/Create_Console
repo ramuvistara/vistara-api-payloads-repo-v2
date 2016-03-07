@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices/{deviceId}/remoteConsoles
  
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -19,7 +19,7 @@ MADATORY FIELDS:
 		3. adminService
 		4. adminDeviceName
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. consoleAuthType
 	2. type
 	3. userName
@@ -33,7 +33,7 @@ REFERENCE DATA:
 	
 EX: https://api.vistara.io/api/v2/tenants/client_93/devices/23e5721a-b1a6-4347-938c-7e9ee28f1592/remoteConsoles
  
-REQUEST: (Ex. for create admin console)
+Request: (Ex. for create admin console)
 [
   {
     "type": "ADMINCONSOLE",
@@ -43,7 +43,7 @@ REQUEST: (Ex. for create admin console)
   }
 ]
 
-REQUEST: (Ex. for create management console)
+Request: (Ex. for create management console)
 [
   {
     "type": "MANAGEMENTCONSOLE",
@@ -57,6 +57,6 @@ REQUEST: (Ex. for create management console)
   }
 ]
  
-RESPONSE: null
+Response: null
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

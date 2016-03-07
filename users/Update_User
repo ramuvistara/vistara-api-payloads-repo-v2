@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/tenants/{orgId}/users
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -14,7 +14,7 @@ NOTE:
 	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
 	* No need to send every field in Update case, just send those fields required to update only.
 
-REQUEST:
+Request:
 {
 	"loginName" : "Vistara-Testing-Client-User",
 	"password" : "VistaraIT123",
@@ -71,7 +71,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
    "id": "USR0000002145",
    "loginName": "Vistara-Testing-Client-User",
@@ -110,4 +110,4 @@ RESPONSE:
    "updatedTime": "2016-02-29T18:21:53+0530"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

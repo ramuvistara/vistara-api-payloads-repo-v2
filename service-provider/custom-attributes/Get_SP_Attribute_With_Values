@@ -2,7 +2,7 @@ URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeI
 
 METHOD : GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json 

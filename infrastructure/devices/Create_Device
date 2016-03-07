@@ -1,17 +1,17 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/devices
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 	
-MANDATORY FIELDS:
+Mandatory Fields:
 	1.hostName
 	2.resourceNetworkInterface
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. dnsName
 	2. deviceType			[Ex. Laptop]
 	3. os
@@ -25,7 +25,7 @@ OPTIONAL FIELDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_12/devices
 
-REQUEST:
+Request:
 {
 	"dnsName": "testdevice-api.vistara.com",
 	"hostName": "testdevice-api",
@@ -58,10 +58,10 @@ REQUEST:
 	}]
 }
 
-RESPONSE:
+Response:
 {
 	"resourceUUID": "612acfb0-6890-4d52-950b-1c4ec17a7248",
 	"tenantID": "client_12"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

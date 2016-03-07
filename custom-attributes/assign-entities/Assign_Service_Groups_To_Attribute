@@ -2,14 +2,14 @@ URL : https://api.vistara.io/api/v2/tenants/{clientId}/customAttributes/{attribu
 
 METHOD : POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX : https://api.vistara.io/api/v2/tenants/client_93/customAttributes/64/values/397/serviceGroups
 
-REQUEST:
+Request:
 [
 	{
 		"id" : "1458"
@@ -19,14 +19,14 @@ REQUEST:
 	}
 ]
 
-RESPONSE: (Ex. For Success) 
+Response: (Ex. For Success) 
 {
   "failedEntities" : { },
   "failedCount" : 0,
   "successCount" : 2
 }
 
-RESPONSE: (Ex. For failures)
+Response: (Ex. For failures)
 {
   "failedEntities" : {
     "1456779" : "Invalid Service group id for client : 93",

@@ -1,15 +1,15 @@
 URL : https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}/deviceWarranty
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
 EX: https://api.vistara.io/api/v2/tenants/client_93/devices/fb3d81e9-cb01-4178-a7c7-7336ddd3c756/deviceWarranty
  
-RESPONSE:
+Response:
 {
 	"id" : 1,
 	"purchaseDate" : "2015-11-09T18:00:00+0530",
@@ -17,4 +17,4 @@ RESPONSE:
 	"deviceId" : "fb3d81e9-cb01-4178-a7c7-7336ddd3c756"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

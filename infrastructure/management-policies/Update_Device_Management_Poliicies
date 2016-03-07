@@ -1,6 +1,6 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/management
 
-METHOD: PUT
+Method: PUT
 
 HEADER:
   Authorization = Bearer {accessToken}
@@ -9,7 +9,7 @@ HEADER:
 
 EX: https://api.vistara.io/api/v2/tenants/client_105261/policies/management
 
-REQUEST:
+Request:
 [
   {
     "id": 1790,
@@ -45,7 +45,7 @@ REQUEST:
   }
 ]
 
-RESPONSE:
+Response:
 [
   {
     "id": 1790,
@@ -81,4 +81,4 @@ RESPONSE:
   }
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

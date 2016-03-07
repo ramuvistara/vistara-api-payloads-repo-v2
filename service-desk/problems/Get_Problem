@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/problems/{problemId}
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/problems/PRB0000001032
 
-RESPONSE:
+Response:
 {
 	"id" : "PRB0000001032",
 	"subject" : "Create-Problem-Test-API",
@@ -205,4 +205,4 @@ RESPONSE:
 	"application" : "itop"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

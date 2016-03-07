@@ -1,8 +1,8 @@
 URL : https://api.vistara.io/api/v2/tenants/{tenantId}/sdesk/statusReasons/{module}
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -13,7 +13,7 @@ NOTE :
 	1. Options for {module} - [INCIDENT, PROBLEM, CHANGE, TASK, ACSTICKET, SERVICEREQUEST, TICKETRESPONSE]
     2. The enabled field in response confirms that Status Change Reasons are enabled or not in Service Desk Settings.
     
-RESPONSE:
+Response:
 [
 	{
 		"id" : "17",
@@ -79,4 +79,4 @@ RESPONSE:
 	}
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

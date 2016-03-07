@@ -2,14 +2,14 @@ URL : https://api.vistara.io/api/v2/tenants/{varId}/clients/minimal
 
 METHOD : GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/api/v2/tenants/msp_92/clients/minimal
 
-RESPONSE:
+Response:
 [
    {
       "id": "93",
@@ -28,4 +28,4 @@ RESPONSE:
    }
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

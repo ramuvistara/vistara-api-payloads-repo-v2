@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/{attributeId}
 
-METHOD: DELETE
+Method: DELETE
  
-HEADERS:
+Headers:
  	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json

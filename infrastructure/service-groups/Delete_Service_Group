@@ -1,6 +1,6 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/serviceGroups/{sgId}
 
-METHOD: DELETE
+Method: DELETE
 
 HEADER:
 1. Authorization = Bearer {accessToken}
@@ -14,7 +14,7 @@ Note: removebranch=true, removes all the child service groups of the parent also
 ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/serviceGroups/2824?removebranch=true
 ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/serviceGroups/2824
 
-RESPONSE:
+Response:
 .........
 {
   "status": 200,

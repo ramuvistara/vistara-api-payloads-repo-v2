@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ MADATORY FIELDS:
 	2. description
 	3. priority		[Low, Normal, High, Urgent, Very Low]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. location
 	2. cc
 	3. channelId
@@ -26,7 +26,7 @@ OPTIONAL FIELDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/serviceRequests
 
-REQUEST:
+Request:
 {
 	"subject" : "Test-Service Request Create",
 	"description" : "testing please ignore",
@@ -70,7 +70,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "SRQ0000001035",
 	"subject" : "Test-Service Request Create",
@@ -225,4 +225,4 @@ RESPONSE:
 	"serviceCatalogItemId" : "0"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

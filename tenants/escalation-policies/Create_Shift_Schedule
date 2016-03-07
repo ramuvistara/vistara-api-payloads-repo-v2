@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/shiftSchedules
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. allClients (or) clients
 	2. scheduleName
 	3. timeZone.id	[Follow the NOTE to get timeZone details]
@@ -22,7 +22,7 @@ NOTE:
 	* allClients and clients is only available for partner level creation, no need to send for client level creation
 	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
 	
-REQUEST:
+Request:
 {
 	"allClients" : "false",
 	"clients" : [
@@ -79,7 +79,7 @@ REQUEST:
 	]
 }
 
-RESPONSE: 
+Response: 
 {
   "id" : 16,
   "mspId" : 4,
@@ -96,4 +96,4 @@ RESPONSE:
   "scheduleName" : "Test-Schedule"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

@@ -1,6 +1,6 @@
 URL: /api/v2/metric/tenants/{tenant}/rtypes/{rtype}/resources/{resource}/metric
 
-METHOD: POST
+Method: POST
 
 HEADER:
 1. Authorization = "Bearer {accessToken}"
@@ -12,7 +12,7 @@ metricName
 instanceVal
 ts
 
-REQUEST:
+Request:
 ........
 {
   "metricName": "system.ping.rta",
@@ -27,7 +27,7 @@ ex: /api/v2/metric/tenants/client_105261/rtypes/DEVICE/resources/735ab798-e9b4-4
 1. Authorization = "Bearer db5ec38f-1200-4037-aefc-47a40cc5e378"
 2. Accept = "application/json"
  
-RESPONSE:
+Response:
 .........
 status :
 

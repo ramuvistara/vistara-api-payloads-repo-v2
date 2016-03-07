@@ -1,12 +1,12 @@
 URL: https://api.vistara.io/api/v2/metric/search?tenant={tenantId}&rtype={rtype}&resource={resource}&metric={metric}&startTime={startTime}&endTime={endTime}
 
-METHOD:GET
+Method:GET
 
 HEADER: 
 1. Authorization = "Bearer {accessToken}"
 2. Accept = "application/json"
 
-MANDATORY FIELDS:
+Mandatory Fields:
 .................
 tenant
 rtype
@@ -20,7 +20,7 @@ ex: api/v2/metric/search?tenant=client_100340&rtype=DEVICE&resource=725ab798-e9b
 1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
 2. Accept = "application/json" 
 
-RESPONSE:
+Response:
 .........
 [{
      "resource": 2828433,
@@ -54,7 +54,7 @@ ex: api/v2/metric/search?tenant=client_100340&rtype=DEVICE&resource=725ab798-e9b
 1. Authorization = "Bearer 61e3f6a3-c389-40c7-8041-04f0dee92d12"
 2. Accept = "application/json" 
 
-RESPONSE:
+Response:
 -------------------------
 [
   {

@@ -1,17 +1,17 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/policies/deviceGroups
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. name
 	2. type		[DEVICE_GROUP]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. childs
 	2. policy
 	3. kbArticlesIds			[List of kb article Ids]
@@ -29,7 +29,7 @@ OPTIONAL FIELDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/policies/deviceGroups
 
-REQUEST:
+Request:
 [
    {
       "name": "Device group example",
@@ -108,7 +108,7 @@ REQUEST:
    }
 ]
 
-RESPONSE:
+Response:
 [
 	{
 	   "id": 1818,
@@ -180,4 +180,4 @@ RESPONSE:
 	}
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

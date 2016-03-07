@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{varId}/
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
 EX:  https://api.vistara.io/api/v2/tenants/msp_92/ 
  
-RESPONSE: 
+Response: 
 {
    "id": 92,
    "uniqueId": "msp_92",
@@ -73,4 +73,4 @@ RESPONSE:
    }
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

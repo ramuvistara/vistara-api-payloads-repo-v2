@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/discoveryProfiles
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -19,7 +19,7 @@ MANDATORY FEILDS:
 	
 EX: https://api.vistara.io/api/v2/tenants/client_93/discoveryProfiles
 
-REQUEST:
+Request:
 {
    "name": "API - testing 1",
    "discoveryType": "gateway",
@@ -66,7 +66,7 @@ REQUEST:
    }
 }
 
-RESPONSE:
+Response:
 {
    "id": "51",
    "name": "created for testing",
@@ -74,4 +74,4 @@ RESPONSE:
    "mspId": "92"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/users/{userId}
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/users/USR0000002114
  
-RESPONSE: 
+Response: 
 {
    "id": "USR0000002145",
    "loginName": "Vistara-Testing-Client-User",

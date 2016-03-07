@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/changeRequests
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. subject
 	2. description
 	3. priority			[Low, Normal, High, Urgent, Very Low]
@@ -19,7 +19,7 @@ MANDATORY FIELDS:
 	9. workStart		[Ex. 2015-11-10T10:40:20+0000]
 	10.workEnd			[Ex. 2015-11-10T10:40:20+0000]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. extTicketId
 	2. cc
 	3. channelId
@@ -32,7 +32,7 @@ OPTIONAL FIELDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/changeRequests
 
-REQUEST:
+Request:
 {
 	"subject" : "Change Request-Test",
 	"description" : "Testing Change request",
@@ -77,7 +77,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "CHG0000001028",
 	"subject" : "Change Request-Test",
@@ -348,4 +348,4 @@ RESPONSE:
 	"workEnd" : "2016-03-25T00:00:00+0530"
 }
  
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

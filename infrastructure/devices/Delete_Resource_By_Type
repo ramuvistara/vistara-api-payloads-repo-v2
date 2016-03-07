@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/rtype/{resourceType}/resource/{resourceId}
 
-METHOD: DELETE
+Method: DELETE
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ EX : 1. https://api.vistara.io/api/v2/tenants/client_20/rtype/DEVICE/resource/DE
      3. https://api.vistara.io/api/v2/tenants/client_20/rtype/MACHINE_LEARNING/resource/ml-cEye2e8TxWB
      4. https://api.vistara.io/api/v2/tenants/client_20/rtype/LOAD_BALANCER/resource/trivalley-web-cla
     
-RESPONSE:
+Response:
 {
 	"status" : 200,
 	"entity" : "Removedresourcewithid:cddd9e6b-5ec2-425d-8ef7-b26e1a8e9327andtype:DEVICE",

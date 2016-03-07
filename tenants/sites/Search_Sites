@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/sites/search
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json 
@@ -28,7 +28,7 @@ NOTE:
 	2.	(:) Indicates Equals (Ex. Key : Value)
 	3.	Space Characters should be URL Encoded (Then Automatically converts to %20)
 
-RESPONSE:
+Response:
 {
    "results": [
       {
@@ -69,4 +69,4 @@ RESPONSE:
    "descendingOrder": true
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

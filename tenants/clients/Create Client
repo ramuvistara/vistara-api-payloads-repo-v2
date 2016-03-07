@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{varId}/clients
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -18,7 +18,7 @@ EX: https://api.vistara.io/api/v2/tenants/msp_92/clients
 NOTE: 
 	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
 
-REQUEST:
+Request:
 {
 	"name" : "Vistara_Client",
 	"extOrgId" : "200",
@@ -123,11 +123,11 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
   "id" : 69883,
   "uniqueId" : "client_69883",
   "name" : "Vistara_Client"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

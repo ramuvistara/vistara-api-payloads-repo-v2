@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{client}/policies/deviceGroups/search
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ QUERY PARAMS:
  
 EX: https://api.vistara.io/api/v2/tenants/client_93/policies/deviceGroups/search?name=A
 
-RESPONSE:
+Response:
 [
    {
       "id": 1664,
@@ -260,4 +260,4 @@ RESPONSE:
    }
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

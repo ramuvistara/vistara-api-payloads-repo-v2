@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/monitoringTemplates
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -20,7 +20,7 @@ EX: https://api.vistara.io/api/v2/tenants/{clientId}/monitoringTemplates?pageNo=
 NOTE: 	templateType  [1 = global templates, 6 = partner or client templates, 2 = vistara templates, 3 = service provider templates]
 		collectorType [0 = all, 1 = Agent, 2 = Gateway, 3 = Vistara Cloud, 4 = AWS, 5 = Google, 6 = Azure]
 
-RESPONSE:
+Response:
 {
    "results": [
       {
@@ -148,4 +148,4 @@ RESPONSE:
    "descendingOrder": false
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

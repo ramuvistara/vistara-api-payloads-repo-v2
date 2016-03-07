@@ -1,6 +1,6 @@
 URL : https://api.vistara.io/api/v2/metric/tenants/{tenant}/metrictype
 
-METHOD: POST
+Method: POST
 
 HEADER:
 1. Authorization = "Bearer {accessToken}"
@@ -16,7 +16,7 @@ description
 unit
 type
 
-REQUEST:
+Request:
 ........
 {
      "metricName": "system.sample.testmetric",
@@ -32,7 +32,7 @@ ex: api/v2/metric/tenants/client_4/metrictype
 1. Authorization = "Bearer db5ec38f-1200-4037-aefc-47a40cc5e378"
 2. Accept = "application/json"
 
-RESPONSE:
+Response:
 .......................
 status :
  

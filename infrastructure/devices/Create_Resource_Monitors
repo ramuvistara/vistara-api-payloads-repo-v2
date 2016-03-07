@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/resourceMonitors
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX : https://api.vistara.io/api/v2/tenants/client_93/resourceMonitors
 
-REQUEST:
+Request:
 [
 	{
 		"name" : "CiscoMemory",
@@ -200,4 +200,4 @@ REQUEST:
 	}
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

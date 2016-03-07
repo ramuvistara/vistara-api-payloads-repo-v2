@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/changeRequests/{changeRequestId} 
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/changeRequests/CHG0000001027
 
-RESPONSE:
+Response:
 {
    "id": "CHG0000001027",
    "subject": "Testing Change request- please ignore",
@@ -301,4 +301,4 @@ RESPONSE:
    "workEnd": "2016-03-23T00:46:59+0530"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

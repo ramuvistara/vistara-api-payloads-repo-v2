@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{varId}/clients/{clientId}
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ EX: https://api.vistara.io/api/v2/tenants/msp_92/clients/client_69883
 NOTE: 
 	* No need to send every field in Update case, just send those fields required to update only.
 	
-REQUEST:	
+Request:	
 {
 	"name" : "Vistara_Client",
 	"extOrgId" : "200",
@@ -40,11 +40,11 @@ REQUEST:
 	"showCopyClipBoard" : "true"
 }
 
-RESPONSE:
+Response:
 {
   "id" : 69883,
   "uniqueId" : "client_69883",
   "name" : "Vistara_Client"
 }
 	
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

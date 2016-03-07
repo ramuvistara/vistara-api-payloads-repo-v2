@@ -1,6 +1,6 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/serviceGroups
 
-METHOD: GET
+Method: GET
 
 HEADER:
 1. Authorization = Bearer {accessToken}
@@ -8,7 +8,7 @@ HEADER:
 
 ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/serviceGroups
 
-RESPONSE:
+Response:
 .........
 [
   {

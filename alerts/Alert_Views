@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{orgId}/users/{userId}/alertViews
  
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization: Bearer {accessToken}
 	Content-Type: application/json
 	Accept: application/json
@@ -13,7 +13,7 @@ QUERY PARAMS:
         
 EX: https://api.vistara.io/api/v2/tenants/client_93/users/USR0000002115/alertViews?isDescendingOrder=true&sortName=id
         
-RESPONSE:
+Response:
 [
    {
       "id": 30,
@@ -37,4 +37,4 @@ RESPONSE:
    }
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

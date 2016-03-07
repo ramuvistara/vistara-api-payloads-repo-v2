@@ -14,15 +14,15 @@ MANDATORY FEILDS :
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/incidents/{incidentId}/notes
 	
-REQUEST:
+Request:
 {
   "description" : "this notes is created from api"
 }
 
-RESPONSE:
+Response:
 {
   "id" : 15,
   "subject" : "test notes"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

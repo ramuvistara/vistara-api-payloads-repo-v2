@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/changeRequests/{changeRequestId}
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
-OPTIONAL FIELDS:
+Optional Fields:
 	1.	devices
 	2.	priority			[Low, Normal, High, Urgent, Very Low]
 	3.	status				[Check allowedStatus field in Get ChangeRequest API]
@@ -39,7 +39,7 @@ NOTE:
 		5. On Hold
 			{ "status":"On Hold","reason":"reason configured for On Hold","suspendEndDate":"2016-02-20T01:00:00+0000" }
 			
-REQUEST:
+Request:
 {
 	"priority" : "High",
 	"status" : "On Hold",
@@ -81,7 +81,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "CHG0000001027",
 	"subject" : "Testing Change request- please ignore",
@@ -360,4 +360,4 @@ RESPONSE:
 	"workEnd" : "2016-03-23T00:46:59+0530"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

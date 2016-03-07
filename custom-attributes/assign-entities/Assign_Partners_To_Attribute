@@ -2,7 +2,7 @@ URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeI
 
 METHOD : POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -21,14 +21,14 @@ REQEUST:
 	}
 ]
 
-RESPONSE: (Ex. For success)
+Response: (Ex. For success)
 {
   "failedEntities" : { },
   "failedCount" : 0,
   "successCount" : 2
 }
 
-RESPONSE: (Ex. For Failures)
+Response: (Ex. For Failures)
 {
   "failedEntities" : {
     "msp_100" : "Invalid partner id",

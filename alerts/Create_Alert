@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/alert
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization: Bearer {accessToken}
 	Content-Type: application/json
 	Accept: application/json
@@ -28,7 +28,7 @@ OPTIONAL FEILDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/alert
 
-REQUEST:
+Request:
 {
 	"serviceName": "CPU",
 	"device":
@@ -50,6 +50,6 @@ REQUEST:
 	"monitorName":"test"
 }
 
-RESPONSE: null
+Response: null
 
 RESPONSE CODE : 200 OK

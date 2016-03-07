@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/tenants/{orgId}/users
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -22,7 +22,7 @@ EX: 1. https://api.vistara.io/api/tenants/client_69881/users
 NOTE: 
 	* List of timeZones can get by using the API - https://api.vistara.io/api/v2/cfg/timezones
 
-REQUEST:
+Request:
 {
 	"loginName" : "Vistara-Testing-Client-User",
 	"password" : "VistaraIT123",
@@ -79,7 +79,7 @@ REQUEST:
 	]
 }
 
-RESPONSE:
+Response:
 {
    "id": "USR0000002145",
    "loginName": "Vistara-Testing-Client-User",

@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -11,14 +11,14 @@ MANDATORY FEILDS:
 	1. name
 	2. customAttributeValues.value
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. description
 	2. customAttributeValues.description
 
 EX :1. https://api.vistara.io/api/v2/tenants/client_1/customAttributes
     2. https://api.vistara.io/api/v2/tenants/msp_1/customAttributes
 
-REQUEST:
+Request:
 {
 	"name" : "custom_attr_type_for_tenant",
 	"description" : "creating custom_type for tenant-create",
@@ -34,7 +34,7 @@ REQUEST:
 	]
 }
 
-RESPONSE: 
+Response: 
 {
   "id" : 1,
   "name" : "custom_attr_type_for_tenant",

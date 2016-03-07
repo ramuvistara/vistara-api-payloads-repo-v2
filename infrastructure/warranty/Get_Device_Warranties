@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/deviceWarranties
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/deviceWarranties
  
-RESPONSE:
+Response:
 [
   {
   	"id" : 1,
@@ -25,4 +25,4 @@ RESPONSE:
   }
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

@@ -2,19 +2,19 @@ URL:
 	1. INCIDENTS 		- https://api.vistara.io/api/v2/tenants/{clientId}/incidents/{incidentId}/notes/{noteId}
 	2. SERVICE REQUESTS - https://api.vistara.io/api/v2/tenants/{clientId}/serviceRequests/{serviceReqId}/notes/{noteId}
 
-METHOD: DELETE
+Method: DELETE
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/notes/15
 
-RESPONSE:
+Response:
 {
   "id" : 15,
   "subject" : "test notes"
 }
 	
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

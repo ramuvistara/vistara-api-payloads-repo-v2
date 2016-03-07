@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{orgId}/customFields/{classCode}/{customFieldId}
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -21,7 +21,7 @@ NOTE:
 		8. KB Articles - KBARTICLE
 		9. Users - USER
 
-RESPONSE: (Ex. Type DROPDOWN)
+Response: (Ex. Type DROPDOWN)
 {
 	"id" : "UDF0000003790",
 	"classCode" : "CHANGE",
@@ -43,7 +43,7 @@ RESPONSE: (Ex. Type DROPDOWN)
 	]
 }
 
-RESPONSE: (Ex. Type TEXT)
+Response: (Ex. Type TEXT)
 {
 	"id" : "UDF0000003791",
 	"classCode" : "CHANGE",
@@ -55,7 +55,7 @@ RESPONSE: (Ex. Type TEXT)
 	"description" : "test case for text field"
 }
 
-RESPONSE: (Ex. Type TEXTAREA)
+Response: (Ex. Type TEXTAREA)
 {
 	"id" : "UDF0000003792",
 	"classCode" : "CHANGE",
@@ -67,7 +67,7 @@ RESPONSE: (Ex. Type TEXTAREA)
 	"description" : "test case for multi line text"
 }
 
-RESPONSE: (Ex. Type NUMERIC)
+Response: (Ex. Type NUMERIC)
 {
 	"id" : "UDF0000003793",
 	"classCode" : "CHANGE",
@@ -79,7 +79,7 @@ RESPONSE: (Ex. Type NUMERIC)
 	"description" : "numeric test case"
 }
 
-RESPONSE: (Ex. Type CHECKBOX)
+Response: (Ex. Type CHECKBOX)
 {
 	"id" : "UDF0000003794",
 	"classCode" : "CHANGE",
@@ -97,7 +97,7 @@ RESPONSE: (Ex. Type CHECKBOX)
 	]
 }
 
-RESPONSE: (Ex. Type DATE)
+Response: (Ex. Type DATE)
 {
 	"id" : "UDF0000003795",
 	"classCode" : "CHANGE",
@@ -109,7 +109,7 @@ RESPONSE: (Ex. Type DATE)
 	"description" : "test case for date field"
 }
 
-RESPONSE: (Ex. Type DATETIME)
+Response: (Ex. Type DATETIME)
 {
 	"id" : "UDF0000003796",
 	"classCode" : "CHANGE",
@@ -121,4 +121,4 @@ RESPONSE: (Ex. Type DATETIME)
 	"description" : "test case for Date and time"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

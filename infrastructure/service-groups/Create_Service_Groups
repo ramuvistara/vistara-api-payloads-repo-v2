@@ -1,6 +1,6 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/policies/serviceGroups
  
-METHOD: POST
+Method: POST
  
 HEADER:
 1. Authorization = Bearer {accessToken}
@@ -11,7 +11,7 @@ ex: https://api.vistara.io/api/v2/tenants/client_105261/policies/serviceGroups
  
 Note: response returned can be posted again with any modification required
  
-REQUEST:
+Request:
 ........
 [
   

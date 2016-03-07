@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 	
 EX: https://api.vistara.io/api/v2/tenants/client_93/devices/DEV0001520157
 	
-RESPONSE:
+Response:
 {
 	"id" : "DEV0001520157",
 	"generalInfo" : {
@@ -128,4 +128,4 @@ RESPONSE:
 	"type" : "DEVICE"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

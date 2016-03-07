@@ -1,15 +1,15 @@
 URL: https://api.vistara.io/tenants/tenants/{clientId}/serviceRequests/{serviceReqId}
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
 
 EX: https://api.vistara.io/tenants/tenants/client_7/serviceRequests/SRQ0000001034
 
-RESPONSE:
+Response:
 {
 	"id" : "SRQ0000001034",
 	"subject" : "Testing Service Request",
@@ -211,4 +211,4 @@ RESPONSE:
 	"serviceCatalogItemId" : "0"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

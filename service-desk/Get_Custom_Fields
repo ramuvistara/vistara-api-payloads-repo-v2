@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/customFields/{classCode}
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -21,7 +21,7 @@ NOTE:
 		8. KB Articles - KBARTICLE
 		9. Users - USER
 
-RESPONSE: 
+Response: 
 [
 	{
 		"id" : "UDF0000003790",
@@ -111,4 +111,4 @@ RESPONSE:
 	}
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

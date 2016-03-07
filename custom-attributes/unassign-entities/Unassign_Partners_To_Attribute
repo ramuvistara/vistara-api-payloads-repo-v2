@@ -2,7 +2,7 @@ URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeI
 
 METHOD : DELETE
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -11,7 +11,7 @@ EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/values/41
 
 NOTE : Only a Service Provider can un-assign partners of a custom attribute
 
-REQUEST:
+Request:
 [
 	{
 		"id" : "msp_4"
@@ -21,14 +21,14 @@ REQUEST:
 	}
 ]
 
-RESPONSE: (Ex. For Success)
+Response: (Ex. For Success)
 {
   "FailedEntities" : { },
   "FailedCount" : 0,
   "SuccessCount" : 2
 }
 
-RESPONSE: (Ex. For Failures)
+Response: (Ex. For Failures)
 {
   "FailedEntities" : {
     "msp_10203" : "Invalid parter id",

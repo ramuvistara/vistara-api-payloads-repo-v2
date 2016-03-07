@@ -11,15 +11,15 @@ HEADERS :
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/notes/15
 
-REQUEST:
+Request:
 {
   "description" : "test notes-1-updated"
 }
 
-RESPONSE:
+Response:
 {
   "id" : 15,
   "subject" : "test notes"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

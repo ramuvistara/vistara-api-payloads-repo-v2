@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/sites/{siteId}
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -11,7 +11,7 @@ EX: https://api.vistara.io/api/v2/tenants/client_69856/sites/69678
 
 NOTE : No need to send every field in Update case, just send those fields required to update only.
 	
-REQUEST:	
+Request:	
 {
    "name": "CREATE SITE - TESTING - API",
    "parent": {
@@ -39,7 +39,7 @@ REQUEST:
    ]
 }
 
-RESPONSE:
+Response:
 {
   "id" : 69678,
   "name" : "CREATE SITE - TESTING - API - UPDATE",
@@ -47,4 +47,4 @@ RESPONSE:
   "mspId" : 92
 }
 	
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

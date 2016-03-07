@@ -2,7 +2,7 @@ URL : https://api.vistara.io/api/v2/tenants/{tenantId}/customAttributes/{attribu
 
 METHOD : POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ EX : 1. https://api.vistara.io/api/v2/tenants/client_69856/customAttributes/68/v
 
 NOTE : This API can be used for updating the description of a custom attribute value (value cannot be updated).
 
-REQUEST:
+Request:
 {
   "description" : "update for description"
 }

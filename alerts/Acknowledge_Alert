@@ -1,16 +1,16 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/{alertId}/acknowledge
 
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization: Bearer {accessToken}
 	Content-Type: application/json
 	Accept: application/json
 
 EX: https://api.vistara.io/api/v2/tenants/client_69919/alerts/6/acknowledge
 
-REQUEST: null
+Request: null
 
-RESPONSE: null
+Response: null
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

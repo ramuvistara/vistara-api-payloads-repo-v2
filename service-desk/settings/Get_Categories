@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/sdesk/categories/{categoryId}
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -13,7 +13,7 @@ NOTE:
   1. Get Categories		- https://api.vistara.io/api/v2/tenants/{clientId}/sdesk/categories/0
   2. Get SubCategories 	- https://api.vistara.io/api/v2/tenants/{clientId}/sdesk/categories/{categoryId}
  
-RESPONSE: (Ex. For Get Categories)
+Response: (Ex. For Get Categories)
 [
 	{
 		"id" : "1",
@@ -31,7 +31,7 @@ RESPONSE: (Ex. For Get Categories)
 	}
 ]
 
-RESPONSE: (Ex. For Get SubCategories)
+Response: (Ex. For Get SubCategories)
 [
 	{
 		"id" : "3",
@@ -51,4 +51,4 @@ RESPONSE: (Ex. For Get SubCategories)
 	}
 ]
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

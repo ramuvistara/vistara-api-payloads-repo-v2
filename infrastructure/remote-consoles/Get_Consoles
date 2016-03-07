@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/devices/{deviceId}/remoteConsoles
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -13,7 +13,7 @@ QUERY PARAMS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/devices/23e5721a-b1a6-4347-938c-7e9ee28f1592/remoteConsoles
  
-RESPONSE:
+Response:
 {
   "results": [
     {
@@ -51,4 +51,4 @@ RESPONSE:
   "decendingOrder": false
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

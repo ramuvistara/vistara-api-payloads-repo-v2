@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alertViews/{viewId}
  
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization: Bearer {accessToken}
 	Content-Type: application/json
 	Accept: application/json
@@ -23,7 +23,7 @@ SAMPLE DATA :
 EX: 1. https://api.vistara.io/api/v2/tenants/client_93/alertViews/0
 	2. https://api.vistara.io/api/v2/tenants/msp_92/alertViews/0
 	
-RESPONSE: (Example for Client)
+Response: (Example for Client)
 {
    "id": 0,
    "clients": [
@@ -298,7 +298,7 @@ RESPONSE: (Example for Client)
    ]
 }
 
-RESPONSE: (Example for Partner)
+Response: (Example for Partner)
 {
    "id": 0,
    "clients": [
@@ -516,4 +516,4 @@ RESPONSE: (Example for Partner)
    ]
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

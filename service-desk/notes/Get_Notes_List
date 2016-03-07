@@ -26,7 +26,7 @@ QUERY VARIABLES:
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/incidents/INC0000001030/notes?pageNo=1&pageSize=5&queryString=startCreationDate:2015-11-02T09:17:09 0530+endCreationDate:2015-11-02T09:17:09 0530
 
-RESPONSE: 
+Response: 
 {
   "results" : [ {
     "id" : 12,
@@ -82,4 +82,4 @@ RESPONSE:
   "descendingOrder" : true
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

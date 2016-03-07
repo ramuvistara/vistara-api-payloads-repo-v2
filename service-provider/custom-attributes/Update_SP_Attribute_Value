@@ -2,7 +2,7 @@ URL : https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeI
 
 METHOD : POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -11,12 +11,12 @@ EX : https://api.vistara.io/api/v2/serviceProvider/customAttributes/71/values/41
 
 NOTE : This API can be used for updating the description of a custom attribute value (value cannot be updated).
 
-REQUEST:
+Request:
 {
   "description" : "update for description"
 }
 
-RESPONSE: 
+Response: 
 {
   "id" : 411,
   "vlaue" : "value of the custom attribute value",

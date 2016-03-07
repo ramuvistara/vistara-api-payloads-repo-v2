@@ -1,13 +1,13 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/scheduleMaintenances
  
-METHOD: POST
+Method: POST
 
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
  
-MANDATORY FIELDS:
+Mandatory Fields:
 	1. name
 	2. description
 	3. devices (or) deviceGroups (or) locations
@@ -21,7 +21,7 @@ MANDATORY FIELDS:
 	   i. schedule.pattern.weekIndex [First, Second, Third, Fourth, Fifth, Last]
 	   ii.schedule.pattern.dayOfWeek [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. dontRunRBA			[true, false]
 	2. dontInstallPatch		[true, false]
 
@@ -34,7 +34,7 @@ REFERENCE DATA (timezone):
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/scheduleMaintenances
 
-REQUEST: (Ex. DayOfMonth Recurring schedule)
+Request: (Ex. DayOfMonth Recurring schedule)
 {
 	"name" : "Recurring-monthly-1schedule",
 	"description" : "Recurring-monthly-1schedule",
@@ -76,7 +76,7 @@ REQUEST: (Ex. DayOfMonth Recurring schedule)
 	}
 }
 
-REQUEST: (Ex. DayOfWeek Recurring schedule)
+Request: (Ex. DayOfWeek Recurring schedule)
 {
 	"name" : "Recurring-monthly-2schedule",
 	"description" : "Recurring-monthly-2schedule",
@@ -119,9 +119,9 @@ REQUEST: (Ex. DayOfWeek Recurring schedule)
 	}
 }
 
-RESPONSE:
+Response:
 {
   "id" : "30"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

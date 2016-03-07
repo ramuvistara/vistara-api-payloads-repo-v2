@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/timeBoundRequests
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ MADATORY FIELDS:
 	2. description
 	3. priority		[Low, Normal, High, Urgent, Very Low]
 
-OPTIONAL FIELDS:
+Optional Fields:
 	1. assignedUser		[Ex. USR0000002146]
 	2. participantUsers
 	3. requester		[loginName]
@@ -22,7 +22,7 @@ OPTIONAL FIELDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_7/timeBoundRequests
 
-REQUEST:
+Request:
 {
 	"subject" : "Test 4- Time Bound Request",
 	"description" : "Testing - Please ignore",
@@ -74,7 +74,7 @@ REQUEST:
 	}
 }
 
-RESPONSE:
+Response:
 {
 	"id" : "TBT0000001041",
 	"subject" : "Test 4- Time Bound Request",
@@ -294,4 +294,4 @@ RESPONSE:
 	}
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

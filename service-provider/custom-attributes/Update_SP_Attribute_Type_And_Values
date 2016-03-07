@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/serviceProvider/customAttributes/{attributeId}
  
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -12,7 +12,7 @@ EX: https://api.vistara.io/api/v2/serviceProvider/customAttributes/10
 
 NOTE: This API can be used to update custom attribute description or to add new custom attribute values
 
-REQUEST:
+Request:
 {
 	"description" : "creating custom_type for provider update",
 	"customAttributeValues" : [
@@ -27,11 +27,11 @@ REQUEST:
 	]
 }
 
-RESPONSE: 
+Response: 
 {
   "id" : 2,
   "name" : "custom_attr_type_for_service_provider",
   "description" : "creating custom_type for provider update"
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

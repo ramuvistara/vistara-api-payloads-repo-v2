@@ -1,6 +1,6 @@
 URL: api/v2/metric/tenants/{tenant}/metrics/{metric}/metricType
 
-METHOD: GET
+Method: GET
 
 HEADER:
 1. Authorization = "Bearer {accessToken}"
@@ -13,7 +13,7 @@ metric
 
 ex: api/v2/metric/tenants/client_581250/metrics/system.cpu.utilization/metricType
 
-RESPONSE:
+Response:
 
 {
 "metricName": "system.cpu.utilization",

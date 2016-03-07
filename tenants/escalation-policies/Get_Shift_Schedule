@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/shiftSchedules/{shiftScheduleId}
  
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -10,7 +10,7 @@ HEADERS:
 EX: 1. https://api.vistara.io/api/v2/tenants/client_7/shiftSchedules/16
 	2. https://api.vistara.io/api/v2/tenants/msp_4/shiftSchedules/17
  
-RESPONSE:
+Response:
 {
    "id": 16,
    "mspId": 4,
@@ -113,4 +113,4 @@ RESPONSE:
    ]
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

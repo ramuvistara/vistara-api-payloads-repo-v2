@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/timeBoundRequests/search
 
-METHOD: GET
+Method: GET
  
-HEADERS:
+Headers:
 	Authorization : Bearer {accessToken}
 	Content-Type : application/json
 	Accept : application/json
@@ -34,7 +34,7 @@ NOTE:
 	4.	Date Format should be in yyyy-MM-dd HH-mm-ss (2015-11-10 10-40-20)
 
 
-RESPONSE:
+Response:
 {
 	"results" : [
 		{
@@ -703,4 +703,4 @@ RESPONSE:
 	"descendingOrder" : true
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK

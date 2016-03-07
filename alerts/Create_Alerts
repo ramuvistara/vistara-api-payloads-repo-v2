@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{clientId}/alerts
 
-METHOD: POST
+Method: POST
  
-HEADERS:
+Headers:
 	Authorization: Bearer {accessToken}
 	Content-Type: application/json
 	Accept: application/json
@@ -28,7 +28,7 @@ OPTIONAL FEILDS:
 
 EX: https://api.vistara.io/api/v2/tenants/client_93/alerts
 
-REQUEST:
+Request:
 [
 	{
 		"serviceName": "CPU",
@@ -72,6 +72,6 @@ REQUEST:
 	}
 ]
 
-RESPONSE: null
+Response: null
 
 RESPONSE CODE : 200 OK

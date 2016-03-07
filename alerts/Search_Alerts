@@ -1,8 +1,8 @@
 URL: https://api.vistara.io/api/v2/tenants/{tenantId}/alerts/search
 
-METHOD: GET
+Method: GET
 
-HEADERS:
+Headers:
 	Authorization: Bearer {accessToken}
 	Content-Type: application/json
 	Accept: application/json
@@ -45,7 +45,7 @@ NOTE:
 	5.	Date Format should be in yyyy-MM-ddTHH:mm:ssZ (Ex: 2016-02-26T05:17:58 0000)
 	6.	To get the Filter Data use API (https://api.vistara.io/api/v2/tenants/{tenantId}/alertViews/{viewId})
 
-RESPONSE:
+Response:
 {
    "results": [
       {
@@ -195,4 +195,4 @@ RESPONSE:
    "descendingOrder": true
 }
 
-RESPONSE CODE: 200 OK
+Response Code: 200 OK
